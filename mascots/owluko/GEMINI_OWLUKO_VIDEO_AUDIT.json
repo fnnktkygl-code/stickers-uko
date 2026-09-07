@@ -1,0 +1,101 @@
+{
+  "owluko_celebration.mp4": {
+    "animation": "owluko_celebration.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 10,
+    "anomalies": [],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "None. The animation perfectly adheres to character model, wing geometry, lighting, scale, and color standards."
+  },
+  "owluko_error_404.mp4": {
+    "animation": "owluko_error_404.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 10,
+    "anomalies": [],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "None. The animation strictly adheres to character model sheets, color palettes, and lighting standards."
+  },
+  "owluko_goodbye.mp4": {
+    "animation": "owluko_goodbye.mp4",
+    "verdict": "FAIL",
+    "score_out_of_10": 6,
+    "anomalies": [
+      "00:00-00:03: Character scale is shrunk to ~50% frame height instead of canonical 70%",
+      "00:00-00:03: Feet color shifted from off-white/cream to golden orange"
+    ],
+    "scale_compliance": "SHRUNK",
+    "actionable_instructions": "Scale up character to fill 70% frame height with correct headroom margins. Fix feet color texture to match the canonical off-white/cream shade (#E4E3D8) as seen in the reference image."
+  },
+  "owluko_idea.mp4": {
+    "animation": "owluko_idea.mp4",
+    "verdict": "FAIL",
+    "score_out_of_10": 7,
+    "anomalies": [
+      "00:00-00:03: Character scale is shrunk (~50% height) compared to reference frame to fit the overhead magic scroll."
+    ],
+    "scale_compliance": "SHRUNK",
+    "actionable_instructions": "Maintain standard 70% vertical body scale for Owluko. Restrict the floating scroll prop and magical trail strictly within the top 15% headroom margin instead of scaling down the character model."
+  },
+  "owluko_loading.mp4": {
+    "animation": "owluko_loading.mp4",
+    "verdict": "FAIL",
+    "score_out_of_10": 6,
+    "anomalies": [
+      "00:00-00:03: Owluko is noticeably scaled down (~50% height) to fit the floating halo stars and moon props inside the frame."
+    ],
+    "scale_compliance": "SHRUNK",
+    "actionable_instructions": "Maintain Owluko's character scale at 70% of frame height as shown in the canonical reference. Position the floating stars and crescent moon halo within the top 15% headroom margin without shrinking the main character body."
+  },
+  "owluko_pointing.mp4": {
+    "animation": "owluko_pointing.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 9,
+    "anomalies": [
+      "00:01 - Wing tip morphs into an extended pointing gesture resembling an index finger shape, though maintaining a smooth, unified wing surface without distinct fingers or thumbs."
+    ],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "Ensure wing gestures maintain a slightly broader, feather-like tip curve when pointing to avoid subtle single-finger morphing appearances."
+  },
+  "owluko_searching.mp4": {
+    "animation": "owluko_searching.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 10,
+    "anomalies": [],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "Approved for production release. Animation matches canonical Owluko asset guidelines perfectly in scale, lighting, texture, and expression control."
+  },
+  "owluko_security.mp4": {
+    "animation": "owluko_security.mp4",
+    "verdict": "FAIL",
+    "score_out_of_10": 4,
+    "anomalies": [
+      "00:01-00:02: Wings morph into clasped human hands during the shield animation."
+    ],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "Maintain strict avian wing anatomy throughout the animation; do not morph wings into human hands or fingers."
+  },
+  "owluko_sleeping.mp4": {
+    "animation": "owluko_sleeping.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 10,
+    "anomalies": [],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "No adjustments needed. The character model maintains pristine continuity with the reference guide, including smooth wing contours, correct sleeping posture, cream white palette, and 5500K studio lighting."
+  },
+  "owluko_thinking.mp4": {
+    "animation": "owluko_thinking.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 10,
+    "anomalies": [],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "No changes needed. Excellent adherence to character specs, lighting, and animation smoothness."
+  },
+  "owluko_thumbs_up.mp4": {
+    "animation": "owluko_thumbs_up.mp4",
+    "verdict": "PASS",
+    "score_out_of_10": 10,
+    "anomalies": [],
+    "scale_compliance": "70% OK",
+    "actionable_instructions": "None. The animation fully complies with the canonical Uko model specifications, maintaining pure bird wing geometry, proper scale, clean studio lighting, and correct prop headroom placement."
+  }
+}

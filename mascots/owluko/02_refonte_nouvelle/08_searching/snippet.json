@@ -1,0 +1,17 @@
+{
+  "mascot": "owluko",
+  "state": "08_searching",
+  "mode": "natural_avian_search",
+  "frames": 120,
+  "fps": 30,
+  "duration": 4.0,
+  "ground_shadow": false,
+  "wings": 2,
+  "lottie_size_kb": 11.94,
+  "markers": [
+    "search_scan_right",
+    "search_blink_pause",
+    "search_scan_left",
+    "search_settle_loop"
+  ]
+}

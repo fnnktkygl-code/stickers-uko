@@ -1,0 +1,266 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; width: 512px; height: 512px; overflow: hidden; background: transparent; }
+svg { display: block; width: 512px; height: 512px; }
+</style></head><body><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" style="background: transparent;">
+  <defs>
+    <!-- Master Body Silhouette Clip -->
+    <clipPath id="bodyClip">
+      <path d="M 272 40 L 237 40 L 216 44 L 207 48 L 201 49 L 185 57 L 168 69 L 155 82 L 147 94 L 145 95 L 132 119 L 126 134 L 124 145 L 120 155 L 120 162 L 116 174 L 115 183 L 103 194 L 95 213 L 92 231 L 90 235 L 90 246 L 88 255 L 87 271 L 90 314 L 96 339 L 105 359 L 109 363 L 110 366 L 119 374 L 127 377 L 132 382 L 144 400 L 151 407 L 168 421 L 186 430 L 192 437 L 188 451 L 183 459 L 178 462 L 164 465 L 158 470 L 155 479 L 157 485 L 160 488 L 169 489 L 176 485 L 180 485 L 186 489 L 198 489 L 206 485 L 214 485 L 220 489 L 224 489 L 231 486 L 233 482 L 231 469 L 221 461 L 217 451 L 218 445 L 224 441 L 242 443 L 293 441 L 297 446 L 297 455 L 293 461 L 283 470 L 280 476 L 280 484 L 283 488 L 293 489 L 300 485 L 308 485 L 314 489 L 324 489 L 329 485 L 337 485 L 340 487 L 349 488 L 352 487 L 356 483 L 356 474 L 351 466 L 338 462 L 329 456 L 323 442 L 323 434 L 327 429 L 334 427 L 337 424 L 344 421 L 356 411 L 372 395 L 380 382 L 385 377 L 391 376 L 397 373 L 404 366 L 407 358 L 411 353 L 411 350 L 416 339 L 416 334 L 421 317 L 424 290 L 424 260 L 420 228 L 416 217 L 416 213 L 409 197 L 409 194 L 396 183 L 392 166 L 391 155 L 389 152 L 385 135 L 382 130 L 379 120 L 364 93 L 347 73 L 331 60 L 311 50 L 305 49 L 293 44 L 277 42 Z" />
+    </clipPath>
+
+    <!-- Master Porcelain Body Gradient -->
+    <linearGradient id="bodyGrad" x1="26%" y1="5%" x2="74%" y2="95%">
+      <stop offset="0%" stop-color="#FBF2E8" />
+      <stop offset="16%" stop-color="#F4E7DA" />
+      <stop offset="36%" stop-color="#E6D4C4" />
+      <stop offset="60%" stop-color="#D5C1AF" />
+      <stop offset="80%" stop-color="#A5907E" />
+      <stop offset="100%" stop-color="#6B5747" />
+    </linearGradient>
+
+    <!-- Cranial Dome Specular Highlight -->
+    <radialGradient id="cranialHl" cx="42%" cy="17%" r="35%">
+      <stop offset="0%" stop-color="#FFFDF9" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#F7EEE4" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ECE0D4" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Upper Right Head Shadow -->
+    <radialGradient id="headRightShadow" cx="72%" cy="18%" r="42%">
+      <stop offset="0%" stop-color="#7A6250" stop-opacity="0.30" />
+      <stop offset="60%" stop-color="#7A6250" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#7A6250" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Soft Right Brow Ambient Falloff (Warm porcelain tone, natural cranial shading) -->
+    <radialGradient id="rBrowSoft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#846C5A" stop-opacity="0.30" />
+      <stop offset="70%" stop-color="#846C5A" stop-opacity="0.11" />
+      <stop offset="100%" stop-color="#846C5A" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Breast / Chest Soft Illumination -->
+    <radialGradient id="chestHl" cx="44%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#F8EFE7" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#E2D4C6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Left Wing Lateral Highlight -->
+    <linearGradient id="lWingGrad" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.30" />
+      <stop offset="40%" stop-color="#F8EFE5" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#DECFC0" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Right Flank Ambient Shadow -->
+    <linearGradient id="rWingShadow" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#D4C2B0" stop-opacity="0.0" />
+      <stop offset="45%" stop-color="#A8927E" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#6B5442" stop-opacity="0.65" />
+    </linearGradient>
+
+    
+    <!-- Left Amber Iris -->
+    <linearGradient id="amberEyeL" x1="40%" y1="10%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#4E280C" />
+      <stop offset="38%" stop-color="#6B3A12" />
+      <stop offset="68%" stop-color="#B87D2A" />
+      <stop offset="88%" stop-color="#EAA648" />
+      <stop offset="100%" stop-color="#D48E32" />
+    </linearGradient>
+
+    <!-- Right Amber Iris (Angled towards lower right illuminated caustic) -->
+    <linearGradient id="amberEyeR" x1="15%" y1="15%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#3D1D06" />
+      <stop offset="30%" stop-color="#552C0D" />
+      <stop offset="55%" stop-color="#8A541A" />
+      <stop offset="80%" stop-color="#C88226" />
+      <stop offset="100%" stop-color="#E29A32" />
+    </linearGradient>
+
+    <!-- Translucent Warm Espresso Pupils -->
+    <radialGradient id="pupilGradL" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#341604" />
+      <stop offset="70%" stop-color="#4D2208" />
+      <stop offset="100%" stop-color="#6B300C" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="pupilGradR" cx="45%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#2B1002" />
+      <stop offset="70%" stop-color="#401804" />
+      <stop offset="100%" stop-color="#5A2406" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Left Porcelain Eyelid Hood -->
+    <linearGradient id="eyelidHoodL" x1="35%" y1="0%" x2="65%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9F4" />
+      <stop offset="50%" stop-color="#F4E7DC" />
+      <stop offset="80%" stop-color="#DCBEA8" />
+      <stop offset="100%" stop-color="#C2A28C" />
+    </linearGradient>
+
+    <!-- Right Porcelain Eyelid Hood -->
+    <linearGradient id="eyelidHoodR" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#EFE0D2" />
+      <stop offset="45%" stop-color="#DCBEAA" />
+      <stop offset="75%" stop-color="#BF9E88" />
+      <stop offset="100%" stop-color="#A5846E" />
+    </linearGradient>
+
+    <!-- Eyelid Cast Shadow on Eyeball -->
+    <linearGradient id="eyeShadow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#180802" stop-opacity="0.72" />
+      <stop offset="60%" stop-color="#401A05" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#7C3B07" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Seamless Volumetric Porcelain Beak Gradient -->
+    <linearGradient id="beakGrad" x1="22%" y1="10%" x2="78%" y2="90%">
+      <stop offset="0%" stop-color="#FFF8F1" />
+      <stop offset="28%" stop-color="#ECE0D3" />
+      <stop offset="65%" stop-color="#BF9F87" />
+      <stop offset="100%" stop-color="#8A6F5A" />
+    </linearGradient>
+
+    <!-- Soft Under-Beak Ambient Shadow -->
+    <radialGradient id="beakTipShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#583D28" stop-opacity="0.48" />
+      <stop offset="65%" stop-color="#583D28" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#583D28" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Soft Inner Right Orbit Groove -->
+    <radialGradient id="orbitGrooveR" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9A7F6C" stop-opacity="0.28" />
+      <stop offset="65%" stop-color="#9A7F6C" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#9A7F6C" stop-opacity="0" />
+    </radialGradient>
+    <!-- Continuous Volumetric Feet Gradients -->
+    <linearGradient id="lFootGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#806B58" />
+      <stop offset="30%" stop-color="#A28974" />
+      <stop offset="70%" stop-color="#C8B19C" />
+      <stop offset="90%" stop-color="#B09883" />
+      <stop offset="100%" stop-color="#78614E" />
+    </linearGradient>
+    <linearGradient id="rFootGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#6E5745" />
+      <stop offset="30%" stop-color="#88705C" />
+      <stop offset="70%" stop-color="#AB937F" />
+      <stop offset="90%" stop-color="#947C68" />
+      <stop offset="100%" stop-color="#624E3D" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Master Base Silhouette Capsule -->
+  <path d="M 272 40 L 237 40 L 216 44 L 207 48 L 201 49 L 185 57 L 168 69 L 155 82 L 147 94 L 145 95 L 132 119 L 126 134 L 124 145 L 120 155 L 120 162 L 116 174 L 115 183 L 103 194 L 95 213 L 92 231 L 90 235 L 90 246 L 88 255 L 87 271 L 90 314 L 96 339 L 105 359 L 109 363 L 110 366 L 119 374 L 127 377 L 132 382 L 144 400 L 151 407 L 168 421 L 186 430 L 192 437 L 188 451 L 183 459 L 178 462 L 164 465 L 158 470 L 155 479 L 157 485 L 160 488 L 169 489 L 176 485 L 180 485 L 186 489 L 198 489 L 206 485 L 214 485 L 220 489 L 224 489 L 231 486 L 233 482 L 231 469 L 221 461 L 217 451 L 218 445 L 224 441 L 242 443 L 293 441 L 297 446 L 297 455 L 293 461 L 283 470 L 280 476 L 280 484 L 283 488 L 293 489 L 300 485 L 308 485 L 314 489 L 324 489 L 329 485 L 337 485 L 340 487 L 349 488 L 352 487 L 356 483 L 356 474 L 351 466 L 338 462 L 329 456 L 323 442 L 323 434 L 327 429 L 334 427 L 337 424 L 344 421 L 356 411 L 372 395 L 380 382 L 385 377 L 391 376 L 397 373 L 404 366 L 407 358 L 411 353 L 411 350 L 416 339 L 416 334 L 421 317 L 424 290 L 424 260 L 420 228 L 416 217 L 416 213 L 409 197 L 409 194 L 396 183 L 392 166 L 391 155 L 389 152 L 385 135 L 382 130 L 379 120 L 364 93 L 347 73 L 331 60 L 311 50 L 305 49 L 293 44 L 277 42 Z" fill="url(#bodyGrad)" />
+
+  <!-- 2. Clipped Body 3D Volume Layers -->
+  <g clip-path="url(#bodyClip)">
+    <!-- Cranial Specular Dome -->
+    <ellipse cx="200" cy="87" rx="95" ry="65" fill="url(#cranialHl)" />
+
+    <!-- Upper Right Head Shadow -->
+    <ellipse cx="340" cy="95" rx="90" ry="70" fill="url(#headRightShadow)" />
+    <!-- Subtle Right Forehead Transition -->
+    <ellipse cx="310" cy="118" rx="55" ry="32" fill="url(#rBrowSoft)" />
+
+    <!-- Breast / Chest Soft Illumination -->
+    <ellipse cx="244" cy="270" rx="115" ry="88" fill="url(#chestHl)" />
+
+    <!-- Left Wing Lateral Highlight -->
+    <path d="M 88 180 C 88 180, 115 190, 118 270 C 120 340, 95 380, 95 380 C 86 340, 86 230, 88 180 Z" fill="url(#lWingGrad)" />
+    <!-- Left Wing Soft Furrow -->
+    <path d="M 125 185 C 135 225, 138 280, 130 355 C 128 370, 122 385, 118 395" stroke="#B8A492" stroke-width="2.2" stroke-linecap="round" opacity="0.25" fill="none" />
+
+    <!-- Right Flank Ambient Occlusion -->
+    <path d="M 330 180 C 375 210, 424 265, 420 345 C 416 385, 375 420, 345 425 C 380 395, 385 300, 345 200 Z" fill="url(#rWingShadow)" />
+    <!-- Right Wing Furrow -->
+    <path d="M 368 185 C 362 225, 362 280, 368 355 C 370 370, 375 385, 380 395" stroke="#66503E" stroke-width="2.5" stroke-linecap="round" opacity="0.32" fill="none" />
+
+    <!-- Lower Belly Shading Gradient -->
+    <ellipse cx="254" cy="405" rx="85" ry="30" fill="#755F4E" opacity="0.25" />
+
+    <!-- Feet 3D Modeling (Seamless Organic Avian Feet) -->
+    <!-- Left Foot Whole Organic Mesh -->
+    <path d="M 155 479 L 157 485 L 160 488 L 169 489 L 176 485 L 180 485 L 186 489 L 198 489 L 206 485 L 214 485 L 220 489 L 228 488 L 231 486 L 233 482 L 231 469 L 227 465 L 225 465 L 219 458 L 217 451 L 217 447 L 221 442 L 224 441 L 239 442 L 239 435 L 191 435 L 192 439 L 190 442 L 190 445 L 185 457 L 178 462 L 174 462 L 171 464 L 167 464 L 162 466 L 158 470 Z" fill="url(#lFootGrad)" />
+    <!-- Left Foot Knuckle Highlights -->
+    <ellipse cx="164" cy="476" rx="7.5" ry="4.5" fill="#FFFFFF" opacity="0.22" />
+    <ellipse cx="189" cy="469" rx="8.5" ry="5.5" fill="#FFFFFF" opacity="0.26" />
+    <ellipse cx="220" cy="476" rx="7.5" ry="4.5" fill="#FFFFFF" opacity="0.20" />
+    <!-- Left Foot Soft Crevices -->
+    <ellipse cx="179" cy="475" rx="2.5" ry="9" fill="#2D1B0E" opacity="0.22" />
+    <ellipse cx="206" cy="473" rx="2.5" ry="9" fill="#2D1B0E" opacity="0.22" />
+
+    <!-- Right Foot Whole Organic Mesh -->
+    <path d="M 270 435 L 270 442 L 293 441 L 297 446 L 297 455 L 293 461 L 283 470 L 280 476 L 280 484 L 283 488 L 293 489 L 300 485 L 308 485 L 314 489 L 324 489 L 329 485 L 337 485 L 340 487 L 349 488 L 352 487 L 356 483 L 356 474 L 353 468 L 351 466 L 338 462 L 332 459 L 329 456 L 323 442 L 323 435 Z" fill="url(#rFootGrad)" />
+    <!-- Right Foot Knuckle Highlights -->
+    <ellipse cx="288" cy="476" rx="7.5" ry="4.5" fill="#FFFFFF" opacity="0.18" />
+    <ellipse cx="315" cy="469" rx="8.5" ry="5.5" fill="#FFFFFF" opacity="0.22" />
+    <ellipse cx="345" cy="476" rx="7.5" ry="4.5" fill="#FFFFFF" opacity="0.16" />
+    <!-- Right Foot Soft Crevices -->
+    <ellipse cx="304" cy="473" rx="2.5" ry="9" fill="#25160A" opacity="0.22" />
+    <ellipse cx="330" cy="475" rx="2.5" ry="9" fill="#25160A" opacity="0.22" />
+  </g>
+
+    <!-- 3. Inner Orbit Warm Crevice (Warm volumetric shading between beak & right eye, zero cranial dome smudge) -->
+  <ellipse cx="272" cy="168" rx="14" ry="20" fill="url(#orbitGrooveR)" />
+
+  <!-- 4. Sleepy Hooded Glassy Amber Eyes (Relaxed Symmetrical Hoods & Caustics) -->
+  <!-- Left Eye -->
+  <g id="left_eye">
+    <!-- Amber Iris (Relaxed horizontal top Y=140.5..143, vertical lateral walls Y=142..158, rounded circular bottom bowl to Y=180) -->
+    <path d="M 169 142 C 168 150, 168 158, 172 166 C 178 174, 186 180, 195.5 180 C 205 180, 213 174, 219 166 C 223.5 158, 223.5 150, 223 143 C 210 140.5, 180 140.5, 169 142 Z" fill="url(#amberEyeL)" />
+    <!-- Pupil -->
+    <ellipse cx="196" cy="154" rx="14" ry="12" fill="url(#pupilGradL)" />
+    <!-- Lower Golden Luminous Rim -->
+    <path d="M 175 168 C 182 176, 194 178.5, 206 177.5 C 214 176, 220 170, 222 165 C 218 171, 208 175.5, 196 175.5 C 185 175.5, 179 171, 175 168 Z" fill="#FFE294" opacity="0.68" />
+    <!-- Eyelid Cast Shadow on eyeball -->
+    <path d="M 169 142 L 169 148 C 180 146, 210 146, 223 149 L 223 143 C 210 140.5, 180 140.5, 169 142 Z" fill="url(#eyeShadow)" />
+    
+    <!-- Specular Reflection Glint (Calibrated to Ref X=185.5, Y=142.5) -->
+    <ellipse cx="185.5" cy="142.5" rx="2.5" ry="2.0" fill="#FFFFFF" opacity="0.95" />
+    <ellipse cx="185.5" cy="142.5" rx="4.2" ry="3.2" fill="#FFF8E0" opacity="0.40" />
+
+    <!-- Porcelain Upper Eyelid Hood (Gentle Arched Crease) -->
+    <path d="M 167 140 C 172 118, 218 118, 224 143 C 210 140.5, 180 140.5, 167 140 Z" fill="url(#eyelidHoodL)" />
+    <!-- Eyelid Lower Porcelain Edge Highlight -->
+    <path d="M 168 141.8 C 180 140.2, 210 140.2, 223.5 142.8" stroke="#FFFDF8" stroke-width="1.0" stroke-linecap="round" opacity="0.55" fill="none" />
+  </g>
+
+  <!-- Right Eye -->
+  <g id="right_eye">
+    <!-- Amber Iris (Relaxed horizontal top Y=140.5..143, vertical lateral walls Y=143..158, rounded circular bottom bowl to Y=180) -->
+    <path d="M 281 143.5 C 281.5 150, 281.5 158, 285 166 C 291 174, 299 180, 310.5 180 C 319 180, 327 174, 333 166 C 340.5 158, 340.5 150, 340 142 C 326 140.5, 296 140.5, 281 143.5 Z" fill="url(#amberEyeR)" />
+    <!-- Pupil -->
+    <ellipse cx="310" cy="153" rx="13.5" ry="11.5" fill="url(#pupilGradR)" />
+    <!-- Lower Golden Luminous Rim -->
+    <path d="M 302 173 C 310 177.5, 322 177.5, 332 172.5 C 336 168, 338 162, 339 157 C 336 163, 329 169, 320 171 C 312 171, 306 171, 302 173 Z" fill="#E59E38" opacity="0.60" />
+    <ellipse cx="326" cy="165" rx="4.0" ry="3.5" fill="#FFAE20" opacity="0.72" /><ellipse cx="326" cy="165" rx="2.2" ry="1.8" fill="#FFD870" opacity="0.80" />
+
+    <!-- Eyelid Cast Shadow -->
+    <path d="M 281 144 L 281 149 C 296 146, 326 146, 340 149 L 340 143 C 326 140.5, 296 140.5, 281 144 Z" fill="url(#eyeShadow)" />
+
+    <!-- Specular Highlight Glint (Top rim) -->
+    <ellipse cx="303" cy="142.0" rx="2.2" ry="1.8" fill="#FFE8C2" opacity="0.72" />
+
+    <!-- Porcelain Upper Eyelid Hood -->
+    <path d="M 277 143 C 285 118, 335 118, 341 142 C 326 140.5, 296 140.5, 277 143 Z" fill="url(#eyelidHoodR)" />
+    <!-- Eyelid Lower Porcelain Edge Highlight -->
+    <path d="M 278 143 C 294 140.2, 326 140.2, 340 142.5" stroke="#F6ECE0" stroke-width="1.0" stroke-linecap="round" opacity="0.50" fill="none" />
+  </g>
+
+  <!-- 5. Plump Rounded 3D Porcelain Beak Cone (Width ~22px, Height ~37px, nested comfortably between lower half of eyes) -->
+  <g id="beak">
+    <!-- Soft Beak Right Ambient Cast Shadow onto face -->
+    <path d="M 256 160 C 263 172, 269 184, 269 196 C 269 203, 265 208, 256 208 C 262 204, 264 198, 264 190 C 264 180, 260 170, 256 160 Z" fill="#6E533F" opacity="0.35" />
+    <!-- Cast Shadow beneath beak tip onto breast -->
+    <ellipse cx="255" cy="206.5" rx="14" ry="5.5" fill="url(#beakTipShadow)" />
+    <!-- Plump Volumetric Pear/Cone Beak Body -->
+    <path d="M 252 150 C 248 165, 243.5 178, 243.5 188 C 243.5 197, 248 204.5, 254.5 204.5 C 261.5 204.5, 266.5 197, 266.5 188 C 266.5 178, 261 165, 257 150 C 255 149, 254 149, 252 150 Z" fill="url(#beakGrad)" />
+    <!-- Longitudinal Soft Volumetric Highlight Ridge -->
+    <path d="M 251 156 C 248.5 169, 247.5 182, 249.5 196" stroke="#FFFFFF" stroke-width="2.0" stroke-linecap="round" opacity="0.28" fill="none" />
+    <!-- Soft Apex Volume Highlight -->
+    <ellipse cx="251" cy="184" rx="3.2" ry="6.5" fill="#FFFFFF" opacity="0.18" />
+  </g>
+</svg></body></html>

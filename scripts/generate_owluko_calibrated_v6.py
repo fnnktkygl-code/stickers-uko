@@ -1,0 +1,338 @@
+import math
+
+def generate_owluko_calibrated_v6(filepath):
+    """
+    Generate master v6 vector illustration for Owluko:
+    - 100% faithful to fluffy baby barn owl reference (owluko_fluffy_view_1.png).
+    - True soft barn owl facial disk with flat, gentle brow rim (NO deep heart notch).
+    - Beak nestled high and snug between the eyes (top at Y~174, tip at Y~214).
+    - Compact, organic wing fold creases that blend seamlessly into the plump body.
+    - Pure round glassy amber eyes with brilliant specular catchlights.
+    - Plump rounded 3-bean toes with downy belly overhanging gracefully.
+    - Hand-drawn illustrated styling matching high-end Rive mascots.
+    """
+
+    svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Soft Ground Shadows -->
+    <radialGradient id="groundShadowDiffuse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2D1B0F" stop-opacity="0.32" />
+      <stop offset="60%" stop-color="#2D1B0F" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#2D1B0F" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="groundShadowContact" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1A0D06" stop-opacity="0.55" />
+      <stop offset="70%" stop-color="#1A0D06" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#1A0D06" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Master Chubby Body Warm Down Gradient -->
+    <radialGradient id="bodyFluffGrad" cx="46%" cy="32%" r="64%">
+      <stop offset="0%" stop-color="#FFFDF8" />
+      <stop offset="38%" stop-color="#F8EFE3" />
+      <stop offset="68%" stop-color="#EBDCC9" />
+      <stop offset="86%" stop-color="#DECBBA" />
+      <stop offset="100%" stop-color="#CBB39D" />
+    </radialGradient>
+
+    <!-- Belly Plush Down Gradient -->
+    <radialGradient id="bellyPlushGrad" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="56%" stop-color="#FAF5ED" />
+      <stop offset="84%" stop-color="#EFE3D3" />
+      <stop offset="100%" stop-color="#DFCCB5" />
+    </radialGradient>
+
+    <!-- Facial Disk Soft Barn Owl Down Gradient -->
+    <radialGradient id="facialDiskGrad" cx="50%" cy="44%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#FAF6EE" />
+      <stop offset="85%" stop-color="#EFE6D7" />
+      <stop offset="100%" stop-color="#DFCFB9" />
+    </radialGradient>
+
+    <!-- Glassy Amber Eye Radial Gradients (Rich, radiant, soulful) -->
+    <radialGradient id="amberEyeL" cx="34%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="16%" stop-color="#FBBF24" />
+      <stop offset="38%" stop-color="#F59E0B" />
+      <stop offset="68%" stop-color="#D97706" />
+      <stop offset="86%" stop-color="#92400E" />
+      <stop offset="100%" stop-color="#451A03" />
+    </radialGradient>
+    <radialGradient id="amberEyeR" cx="34%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="16%" stop-color="#FBBF24" />
+      <stop offset="38%" stop-color="#F59E0B" />
+      <stop offset="68%" stop-color="#D97706" />
+      <stop offset="86%" stop-color="#92400E" />
+      <stop offset="100%" stop-color="#451A03" />
+    </radialGradient>
+
+    <!-- Beak Terracotta Gradient -->
+    <linearGradient id="beakGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FDBA74" />
+      <stop offset="32%" stop-color="#F97316" />
+      <stop offset="72%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+
+    <!-- Bean Toes Warm Terracotta Gradient -->
+    <linearGradient id="toeGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#FDBA74" />
+      <stop offset="32%" stop-color="#F97316" />
+      <stop offset="72%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+
+    <!-- Soft Cheek Blush Radial -->
+    <radialGradient id="blushGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F87171" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#F87171" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#F87171" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- 01. GROUND SHADOW -->
+  <g id="ground_shadow_layer">
+    <ellipse cx="256" cy="472" rx="174" ry="24" fill="url(#groundShadowDiffuse)" />
+    <ellipse cx="256" cy="470" rx="124" ry="13" fill="url(#groundShadowContact)" />
+  </g>
+
+  <!-- 02. PLUMP 3-BEAN TOES (Under the belly down, firmly grounded) -->
+  <g id="feet_layer">
+    <!-- LEFT FOOT (Centered at X=182, Y=464 under left eye) -->
+    <g id="foot_l">
+      <!-- Outer Toe 1 -->
+      <path d="M 158 450 C 150 450, 142 457, 142 466 C 142 474, 150 480, 159 479 C 168 478, 171 471, 171 462 C 171 454, 166 450, 158 450 Z"
+            fill="url(#toeGrad)" stroke="#5B2308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <ellipse cx="158" cy="459" rx="3.8" ry="2.2" fill="#FED7AA" opacity="0.85" />
+
+      <!-- Inner Toe 3 -->
+      <path d="M 206 450 C 198 450, 193 454, 193 462 C 193 471, 196 478, 205 479 C 214 480, 222 474, 222 466 C 222 457, 214 450, 206 450 Z"
+            fill="url(#toeGrad)" stroke="#5B2308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <ellipse cx="206" cy="459" rx="3.8" ry="2.2" fill="#FED7AA" opacity="0.85" />
+
+      <!-- Middle Toe 2 (Slightly larger, proud) -->
+      <path d="M 182 446 C 171 446, 165 454, 165 464 C 165 475, 173 482, 182 482 C 191 482, 199 475, 199 464 C 199 454, 193 446, 182 446 Z"
+            fill="url(#toeGrad)" stroke="#5B2308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <ellipse cx="182" cy="455" rx="4.8" ry="2.8" fill="#FED7AA" opacity="0.9" />
+    </g>
+
+    <!-- RIGHT FOOT (Centered at X=330, Y=464 under right eye) -->
+    <g id="foot_r">
+      <!-- Inner Toe 1 -->
+      <path d="M 306 450 C 298 450, 290 457, 290 466 C 290 474, 298 480, 307 479 C 316 478, 319 471, 319 462 C 319 454, 314 450, 306 450 Z"
+            fill="url(#toeGrad)" stroke="#5B2308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <ellipse cx="306" cy="459" rx="3.8" ry="2.2" fill="#FED7AA" opacity="0.85" />
+
+      <!-- Outer Toe 3 -->
+      <path d="M 354 450 C 346 450, 341 454, 341 462 C 341 471, 344 478, 353 479 C 362 480, 370 474, 370 466 C 370 457, 362 450, 354 450 Z"
+            fill="url(#toeGrad)" stroke="#5B2308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <ellipse cx="354" cy="459" rx="3.8" ry="2.2" fill="#FED7AA" opacity="0.85" />
+
+      <!-- Middle Toe 2 (Slightly larger, proud) -->
+      <path d="M 330 446 C 319 446, 313 454, 313 464 C 313 475, 321 482, 330 482 C 339 482, 347 475, 347 464 C 347 454, 341 446, 330 446 Z"
+            fill="url(#toeGrad)" stroke="#5B2308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <ellipse cx="330" cy="455" rx="4.8" ry="2.8" fill="#FED7AA" opacity="0.9" />
+    </g>
+  </g>
+
+  <!-- 03. CHUBBY SPHERICAL BODY & INTEGRATED WINGS (PERFECT SPHERICAL CONVEX DOUGH BALL) -->
+  <g id="body_layer">
+    <!-- True chubby sphere:
+         Crown at Y=46, Cheeks & Wings swelling out to X=42 and X=470 at Y=260..290,
+         Lower belly swelling out smoothly below the wings,
+         Rounding into a plush convex bowl down to Y=464, resting right above the toes!
+    -->
+    <path id="body_main_silhouette"
+          d="M 256 46
+             C 334 46, 404 76, 440 134
+             C 466 178, 474 230, 470 286
+             C 466 338, 446 388, 404 424
+             C 362 458, 310 464, 256 464
+             C 202 464, 150 458, 108 424
+             C 66 388, 46 338, 42 286
+             C 38 230, 46 178, 72 134
+             C 108 76, 178 46, 256 46 Z"
+          fill="url(#bodyFluffGrad)"
+          stroke="#3D271A"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+
+    <!-- INTEGRATED LEFT WING FOLD (Natural resting flank fold ending at Y~340) -->
+    <!-- Ambient shadow under wing crease -->
+    <path d="M 88 198
+             C 72 230, 70 268, 78 298
+             C 86 322, 100 334, 114 340
+             C 106 332, 98 316, 94 296
+             C 88 268, 90 234, 102 202 Z"
+          fill="#C4AE96" opacity="0.48" />
+    <!-- Wing fold character line -->
+    <path id="wing_l_crease_line"
+          d="M 92 194
+             C 74 228, 72 270, 80 302
+             C 86 324, 102 338, 116 342"
+          fill="none"
+          stroke="#4A3425"
+          stroke-width="3.0"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+    <!-- Soft feather texture tick on wing -->
+    <path d="M 64 274 C 72 282, 82 286, 94 282" fill="none" stroke="#D2BEA6" stroke-width="2.0" stroke-linecap="round" />
+
+    <!-- INTEGRATED RIGHT WING FOLD (Mirrored) -->
+    <!-- Ambient shadow under wing crease -->
+    <path d="M 424 198
+             C 440 230, 442 268, 434 298
+             C 426 322, 412 334, 398 340
+             C 406 332, 414 316, 418 296
+             C 424 268, 422 234, 410 202 Z"
+          fill="#C4AE96" opacity="0.48" />
+    <!-- Wing fold character line -->
+    <path id="wing_r_crease_line"
+          d="M 420 194
+             C 438 228, 440 270, 432 302
+             C 426 324, 410 338, 396 342"
+          fill="none"
+          stroke="#4A3425"
+          stroke-width="3.0"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+    <!-- Soft feather texture tick on wing -->
+    <path d="M 448 274 C 440 282, 430 286, 418 282" fill="none" stroke="#D2BEA6" stroke-width="2.0" stroke-linecap="round" />
+
+    <!-- PLUSH BELLY DOWN PATCH (Luminous, rounded warm cream/white down) -->
+    <path id="belly_plush_patch"
+          d="M 132 230
+             C 178 218, 334 218, 380 230
+             C 422 275, 424 350, 396 398
+             C 366 446, 316 456, 256 456
+             C 196 456, 146 446, 116 398
+             C 88 350, 90 275, 132 230 Z"
+          fill="url(#bellyPlushGrad)"
+          stroke="#E5D7C4"
+          stroke-width="1.8"
+          opacity="0.96" />
+
+    <!-- Soft Down Tuft Accents on Belly -->
+    <path d="M 230 320 Q 256 332 282 320" fill="none" stroke="#D5C1A9" stroke-width="2.2" stroke-linecap="round" opacity="0.55" />
+    <path d="M 214 358 Q 256 372 298 358" fill="none" stroke="#D5C1A9" stroke-width="2.2" stroke-linecap="round" opacity="0.55" />
+    <path d="M 234 396 Q 256 408 278 396" fill="none" stroke="#D5C1A9" stroke-width="2.2" stroke-linecap="round" opacity="0.55" />
+  </g>
+
+  <!-- 04. FACIAL DISK (Authentic Baby Barn Owl Soft Heart/Apple Disk) -->
+  <g id="facial_disk_layer">
+    <!-- Ambient Occlusion Shadow under Facial Disk -->
+    <path d="M 256 102
+             C 242 86, 170 82, 126 114
+             C 84 146, 82 204, 110 248
+             C 140 292, 210 306, 256 306
+             C 302 306, 372 292, 402 248
+             C 430 204, 428 146, 386 114
+             C 342 82, 270 86, 256 102 Z"
+          fill="#C4AE96" opacity="0.38" transform="translate(0, 5)" />
+
+    <!-- Main Barn Owl Facial Disk:
+         Soft, gentle brow line with subtle dip, broad chubby cheeks, rounded chin
+    -->
+    <path id="facial_disk_main"
+          d="M 256 100
+             C 242 82, 170 78, 126 110
+             C 84 142, 82 200, 110 244
+             C 140 288, 210 302, 256 302
+             C 302 302, 372 288, 402 244
+             C 430 200, 428 142, 386 110
+             C 342 78, 270 82, 256 100 Z"
+          fill="url(#facialDiskGrad)"
+          stroke="#3D271A"
+          stroke-width="3.2"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+
+    <!-- Inner Soft Feather Rim -->
+    <path d="M 256 106
+             C 242 90, 176 86, 134 116
+             C 96 146, 96 194, 122 234
+             C 150 274, 214 288, 256 288
+             C 298 288, 362 274, 390 234
+             C 416 194, 416 146, 378 116
+             C 336 86, 270 90, 256 106 Z"
+          fill="none"
+          stroke="#F4E8D7"
+          stroke-width="2.2" />
+
+    <!-- Sweet Cheek Blush -->
+    <ellipse cx="136" cy="216" rx="26" ry="16" fill="url(#blushGrad)" />
+    <ellipse cx="376" cy="216" rx="26" ry="16" fill="url(#blushGrad)" />
+  </g>
+
+  <!-- 05. EYES (HUGE, ALERT, ADORABLE GLASSY AMBER ORBS) -->
+  <g id="eyes_layer">
+    <!-- LEFT EYE (Centered at X=182, Y=162, Radius=46px) -->
+    <g id="eye_left_orb">
+      <!-- Dark Eyeliner Socket -->
+      <circle cx="182" cy="162" r="48" fill="#1A0D06" stroke="#3D271A" stroke-width="3.0" />
+      <!-- Radiant Amber Iris -->
+      <circle cx="182" cy="162" r="45" fill="url(#amberEyeL)" />
+      <!-- Bottom Golden Iris Rim Glow (BEFORE pupil!) -->
+      <path d="M 148 175 C 158 201, 206 201, 216 175 C 208 193, 156 193, 148 175 Z" fill="#FEF08A" opacity="0.6" />
+      <!-- Deep Obsidian Pupil (PURE, ROUND, SOLID BLACK ON TOP OF IRIS!) -->
+      <circle cx="182" cy="162" r="28" fill="#0A0502" />
+      <!-- Primary Glassy Specular Catchlight (10:30 o'clock - Large, round, bright white) -->
+      <circle cx="168" cy="148" r="10.5" fill="#FFFFFF" />
+      <!-- Secondary Micro Catchlight (4:30 o'clock) -->
+      <circle cx="197" cy="176" r="4.2" fill="#FFFFFF" opacity="0.9" />
+      <!-- Delicate Brow Fold Arc (Above eye on brow) -->
+      <path d="M 144 131 C 162 113, 202 113, 220 131" fill="none" stroke="#382214" stroke-width="3.0" stroke-linecap="round" />
+    </g>
+
+    <!-- RIGHT EYE (Centered at X=330, Y=162, Radius=46px) -->
+    <g id="eye_right_orb">
+      <!-- Dark Eyeliner Socket -->
+      <circle cx="330" cy="162" r="48" fill="#1A0D06" stroke="#3D271A" stroke-width="3.0" />
+      <!-- Radiant Amber Iris -->
+      <circle cx="330" cy="162" r="45" fill="url(#amberEyeR)" />
+      <!-- Bottom Golden Iris Rim Glow (BEFORE pupil!) -->
+      <path d="M 296 175 C 306 201, 354 201, 364 175 C 356 193, 304 193, 296 175 Z" fill="#FEF08A" opacity="0.6" />
+      <!-- Deep Obsidian Pupil (PURE, ROUND, SOLID BLACK ON TOP OF IRIS!) -->
+      <circle cx="330" cy="162" r="28" fill="#0A0502" />
+      <!-- Primary Glassy Specular Catchlight (10:30 o'clock - Large, round, bright white) -->
+      <circle cx="316" cy="148" r="10.5" fill="#FFFFFF" />
+      <!-- Secondary Micro Catchlight (4:30 o'clock) -->
+      <circle cx="345" cy="176" r="4.2" fill="#FFFFFF" opacity="0.9" />
+      <!-- Delicate Brow Fold Arc (Above eye on brow) -->
+      <path d="M 292 131 C 310 113, 350 113, 368 131" fill="none" stroke="#382214" stroke-width="3.0" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- 06. BEAK (Snug, Cute Rounded Terracotta Heart Cone nestled between eyes) -->
+  <g id="beak_layer">
+    <!-- Drop Shadow on chin -->
+    <path d="M 244 194 L 256 218 L 268 194 Z" fill="#3D2719" opacity="0.32" transform="translate(0, 3)" />
+    <!-- Beak Main Body (Nestled high between the eyes: top at Y=174, tip at Y=214) -->
+    <path id="beak_cone"
+          d="M 256 174
+             C 266 174, 273 178, 273 188
+             C 273 198, 263 209, 256 216
+             C 249 209, 239 198, 239 188
+             C 239 178, 246 174, 256 174 Z"
+          fill="url(#beakGrad)"
+          stroke="#5B2308"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+    <!-- Glossy Highlight -->
+    <ellipse cx="256" cy="181" rx="6.0" ry="3.5" fill="#FED7AA" opacity="0.85" />
+    <!-- Center Beak Seam -->
+    <path d="M 256 184 L 256 208" stroke="#FED7AA" stroke-width="1.5" stroke-linecap="round" opacity="0.55" />
+  </g>
+</svg>'''
+
+    with open(filepath, 'w') as f:
+        f.write(svg)
+    print(f"Written calibrated master SVG v6 to {filepath}")
+
+if __name__ == "__main__":
+    generate_owluko_calibrated_v6("scratch/owluko_calibrated_v6.svg")

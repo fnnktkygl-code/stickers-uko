@@ -1,0 +1,8 @@
+{
+  "mascot": "luneko",
+  "state": "06_sleeping",
+  "react": "<Luneko state=\"06_sleeping\" size={180} animated />",
+  "vue": "<Luneko state=\"06_sleeping\" :size=\"180\" animated />",
+  "flutter": "LunekoMascot(state: LunekoState.06_sleeping, size: 180.0)",
+  "html": "<img src=\"assets/06_sleeping/animated.webp\" width=\"180\" height=\"180\" alt=\"Luneko\" />"
+}

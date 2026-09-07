@@ -1,0 +1,1 @@
+{"artboard": {"name": "Test", "width": 400, "height": 300}, "backgroundColor": "#ffffff", "groups": [{"id": "root", "x": 200, "y": 150, "scale": 0.88}], "shapes": [{"id": "b", "type": "rect", "x": 0, "y": 0, "width": 50, "height": 50, "parent": "root", "fill": {"color": "#ff0000"}}], "animations": [{"name": "idle", "fps": 60, "duration": 60, "loop": "loop", "tracks": []}]}

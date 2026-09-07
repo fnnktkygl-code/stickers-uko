@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Underlay Panel 5 -->
+  <image href="panel_5_aligned.png" width="1024" height="1024" opacity="0.3"/>
+
+  <!-- Left Happy Eye -->
+  <g id="happy_eye_l">
+    <!-- Soft socket shadow -->
+    <path d="M 345,365 C 365,335 430,335 452,365 C 440,345 360,345 345,365 Z" fill="#D4BEA2" opacity="0.35"/>
+    <!-- Espresso Arch Stroke -->
+    <path d="M 348,368 C 368,340 430,340 450,368" fill="none" stroke="#573E1F" stroke-width="8.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right Happy Eye -->
+  <g id="happy_eye_r">
+    <!-- Soft socket shadow -->
+    <path d="M 572,365 C 592,335 658,335 678,365 C 666,345 586,345 572,365 Z" fill="#D4BEA2" opacity="0.35"/>
+    <!-- Espresso Arch Stroke -->
+    <path d="M 574,368 C 594,340 656,340 676,368" fill="none" stroke="#573E1F" stroke-width="8.5" stroke-linecap="round"/>
+  </g>
+</svg>

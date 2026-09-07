@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-debug.log*
+.npm/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Videos / heavy media
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Vercel
+.vercel/
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Modèles ML lourds
+.cache/
+*.onnx
+*.onnx.bak
+
+# Archives ZIP de livrables (> 50MB GitHub limit)
+downloads/
+*.zip
+
+# Bundles d'assets lourds
+**/bundle_*.zip
+
+# Animated PNG/GIF sprites (trop lourds, dérivés des process)
+animated.png
+animated.gif
+*.apng
+
+# Sprites et frames extraites
+frames/
+sprites/
+processed/

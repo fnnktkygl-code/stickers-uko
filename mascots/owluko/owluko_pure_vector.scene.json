@@ -1,0 +1,7060 @@
+{
+  "artboard": {
+    "name": "Owluko_Master_Artboard",
+    "width": 1152,
+    "height": 1024
+  },
+  "backgroundColor": "#FFFFFF",
+  "groups": [
+    {
+      "id": "root",
+      "x": 576,
+      "y": 876
+    },
+    {
+      "id": "shadow_group",
+      "parent": "root",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "feet_group",
+      "parent": "root",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "body_group",
+      "parent": "root",
+      "x": 0,
+      "y": -378
+    },
+    {
+      "id": "wings_group",
+      "parent": "body_group",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "wing_l_group",
+      "parent": "wings_group",
+      "x": -288,
+      "y": 92
+    },
+    {
+      "id": "wing_r_rest_group",
+      "parent": "wings_group",
+      "x": 288,
+      "y": 92
+    },
+    {
+      "id": "wing_r_wave_group",
+      "parent": "wings_group",
+      "x": 258,
+      "y": 62
+    },
+    {
+      "id": "wing_l_wave_group",
+      "parent": "wings_group",
+      "x": -258,
+      "y": 62
+    },
+    {
+      "id": "belly_group",
+      "parent": "body_group",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "head_group",
+      "parent": "body_group",
+      "x": 0,
+      "y": -126
+    },
+    {
+      "id": "eye_l_group",
+      "parent": "head_group",
+      "x": -114,
+      "y": -10
+    },
+    {
+      "id": "eye_r_group",
+      "parent": "head_group",
+      "x": 114,
+      "y": -10
+    },
+    {
+      "id": "beak_group",
+      "parent": "head_group",
+      "x": 0,
+      "y": 44
+    }
+  ],
+  "shapes": [
+    {
+      "id": "owluko_wave_ground_shadow_outer",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -275,
+              "y": 0,
+              "cubic": {
+                "rotation": 89.99999999999991,
+                "inRotation": -89.99999999999991,
+                "inDistance": 18.777681494246963,
+                "outDistance": 18.777681494246963
+              }
+            },
+            {
+              "x": 0,
+              "y": 34,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 151.87830620346813,
+                "outDistance": 151.87830620346813
+              }
+            },
+            {
+              "x": 275,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 18.777681494246963,
+                "outDistance": 18.777681494246963
+              }
+            },
+            {
+              "x": 0,
+              "y": -34,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 151.87830620346813,
+                "outDistance": 151.87830620346813
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#402D1A0D",
+              "position": 0
+            },
+            {
+              "color": "#1a2D1A0D",
+              "position": 0.45
+            },
+            {
+              "color": "#052D1A0D",
+              "position": 0.8
+            },
+            {
+              "color": "#002D1A0D",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": 0,
+            "y": 0
+          },
+          "end": {
+            "x": 275,
+            "y": 0
+          }
+        }
+      },
+      "parent": "shadow_group"
+    },
+    {
+      "id": "owluko_wave_ground_shadow_dense",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -205,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 12.150264496277487,
+                "outDistance": 12.150264496277487
+              }
+            },
+            {
+              "x": 0,
+              "y": 22,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 113.21837371531262,
+                "outDistance": 113.21837371531262
+              }
+            },
+            {
+              "x": 205,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 12.150264496277487,
+                "outDistance": 12.150264496277487
+              }
+            },
+            {
+              "x": 0,
+              "y": -22,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 113.21837371531262,
+                "outDistance": 113.21837371531262
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.18,
+      "fill": {
+        "color": "#2D1A0D"
+      },
+      "parent": "shadow_group"
+    },
+    {
+      "id": "owluko_wave_toe_l1",
+      "type": "polygon",
+      "x": -139.99999999999994,
+      "y": -6,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -18.07007380960789,
+              "y": 5.871322893123988,
+              "cubic": {
+                "rotation": 72.000000000001,
+                "inRotation": -108.00000000000047,
+                "inDistance": 7.179701747800389,
+                "outDistance": 7.179701747800211
+              }
+            },
+            {
+              "x": 4.017220926874245,
+              "y": 12.363734711836969,
+              "cubic": {
+                "rotation": -17.999999999999964,
+                "inRotation": 161.99999999999986,
+                "inDistance": 10.493410246785038,
+                "outDistance": 10.493410246785146
+              }
+            },
+            {
+              "x": 18.07007380960789,
+              "y": -5.871322893123988,
+              "cubic": {
+                "rotation": -107.9999999999996,
+                "inRotation": 72.00000000000014,
+                "inDistance": 7.179701747800247,
+                "outDistance": 7.179701747800355
+              }
+            },
+            {
+              "x": -4.017220926874359,
+              "y": -12.363734711837083,
+              "cubic": {
+                "rotation": 162.00000000000006,
+                "inRotation": -18.000000000000153,
+                "inDistance": 10.493410246785038,
+                "outDistance": 10.493410246785146
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FB923C",
+              "position": 0.4
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.75
+            },
+            {
+              "color": "#C2410C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -7.228029523843157,
+            "y": -9.890987769469621
+          },
+          "end": {
+            "x": 7.228029523843155,
+            "y": 9.890987769469621
+          }
+        }
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_l2",
+      "type": "polygon",
+      "x": -112,
+      "y": -4,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -22,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 7.7319864976310555,
+                "outDistance": 7.7319864976310555
+              }
+            },
+            {
+              "x": 0,
+              "y": 14,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 12.15026449627743,
+                "outDistance": 12.15026449627743
+              }
+            },
+            {
+              "x": 22,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 7.7319864976310555,
+                "outDistance": 7.7319864976310555
+              }
+            },
+            {
+              "x": 0,
+              "y": -14,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 12.15026449627743,
+                "outDistance": 12.15026449627743
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FB923C",
+              "position": 0.4
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.75
+            },
+            {
+              "color": "#C2410C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -8.8,
+            "y": -11.200000000000001
+          },
+          "end": {
+            "x": 8.799999999999997,
+            "y": 11.200000000000001
+          }
+        }
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_l3",
+      "type": "polygon",
+      "x": -84,
+      "y": -6,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -18.263972222828045,
+              "y": -5.237109760523026,
+              "cubic": {
+                "rotation": 106.00000000000004,
+                "inRotation": -73.99999999999974,
+                "inDistance": 7.179701747800261,
+                "outDistance": 7.179701747800371
+              }
+            },
+            {
+              "x": -3.583285625620988,
+              "y": 12.496402047198217,
+              "cubic": {
+                "rotation": 15.99999999999952,
+                "inRotation": -163.9999999999999,
+                "inDistance": 10.493410246785078,
+                "outDistance": 10.493410246785048
+              }
+            },
+            {
+              "x": 18.263972222828045,
+              "y": 5.237109760522912,
+              "cubic": {
+                "rotation": -73.99999999999974,
+                "inRotation": 106.00000000000004,
+                "inDistance": 7.179701747800371,
+                "outDistance": 7.179701747800261
+              }
+            },
+            {
+              "x": 3.583285625620988,
+              "y": -12.496402047198103,
+              "cubic": {
+                "rotation": -163.9999999999999,
+                "inRotation": 15.99999999999952,
+                "inDistance": 10.493410246785048,
+                "outDistance": 10.493410246785078
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FB923C",
+              "position": 0.4
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.75
+            },
+            {
+              "color": "#C2410C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -7.305588889131219,
+            "y": -9.997121637758529
+          },
+          "end": {
+            "x": 7.305588889131216,
+            "y": 9.997121637758529
+          }
+        }
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_l1_hi",
+      "type": "polygon",
+      "x": -142,
+      "y": -8.999999999999886,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -7.608452130361229,
+              "y": 2.472135954999544,
+              "cubic": {
+                "rotation": 71.99999999999984,
+                "inRotation": -108.00000000000016,
+                "inDistance": 2.209138999323147,
+                "outDistance": 2.209138999323147
+              }
+            },
+            {
+              "x": 1.2360679774998289,
+              "y": 3.8042260651806146,
+              "cubic": {
+                "rotation": -18.000000000001553,
+                "inRotation": 162.0000000000003,
+                "inDistance": 4.418277998646403,
+                "outDistance": 4.418277998646329
+              }
+            },
+            {
+              "x": 7.608452130361229,
+              "y": -2.4721359549996578,
+              "cubic": {
+                "rotation": -108.00000000000016,
+                "inRotation": 71.99999999999984,
+                "inDistance": 2.209138999323147,
+                "outDistance": 2.209138999323147
+              }
+            },
+            {
+              "x": -1.2360679774998289,
+              "y": -3.8042260651806146,
+              "cubic": {
+                "rotation": 161.99999999999986,
+                "inRotation": -18.000000000001098,
+                "inDistance": 4.4182779986464364,
+                "outDistance": 4.418277998646294
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.65,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_l2_hi",
+      "type": "polygon",
+      "x": -112,
+      "y": -8,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -10,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 2.2091389993231587,
+                "outDistance": 2.2091389993231587
+              }
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 5.522847498307954,
+                "outDistance": 5.522847498307954
+              }
+            },
+            {
+              "x": 10,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 2.2091389993231587,
+                "outDistance": 2.2091389993231587
+              }
+            },
+            {
+              "x": 0,
+              "y": -4,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 5.522847498307954,
+                "outDistance": 5.522847498307954
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.75,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_l3_hi",
+      "type": "polygon",
+      "x": -82,
+      "y": -9,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -7.690093567506551,
+              "y": -2.205098846535975,
+              "cubic": {
+                "rotation": 106.0000000000013,
+                "inRotation": -74.00000000000097,
+                "inDistance": 2.2091389993232435,
+                "outDistance": 2.20913899932315
+              }
+            },
+            {
+              "x": -1.1025494232679875,
+              "y": 3.8450467837532187,
+              "cubic": {
+                "rotation": 15.999999999999444,
+                "inRotation": -164.00000000000057,
+                "inDistance": 4.418277998646378,
+                "outDistance": 4.418277998646378
+              }
+            },
+            {
+              "x": 7.690093567506551,
+              "y": 2.205098846535975,
+              "cubic": {
+                "rotation": -74.00000000000097,
+                "inRotation": 106.0000000000013,
+                "inDistance": 2.20913899932315,
+                "outDistance": 2.2091389993232435
+              }
+            },
+            {
+              "x": 1.1025494232679875,
+              "y": -3.8450467837533324,
+              "cubic": {
+                "rotation": -164.00000000000034,
+                "inRotation": 16.000000000000863,
+                "inDistance": 4.41827799864641,
+                "outDistance": 4.418277998646323
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.65,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_r1",
+      "type": "polygon",
+      "x": 84,
+      "y": -6,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -18.2639722228281,
+              "y": 5.237109760523026,
+              "cubic": {
+                "rotation": 74.00000000000041,
+                "inRotation": -106.00000000000072,
+                "inDistance": 7.1797017478002765,
+                "outDistance": 7.179701747800355
+              }
+            },
+            {
+              "x": 3.583285625620988,
+              "y": 12.496402047198217,
+              "cubic": {
+                "rotation": -16.000000000000288,
+                "inRotation": 163.9999999999999,
+                "inDistance": 10.493410246785078,
+                "outDistance": 10.49341024678497
+              }
+            },
+            {
+              "x": 18.263972222827988,
+              "y": -5.237109760523026,
+              "cubic": {
+                "rotation": -105.99999999999984,
+                "inRotation": 74.00000000000067,
+                "inDistance": 7.179701747800464,
+                "outDistance": 7.179701747800246
+              }
+            },
+            {
+              "x": -3.583285625620988,
+              "y": -12.496402047198103,
+              "cubic": {
+                "rotation": 163.9999999999999,
+                "inRotation": -16.000000000000288,
+                "inDistance": 10.49341024678497,
+                "outDistance": 10.493410246785078
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FB923C",
+              "position": 0.4
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.75
+            },
+            {
+              "color": "#C2410C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -7.305588889131219,
+            "y": -9.997121637758529
+          },
+          "end": {
+            "x": 7.305588889131216,
+            "y": 9.997121637758529
+          }
+        }
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_r2",
+      "type": "polygon",
+      "x": 112,
+      "y": -4,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -22,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 7.7319864976310555,
+                "outDistance": 7.7319864976310555
+              }
+            },
+            {
+              "x": 0,
+              "y": 14,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 12.150264496277487,
+                "outDistance": 12.150264496277487
+              }
+            },
+            {
+              "x": 22,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 7.7319864976310555,
+                "outDistance": 7.7319864976310555
+              }
+            },
+            {
+              "x": 0,
+              "y": -14,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 12.150264496277487,
+                "outDistance": 12.150264496277487
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FB923C",
+              "position": 0.4
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.75
+            },
+            {
+              "color": "#C2410C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -8.8,
+            "y": -11.200000000000001
+          },
+          "end": {
+            "x": 8.799999999999997,
+            "y": 11.200000000000001
+          }
+        }
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_r3",
+      "type": "polygon",
+      "x": 140,
+      "y": -6,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -18.070073809607834,
+              "y": -5.871322893123988,
+              "cubic": {
+                "rotation": 107.99999999999987,
+                "inRotation": -72.0000000000007,
+                "inDistance": 7.179701747800462,
+                "outDistance": 7.179701747800247
+              }
+            },
+            {
+              "x": -4.017220926874302,
+              "y": 12.363734711836969,
+              "cubic": {
+                "rotation": 17.99999999999937,
+                "inRotation": -161.99999999999926,
+                "inDistance": 10.493410246785073,
+                "outDistance": 10.49341024678511
+              }
+            },
+            {
+              "x": 18.070073809607948,
+              "y": 5.871322893123988,
+              "cubic": {
+                "rotation": -71.99999999999984,
+                "inRotation": 107.99999999999987,
+                "inDistance": 7.179701747800247,
+                "outDistance": 7.1797017478004985
+              }
+            },
+            {
+              "x": 4.0172209268744155,
+              "y": -12.363734711837083,
+              "cubic": {
+                "rotation": -162.00000000000006,
+                "inRotation": 17.999999999999964,
+                "inDistance": 10.493410246785146,
+                "outDistance": 10.493410246785146
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FB923C",
+              "position": 0.4
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.75
+            },
+            {
+              "color": "#C2410C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -7.228029523843157,
+            "y": -9.890987769469621
+          },
+          "end": {
+            "x": 7.228029523843155,
+            "y": 9.890987769469621
+          }
+        }
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_r1_hi",
+      "type": "polygon",
+      "x": 82.00000000000011,
+      "y": -9.000000000000114,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -7.690093567506551,
+              "y": 2.205098846536089,
+              "cubic": {
+                "rotation": 74.00000000000156,
+                "inRotation": -106.00000000000047,
+                "inDistance": 2.209138999323259,
+                "outDistance": 2.2091389993231183
+              }
+            },
+            {
+              "x": 1.1025494232679875,
+              "y": 3.8450467837532187,
+              "cubic": {
+                "rotation": -15.999999999998433,
+                "inRotation": 163.99999999999915,
+                "inDistance": 4.41827799864641,
+                "outDistance": 4.418277998646237
+              }
+            },
+            {
+              "x": 7.690093567506551,
+              "y": -2.2050988465358614,
+              "cubic": {
+                "rotation": -105.99999999999966,
+                "inRotation": 74.00000000000156,
+                "inDistance": 2.2091389993231183,
+                "outDistance": 2.2091389993233688
+              }
+            },
+            {
+              "x": -1.1025494232679875,
+              "y": -3.8450467837532187,
+              "cubic": {
+                "rotation": 164.00000000000097,
+                "inRotation": -16.00000000000127,
+                "inDistance": 4.4182779986463,
+                "outDistance": 4.418277998646487
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.65,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_r2_hi",
+      "type": "polygon",
+      "x": 112,
+      "y": -8,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -10,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 2.2091389993231587,
+                "outDistance": 2.2091389993231587
+              }
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 5.522847498307897,
+                "outDistance": 5.522847498307897
+              }
+            },
+            {
+              "x": 10,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 2.2091389993231587,
+                "outDistance": 2.2091389993231587
+              }
+            },
+            {
+              "x": 0,
+              "y": -4,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 5.522847498307897,
+                "outDistance": 5.522847498307897
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.75,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_toe_r3_hi",
+      "type": "polygon",
+      "x": 142,
+      "y": -9,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -7.608452130361229,
+              "y": -2.4721359549996578,
+              "cubic": {
+                "rotation": 107.99999999999925,
+                "inRotation": -71.99999999999895,
+                "inDistance": 2.209138999323039,
+                "outDistance": 2.2091389993232546
+              }
+            },
+            {
+              "x": -1.2360679774997152,
+              "y": 3.804226065180501,
+              "cubic": {
+                "rotation": 18.000000000002952,
+                "inRotation": -162.00000000000264,
+                "inDistance": 4.418277998646224,
+                "outDistance": 4.418277998646364
+              }
+            },
+            {
+              "x": 7.608452130361229,
+              "y": 2.4721359549996578,
+              "cubic": {
+                "rotation": -72.00000000000075,
+                "inRotation": 108.00000000000107,
+                "inDistance": 2.209138999323039,
+                "outDistance": 2.2091389993232546
+              }
+            },
+            {
+              "x": 1.2360679774998289,
+              "y": -3.8042260651806146,
+              "cubic": {
+                "rotation": -161.99999999999986,
+                "inRotation": 17.99999999999875,
+                "inDistance": 4.41827799864626,
+                "outDistance": 4.418277998646294
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.65,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "feet_group"
+    },
+    {
+      "id": "owluko_wave_wing_wave_l_main",
+      "type": "polygon",
+      "x": -109,
+      "y": -133,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 99,
+              "y": -67,
+              "cubic": {
+                "rotation": 252.25532837494308,
+                "inRotation": 73.30075576600638,
+                "inDistance": 20.8806130178211,
+                "outDistance": 52.49761899362675
+              }
+            },
+            {
+              "x": 5,
+              "y": -243,
+              "cubic": {
+                "rotation": 229.39870535499554,
+                "inRotation": 50.44033203100551,
+                "inDistance": 59.66573556070519,
+                "outDistance": 18.439088914585774
+              }
+            },
+            {
+              "x": -26,
+              "y": -231,
+              "cubic": {
+                "rotation": 99.46232220802561,
+                "inRotation": 279.4623222080256,
+                "inDistance": 18.248287590894655,
+                "outDistance": 18.248287590894655
+              }
+            },
+            {
+              "x": -35,
+              "y": -175,
+              "cubic": {
+                "rotation": 126.86989764584402,
+                "inRotation": 303.69006752597977,
+                "inDistance": 14.422205101855958,
+                "outDistance": 10
+              }
+            },
+            {
+              "x": -65,
+              "y": -187,
+              "cubic": {
+                "rotation": 209.74488129694222,
+                "inRotation": 30.963756532073518,
+                "inDistance": 11.6619037896906,
+                "outDistance": 16.1245154965971
+              }
+            },
+            {
+              "x": -87,
+              "y": -167,
+              "cubic": {
+                "rotation": 83.65980825409007,
+                "inRotation": 263.6598082540901,
+                "inDistance": 18.110770276274835,
+                "outDistance": 18.110770276274835
+              }
+            },
+            {
+              "x": -81,
+              "y": -115,
+              "cubic": {
+                "rotation": 120.96375653207352,
+                "inRotation": 299.74488129694225,
+                "inDistance": 16.1245154965971,
+                "outDistance": 11.6619037896906
+              }
+            },
+            {
+              "x": -111,
+              "y": -103,
+              "cubic": {
+                "rotation": 122.0053832080835,
+                "inRotation": 303.69006752597977,
+                "inDistance": 14.422205101855958,
+                "outDistance": 18.867962264113206
+              }
+            },
+            {
+              "x": -105,
+              "y": -25,
+              "cubic": {
+                "rotation": 68.6293777306568,
+                "inRotation": 248.19859051364818,
+                "inDistance": 32.31098884280703,
+                "outDistance": 49.39635614091387
+              }
+            },
+            {
+              "x": 49,
+              "y": 83,
+              "cubic": {
+                "rotation": 42.27368900609372,
+                "inRotation": 222.95459151111277,
+                "inDistance": 50,
+                "outDistance": 35
+              }
+            },
+            {
+              "x": 149,
+              "y": 58,
+              "cubic": {
+                "rotation": 278.53076560994816,
+                "inRotation": 239.74356283647074,
+                "inDistance": 30,
+                "outDistance": 30
+              }
+            },
+            {
+              "x": 139,
+              "y": -17,
+              "cubic": {
+                "rotation": 270,
+                "inRotation": 90,
+                "inDistance": 40,
+                "outDistance": 40
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FCF9F3",
+              "position": 0
+            },
+            {
+              "color": "#F7EEDB",
+              "position": 0.3
+            },
+            {
+              "color": "#EBD9BF",
+              "position": 0.65
+            },
+            {
+              "color": "#DCC4A5",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": 66.6,
+            "y": -170.1
+          },
+          "end": {
+            "x": -66.60000000000001,
+            "y": 170.1
+          }
+        }
+      },
+      "parent": "wing_l_wave_group",
+      "opacity": 0
+    },
+    {
+      "id": "owluko_wave_wing_wave_shadow",
+      "type": "polygon",
+      "x": -5,
+      "y": 42.5,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -15,
+              "y": -82.5,
+              "cubic": {
+                "rotation": 73.30075576600638,
+                "inRotation": 0,
+                "inDistance": 0,
+                "outDistance": 52.201532544552755
+              }
+            },
+            {
+              "x": -5,
+              "y": 87.5,
+              "cubic": {
+                "rotation": 123.6900675259798,
+                "inRotation": -75.96375653207353,
+                "inDistance": 61.84658438426491,
+                "outDistance": 18.027756377319946
+              }
+            },
+            {
+              "x": 15,
+              "y": 87.5,
+              "cubic": {
+                "rotation": -71.56505117707799,
+                "inRotation": 116.56505117707799,
+                "inDistance": 22.360679774997898,
+                "outDistance": 63.24555320336759
+              }
+            },
+            {
+              "x": 0,
+              "y": -87.5,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 60.94539590092286,
+                "inDistance": 51.478150704935004,
+                "outDistance": 0
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#B89B7D"
+      },
+      "parent": "wing_r_wave_group"
+    },
+    {
+      "id": "owluko_wave_wing_wave_smooth_main",
+      "type": "polygon",
+      "x": 109,
+      "y": -133,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -99,
+              "y": -67,
+              "cubic": {
+                "rotation": -72.25532837494306,
+                "inRotation": 106.69924423399362,
+                "inDistance": 20.8806130178211,
+                "outDistance": 52.49761899362675
+              }
+            },
+            {
+              "x": -5,
+              "y": -243,
+              "cubic": {
+                "rotation": -49.39870535499554,
+                "inRotation": 129.5596679689945,
+                "inDistance": 59.66573556070519,
+                "outDistance": 18.439088914585774
+              }
+            },
+            {
+              "x": 26,
+              "y": -231,
+              "cubic": {
+                "rotation": 80.53767779197439,
+                "inRotation": -99.46232220802563,
+                "inDistance": 18.248287590894655,
+                "outDistance": 18.248287590894655
+              }
+            },
+            {
+              "x": 35,
+              "y": -175,
+              "cubic": {
+                "rotation": 53.13010235415598,
+                "inRotation": -123.6900675259798,
+                "inDistance": 14.422205101855958,
+                "outDistance": 10
+              }
+            },
+            {
+              "x": 65,
+              "y": -187,
+              "cubic": {
+                "rotation": -29.744881296942225,
+                "inRotation": 149.03624346792648,
+                "inDistance": 11.6619037896906,
+                "outDistance": 16.1245154965971
+              }
+            },
+            {
+              "x": 87,
+              "y": -167,
+              "cubic": {
+                "rotation": 96.34019174590993,
+                "inRotation": -83.6598082540901,
+                "inDistance": 18.110770276274835,
+                "outDistance": 18.110770276274835
+              }
+            },
+            {
+              "x": 81,
+              "y": -115,
+              "cubic": {
+                "rotation": 59.03624346792648,
+                "inRotation": -119.74488129694224,
+                "inDistance": 16.1245154965971,
+                "outDistance": 11.6619037896906
+              }
+            },
+            {
+              "x": 111,
+              "y": -103,
+              "cubic": {
+                "rotation": 57.9946167919165,
+                "inRotation": -123.6900675259798,
+                "inDistance": 14.422205101855958,
+                "outDistance": 18.867962264113206
+              }
+            },
+            {
+              "x": 105,
+              "y": -25,
+              "cubic": {
+                "rotation": 111.3706222693432,
+                "inRotation": -68.19859051364818,
+                "inDistance": 32.31098884280703,
+                "outDistance": 49.39635614091387
+              }
+            },
+            {
+              "x": -49,
+              "y": 83,
+              "cubic": {
+                "rotation": 137.72631099390628,
+                "inRotation": -42.95459151111278,
+                "inDistance": 50,
+                "outDistance": 35
+              }
+            },
+            {
+              "x": -149,
+              "y": 58,
+              "cubic": {
+                "rotation": -98.53076560994813,
+                "inRotation": -59.74356283647074,
+                "inDistance": 30,
+                "outDistance": 30
+              }
+            },
+            {
+              "x": -139,
+              "y": -17,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 40,
+                "outDistance": 40
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "#FCF9F3",
+              "position": 0
+            },
+            {
+              "color": "#F7EEDB",
+              "position": 0.3
+            },
+            {
+              "color": "#EBD9BF",
+              "position": 0.65
+            },
+            {
+              "color": "#DCC4A5",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -66.6,
+            "y": -170.1
+          },
+          "end": {
+            "x": 66.60000000000001,
+            "y": 170.1
+          }
+        }
+      },
+      "parent": "wing_r_wave_group",
+      "opacity": 0
+    },
+    {
+      "id": "owluko_wave_body_silhouette",
+      "type": "polygon",
+      "x": 0,
+      "y": -28,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": -326,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 116,
+                "outDistance": 116
+              }
+            },
+            {
+              "x": 270,
+              "y": -98,
+              "cubic": {
+                "rotation": 80.39479584498706,
+                "inRotation": -99.58294472353258,
+                "inDistance": 156.1793840428371,
+                "outDistance": 131.84839779079607
+              }
+            },
+            {
+              "x": 214,
+              "y": 326,
+              "cubic": {
+                "rotation": 123.11134196037203,
+                "inRotation": -57.17145820858748,
+                "inDistance": 147.56693396557372,
+                "outDistance": 109.83624174196785
+              }
+            },
+            {
+              "x": -214,
+              "y": 326,
+              "cubic": {
+                "rotation": -122.82854179141253,
+                "inRotation": 56.88865803962798,
+                "inDistance": 109.83624174196785,
+                "outDistance": 147.56693396557372
+              }
+            },
+            {
+              "x": -270,
+              "y": -98,
+              "cubic": {
+                "rotation": -80.41705527646742,
+                "inRotation": 99.60520415501294,
+                "inDistance": 131.84839779079607,
+                "outDistance": 156.1793840428371
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#FCF9F3",
+              "position": 0
+            },
+            {
+              "color": "#F7EEDB",
+              "position": 0.35
+            },
+            {
+              "color": "#EFE0C7",
+              "position": 0.65
+            },
+            {
+              "color": "#E5D0B2",
+              "position": 0.85
+            },
+            {
+              "color": "#D4BDA0",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": 0,
+            "y": -130.4
+          },
+          "end": {
+            "x": 423.8,
+            "y": -130.4
+          }
+        }
+      },
+      "parent": "body_group"
+    },
+    {
+      "id": "owluko_wave_wing_left_shadow",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -4,
+              "y": -40,
+              "cubic": {
+                "rotation": 90,
+                "outDistance": 30,
+                "inRotation": -90,
+                "inDistance": 10
+              }
+            },
+            {
+              "x": 16,
+              "y": 90,
+              "cubic": {
+                "rotation": 45,
+                "outDistance": 25,
+                "inRotation": -135,
+                "inDistance": 25
+              }
+            },
+            {
+              "x": 55,
+              "y": 150,
+              "cubic": {
+                "rotation": -45,
+                "outDistance": 15,
+                "inRotation": 135,
+                "inDistance": 15
+              }
+            },
+            {
+              "x": 30,
+              "y": 140,
+              "cubic": {
+                "rotation": -135,
+                "outDistance": 25,
+                "inRotation": 45,
+                "inDistance": 25
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#B89C7B"
+      },
+      "parent": "wing_l_group"
+    },
+    {
+      "id": "owluko_wave_wing_left_main",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": -165,
+              "cubic": {
+                "rotation": 180,
+                "outDistance": 35,
+                "inRotation": 0,
+                "inDistance": 25
+              }
+            },
+            {
+              "x": -75,
+              "y": -80,
+              "cubic": {
+                "rotation": 105,
+                "outDistance": 46,
+                "inRotation": -75,
+                "inDistance": 46
+              }
+            },
+            {
+              "x": -92,
+              "y": 10,
+              "cubic": {
+                "rotation": 90,
+                "outDistance": 48,
+                "inRotation": -90,
+                "inDistance": 48
+              }
+            },
+            {
+              "x": -68,
+              "y": 90,
+              "cubic": {
+                "rotation": 68,
+                "outDistance": 44,
+                "inRotation": -112,
+                "inDistance": 44
+              }
+            },
+            {
+              "x": 8,
+              "y": 142,
+              "cubic": {
+                "rotation": 0,
+                "outDistance": 30,
+                "inRotation": 180,
+                "inDistance": 32
+              }
+            },
+            {
+              "x": 50,
+              "y": 0,
+              "cubic": {
+                "rotation": -92,
+                "outDistance": 85,
+                "inRotation": 88,
+                "inDistance": 85
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "start": {
+            "x": -92,
+            "y": 10
+          },
+          "end": {
+            "x": 50,
+            "y": 10
+          },
+          "stops": [
+            {
+              "color": "#FCF8EE",
+              "position": 0
+            },
+            {
+              "color": "#F6EDDB",
+              "position": 0.22
+            },
+            {
+              "color": "#F2E6D0",
+              "position": 0.48
+            },
+            {
+              "color": "#EEDDC3",
+              "position": 0.64
+            },
+            {
+              "color": "#E3CCB1",
+              "position": 0.75
+            },
+            {
+              "color": "#EBDAC0",
+              "position": 0.88
+            },
+            {
+              "color": "#F0DECA",
+              "position": 1
+            }
+          ]
+        }
+      },
+      "parent": "wing_l_group"
+    },
+    {
+      "id": "owluko_wave_wing_right_shadow",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 4,
+              "y": -40,
+              "cubic": {
+                "rotation": 90,
+                "outDistance": 30,
+                "inRotation": 270,
+                "inDistance": 10
+              }
+            },
+            {
+              "x": -16,
+              "y": 90,
+              "cubic": {
+                "rotation": 135,
+                "outDistance": 25,
+                "inRotation": 315,
+                "inDistance": 25
+              }
+            },
+            {
+              "x": -55,
+              "y": 150,
+              "cubic": {
+                "rotation": 225,
+                "outDistance": 15,
+                "inRotation": 45,
+                "inDistance": 15
+              }
+            },
+            {
+              "x": -30,
+              "y": 140,
+              "cubic": {
+                "rotation": 315,
+                "outDistance": 25,
+                "inRotation": 135,
+                "inDistance": 25
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#B89C7B"
+      },
+      "parent": "wing_r_rest_group"
+    },
+    {
+      "id": "owluko_wave_wing_right_main",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": -165,
+              "cubic": {
+                "rotation": 0,
+                "outDistance": 35,
+                "inRotation": 180,
+                "inDistance": 25
+              }
+            },
+            {
+              "x": 75,
+              "y": -80,
+              "cubic": {
+                "rotation": 75,
+                "outDistance": 46,
+                "inRotation": 255,
+                "inDistance": 46
+              }
+            },
+            {
+              "x": 92,
+              "y": 10,
+              "cubic": {
+                "rotation": 90,
+                "outDistance": 48,
+                "inRotation": 270,
+                "inDistance": 48
+              }
+            },
+            {
+              "x": 68,
+              "y": 90,
+              "cubic": {
+                "rotation": 112,
+                "outDistance": 44,
+                "inRotation": 292,
+                "inDistance": 44
+              }
+            },
+            {
+              "x": -8,
+              "y": 142,
+              "cubic": {
+                "rotation": 180,
+                "outDistance": 30,
+                "inRotation": 0,
+                "inDistance": 32
+              }
+            },
+            {
+              "x": -50,
+              "y": 0,
+              "cubic": {
+                "rotation": 272,
+                "outDistance": 85,
+                "inRotation": 92,
+                "inDistance": 85
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "linear",
+          "start": {
+            "x": 92,
+            "y": 10
+          },
+          "end": {
+            "x": -50,
+            "y": 10
+          },
+          "stops": [
+            {
+              "color": "#FCF8EE",
+              "position": 0
+            },
+            {
+              "color": "#F6EDDB",
+              "position": 0.22
+            },
+            {
+              "color": "#F2E6D0",
+              "position": 0.48
+            },
+            {
+              "color": "#EEDDC3",
+              "position": 0.64
+            },
+            {
+              "color": "#E3CCB1",
+              "position": 0.75
+            },
+            {
+              "color": "#EBDAC0",
+              "position": 0.88
+            },
+            {
+              "color": "#F0DECA",
+              "position": 1
+            }
+          ]
+        }
+      },
+      "parent": "wing_r_rest_group"
+    },
+    {
+      "id": "owluko_wave_belly_patch",
+      "type": "polygon",
+      "x": 0,
+      "y": 203,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": -155,
+              "cubic": {
+                "rotation": -24.623564786163612,
+                "inRotation": -155.3764352138364,
+                "inDistance": 52.80151512977635,
+                "outDistance": 52.80151512977635
+              }
+            },
+            {
+              "x": 190,
+              "y": -63,
+              "cubic": {
+                "rotation": 73.44292862436336,
+                "inRotation": -106.7983717813053,
+                "inDistance": 110.72488428533129,
+                "outDistance": 77.20103626247513
+              }
+            },
+            {
+              "x": 132,
+              "y": 155,
+              "cubic": {
+                "rotation": 137.29061004263855,
+                "inRotation": -43.919075813339305,
+                "inDistance": 74.96665925596524,
+                "outDistance": 70.76722405181653
+              }
+            },
+            {
+              "x": -132,
+              "y": 155,
+              "cubic": {
+                "rotation": -136.0809241866607,
+                "inRotation": 42.70938995736147,
+                "inDistance": 70.76722405181653,
+                "outDistance": 74.96665925596524
+              }
+            },
+            {
+              "x": -190,
+              "y": -63,
+              "cubic": {
+                "rotation": -73.20162821869471,
+                "inRotation": 106.55707137563667,
+                "inDistance": 77.20103626247513,
+                "outDistance": 110.72488428533129
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#FFFEFA",
+              "position": 0
+            },
+            {
+              "color": "#F9F3E7",
+              "position": 0.5
+            },
+            {
+              "color": "#EFE2CF",
+              "position": 0.8
+            },
+            {
+              "color": "#E0CEB4",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": 0,
+            "y": -62
+          },
+          "end": {
+            "x": 228,
+            "y": -62
+          }
+        }
+      },
+      "parent": "belly_group"
+    },
+    {
+      "id": "owluko_wave_facial_mask_shadow",
+      "type": "polygon",
+      "x": 0,
+      "y": 57,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": -93,
+              "cubic": {
+                "rotation": -109.8321298502184,
+                "inRotation": -70.16787014978162,
+                "inDistance": 129.6919426949878,
+                "outDistance": 129.6919426949878
+              }
+            },
+            {
+              "x": -236,
+              "y": -67,
+              "cubic": {
+                "rotation": 103.2405199151872,
+                "inRotation": -76.71513351509782,
+                "inDistance": 147.95945390545344,
+                "outDistance": 104.78549517943787
+              }
+            },
+            {
+              "x": -78,
+              "y": 93,
+              "cubic": {
+                "rotation": -11.888658039627973,
+                "inRotation": 167.82854179141253,
+                "inDistance": 104.34557968596467,
+                "outDistance": 38.8329756778952
+              }
+            },
+            {
+              "x": 0,
+              "y": 29,
+              "cubic": {
+                "rotation": 58.392497753751094,
+                "inRotation": 121.60750224624891,
+                "inDistance": 30.528675044947498,
+                "outDistance": 30.528675044947498
+              }
+            },
+            {
+              "x": 78,
+              "y": 93,
+              "cubic": {
+                "rotation": 12.171458208587474,
+                "inRotation": -168.11134196037202,
+                "inDistance": 38.8329756778952,
+                "outDistance": 104.34557968596467
+              }
+            },
+            {
+              "x": 236,
+              "y": -67,
+              "cubic": {
+                "rotation": -103.2848664849022,
+                "inRotation": 76.75948008481281,
+                "inDistance": 104.78549517943787,
+                "outDistance": 147.95945390545344
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.25,
+      "fill": {
+        "color": "#D4BDA0"
+      },
+      "parent": "head_group"
+    },
+    {
+      "id": "owluko_wave_facial_mask_main",
+      "type": "polygon",
+      "x": 0,
+      "y": 51,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": -93,
+              "cubic": {
+                "rotation": -111.25050550713324,
+                "inRotation": -68.74949449286676,
+                "inDistance": 115.8792474949678,
+                "outDistance": 115.8792474949678
+              }
+            },
+            {
+              "x": -228,
+              "y": -59,
+              "cubic": {
+                "rotation": 104.0362434679265,
+                "inRotation": -76.15930450834439,
+                "inDistance": 142.12670403551897,
+                "outDistance": 98.95453501482385
+              }
+            },
+            {
+              "x": -76,
+              "y": 93,
+              "cubic": {
+                "rotation": -12.528807709151511,
+                "inRotation": 168.46537934635526,
+                "inDistance": 100.01999800039991,
+                "outDistance": 36.878177829171555
+              }
+            },
+            {
+              "x": 0,
+              "y": 29,
+              "cubic": {
+                "rotation": 58.392497753751094,
+                "inRotation": 121.60750224624891,
+                "inDistance": 30.528675044947498,
+                "outDistance": 30.528675044947498
+              }
+            },
+            {
+              "x": 76,
+              "y": 93,
+              "cubic": {
+                "rotation": 11.534620653644717,
+                "inRotation": -167.47119229084848,
+                "inDistance": 36.878177829171555,
+                "outDistance": 100.01999800039991
+              }
+            },
+            {
+              "x": 228,
+              "y": -59,
+              "cubic": {
+                "rotation": -103.84069549165562,
+                "inRotation": 75.96375653207353,
+                "inDistance": 98.95453501482385,
+                "outDistance": 142.12670403551897
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#FFFDF7",
+              "position": 0
+            },
+            {
+              "color": "#FAF6EC",
+              "position": 0.45
+            },
+            {
+              "color": "#F2E7D4",
+              "position": 0.75
+            },
+            {
+              "color": "#E8D4BB",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": 0,
+            "y": -22.32
+          },
+          "end": {
+            "x": 264.47999999999996,
+            "y": -22.32
+          }
+        }
+      },
+      "parent": "head_group"
+    },
+    {
+      "id": "owluko_wave_socket_left",
+      "type": "polygon",
+      "x": -114,
+      "y": -10,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -72,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 39.76450198781714,
+                "outDistance": 39.76450198781714
+              }
+            },
+            {
+              "x": 0,
+              "y": 72,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 39.76450198781714,
+                "outDistance": 39.76450198781714
+              }
+            },
+            {
+              "x": 72,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 39.76450198781714,
+                "outDistance": 39.76450198781714
+              }
+            },
+            {
+              "x": 0,
+              "y": -72,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 39.76450198781714,
+                "outDistance": 39.76450198781714
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#a6E5CEB0",
+              "position": 0
+            },
+            {
+              "color": "#33E5CEB0",
+              "position": 0.65
+            },
+            {
+              "color": "#00FAF6EC",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -2.8800000000000026,
+            "y": -2.8800000000000026
+          },
+          "end": {
+            "x": 72,
+            "y": -2.8800000000000026
+          }
+        }
+      },
+      "parent": "head_group"
+    },
+    {
+      "id": "owluko_wave_socket_right",
+      "type": "polygon",
+      "x": 114,
+      "y": -10,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -72,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 39.76450198781714,
+                "outDistance": 39.76450198781714
+              }
+            },
+            {
+              "x": 0,
+              "y": 72,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 39.764501987817084,
+                "outDistance": 39.764501987817084
+              }
+            },
+            {
+              "x": 72,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 39.76450198781714,
+                "outDistance": 39.76450198781714
+              }
+            },
+            {
+              "x": 0,
+              "y": -72,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 39.764501987817084,
+                "outDistance": 39.764501987817084
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#a6E5CEB0",
+              "position": 0
+            },
+            {
+              "color": "#33E5CEB0",
+              "position": 0.65
+            },
+            {
+              "color": "#00FAF6EC",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -2.8800000000000026,
+            "y": -2.8800000000000026
+          },
+          "end": {
+            "x": 72,
+            "y": -2.8800000000000026
+          }
+        }
+      },
+      "parent": "head_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_outer_rim",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -64,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            },
+            {
+              "x": 0,
+              "y": 64,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            },
+            {
+              "x": 64,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            },
+            {
+              "x": 0,
+              "y": -64,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "color": "#3D2406"
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_iris",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -62,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            },
+            {
+              "x": 0,
+              "y": 62,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            },
+            {
+              "x": 62,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            },
+            {
+              "x": 0,
+              "y": -62,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#FFF388",
+              "position": 0
+            },
+            {
+              "color": "#FCE14E",
+              "position": 0.18
+            },
+            {
+              "color": "#EAB32A",
+              "position": 0.38
+            },
+            {
+              "color": "#B88018",
+              "position": 0.65
+            },
+            {
+              "color": "#845410",
+              "position": 0.85
+            },
+            {
+              "color": "#553208",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -17.360000000000003,
+            "y": -19.839999999999996
+          },
+          "end": {
+            "x": 63.24000000000001,
+            "y": -19.839999999999996
+          }
+        }
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_crescent",
+      "type": "polygon",
+      "x": 4,
+      "y": 22,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -56,
+              "y": -20,
+              "cubic": {
+                "rotation": 84.28940686250037,
+                "inRotation": 90,
+                "inDistance": 14,
+                "outDistance": 40.19950248448356
+              }
+            },
+            {
+              "x": 36,
+              "y": 20,
+              "cubic": {
+                "rotation": -38.659808254090095,
+                "inRotation": 157.75097634278762,
+                "inDistance": 47.53945729601885,
+                "outDistance": 12.806248474865697
+              }
+            },
+            {
+              "x": 56,
+              "y": -12,
+              "cubic": {
+                "rotation": 108.43494882292202,
+                "inRotation": 108.43494882292202,
+                "inDistance": 12.649110640673518,
+                "outDistance": 37.94733192202055
+              }
+            },
+            {
+              "x": -40,
+              "y": 18,
+              "cubic": {
+                "rotation": -140.19442890773482,
+                "inRotation": 24.22774531795417,
+                "inDistance": 43.86342439892262,
+                "outDistance": 15.620499351813312
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#f2FFF388",
+              "position": 0
+            },
+            {
+              "color": "#ccF9D448",
+              "position": 0.45
+            },
+            {
+              "color": "#00D49A1C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -8.96,
+            "y": 6.000000000000001
+          },
+          "end": {
+            "x": 47.04,
+            "y": 6.000000000000001
+          }
+        }
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_pupil",
+      "type": "polygon",
+      "x": 4,
+      "y": -7,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -37,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 20.434535743739332,
+                "outDistance": 20.434535743739332
+              }
+            },
+            {
+              "x": 0,
+              "y": 37,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 20.434535743739332,
+                "outDistance": 20.434535743739332
+              }
+            },
+            {
+              "x": 37,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 20.434535743739332,
+                "outDistance": 20.434535743739332
+              }
+            },
+            {
+              "x": 0,
+              "y": -37,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 20.434535743739332,
+                "outDistance": 20.434535743739332
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "color": "#6E4816"
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_pupil_inner",
+      "type": "polygon",
+      "x": 4,
+      "y": -7,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "color": "#52340E"
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_glint_major",
+      "type": "polygon",
+      "x": -22,
+      "y": -28,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -15.216904260722458,
+              "y": 4.944271909999145,
+              "cubic": {
+                "rotation": 71.99999999999994,
+                "inRotation": -107.99999999999983,
+                "inDistance": 9.388840747123448,
+                "outDistance": 9.388840747123519
+              }
+            },
+            {
+              "x": 5.253288904374131,
+              "y": 16.16796077701764,
+              "cubic": {
+                "rotation": -17.999999999999922,
+                "inRotation": 162.00000000000009,
+                "inDistance": 8.836555997292697,
+                "outDistance": 8.836555997292697
+              }
+            },
+            {
+              "x": 15.216904260722458,
+              "y": -4.944271909999145,
+              "cubic": {
+                "rotation": -107.99999999999983,
+                "inRotation": 71.99999999999994,
+                "inDistance": 9.388840747123519,
+                "outDistance": 9.388840747123448
+              }
+            },
+            {
+              "x": -5.253288904374074,
+              "y": -16.167960777017583,
+              "cubic": {
+                "rotation": 162.00000000000009,
+                "inRotation": -17.999999999999922,
+                "inDistance": 8.836555997292697,
+                "outDistance": 8.836555997292697
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.96,
+      "fill": {
+        "color": "#FFFFFF"
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_l_glint_minor",
+      "type": "polygon",
+      "x": 28,
+      "y": 16,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -7,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 3.8659932488155277,
+                "outDistance": 3.8659932488155277
+              }
+            },
+            {
+              "x": 0,
+              "y": 7,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 3.8659932488155277,
+                "outDistance": 3.8659932488155277
+              }
+            },
+            {
+              "x": 7,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 3.8659932488155277,
+                "outDistance": 3.8659932488155277
+              }
+            },
+            {
+              "x": 0,
+              "y": -7,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 3.8659932488155277,
+                "outDistance": 3.8659932488155277
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.88,
+      "fill": {
+        "color": "#FFFFFF"
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "eyelid_l_cover",
+      "type": "polygon",
+      "parent": "eye_l_group",
+      "x": 0,
+      "y": 0,
+      "points": [
+        {
+          "x": -64,
+          "y": 0,
+          "cubic": {
+            "inRotation": 90,
+            "inDistance": 35.34622398917079,
+            "rotation": 270,
+            "outDistance": 35.34622398917079
+          }
+        },
+        {
+          "x": 0,
+          "y": -64,
+          "cubic": {
+            "inRotation": 180,
+            "inDistance": 35.34622398917079,
+            "rotation": 0,
+            "outDistance": 35.34622398917079
+          }
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "cubic": {
+            "inRotation": 270,
+            "inDistance": 35.34622398917079,
+            "rotation": 90,
+            "outDistance": 35.34622398917079
+          }
+        },
+        {
+          "x": 0,
+          "y": 64,
+          "cubic": {
+            "inRotation": 0,
+            "inDistance": 35.34622398917079,
+            "rotation": 180,
+            "outDistance": 35.34622398917079
+          }
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#FAF6EC"
+      }
+    },
+    {
+      "id": "eyelid_l_seam",
+      "type": "polygon",
+      "closed": false,
+      "parent": "eye_l_group",
+      "x": 0,
+      "y": 0,
+      "points": [
+        {
+          "x": -40,
+          "y": 3,
+          "cubic": {
+            "inRotation": 0,
+            "inDistance": 0,
+            "rotation": 22,
+            "outDistance": 20
+          }
+        },
+        {
+          "x": 0,
+          "y": 16,
+          "cubic": {
+            "inRotation": -22,
+            "inDistance": 20,
+            "rotation": -22,
+            "outDistance": 20
+          }
+        },
+        {
+          "x": 40,
+          "y": 3,
+          "cubic": {
+            "inRotation": 22,
+            "inDistance": 20,
+            "rotation": 0,
+            "outDistance": 0
+          }
+        }
+      ],
+      "opacity": 0,
+      "stroke": {
+        "color": "#5C3D2E",
+        "thickness": 3.6,
+        "cap": "round",
+        "join": "round"
+      }
+    },
+    {
+      "id": "owluko_wave_happy_eye_l",
+      "type": "polygon",
+      "x": 0,
+      "y": -5,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -53,
+              "y": 17,
+              "cubic": {
+                "rotation": -35.21759296819272,
+                "inRotation": -53.13010235415598,
+                "inDistance": 25,
+                "outDistance": 20.808652046684813
+              }
+            },
+            {
+              "x": 0,
+              "y": -5,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 18,
+                "outDistance": 18
+              }
+            },
+            {
+              "x": 53,
+              "y": 17,
+              "cubic": {
+                "rotation": -126.86989764584402,
+                "inRotation": -144.78240703180728,
+                "inDistance": 20.808652046684813,
+                "outDistance": 25
+              }
+            },
+            {
+              "x": 0,
+              "y": -17,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 20,
+                "outDistance": 20
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#52381C"
+      },
+      "parent": "eye_l_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_outer_rim",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -64,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            },
+            {
+              "x": 0,
+              "y": 64,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            },
+            {
+              "x": 64,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            },
+            {
+              "x": 0,
+              "y": -64,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 35.34622398917077,
+                "outDistance": 35.34622398917077
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "color": "#3D2406"
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_iris",
+      "type": "polygon",
+      "x": 0,
+      "y": 0,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -62,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            },
+            {
+              "x": 0,
+              "y": 62,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            },
+            {
+              "x": 62,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            },
+            {
+              "x": 0,
+              "y": -62,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 34.24165448950919,
+                "outDistance": 34.24165448950919
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#FFF388",
+              "position": 0
+            },
+            {
+              "color": "#FCE14E",
+              "position": 0.18
+            },
+            {
+              "color": "#EAB32A",
+              "position": 0.38
+            },
+            {
+              "color": "#B88018",
+              "position": 0.65
+            },
+            {
+              "color": "#845410",
+              "position": 0.85
+            },
+            {
+              "color": "#553208",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -17.360000000000003,
+            "y": -19.839999999999996
+          },
+          "end": {
+            "x": 63.24000000000001,
+            "y": -19.839999999999996
+          }
+        }
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_crescent",
+      "type": "polygon",
+      "x": 4,
+      "y": 22,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -56,
+              "y": -20,
+              "cubic": {
+                "rotation": 84.28940686250037,
+                "inRotation": 90,
+                "inDistance": 14,
+                "outDistance": 40.19950248448356
+              }
+            },
+            {
+              "x": 36,
+              "y": 20,
+              "cubic": {
+                "rotation": -38.659808254090095,
+                "inRotation": 157.75097634278762,
+                "inDistance": 47.53945729601885,
+                "outDistance": 12.806248474865697
+              }
+            },
+            {
+              "x": 56,
+              "y": -12,
+              "cubic": {
+                "rotation": 108.43494882292202,
+                "inRotation": 108.43494882292202,
+                "inDistance": 12.649110640673518,
+                "outDistance": 37.94733192202055
+              }
+            },
+            {
+              "x": -40,
+              "y": 18,
+              "cubic": {
+                "rotation": -140.19442890773482,
+                "inRotation": 24.22774531795417,
+                "inDistance": 43.86342439892262,
+                "outDistance": 15.620499351813312
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#f2FFF388",
+              "position": 0
+            },
+            {
+              "color": "#ccF9D448",
+              "position": 0.45
+            },
+            {
+              "color": "#00D49A1C",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -8.96,
+            "y": 6.000000000000001
+          },
+          "end": {
+            "x": 47.04,
+            "y": 6.000000000000001
+          }
+        }
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_pupil",
+      "type": "polygon",
+      "x": -4,
+      "y": -7,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -37,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 20.434535743739332,
+                "outDistance": 20.434535743739332
+              }
+            },
+            {
+              "x": 0,
+              "y": 37,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 20.43453574373939,
+                "outDistance": 20.43453574373939
+              }
+            },
+            {
+              "x": 37,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 20.434535743739332,
+                "outDistance": 20.434535743739332
+              }
+            },
+            {
+              "x": 0,
+              "y": -37,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 20.43453574373939,
+                "outDistance": 20.43453574373939
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "color": "#6E4816"
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_pupil_inner",
+      "type": "polygon",
+      "x": -4,
+      "y": -7,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "color": "#52340E"
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_glint_major",
+      "type": "polygon",
+      "x": -28,
+      "y": -28,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -15.216904260722458,
+              "y": 4.944271909999145,
+              "cubic": {
+                "rotation": 72.00000000000028,
+                "inRotation": -108.0000000000005,
+                "inDistance": 9.388840747123481,
+                "outDistance": 9.388840747123503
+              }
+            },
+            {
+              "x": 5.253288904374017,
+              "y": 16.16796077701764,
+              "cubic": {
+                "rotation": -18.000000000000274,
+                "inRotation": 161.99999999999974,
+                "inDistance": 8.836555997292715,
+                "outDistance": 8.836555997292715
+              }
+            },
+            {
+              "x": 15.216904260722458,
+              "y": -4.944271909999202,
+              "cubic": {
+                "rotation": -108.0000000000006,
+                "inRotation": 72.00000000000028,
+                "inDistance": 9.388840747123503,
+                "outDistance": 9.388840747123428
+              }
+            },
+            {
+              "x": -5.253288904374131,
+              "y": -16.167960777017583,
+              "cubic": {
+                "rotation": 162.00000000000009,
+                "inRotation": -17.999999999999922,
+                "inDistance": 8.836555997292697,
+                "outDistance": 8.836555997292697
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.96,
+      "fill": {
+        "color": "#FFFFFF"
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_eye_r_glint_minor",
+      "type": "polygon",
+      "x": 22,
+      "y": 16,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -7,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 3.8659932488155277,
+                "outDistance": 3.8659932488155277
+              }
+            },
+            {
+              "x": 0,
+              "y": 7,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 3.8659932488155846,
+                "outDistance": 3.8659932488155846
+              }
+            },
+            {
+              "x": 7,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 3.8659932488155277,
+                "outDistance": 3.8659932488155277
+              }
+            },
+            {
+              "x": 0,
+              "y": -7,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 3.8659932488155846,
+                "outDistance": 3.8659932488155846
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.88,
+      "fill": {
+        "color": "#FFFFFF"
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "eyelid_r_cover",
+      "type": "polygon",
+      "parent": "eye_r_group",
+      "x": 0,
+      "y": 0,
+      "points": [
+        {
+          "x": -64,
+          "y": 0,
+          "cubic": {
+            "inRotation": 90,
+            "inDistance": 35.34622398917079,
+            "rotation": 270,
+            "outDistance": 35.34622398917079
+          }
+        },
+        {
+          "x": 0,
+          "y": -64,
+          "cubic": {
+            "inRotation": 180,
+            "inDistance": 35.34622398917079,
+            "rotation": 0,
+            "outDistance": 35.34622398917079
+          }
+        },
+        {
+          "x": 64,
+          "y": 0,
+          "cubic": {
+            "inRotation": 270,
+            "inDistance": 35.34622398917079,
+            "rotation": 90,
+            "outDistance": 35.34622398917079
+          }
+        },
+        {
+          "x": 0,
+          "y": 64,
+          "cubic": {
+            "inRotation": 0,
+            "inDistance": 35.34622398917079,
+            "rotation": 180,
+            "outDistance": 35.34622398917079
+          }
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#FAF6EC"
+      }
+    },
+    {
+      "id": "eyelid_r_seam",
+      "type": "polygon",
+      "closed": false,
+      "parent": "eye_r_group",
+      "x": 0,
+      "y": 0,
+      "points": [
+        {
+          "x": -40,
+          "y": 3,
+          "cubic": {
+            "inRotation": 0,
+            "inDistance": 0,
+            "rotation": 22,
+            "outDistance": 20
+          }
+        },
+        {
+          "x": 0,
+          "y": 16,
+          "cubic": {
+            "inRotation": -22,
+            "inDistance": 20,
+            "rotation": -22,
+            "outDistance": 20
+          }
+        },
+        {
+          "x": 40,
+          "y": 3,
+          "cubic": {
+            "inRotation": 22,
+            "inDistance": 20,
+            "rotation": 0,
+            "outDistance": 0
+          }
+        }
+      ],
+      "opacity": 0,
+      "stroke": {
+        "color": "#5C3D2E",
+        "thickness": 3.6,
+        "cap": "round",
+        "join": "round"
+      }
+    },
+    {
+      "id": "owluko_wave_happy_eye_r",
+      "type": "polygon",
+      "x": 0,
+      "y": -5,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -53,
+              "y": 17,
+              "cubic": {
+                "rotation": -35.21759296819272,
+                "inRotation": -53.13010235415598,
+                "inDistance": 25,
+                "outDistance": 20.808652046684813
+              }
+            },
+            {
+              "x": 0,
+              "y": -5,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 18,
+                "outDistance": 18
+              }
+            },
+            {
+              "x": 53,
+              "y": 17,
+              "cubic": {
+                "rotation": -126.86989764584402,
+                "inRotation": -144.78240703180728,
+                "inDistance": 20.808652046684813,
+                "outDistance": 25
+              }
+            },
+            {
+              "x": 0,
+              "y": -17,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 20,
+                "outDistance": 20
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0,
+      "fill": {
+        "color": "#52381C"
+      },
+      "parent": "eye_r_group"
+    },
+    {
+      "id": "owluko_wave_beak_shadow",
+      "type": "polygon",
+      "x": 0,
+      "y": 20,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -30,
+              "y": -28,
+              "cubic": {
+                "rotation": -143.13010235415598,
+                "inRotation": 79.99202019855866,
+                "inDistance": 34.52535300326414,
+                "outDistance": 10
+              }
+            },
+            {
+              "x": 30,
+              "y": -28,
+              "cubic": {
+                "rotation": 100.00797980144135,
+                "inRotation": -36.86989764584402,
+                "inDistance": 10,
+                "outDistance": 34.52535300326414
+              }
+            },
+            {
+              "x": 0,
+              "y": 28,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 6,
+                "outDistance": 6
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.3,
+      "fill": {
+        "color": "#8C2E06"
+      },
+      "parent": "beak_group"
+    },
+    {
+      "id": "owluko_wave_beak_cone",
+      "type": "polygon",
+      "x": 0,
+      "y": 16,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -30,
+              "y": -28,
+              "cubic": {
+                "rotation": -126.86989764584402,
+                "inRotation": 79.99202019855866,
+                "inDistance": 34.52535300326414,
+                "outDistance": 10
+              }
+            },
+            {
+              "x": 30,
+              "y": -28,
+              "cubic": {
+                "rotation": 100.00797980144135,
+                "inRotation": -53.13010235415598,
+                "inDistance": 10,
+                "outDistance": 34.52535300326414
+              }
+            },
+            {
+              "x": 0,
+              "y": 28,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 6,
+                "outDistance": 6
+              }
+            }
+          ]
+        }
+      ],
+      "fill": {
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "#FED7AA",
+              "position": 0
+            },
+            {
+              "color": "#FBA343",
+              "position": 0.35
+            },
+            {
+              "color": "#EA580C",
+              "position": 0.7
+            },
+            {
+              "color": "#B93808",
+              "position": 1
+            }
+          ],
+          "start": {
+            "x": -1.200000000000001,
+            "y": -13.44
+          },
+          "end": {
+            "x": 37.8,
+            "y": -13.44
+          }
+        }
+      },
+      "parent": "beak_group"
+    },
+    {
+      "id": "owluko_wave_beak_highlight",
+      "type": "polygon",
+      "x": -4,
+      "y": -7,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -13.923306535155803,
+              "y": 1.4633984857471773,
+              "cubic": {
+                "rotation": 84.00000000000011,
+                "inRotation": -95.9999999999998,
+                "inDistance": 3.865993248815539,
+                "outDistance": 3.8659932488154825
+              }
+            },
+            {
+              "x": 0.7316992428735603,
+              "y": 6.961653267577958,
+              "cubic": {
+                "rotation": -6.00000000000021,
+                "inRotation": 174.0000000000002,
+                "inDistance": 7.731986497631078,
+                "outDistance": 7.731986497631085
+              }
+            },
+            {
+              "x": 13.923306535155803,
+              "y": -1.4633984857471205,
+              "cubic": {
+                "rotation": -95.9999999999998,
+                "inRotation": 84.00000000000011,
+                "inDistance": 3.8659932488154825,
+                "outDistance": 3.865993248815539
+              }
+            },
+            {
+              "x": -0.7316992428735603,
+              "y": -6.961653267577958,
+              "cubic": {
+                "rotation": 173.99999999999977,
+                "inRotation": -5.99999999999979,
+                "inDistance": 7.731986497631078,
+                "outDistance": 7.731986497631085
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.75,
+      "fill": {
+        "color": "#FEEBC8"
+      },
+      "parent": "beak_group"
+    },
+    {
+      "id": "owluko_wave_beak_tip_point",
+      "type": "polygon",
+      "x": 0,
+      "y": 38,
+      "subpaths": [
+        {
+          "closed": true,
+          "points": [
+            {
+              "x": -5,
+              "y": 0,
+              "cubic": {
+                "rotation": 90,
+                "inRotation": -90,
+                "inDistance": 1.656854249492369,
+                "outDistance": 1.656854249492369
+              }
+            },
+            {
+              "x": 0,
+              "y": 3,
+              "cubic": {
+                "rotation": 0,
+                "inRotation": 180,
+                "inDistance": 2.7614237491539484,
+                "outDistance": 2.7614237491540052
+              }
+            },
+            {
+              "x": 5,
+              "y": 0,
+              "cubic": {
+                "rotation": -90,
+                "inRotation": 90,
+                "inDistance": 1.656854249492369,
+                "outDistance": 1.656854249492369
+              }
+            },
+            {
+              "x": 0,
+              "y": -3,
+              "cubic": {
+                "rotation": 180,
+                "inRotation": 0,
+                "inDistance": 2.7614237491540052,
+                "outDistance": 2.7614237491539484
+              }
+            }
+          ]
+        }
+      ],
+      "opacity": 0.6,
+      "fill": {
+        "color": "#FED7AA"
+      },
+      "parent": "beak_group"
+    }
+  ],
+  "animations": [
+    {
+      "name": "idle",
+      "fps": 60,
+      "duration": 120,
+      "loop": "loop",
+      "tracks": [
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 1.025,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 1,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 0.988,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 1,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_l_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 60,
+              "value": -1.6,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_r_rest_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 60,
+              "value": 1.6,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 120,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 120,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 120,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 120,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -126
+            },
+            {
+              "frame": 65,
+              "value": -129.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": -126,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 35,
+              "value": 0.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 85,
+              "value": -0.6,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "shadow_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 60,
+              "value": 1.03,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 1,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 74,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 80,
+              "value": 1
+            },
+            {
+              "frame": 86,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 74,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 80,
+              "value": 1
+            },
+            {
+              "frame": 86,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 74,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 80,
+              "value": 1
+            },
+            {
+              "frame": 86,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 74,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 80,
+              "value": 1
+            },
+            {
+              "frame": 86,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_l",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_r",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "waving",
+      "fps": 60,
+      "duration": 240,
+      "loop": "one-shot",
+      "tracks": [
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 30,
+              "value": 1
+            },
+            {
+              "frame": 45,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 200,
+              "value": 0
+            },
+            {
+              "frame": 218,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 30,
+              "value": 0.22
+            },
+            {
+              "frame": 45,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 200,
+              "value": 0
+            },
+            {
+              "frame": 218,
+              "value": 0.22,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 240,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 30,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 200,
+              "value": 1
+            },
+            {
+              "frame": 218,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 240,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "wing_r_wave_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -18
+            },
+            {
+              "frame": 30,
+              "value": -18
+            },
+            {
+              "frame": 45,
+              "value": -6,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 60,
+              "value": 0,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 85,
+              "value": -10,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": 8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 135,
+              "value": -8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 155,
+              "value": 4,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 175,
+              "value": 0,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 195,
+              "value": -8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 215,
+              "value": -16,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 228,
+              "value": -18,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 240,
+              "value": -18
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 30,
+              "value": -0.8,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 60,
+              "value": 1,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 85,
+              "value": 1.6,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": -1.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 135,
+              "value": 1.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 150,
+              "value": 2.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 175,
+              "value": 0.6,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 210,
+              "value": -0.4,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 0,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -126
+            },
+            {
+              "frame": 30,
+              "value": -125,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 60,
+              "value": -128.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 85,
+              "value": -127,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": -128,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 145,
+              "value": -124,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 175,
+              "value": -126.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 210,
+              "value": -125.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": -126,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 30,
+              "value": 0.992,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 60,
+              "value": 1.018,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 85,
+              "value": 1.008,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": 1.014,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 145,
+              "value": 0.995,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 175,
+              "value": 1.008,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 210,
+              "value": 0.994,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 1,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 30,
+              "value": 1.006,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 60,
+              "value": 0.99,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 85,
+              "value": 0.995,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": 0.991,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 145,
+              "value": 1.005,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 175,
+              "value": 0.994,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 210,
+              "value": 1.005,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 1,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_l_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 30,
+              "value": 0.6,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 60,
+              "value": -1.2,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 85,
+              "value": -1.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": 0.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 135,
+              "value": -1.4,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 160,
+              "value": 0.4,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 210,
+              "value": -0.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 0,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            },
+            {
+              "frame": 130,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 155,
+              "value": 1
+            },
+            {
+              "frame": 168,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            },
+            {
+              "frame": 130,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 155,
+              "value": 1
+            },
+            {
+              "frame": 168,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_l",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            },
+            {
+              "frame": 130,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 155,
+              "value": 1
+            },
+            {
+              "frame": 168,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_r",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            },
+            {
+              "frame": 130,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 155,
+              "value": 1
+            },
+            {
+              "frame": 168,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "celebrating",
+      "fps": 60,
+      "duration": 180,
+      "loop": "loop",
+      "tracks": [
+        {
+          "target": "owluko_wave_wing_left_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 25,
+              "value": 1
+            },
+            {
+              "frame": 40,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 135,
+              "value": 0
+            },
+            {
+              "frame": 150,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 25,
+              "value": 0.22
+            },
+            {
+              "frame": 40,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 135,
+              "value": 0
+            },
+            {
+              "frame": 150,
+              "value": 0.22,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 180,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 25,
+              "value": 1
+            },
+            {
+              "frame": 40,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 135,
+              "value": 0
+            },
+            {
+              "frame": 150,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 25,
+              "value": 0.22
+            },
+            {
+              "frame": 40,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 135,
+              "value": 0
+            },
+            {
+              "frame": 150,
+              "value": 0.22,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 180,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 25,
+              "value": 0
+            },
+            {
+              "frame": 40,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 135,
+              "value": 1
+            },
+            {
+              "frame": 150,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 25,
+              "value": 0
+            },
+            {
+              "frame": 40,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 135,
+              "value": 1
+            },
+            {
+              "frame": 150,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "wing_l_wave_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 18
+            },
+            {
+              "frame": 25,
+              "value": 18
+            },
+            {
+              "frame": 45,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 65,
+              "value": -16,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 85,
+              "value": 12,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 105,
+              "value": -14,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 125,
+              "value": 8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 145,
+              "value": 18,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 18
+            }
+          ]
+        },
+        {
+          "target": "wing_r_wave_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -18
+            },
+            {
+              "frame": 25,
+              "value": -18
+            },
+            {
+              "frame": 45,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 65,
+              "value": 16,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 85,
+              "value": -12,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 105,
+              "value": 14,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 125,
+              "value": -8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 145,
+              "value": -18,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": -18
+            }
+          ]
+        },
+        {
+          "target": "root",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 876
+            },
+            {
+              "frame": 25,
+              "value": 896,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 50,
+              "value": 810,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 75,
+              "value": 785,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 100,
+              "value": 792,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 125,
+              "value": 825,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 145,
+              "value": 892,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 165,
+              "value": 872,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 876
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 25,
+              "value": 0.92,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 45,
+              "value": 1.09,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 75,
+              "value": 1.04,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 125,
+              "value": 1.06,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 145,
+              "value": 0.93,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 165,
+              "value": 1.02,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 25,
+              "value": 1.08,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 45,
+              "value": 0.93,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 75,
+              "value": 0.97,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 125,
+              "value": 0.95,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 145,
+              "value": 1.07,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 165,
+              "value": 0.98,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "shadow_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 25,
+              "value": 1.15,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 75,
+              "value": 0.65,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 145,
+              "value": 1.18,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 130,
+              "value": 1
+            },
+            {
+              "frame": 145,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 130,
+              "value": 1
+            },
+            {
+              "frame": 145,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_l",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 130,
+              "value": 1
+            },
+            {
+              "frame": 145,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_r",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 35,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 130,
+              "value": 1
+            },
+            {
+              "frame": 145,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "thinking",
+      "fps": 60,
+      "duration": 180,
+      "loop": "loop",
+      "tracks": [
+        {
+          "target": "owluko_wave_wing_left_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 180,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 180,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 35,
+              "value": 6.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 80,
+              "value": 7.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": -5.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 145,
+              "value": -4.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -126
+            },
+            {
+              "frame": 45,
+              "value": -129,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": -127.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": -126,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": -1.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": 1,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 90,
+              "value": 1.015,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_l_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": -2.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": 1.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_r_rest_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 45,
+              "value": 1.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 110,
+              "value": -2.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 75,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 82,
+              "value": 1
+            },
+            {
+              "frame": 88,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 75,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 82,
+              "value": 1
+            },
+            {
+              "frame": 88,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 75,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 82,
+              "value": 1
+            },
+            {
+              "frame": 88,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 68,
+              "value": 0
+            },
+            {
+              "frame": 75,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 82,
+              "value": 1
+            },
+            {
+              "frame": 88,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "error_404",
+      "fps": 60,
+      "duration": 180,
+      "loop": "loop",
+      "tracks": [
+        {
+          "target": "owluko_wave_wing_left_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 180,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 180,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 180,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "root",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 876
+            },
+            {
+              "frame": 20,
+              "value": 866,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": 914,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 120,
+              "value": 918,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 876,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 20,
+              "value": 1.06,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": 0.88,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 120,
+              "value": 0.89,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 20,
+              "value": 0.95,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": 1.1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 120,
+              "value": 1.09,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 1,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -126
+            },
+            {
+              "frame": 20,
+              "value": -134,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": -112,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 120,
+              "value": -114,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": -126,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_l_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 20,
+              "value": -3,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": 8.5,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 120,
+              "value": 7.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_r_rest_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 20,
+              "value": 3,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": -8.5,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 120,
+              "value": -7.5,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 180,
+              "value": 0,
+              "easing": "ease-out"
+            }
+          ]
+        },
+        {
+          "target": "shadow_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 20,
+              "value": 0.9,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 50,
+              "value": 1.2,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 180,
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sleeping",
+      "fps": 60,
+      "duration": 240,
+      "loop": "loop",
+      "tracks": [
+        {
+          "target": "owluko_wave_wing_left_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_left_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 240,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.22
+            },
+            {
+              "frame": 240,
+              "value": 0.22
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 240,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_l",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_happy_eye_r",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 240,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0.985
+            },
+            {
+              "frame": 120,
+              "value": 1.035,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 0.985,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1.015
+            },
+            {
+              "frame": 120,
+              "value": 0.985,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 1.015,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "y",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": -122
+            },
+            {
+              "frame": 120,
+              "value": -128,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": -122,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 3.5
+            },
+            {
+              "frame": 120,
+              "value": 4.8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 3.5,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_l_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": -2.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "wing_r_rest_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 2.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "shadow_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1.02
+            },
+            {
+              "frame": 120,
+              "value": 0.98,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 240,
+              "value": 1.02,
+              "easing": "ease-in-out"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "wave_loop",
+      "fps": 60,
+      "duration": 120,
+      "loop": "loop",
+      "tracks": [
+        {
+          "target": "owluko_wave_wing_right_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_right_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_smooth_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 120,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_shadow",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "owluko_wave_wing_wave_l_main",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "wing_r_wave_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 30,
+              "value": -10,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 60,
+              "value": 0,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 90,
+              "value": 8,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "head_group",
+          "property": "rotation",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 30,
+              "value": 1.6,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 60,
+              "value": 0,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 90,
+              "value": -1.2,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 0,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleY",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 30,
+              "value": 1.012,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 60,
+              "value": 1,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 90,
+              "value": 1.008,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 1,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "body_group",
+          "property": "scaleX",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 1
+            },
+            {
+              "frame": 30,
+              "value": 0.992,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 60,
+              "value": 1,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 90,
+              "value": 0.994,
+              "easing": "ease-in-out"
+            },
+            {
+              "frame": 120,
+              "value": 1,
+              "easing": "ease-in-out"
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 50,
+              "value": 0
+            },
+            {
+              "frame": 56,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 62,
+              "value": 1
+            },
+            {
+              "frame": 68,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 50,
+              "value": 0
+            },
+            {
+              "frame": 56,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 62,
+              "value": 1
+            },
+            {
+              "frame": 68,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 50,
+              "value": 0
+            },
+            {
+              "frame": 56,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 62,
+              "value": 1
+            },
+            {
+              "frame": 68,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 50,
+              "value": 0
+            },
+            {
+              "frame": 56,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 62,
+              "value": 1
+            },
+            {
+              "frame": 68,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 120,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "blink",
+      "fps": 60,
+      "duration": 20,
+      "loop": "one-shot",
+      "tracks": [
+        {
+          "target": "eyelid_l_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 12,
+              "value": 1
+            },
+            {
+              "frame": 18,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 20,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_l_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 12,
+              "value": 1
+            },
+            {
+              "frame": 18,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 20,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 12,
+              "value": 1
+            },
+            {
+              "frame": 18,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 20,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 12,
+              "value": 1
+            },
+            {
+              "frame": 18,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 20,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "wink",
+      "fps": 60,
+      "duration": 30,
+      "loop": "one-shot",
+      "tracks": [
+        {
+          "target": "eyelid_r_cover",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 20,
+              "value": 1
+            },
+            {
+              "frame": 28,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 30,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "target": "eyelid_r_seam",
+          "property": "opacity",
+          "keyframes": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 6,
+              "value": 1,
+              "easing": "ease-in"
+            },
+            {
+              "frame": 20,
+              "value": 1
+            },
+            {
+              "frame": 28,
+              "value": 0,
+              "easing": "ease-out"
+            },
+            {
+              "frame": 30,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stateMachine": {
+    "name": "SM_Owluko",
+    "inputs": [
+      {
+        "name": "triggerIdle",
+        "type": "trigger"
+      },
+      {
+        "name": "triggerWave",
+        "type": "trigger"
+      },
+      {
+        "name": "triggerCelebrate",
+        "type": "trigger"
+      },
+      {
+        "name": "triggerThink",
+        "type": "trigger"
+      },
+      {
+        "name": "triggerError",
+        "type": "trigger"
+      },
+      {
+        "name": "triggerSleep",
+        "type": "trigger"
+      },
+      {
+        "name": "isWaving",
+        "type": "bool",
+        "initial": false
+      },
+      {
+        "name": "triggerBlink",
+        "type": "trigger"
+      },
+      {
+        "name": "triggerWink",
+        "type": "trigger"
+      }
+    ],
+    "states": [
+      {
+        "name": "State_Idle",
+        "animation": "idle"
+      },
+      {
+        "name": "State_Waving",
+        "animation": "waving"
+      },
+      {
+        "name": "State_Celebrating",
+        "animation": "celebrating"
+      },
+      {
+        "name": "State_Thinking",
+        "animation": "thinking"
+      },
+      {
+        "name": "State_Error_404",
+        "animation": "error_404"
+      },
+      {
+        "name": "State_Sleeping",
+        "animation": "sleeping"
+      },
+      {
+        "name": "State_Wave_Continuous",
+        "animation": "wave_loop"
+      },
+      {
+        "name": "State_Blink",
+        "animation": "blink"
+      },
+      {
+        "name": "State_Wink",
+        "animation": "wink"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "entry",
+        "to": "State_Idle"
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Waving",
+        "condition": {
+          "input": "triggerWave"
+        }
+      },
+      {
+        "from": "State_Waving",
+        "to": "State_Idle",
+        "exitTimeMs": 4000
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Celebrating",
+        "condition": {
+          "input": "triggerCelebrate"
+        }
+      },
+      {
+        "from": "State_Celebrating",
+        "to": "State_Idle",
+        "condition": {
+          "input": "triggerIdle"
+        }
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Thinking",
+        "condition": {
+          "input": "triggerThink"
+        }
+      },
+      {
+        "from": "State_Thinking",
+        "to": "State_Idle",
+        "condition": {
+          "input": "triggerIdle"
+        }
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Error_404",
+        "condition": {
+          "input": "triggerError"
+        }
+      },
+      {
+        "from": "State_Error_404",
+        "to": "State_Idle",
+        "condition": {
+          "input": "triggerIdle"
+        }
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Sleeping",
+        "condition": {
+          "input": "triggerSleep"
+        }
+      },
+      {
+        "from": "State_Sleeping",
+        "to": "State_Idle",
+        "condition": {
+          "input": "triggerIdle"
+        }
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Wave_Continuous",
+        "condition": {
+          "input": "isWaving"
+        }
+      },
+      {
+        "from": "State_Wave_Continuous",
+        "to": "State_Idle",
+        "condition": {
+          "input": "isWaving",
+          "op": "!="
+        }
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Blink",
+        "condition": {
+          "input": "triggerBlink"
+        }
+      },
+      {
+        "from": "State_Blink",
+        "to": "State_Idle",
+        "exitTimeMs": 333
+      },
+      {
+        "from": "State_Idle",
+        "to": "State_Wink",
+        "condition": {
+          "input": "triggerWink"
+        }
+      },
+      {
+        "from": "State_Wink",
+        "to": "State_Idle",
+        "exitTimeMs": 500
+      }
+    ]
+  }
+}

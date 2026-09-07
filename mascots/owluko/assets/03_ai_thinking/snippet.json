@@ -1,0 +1,8 @@
+{
+  "mascot": "owluko",
+  "state": "03_ai_thinking",
+  "react": "<Owluko state=\"03_ai_thinking\" size={180} animated />",
+  "vue": "<Owluko state=\"03_ai_thinking\" :size=\"180\" animated />",
+  "flutter": "OwlukoMascot(state: OwlukoState.03_ai_thinking, size: 180.0)",
+  "html": "<img src=\"mascots/owluko/assets/03_ai_thinking/animated.webp\" width=\"180\" height=\"180\" alt=\"Owluko\" />"
+}

@@ -1,0 +1,8 @@
+{
+  "mascot": "owluko",
+  "state": "04_error_404",
+  "react": "<Owluko state=\"04_error_404\" size={180} animated />",
+  "vue": "<Owluko state=\"04_error_404\" :size=\"180\" animated />",
+  "flutter": "OwlukoMascot(state: OwlukoState.04_error_404, size: 180.0)",
+  "html": "<img src=\"mascots/owluko/assets/04_error_404/animated.webp\" width=\"180\" height=\"180\" alt=\"Owluko\" />"
+}

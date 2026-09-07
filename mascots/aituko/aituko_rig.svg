@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full drop-shadow-md overflow-visible">
+  <defs>
+    <!-- Porcelain Gradients -->
+    <linearGradient id="aituko_porcelainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#F8FAFC" />
+      <stop offset="70%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <radialGradient id="aituko_headDomeGrad" cx="38%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#F8FAFC" />
+      <stop offset="80%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </radialGradient>
+
+    <linearGradient id="aituko_neckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1" />
+      <stop offset="25%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="80%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <linearGradient id="aituko_podGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1" />
+      <stop offset="30%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <radialGradient id="aituko_footGrad" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="55%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </radialGradient>
+
+    <!-- Visor Glass Gradients -->
+    <radialGradient id="aituko_visorGlassGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#181B26" />
+      <stop offset="60%" stop-color="#10121A" />
+      <stop offset="100%" stop-color="#090A0F" />
+    </radialGradient>
+
+    <linearGradient id="aituko_visorArcReflection" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.45" />
+      <stop offset="40%" stop-color="#64748B" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#334155" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Specular Highlight Strip -->
+    <linearGradient id="aituko_specularStreak" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Thruster & Eyes Cyan Glow -->
+    <radialGradient id="aituko_shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0F172A" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#0F172A" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="aituko_cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes aitukoTorsoHover {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-14px); }
+      }
+      @keyframes aitukoHeadHover {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        25% { transform: translateY(-3px) rotate(-1.5deg); }
+        50% { transform: translateY(-15px) rotate(0deg); }
+        75% { transform: translateY(-12px) rotate(1.5deg); }
+      }
+      @keyframes aitukoLeftPodHover {
+        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+        50% { transform: translate(-4px, -15px) rotate(-4deg); }
+      }
+      @keyframes aitukoRightPodHover {
+        0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+        50% { transform: translate(4px, -15px) rotate(4deg); }
+      }
+      @keyframes aitukoFootHover {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-13px); }
+      }
+      @keyframes aitukoShadowBreathe {
+        0%, 100% { transform: scale(1); opacity: 0.85; }
+        50% { transform: scale(0.85); opacity: 0.55; }
+      }
+      @keyframes aitukoEyeBlink {
+        0%, 92%, 100% { transform: scaleY(1); }
+        94% { transform: scaleY(0.08); }
+        96% { transform: scaleY(1); }
+        97.5% { transform: scaleY(0.15); }
+        99% { transform: scaleY(1); }
+      }
+      .aituko-torso-anim {
+        animation: aitukoTorsoHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 256px 298px;
+      }
+      .aituko-head-anim {
+        animation: aitukoHeadHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 256px 202px;
+      }
+      .aituko-neck-anim {
+        animation: aitukoTorsoHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 256px 202px;
+      }
+      .aituko-left-pod-anim {
+        animation: aitukoLeftPodHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 138px 248px;
+      }
+      .aituko-right-pod-anim {
+        animation: aitukoRightPodHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 374px 248px;
+      }
+      .aituko-pods-anim {
+        animation: aitukoFootHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 256px 412px;
+      }
+      .aituko-shadow-anim {
+        animation: aitukoShadowBreathe 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        transform-box: view-box;
+        transform-origin: 256px 468px;
+      }
+      .aituko-eyes-blink {
+        animation: aitukoEyeBlink 4.5s ease-in-out infinite;
+        transform-box: view-box;
+        transform-origin: 256px 126px;
+      }
+    </style>
+  </defs>
+
+  <!-- 1. Soft Ground Shadow -->
+  <ellipse id="aitukoShadow" cx="256" cy="468" rx="90" ry="14" fill="url(#aituko_shadowGrad)" class="aituko-shadow-anim" />
+
+  <!-- 2. Two Small Floating Foot Pods (Hovering underneath torso) -->
+  <g id="aitukoFootPods" class="aituko-pods-anim">
+    <!-- Left Foot Pod (X=228, Y=412, tilt -10°) -->
+    <g transform="translate(228, 412) rotate(-10)">
+      <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
+      <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#aituko_footGrad)" />
+      <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
+    </g>
+    <!-- Right Foot Pod (X=284, Y=412, tilt +10°) -->
+    <g transform="translate(284, 412) rotate(10)">
+      <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
+      <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#aituko_footGrad)" />
+      <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
+    </g>
+  </g>
+
+  <!-- 3. Slender Neck (Connecting Head and Torso) -->
+  <g id="aitukoNeck" class="aituko-neck-anim">
+    <rect x="238" y="192" width="36" height="22" rx="10" fill="#CBD5E1" />
+    <rect x="240" y="193" width="32" height="20" rx="9" fill="url(#aituko_neckGrad)" />
+    <ellipse cx="256" cy="193" rx="16" ry="3" fill="#0F172A" opacity="0.25" />
+  </g>
+
+  <!-- 4. Smooth Capsule Torso (Center X=256, Y=298, Width=124, Height=176) -->
+  <g id="aitukoTorso" class="aituko-torso-anim">
+    <rect x="192" y="208" width="128" height="180" rx="64" fill="#CBD5E1" />
+    <rect x="194" y="210" width="124" height="176" rx="62" fill="url(#aituko_porcelainGrad)" />
+    <!-- Left ambient shadow contour -->
+    <rect x="195" y="222" width="38" height="152" rx="19" fill="#E2E8F0" opacity="0.45" />
+    <!-- Right vertical specular highlight streak -->
+    <rect x="300" y="232" width="12" height="124" rx="6" fill="url(#aituko_specularStreak)" />
+    <!-- Top shoulder specular reflection -->
+    <ellipse cx="256" cy="226" rx="36" ry="8" fill="#FFFFFF" opacity="0.6" />
+    <!-- Neck AO shadow -->
+    <ellipse cx="256" cy="210" rx="30" ry="6" fill="#0F172A" opacity="0.22" />
+  </g>
+
+  <!-- 5. Oblate Porcelain Head with Dark Visor Faceplate & Neon Cyan Arch Eyes -->
+  <g id="aitukoHeadGroup" class="aituko-head-anim">
+    <!-- Oblate Head Shell (Width 236, Height 164, Center Y=126) -->
+    <rect x="136" y="42" width="240" height="168" rx="74" fill="#CBD5E1" />
+    <rect x="138" y="44" width="236" height="164" rx="72" fill="url(#aituko_headDomeGrad)" />
+    <!-- Crown Specular Highlight -->
+    <ellipse cx="242" cy="60" rx="55" ry="12" fill="#FFFFFF" opacity="0.90" />
+    <ellipse cx="162" cy="118" rx="12" ry="26" fill="#E2E8F0" opacity="0.4" />
+    <ellipse cx="346" cy="100" rx="8" ry="22" transform="rotate(16 346 100)" fill="#FFFFFF" opacity="0.65" />
+    <!-- Chin AO rim -->
+    <ellipse cx="256" cy="204" rx="46" ry="6" fill="#CBD5E1" opacity="0.5" />
+
+    <!-- Dark Visor Faceplate (Obsidian Curved Glass) -->
+    <rect x="160" y="61" width="192" height="130" rx="58" fill="#090A0F" />
+    <rect x="162" y="63" width="188" height="126" rx="56" fill="url(#aituko_visorGlassGrad)" stroke="#1F2433" stroke-width="1.5" />
+    <!-- Visor Horizon Specular Reflection Arc -->
+    <path d="M 182, 102 C 205, 78 245, 72 292, 78 C 272, 82 222, 88 198, 112 Z" fill="url(#aituko_visorArcReflection)" />
+    <!-- Neon Cyan Arch Eyes (^ ^) -->
+    <g id="aitukoEyesGroup" class="aituko-eyes-blink">
+      <!-- Left Smiling Neon Arch -->
+      <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#aituko_cyanGlow)" />
+      <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
+      <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
+
+      <!-- Right Smiling Neon Arch -->
+      <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#aituko_cyanGlow)" />
+      <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
+      <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
+    </g>
+  </g>
+
+  <!-- 6. Two Floating Lateral Pods (Winglets/Thrusters — STRICTLY NO HANDS) -->
+  <!-- Left Lateral Pod (Hovering at X=138, Y=298, tilt -9°) -->
+  <g id="aitukoLeftPod" class="aituko-left-pod-anim">
+    <g transform="translate(138, 298) rotate(-9)">
+      <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
+      <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#aituko_podGrad)" />
+      <!-- Specular reflection streak on outer winglet flank -->
+      <rect x="-12" y="-42" width="6" height="74" rx="3" fill="url(#aituko_specularStreak)" />
+      <!-- Inner ambient shadow facing torso -->
+      <rect x="6" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
+    </g>
+  </g>
+
+  <!-- Right Lateral Pod (Hovering at X=374, Y=298, tilt +9°) -->
+  <g id="aitukoRightPod" class="aituko-right-pod-anim">
+    <g transform="translate(374, 298) rotate(9)">
+      <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
+      <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#aituko_podGrad)" />
+      <!-- Specular reflection streak on outer winglet flank -->
+      <rect x="6" y="-42" width="6" height="74" rx="3" fill="url(#aituko_specularStreak)" />
+      <!-- Inner ambient shadow facing torso -->
+      <rect x="-15" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html><head><style>
+html, body { margin: 0; padding: 0; width: 512px; height: 512px; overflow: hidden; background: transparent; }
+svg { display: block; width: 512px; height: 512px; }
+</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" style="background-color: #0B0F17; overflow: visible;">
+  <defs>
+    <!-- Porcelain Cream Gradient -->
+    <linearGradient id="owluko_porcelainCream" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FAF7F2" />
+      <stop offset="75%" stop-color="#ECE6DC" />
+      <stop offset="100%" stop-color="#DAD2C3" />
+    </linearGradient>
+
+    <!-- Winglet Gradient -->
+    <linearGradient id="owluko_wingletGrad" x1="25%" y1="15%" x2="75%" y2="85%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#FAF7F2" />
+      <stop offset="80%" stop-color="#E2DCD0" />
+      <stop offset="100%" stop-color="#CDC4B3" />
+    </linearGradient>
+
+    <!-- Amber Eye Radial -->
+    <radialGradient id="owluko_amberEye" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="35%" stop-color="#D99B26" />
+      <stop offset="70%" stop-color="#B37A15" />
+      <stop offset="100%" stop-color="#451A03" />
+    </radialGradient>
+
+    <!-- Beak Gradient -->
+    <radialGradient id="owluko_beakGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFBEB" />
+      <stop offset="50%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#D97706" />
+    </radialGradient>
+
+    <!-- Specular Highlight -->
+    <radialGradient id="owluko_specularDome" cx="45%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </radialGradient>
+
+    <style>
+      @keyframes owlukoTorsoBreathe {
+        0%, 50%, 100% { transform: scale(1.0, 1.0) rotate(0deg); }
+        25% { transform: scale(0.992, 1.015) rotate(-1.2deg); }
+        75% { transform: scale(1.008, 0.985) rotate(1.2deg); }
+      }
+
+      @keyframes owlukoWingLeft {
+        0%, 50%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-1.8deg); }
+        75% { transform: rotate(1.8deg); }
+      }
+
+      @keyframes owlukoWingRight {
+        0%, 50%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(1.8deg); }
+        75% { transform: rotate(-1.8deg); }
+      }
+
+      @keyframes owlukoDoubleBlink {
+        0%, 14% { transform: scaleY(0); }
+        17.5% { transform: scaleY(1); }
+        21% { transform: scaleY(0); }
+        64% { transform: scaleY(0); }
+        67.5% { transform: scaleY(1); }
+        71%, 100% { transform: scaleY(0); }
+      }
+
+      .torso-group {
+        transform-origin: 256px 440px;
+        animation: owlukoTorsoBreathe 4.0s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      }
+      .wing-left {
+        transform-origin: 120px 220px;
+        animation: owlukoWingLeft 4.0s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      }
+      .wing-right {
+        transform-origin: 392px 220px;
+        animation: owlukoWingRight 4.0s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      }
+      .eyelid {
+        transform-origin: 256px 135px;
+        animation: owlukoDoubleBlink 4.0s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Grounded Porcelain Feet (100% Static, Delta Y = 0 px, No Shadow) -->
+  <g id="grounded_feet" fill="url(#owluko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.0">
+    <path d="M 211.8 433.1 C 211.8 462.6 197.0 485.2 177.4 495.0 C 174.4 499.0 194.1 499.0 206.9 495.0 C 216.7 499.0 236.3 499.0 231.4 491.1 C 225.5 481.3 223.6 457.7 223.6 433.1 Z" />
+    <path d="M 300.2 433.1 C 300.2 462.6 285.5 485.2 265.8 495.0 C 262.9 499.0 282.5 499.0 295.3 495.0 C 305.1 499.0 324.8 499.0 319.9 491.1 C 314.0 481.3 312.0 457.7 312.0 433.1 Z" />
+  </g>
+
+  <!-- Breathing Body & Head (Pivot at Ankles Y = 440) -->
+  <g class="torso-group">
+    <!-- Porcelain Body Capsule -->
+    <ellipse cx="256" cy="246" rx="142.5" ry="206.4" fill="url(#owluko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.0" />
+    <ellipse cx="241" cy="133" rx="113" ry="88" fill="url(#owluko_specularDome)" />
+
+    <!-- Symmetrical Teardrop Winglets -->
+    <path class="wing-left" d="M 120.4 220.8 C 103.7 271.0 103.7 349.6 130.2 393.8 C 140.0 369.2 149.9 300.4 140.0 230.7 Z" fill="url(#owluko_wingletGrad)" stroke="#C8BEAD" stroke-width="1.0" />
+    <path class="wing-right" d="M 391.6 220.8 C 408.3 271.0 408.3 349.6 381.8 393.8 C 372.0 369.2 362.1 300.4 372.0 230.7 Z" fill="url(#owluko_wingletGrad)" stroke="#C8BEAD" stroke-width="1.0" />
+
+    <!-- Glassy Amber Orb Eyes -->
+    <g id="amber_eyes">
+      <circle cx="205" cy="164" r="29.5" fill="url(#owluko_amberEye)" stroke="#451A03" stroke-width="1.8" />
+      <circle cx="307" cy="164" r="29.5" fill="url(#owluko_amberEye)" stroke="#451A03" stroke-width="1.8" />
+      <!-- Specular Highlights -->
+      <circle cx="215" cy="154" r="5" fill="#FFFFFF" />
+      <circle cx="199" cy="174" r="2.5" fill="#FFFFFF" opacity="0.8" />
+      <circle cx="317" cy="154" r="5" fill="#FFFFFF" />
+      <circle cx="301" cy="174" r="2.5" fill="#FFFFFF" opacity="0.8" />
+    </g>
+
+    <!-- Porcelain Eyelids (Animated Double Blink) -->
+    <g class="eyelid">
+      <ellipse cx="205" cy="164" rx="30" ry="30" fill="url(#owluko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.0" />
+      <ellipse cx="307" cy="164" rx="30" ry="30" fill="url(#owluko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.0" />
+    </g>
+
+    <!-- Centered Porcelain Beak -->
+    <path d="M 256.0 162.8 C 263.9 180.5 261.9 207.1 256.0 216.9 C 250.1 207.1 248.1 180.5 256.0 162.8 Z" fill="url(#owluko_beakGrad)" stroke="#B45309" stroke-width="1.0" />
+  </g>
+</svg>
+</body></html>

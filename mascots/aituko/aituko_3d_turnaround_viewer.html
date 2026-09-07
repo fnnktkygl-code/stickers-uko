@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AItuko — Visualiseur 3D & Turnaround 360° Officiel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #0B0F17;
+      color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    #header {
+      padding: 16px 24px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1F2937;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+    .title-group h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #00F0FF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: rgba(0, 240, 255, 0.15);
+      border: 1px solid #00F0FF;
+      color: #00F0FF;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .title-group p {
+      font-size: 12px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+    #canvas-container {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #toolbar {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(17, 24, 39, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 40px;
+      padding: 6px 12px;
+      display: flex;
+      gap: 8px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+    button {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #CBD5E1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    button:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+    }
+    button.active {
+      background: rgba(0, 240, 255, 0.2);
+      border-color: #00F0FF;
+      color: #00F0FF;
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+    }
+    #info-panel {
+      position: absolute;
+      top: 90px;
+      left: 24px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid #1F2937;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 12px;
+      line-height: 1.6;
+      max-width: 280px;
+      color: #94A3B8;
+      pointer-events: none;
+      z-index: 10;
+    }
+    #info-panel strong {
+      color: #F8FAFC;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 4px 0;
+    }
+    .stat-val {
+      color: #34D399;
+      font-family: monospace;
+      font-weight: 600;
+    }
+    #guides-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      display: none;
+    }
+    .guide-line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px dashed rgba(0, 240, 255, 0.3);
+    }
+    .guide-label {
+      position: absolute;
+      right: 24px;
+      font-size: 11px;
+      color: #00F0FF;
+      font-family: monospace;
+      transform: translateY(-14px);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="title-group">
+      <h1>AITUKO <span class="badge">Master 3D & 360° Rig</span></h1>
+      <p>Modèle géométrique officiel calibré — Porcelaine Crème Lustrée, Visière Obsidienne & Zéro Main</p>
+    </div>
+    <div>
+      <button id="btn-toggle-guides" onclick="toggleGuides()">📐 Guides Orthographiques</button>
+    </div>
+  </div>
+
+  <div id="canvas-container">
+    <div id="info-panel">
+      <div style="font-weight: 700; color: #00F0FF; margin-bottom: 8px;">SPECIFICATIONS DU MODELE</div>
+      <div class="stat-row"><span>Matériau Corps</span><span class="stat-val">Porcelaine Crème Lustrée (#FAF7F2)</span></div>
+      <div class="stat-row"><span>Écran Visière</span><span class="stat-val">Verre Obsidienne</span></div>
+      <div class="stat-row"><span>Émissif Yeux</span><span class="stat-val">Cyan Néon (#00F0FF)</span></div>
+      <div class="stat-row"><span>Membres Latéraux</span><span class="stat-val">2 Pods Flottants (Zéro Main)</span></div>
+      <div class="stat-row"><span>Sustentation</span><span class="stat-val">2 Pods Inférieurs en V</span></div>
+      <div class="stat-row"><span>Fidélité Studio</span><span class="stat-val">100% Calibré</span></div>
+      <div style="margin-top: 10px; font-size: 11px; color: #64748B;">
+        Glissez pour orbiter à 360°. Utilisez les boutons pour basculer entre les 4 vues officielles.
+      </div>
+    </div>
+
+    <div id="guides-overlay">
+      <div class="guide-line" style="top: 25%;"><span class="guide-label">SOMMET DU CASQUE</span></div>
+      <div class="guide-line" style="top: 35%;"><span class="guide-label">HORIZON DES YEUX (CYAN)</span></div>
+      <div class="guide-line" style="top: 48%;"><span class="guide-label">EMBOITEMENT DU COU</span></div>
+      <div class="guide-line" style="top: 72%;"><span class="guide-label">BASE DU TORSE</span></div>
+      <div class="guide-line" style="top: 84%;"><span class="guide-label">PLAN DE SUSTENTATION SOL</span></div>
+    </div>
+  </div>
+
+  <div id="toolbar">
+    <button class="active" onclick="setView(0, this)">0° Face</button>
+    <button onclick="setView(Math.PI / 4, this)">45° 3/4</button>
+    <button onclick="setView(Math.PI / 2, this)">90° Profil</button>
+    <button onclick="setView(Math.PI, this)">180° Dos</button>
+    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); margin: 6px 4px;"></div>
+    <button id="btn-spin" onclick="toggleSpin(this)">🔄 Auto-Rotation</button>
+    <button onclick="resetCamera()">🎯 Centrer</button>
+  </div>
+
+  <script>
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0B0F17);
+
+    // Camera
+    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 0.4, 4.6);
+
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    container.appendChild(renderer.domElement);
+
+    // Controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxPolarAngle = Math.PI / 2 + 0.05;
+    controls.minDistance = 2.0;
+    controls.maxDistance = 8.0;
+    controls.target.set(0, 0.2, 0);
+
+    // Lighting (Studio Setup)
+    const ambientLight = new THREE.AmbientLight(0xE2E8F0, 0.85);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0xFFFFFF, 1.4);
+    keyLight.position.set(2.5, 4.0, 3.5);
+    keyLight.castShadow = true;
+    keyLight.shadow.mapSize.width = 2048;
+    keyLight.shadow.mapSize.height = 2048;
+    keyLight.shadow.bias = -0.0001;
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0x94A3B8, 0.6);
+    fillLight.position.set(-3.0, 2.0, 2.0);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.DirectionalLight(0xE2E8F0, 0.4);
+    rimLight.position.set(0, 3.0, -3.5);
+    scene.add(rimLight);
+
+    // Ground Plane Shadow
+    const shadowGeo = new THREE.PlaneGeometry(3.0, 3.0);
+    const shadowCanvas = document.createElement('canvas');
+    shadowCanvas.width = 256;
+    shadowCanvas.height = 256;
+    const sCtx = shadowCanvas.getContext('2d');
+    const grad = sCtx.createRadialGradient(128, 128, 10, 128, 128, 110);
+    grad.addColorStop(0, 'rgba(0, 0, 0, 0.65)');
+    grad.addColorStop(0.5, 'rgba(0, 0, 0, 0.25)');
+    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    sCtx.fillStyle = grad;
+    sCtx.fillRect(0, 0, 256, 256);
+    const shadowTexture = new THREE.CanvasTexture(shadowCanvas);
+    const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTexture, transparent: true, depthWrite: false });
+    const shadowMesh = new THREE.Mesh(shadowGeo, shadowMat);
+    shadowMesh.rotation.x = -Math.PI / 2;
+    shadowMesh.position.y = -1.08;
+    scene.add(shadowMesh);
+
+    // Materials
+    const porcelainMat = new THREE.MeshPhysicalMaterial({
+      color: 0xFAF7F2,
+      roughness: 0.12,
+      metalness: 0.02,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.08,
+      reflectivity: 0.9
+    });
+
+    const visorMat = new THREE.MeshPhysicalMaterial({
+      color: 0x0A0D14,
+      roughness: 0.08,
+      metalness: 0.2,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.05,
+      reflectivity: 1.0
+    });
+
+    const eyeMat = new THREE.MeshBasicMaterial({
+      color: 0x00F0FF
+    });
+
+    const neckMat = new THREE.MeshStandardMaterial({
+      color: 0x1E293B,
+      roughness: 0.6,
+      metalness: 0.3
+    });
+
+    // Root Mascot Group
+    const aituko = new THREE.Group();
+    scene.add(aituko);
+
+    // 1. Head Dome (Porcelain)
+    const headGeo = new THREE.SphereGeometry(0.68, 64, 64);
+    const headMesh = new THREE.Mesh(headGeo, porcelainMat);
+    headMesh.scale.set(1.18, 0.96, 1.04);
+    headMesh.position.set(0, 0.72, 0);
+    headMesh.castShadow = true;
+    aituko.add(headMesh);
+
+    // 2. Visor Faceplate (Obsidian Glass)
+    const visorGeo = new THREE.SphereGeometry(0.67, 48, 48, 0, Math.PI * 2, 0, Math.PI * 0.46);
+    const visorMesh = new THREE.Mesh(visorGeo, visorMat);
+    visorMesh.scale.set(1.16, 0.94, 1.03);
+    visorMesh.rotation.x = Math.PI * 0.44;
+    visorMesh.position.set(0, 0.73, 0.035);
+    aituko.add(visorMesh);
+
+    // 3. Cyan Smiling Eyes (^ ^ Crescent Geometry)
+    function createSmilingEye(isRight = false) {
+      const eyeGroup = new THREE.Group();
+      const curve = new THREE.EllipseCurve(0, 0, 0.14, 0.10, 0.15 * Math.PI, 0.85 * Math.PI, false, 0);
+      const points = curve.getPoints(24);
+      const shape = new THREE.Shape();
+      shape.moveTo(points[0].x, points[0].y);
+      for (let i = 1; i < points.length; i++) shape.lineTo(points[i].x, points[i].y);
+      for (let i = points.length - 1; i >= 0; i--) shape.lineTo(points[i].x, points[i].y - 0.038);
+      shape.closePath();
+
+      const eyeGeo = new THREE.ShapeGeometry(shape);
+      const eyeMesh = new THREE.Mesh(eyeGeo, eyeMat);
+      eyeMesh.rotation.x = -0.15;
+      if (isRight) eyeMesh.rotation.y = 0.08;
+      else eyeMesh.rotation.y = -0.08;
+      eyeGroup.add(eyeMesh);
+
+      // Eye Glow Light
+      const pLight = new THREE.PointLight(0x00F0FF, 0.45, 0.5);
+      pLight.position.set(0, 0, 0.05);
+      eyeGroup.add(pLight);
+
+      return eyeGroup;
+    }
+
+    const leftEye = createSmilingEye(false);
+    leftEye.position.set(-0.30, 0.74, 0.66);
+    aituko.add(leftEye);
+
+    const rightEye = createSmilingEye(true);
+    rightEye.position.set(0.30, 0.74, 0.66);
+    aituko.add(rightEye);
+
+    // 4. Neck Joint
+    const neckGeo = new THREE.CylinderGeometry(0.18, 0.22, 0.12, 32);
+    const neckMesh = new THREE.Mesh(neckGeo, neckMat);
+    neckMesh.position.set(0, 0.18, 0);
+    aituko.add(neckMesh);
+
+    // 5. Torso Capsule (Porcelain)
+    const torsoGeo = new THREE.CylinderGeometry(0.48, 0.44, 0.72, 48);
+    const torsoMesh = new THREE.Mesh(torsoGeo, porcelainMat);
+    torsoMesh.position.set(0, -0.22, 0);
+    torsoMesh.castShadow = true;
+    aituko.add(torsoMesh);
+
+    const torsoTopCap = new THREE.Mesh(new THREE.SphereGeometry(0.48, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.5), porcelainMat);
+    torsoTopCap.position.set(0, 0.14, 0);
+    aituko.add(torsoTopCap);
+
+    const torsoBottomCap = new THREE.Mesh(new THREE.SphereGeometry(0.44, 48, 24, 0, Math.PI * 2, Math.PI * 0.5, Math.PI * 0.5), porcelainMat);
+    torsoBottomCap.position.set(0, -0.58, 0);
+    aituko.add(torsoBottomCap);
+
+    // 6. Floating Lateral Pods (Winglets — ZERO HANDS)
+    function createWingletPod(isRight = false) {
+      const podGroup = new THREE.Group();
+      const pGeo = new THREE.CylinderGeometry(0.12, 0.10, 0.55, 32);
+      const pMesh = new THREE.Mesh(pGeo, porcelainMat);
+      pMesh.castShadow = true;
+      podGroup.add(pMesh);
+
+      const pTop = new THREE.Mesh(new THREE.SphereGeometry(0.12, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.5), porcelainMat);
+      pTop.position.set(0, 0.275, 0);
+      podGroup.add(pTop);
+
+      const pBottom = new THREE.Mesh(new THREE.SphereGeometry(0.10, 32, 16, 0, Math.PI * 2, Math.PI * 0.5, Math.PI * 0.5), porcelainMat);
+      pBottom.position.set(0, -0.275, 0);
+      podGroup.add(pBottom);
+
+      return podGroup;
+    }
+
+    const leftPod = createWingletPod(false);
+    leftPod.position.set(-0.76, -0.20, 0);
+    leftPod.rotation.z = 0.12;
+    aituko.add(leftPod);
+
+    const rightPod = createWingletPod(true);
+    rightPod.position.set(0.76, -0.20, 0);
+    rightPod.rotation.z = -0.12;
+    aituko.add(rightPod);
+
+    // 7. Floating Landing Feet Pods (Angled in V — STRICTEMENT SANS LUEUR CYAN)
+    function createFootPod(isRight = false) {
+      const fGroup = new THREE.Group();
+      const fGeo = new THREE.CylinderGeometry(0.15, 0.11, 0.24, 32);
+      const fMesh = new THREE.Mesh(fGeo, porcelainMat);
+      fMesh.castShadow = true;
+      fGroup.add(fMesh);
+
+      const fTop = new THREE.Mesh(new THREE.SphereGeometry(0.15, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.5), porcelainMat);
+      fTop.position.set(0, 0.12, 0);
+      fGroup.add(fTop);
+
+      const fBottom = new THREE.Mesh(new THREE.SphereGeometry(0.11, 32, 16, 0, Math.PI * 2, Math.PI * 0.5, Math.PI * 0.5), porcelainMat);
+      fBottom.position.set(0, -0.12, 0);
+      fGroup.add(fBottom);
+
+      return fGroup;
+    }
+
+    const leftFoot = createFootPod(false);
+    leftFoot.position.set(-0.28, -0.88, 0);
+    leftFoot.rotation.z = 0.22;
+    aituko.add(leftFoot);
+
+    const rightFoot = createFootPod(true);
+    rightFoot.position.set(0.28, -0.88, 0);
+    rightFoot.rotation.z = -0.22;
+    aituko.add(rightFoot);
+
+    // Animation & State
+    let isSpinning = false;
+    let targetRotationY = 0;
+    let isTransitioning = false;
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (isSpinning) {
+        aituko.rotation.y += 0.012;
+      } else if (isTransitioning) {
+        aituko.rotation.y += (targetRotationY - aituko.rotation.y) * 0.1;
+        if (Math.abs(targetRotationY - aituko.rotation.y) < 0.001) {
+          aituko.rotation.y = targetRotationY;
+          isTransitioning = false;
+        }
+      }
+
+      // Idle float oscillation
+      const time = Date.now() * 0.002;
+      aituko.position.y = Math.sin(time) * 0.04;
+      leftPod.position.y = -0.20 + Math.sin(time + 0.4) * 0.03;
+      rightPod.position.y = -0.20 + Math.sin(time + 0.4) * 0.03;
+      leftFoot.position.y = -0.88 + Math.sin(time + 0.8) * 0.02;
+      rightFoot.position.y = -0.88 + Math.sin(time + 0.8) * 0.02;
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // UI View Switching
+    window.setView = function(targetAngle, btn) {
+      isSpinning = false;
+      document.getElementById('btn-spin').classList.remove('active');
+      document.querySelectorAll('#toolbar button').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      targetRotationY = targetAngle;
+      isTransitioning = true;
+    };
+
+    window.toggleSpin = function(btn) {
+      isSpinning = !isSpinning;
+      btn.classList.toggle('active', isSpinning);
+    };
+
+    window.resetCamera = function() {
+      camera.position.set(0, 0.4, 4.6);
+      controls.target.set(0, 0.2, 0);
+      controls.update();
+    };
+
+    window.toggleGuides = function() {
+      const overlay = document.getElementById('guides-overlay');
+      const btn = document.getElementById('btn-toggle-guides');
+      const isVisible = overlay.style.display === 'block';
+      overlay.style.display = isVisible ? 'none' : 'block';
+      btn.style.color = isVisible ? '#CBD5E1' : '#00F0FF';
+      btn.style.borderColor = isVisible ? 'transparent' : '#00F0FF';
+    };
+
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  </script>
+</body>
+</html>

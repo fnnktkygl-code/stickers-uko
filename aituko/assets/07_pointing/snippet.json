@@ -1,0 +1,19 @@
+{
+  "state": "07_pointing",
+  "character": "aituko",
+  "direction": "right",
+  "angle": "+31.4\u00b0 (Oblique natural)",
+  "duration_seconds": 4.0,
+  "fps": 30,
+  "total_frames": 120,
+  "lottie_markers": [
+    "point_intro (f0..46)",
+    "point_hold_loop (f47..75)",
+    "point_outro (f76..120)"
+  ],
+  "lottie_react": "<Lottie animationData={aituko_07_pointing} loop={true} style={{ width: 180, height: 180 }} />",
+  "lottie_flutter": "Lottie.asset('assets/07_pointing/lottie.json', width: 180, height: 180)",
+  "lottie_web": "<lottie-player src=\"assets/07_pointing/lottie.json\" background=\"transparent\" speed=\"1\" style=\"width: 180px; height: 180px;\" loop autoplay></lottie-player>",
+  "animated_webp": "<img src=\"assets/07_pointing/animated.webp\" alt=\"AItuko Pointing Right\" width=\"180\" height=\"180\" />",
+  "animated_svg": "<img src=\"assets/07_pointing/aituko_pointing_animated.svg\" alt=\"AItuko Pointing Right SVG\" width=\"180\" height=\"180\" />"
+}

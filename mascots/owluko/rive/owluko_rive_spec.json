@@ -1,0 +1,555 @@
+{
+  "format": "Rive State Machine & Bone Rig Specification",
+  "version": "1.0",
+  "mascot": "Owluko",
+  "artboard": {
+    "name": "Owluko_Artboard",
+    "width": 512,
+    "height": 512,
+    "fps": 60,
+    "origin": [
+      0,
+      0
+    ]
+  },
+  "bones": [
+    {
+      "id": "root_bone",
+      "name": "Root",
+      "position": [
+        256.0,
+        489.0
+      ],
+      "length": 0.0,
+      "rotation": 0.0,
+      "parent": null
+    },
+    {
+      "id": "shadow_bone",
+      "name": "Bone_Shadow",
+      "position": [
+        256.0,
+        489.0
+      ],
+      "length": 10.0,
+      "rotation": 0.0,
+      "parent": "root_bone"
+    },
+    {
+      "id": "pelvis_bone",
+      "name": "Bone_Pelvis",
+      "position": [
+        256.0,
+        435.0
+      ],
+      "length": 135.0,
+      "rotation": -90.0,
+      "parent": "root_bone"
+    },
+    {
+      "id": "l_foot_bone",
+      "name": "Bone_Foot_L",
+      "position": [
+        204.0,
+        425.0
+      ],
+      "length": 64.0,
+      "rotation": 90.0,
+      "parent": "root_bone"
+    },
+    {
+      "id": "r_foot_bone",
+      "name": "Bone_Foot_R",
+      "position": [
+        308.0,
+        425.0
+      ],
+      "length": 64.0,
+      "rotation": 90.0,
+      "parent": "root_bone"
+    },
+    {
+      "id": "spine_bone",
+      "name": "Bone_Spine",
+      "position": [
+        256.0,
+        300.0
+      ],
+      "length": 125.0,
+      "rotation": -90.0,
+      "parent": "pelvis_bone"
+    },
+    {
+      "id": "head_bone",
+      "name": "Bone_Head",
+      "position": [
+        256.0,
+        175.0
+      ],
+      "length": 135.0,
+      "rotation": -90.0,
+      "parent": "spine_bone"
+    },
+    {
+      "id": "beak_bone",
+      "name": "Bone_Beak",
+      "position": [
+        256.0,
+        175.0
+      ],
+      "length": 55.0,
+      "rotation": 90.0,
+      "parent": "head_bone"
+    },
+    {
+      "id": "l_eye_bone",
+      "name": "Bone_Eye_L",
+      "position": [
+        193.0,
+        160.0
+      ],
+      "length": 10.0,
+      "rotation": 0.0,
+      "parent": "head_bone"
+    },
+    {
+      "id": "r_eye_bone",
+      "name": "Bone_Eye_R",
+      "position": [
+        315.0,
+        163.0
+      ],
+      "length": 10.0,
+      "rotation": 0.0,
+      "parent": "head_bone"
+    },
+    {
+      "id": "l_eyelid_bone",
+      "name": "Bone_Eyelid_L",
+      "position": [
+        193.0,
+        145.0
+      ],
+      "length": 20.0,
+      "rotation": 90.0,
+      "parent": "head_bone"
+    },
+    {
+      "id": "r_eyelid_bone",
+      "name": "Bone_Eyelid_R",
+      "position": [
+        315.0,
+        147.0
+      ],
+      "length": 20.0,
+      "rotation": 90.0,
+      "parent": "head_bone"
+    },
+    {
+      "id": "l_wing_bone",
+      "name": "Bone_Wing_L",
+      "position": [
+        128.0,
+        192.0
+      ],
+      "length": 190.0,
+      "rotation": 85.0,
+      "parent": "pelvis_bone"
+    },
+    {
+      "id": "r_wing_bone",
+      "name": "Bone_Wing_R",
+      "position": [
+        384.0,
+        192.0
+      ],
+      "length": 190.0,
+      "rotation": 95.0,
+      "parent": "pelvis_bone"
+    }
+  ],
+  "state_machine": {
+    "name": "Owluko_StateMachine",
+    "inputs": [
+      {
+        "name": "isBreathing",
+        "type": "Boolean",
+        "default": true
+      },
+      {
+        "name": "blinkTrigger",
+        "type": "Trigger"
+      },
+      {
+        "name": "lookX",
+        "type": "Number",
+        "min": -100.0,
+        "max": 100.0,
+        "default": 0.0
+      },
+      {
+        "name": "lookY",
+        "type": "Number",
+        "min": -100.0,
+        "max": 100.0,
+        "default": 0.0
+      },
+      {
+        "name": "isHovering",
+        "type": "Boolean",
+        "default": false
+      }
+    ],
+    "layers": [
+      {
+        "name": "Base_Breathing",
+        "states": [
+          {
+            "name": "Idle_Respiration",
+            "type": "Animation",
+            "timeline": "idle_breath",
+            "loop": true
+          }
+        ]
+      },
+      {
+        "name": "Eyelid_Blink",
+        "states": [
+          {
+            "name": "Drowsy_Rest",
+            "type": "Entry"
+          },
+          {
+            "name": "Do_Blink",
+            "type": "Animation",
+            "timeline": "blink_action",
+            "loop": false
+          }
+        ],
+        "transitions": [
+          {
+            "from": "Drowsy_Rest",
+            "to": "Do_Blink",
+            "condition": "blinkTrigger"
+          },
+          {
+            "from": "Do_Blink",
+            "to": "Drowsy_Rest",
+            "condition": "onAnimationEnd"
+          }
+        ]
+      },
+      {
+        "name": "Gaze_Tracking",
+        "states": [
+          {
+            "name": "Blend_Gaze",
+            "type": "BlendTree2D",
+            "inputs": [
+              "lookX",
+              "lookY"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Wing_Secondary",
+        "states": [
+          {
+            "name": "Wing_Harmonics",
+            "type": "Animation",
+            "timeline": "wing_sway",
+            "loop": true
+          }
+        ]
+      }
+    ]
+  },
+  "layers": {
+    "00_shadow": {
+      "file": "assets/00_shadow.png",
+      "full_canvas_bbox": {
+        "x_min": 154,
+        "x_max": 356,
+        "y_min": 469,
+        "y_max": 507,
+        "width": 203,
+        "height": 39
+      },
+      "center": [
+        255.0,
+        488.0
+      ]
+    },
+    "01_body_porcelain": {
+      "file": "assets/01_body_porcelain.png",
+      "full_canvas_bbox": {
+        "x_min": 86,
+        "x_max": 425,
+        "y_min": 40,
+        "y_max": 489,
+        "width": 340,
+        "height": 450
+      },
+      "center": [
+        255.5,
+        264.5
+      ]
+    },
+    "01_foot_left": {
+      "file": "assets/01_foot_left.png",
+      "full_canvas_bbox": {
+        "x_min": 155,
+        "x_max": 251,
+        "y_min": 409,
+        "y_max": 489,
+        "width": 97,
+        "height": 81
+      },
+      "center": [
+        203.0,
+        449.0
+      ]
+    },
+    "02_foot_right": {
+      "file": "assets/02_foot_right.png",
+      "full_canvas_bbox": {
+        "x_min": 260,
+        "x_max": 356,
+        "y_min": 409,
+        "y_max": 489,
+        "width": 97,
+        "height": 81
+      },
+      "center": [
+        308.0,
+        449.0
+      ]
+    },
+    "02_wing_left": {
+      "file": "assets/02_wing_left.png",
+      "full_canvas_bbox": {
+        "x_min": 87,
+        "x_max": 134,
+        "y_min": 180,
+        "y_max": 386,
+        "width": 48,
+        "height": 207
+      },
+      "center": [
+        110.5,
+        283.0
+      ]
+    },
+    "03_body_porcelain": {
+      "file": "assets/03_body_porcelain.png",
+      "full_canvas_bbox": {
+        "x_min": 86,
+        "x_max": 425,
+        "y_min": 40,
+        "y_max": 444,
+        "width": 340,
+        "height": 405
+      },
+      "center": [
+        255.5,
+        242.0
+      ]
+    },
+    "03_wing_right": {
+      "file": "assets/03_wing_right.png",
+      "full_canvas_bbox": {
+        "x_min": 376,
+        "x_max": 424,
+        "y_min": 180,
+        "y_max": 389,
+        "width": 49,
+        "height": 210
+      },
+      "center": [
+        400.0,
+        284.5
+      ]
+    },
+    "04_eye_left": {
+      "file": "assets/04_eye_left.png",
+      "full_canvas_bbox": {
+        "x_min": 155,
+        "x_max": 231,
+        "y_min": 122,
+        "y_max": 198,
+        "width": 77,
+        "height": 77
+      },
+      "center": [
+        193.0,
+        160.0
+      ]
+    },
+    "04_wing_left": {
+      "file": "assets/04_wing_left.png",
+      "full_canvas_bbox": {
+        "x_min": 87,
+        "x_max": 134,
+        "y_min": 180,
+        "y_max": 386,
+        "width": 48,
+        "height": 207
+      },
+      "center": [
+        110.5,
+        283.0
+      ]
+    },
+    "05_eye_right": {
+      "file": "assets/05_eye_right.png",
+      "full_canvas_bbox": {
+        "x_min": 277,
+        "x_max": 353,
+        "y_min": 125,
+        "y_max": 201,
+        "width": 77,
+        "height": 77
+      },
+      "center": [
+        315.0,
+        163.0
+      ]
+    },
+    "05_wing_right": {
+      "file": "assets/05_wing_right.png",
+      "full_canvas_bbox": {
+        "x_min": 376,
+        "x_max": 424,
+        "y_min": 180,
+        "y_max": 389,
+        "width": 49,
+        "height": 210
+      },
+      "center": [
+        400.0,
+        284.5
+      ]
+    },
+    "06_beak": {
+      "file": "assets/06_beak.png",
+      "full_canvas_bbox": {
+        "x_min": 240,
+        "x_max": 271,
+        "y_min": 165,
+        "y_max": 234,
+        "width": 32,
+        "height": 70
+      },
+      "center": [
+        255.5,
+        199.5
+      ]
+    },
+    "06_eye_left": {
+      "file": "assets/06_eye_left.png",
+      "full_canvas_bbox": {
+        "x_min": 172,
+        "x_max": 214,
+        "y_min": 139,
+        "y_max": 181,
+        "width": 43,
+        "height": 43
+      },
+      "center": [
+        193.0,
+        160.0
+      ]
+    },
+    "07_eye_right": {
+      "file": "assets/07_eye_right.png",
+      "full_canvas_bbox": {
+        "x_min": 294,
+        "x_max": 336,
+        "y_min": 142,
+        "y_max": 184,
+        "width": 43,
+        "height": 43
+      },
+      "center": [
+        315.0,
+        163.0
+      ]
+    },
+    "07_foot_left": {
+      "file": "assets/07_foot_left.png",
+      "full_canvas_bbox": {
+        "x_min": 155,
+        "x_max": 244,
+        "y_min": 415,
+        "y_max": 489,
+        "width": 90,
+        "height": 75
+      },
+      "center": [
+        199.5,
+        452.0
+      ]
+    },
+    "08_eyelid_left": {
+      "file": "assets/08_eyelid_left.png",
+      "full_canvas_bbox": {
+        "x_min": 169,
+        "x_max": 216,
+        "y_min": 135,
+        "y_max": 183,
+        "width": 48,
+        "height": 49
+      },
+      "center": [
+        192.5,
+        159.0
+      ]
+    },
+    "08_foot_right": {
+      "file": "assets/08_foot_right.png",
+      "full_canvas_bbox": {
+        "x_min": 265,
+        "x_max": 356,
+        "y_min": 415,
+        "y_max": 489,
+        "width": 92,
+        "height": 75
+      },
+      "center": [
+        310.5,
+        452.0
+      ]
+    },
+    "09_eyelid_right": {
+      "file": "assets/09_eyelid_right.png",
+      "full_canvas_bbox": {
+        "x_min": 292,
+        "x_max": 339,
+        "y_min": 138,
+        "y_max": 186,
+        "width": 48,
+        "height": 49
+      },
+      "center": [
+        315.5,
+        162.0
+      ]
+    },
+    "10_beak": {
+      "file": "assets/10_beak.png",
+      "full_canvas_bbox": {
+        "x_min": 238,
+        "x_max": 274,
+        "y_min": 162,
+        "y_max": 235,
+        "width": 37,
+        "height": 74
+      },
+      "center": [
+        256.0,
+        198.5
+      ]
+    }
+  }
+}

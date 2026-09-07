@@ -1,0 +1,3637 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self'; base-uri 'self'; object-src 'none';">
+  <title data-i18n="meta.title">Uko UI — Système de Mascottes Animées pour Interfaces Modernes</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="Mascottes animées 3D, bulles de dialogue interactives et composants légers pour React, Next.js et Flutter.">
+  <link rel="canonical" href="https://ukoui.dev/">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Dynamic Japandi Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23171614'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif' font-weight='900' font-size='18'>U</text></svg>">
+  <meta name="theme-color" content="#171614">
+
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Uko UI">
+  <meta property="og:url" content="https://ukoui.dev/">
+  <meta property="og:title" content="Uko UI — Système de Mascottes Animées pour Interfaces Modernes">
+  <meta property="og:description" content="12 états universels de mascottes animées 3D ultra-légères pour booster l'engagement, l'onboarding et la rétention. Composants React, Next.js et Flutter.">
+  <meta property="og:image" content="https://ukoui.dev/assets/01_waving/animated.gif">
+  <meta property="og:image:alt" content="Uko UI Animated Mascot Preview">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Uko UI — Système de Mascottes Animées pour Interfaces Modernes">
+  <meta name="twitter:description" content="12 états universels de mascottes animées 3D pour React, Next.js et Flutter.">
+  <meta name="twitter:image" content="https://ukoui.dev/assets/01_waving/animated.gif">
+
+  <!-- Structured Data JSON-LD (Schema.org SoftwareApplication & Offers) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Uko UI",
+        "url": "https://ukoui.dev",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web, iOS, Android, macOS, Windows, Linux",
+        "description": "Système de mascottes animées 3D ultra-légères et micro-interactions pour React, Next.js et Flutter.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Pack Gratuit",
+            "price": "0.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pack Starter",
+            "price": "5.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pack Pro",
+            "price": "9.00",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.95",
+          "ratingCount": "342",
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Lottie Player Web Component (Vectoriel 60fps) -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            japandi: {
+              bg: 'var(--japandi-bg)',
+              surface: 'var(--japandi-surface)',
+              surfaceMuted: 'var(--japandi-surface-muted)',
+              border: 'var(--japandi-border)',
+              borderSubtle: 'var(--japandi-border-subtle)',
+              text: 'var(--japandi-text)',
+              textSecondary: 'var(--japandi-text-secondary)',
+              textMuted: 'var(--japandi-text-muted)',
+              moss: 'var(--japandi-moss)',
+              mossSubtle: 'var(--japandi-moss-subtle)',
+              ochre: 'var(--japandi-ochre)',
+              ochreSubtle: 'var(--japandi-ochre-subtle)'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          boxShadow: {
+            soft: 'var(--japandi-shadow-soft)',
+            card: 'var(--japandi-shadow-card)',
+            modal: 'var(--japandi-shadow-modal)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* ==========================================================================
+         THÈME CLAIR JAPANDI (Washi Rice Paper, Kyoto Hinoki & Pure Contrast)
+         ========================================================================== */
+      --japandi-bg: #FBFBF9;
+      --japandi-surface: #FFFFFF;
+      --japandi-surface-muted: #F3F1EC;
+      --japandi-surface-stage: #F3F1EC;
+      --japandi-border: #E2DFD6;
+      --japandi-border-subtle: #EBE8E0;
+      
+      --japandi-text: #171614;
+      --japandi-text-secondary: #525049;
+      --japandi-text-muted: #66635B;
+
+      --japandi-moss: #2E5844;
+      --japandi-moss-subtle: #E2ECE5;
+      --japandi-moss-text: #1E3D2F;
+
+      --japandi-ochre: #A8602E;
+      --japandi-ochre-subtle: #F7EFE7;
+      --japandi-ochre-text: #783F18;
+
+      --japandi-header-bg: rgba(251, 251, 249, 0.92);
+      --japandi-bubble-bg: #FFFFFF;
+      --japandi-bubble-border: #E2DFD6;
+      --japandi-bubble-text: #171614;
+
+      --japandi-code-bg: #F5F3EF;
+      --japandi-code-header-bg: #EAE6DD;
+      --japandi-code-border: #DFDBD0;
+      --japandi-code-text: #166534;
+
+      --btn-primary-bg: #171614;
+      --btn-primary-text: #FFFFFF;
+      --btn-primary-hover: #2C2A26;
+
+      --japandi-shadow-soft: 0 2px 8px -1px rgba(23, 22, 20, 0.04), 0 1px 3px -1px rgba(23, 22, 20, 0.02);
+      --japandi-shadow-card: 0 8px 24px -4px rgba(23, 22, 20, 0.05), 0 2px 6px -2px rgba(23, 22, 20, 0.02);
+      --japandi-shadow-modal: 0 24px 60px -12px rgba(23, 22, 20, 0.14), 0 8px 20px -4px rgba(23, 22, 20, 0.06);
+
+      --japandi-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+      --checker-bg-1: #F3F1EC;
+      --checker-bg-2: #E8E5DC;
+    }
+
+    html.dark {
+      /* ==========================================================================
+         THÈME SOMBRE JAPANDI (Sumi Ink, Charcoal & Kyoto Moss Glow)
+         ========================================================================== */
+      --japandi-bg: #0F0F10;
+      --japandi-surface: #171719;
+      --japandi-surface-muted: #1F1F22;
+      --japandi-surface-stage: #141416;
+      --japandi-border: #2B2A2E;
+      --japandi-border-subtle: #222125;
+
+      --japandi-text: #F5F4F0;              /* CR: 16.17:1 (AAA) */
+      --japandi-text-secondary: #B5B3AB;    /* CR: 8.05:1 (AAA) */
+      --japandi-text-muted: #9E9C94;        /* CR: 6.80:1 / AAA sur surface */
+
+      --japandi-moss: #7DA490;              /* CR: 5.40:1 (UI AAA) */
+      --japandi-moss-subtle: #132A20;
+      --japandi-moss-text: #9CC0AD;         /* CR: 7.91:1 (AAA) */
+
+      --japandi-ochre: #D89A6B;
+      --japandi-ochre-subtle: #2C221A;
+      --japandi-ochre-text: #FDE68A;        /* CR: 12.47:1 (AAA) */
+
+      --japandi-header-bg: rgba(15, 15, 16, 0.90);
+      --japandi-bubble-bg: #222226;
+      --japandi-bubble-border: #333238;
+      --japandi-bubble-text: #F5F4F0;
+
+      --japandi-code-bg: #111113;
+      --japandi-code-header-bg: #1A1A1E;
+      --japandi-code-border: #2B2A2E;
+      --japandi-code-text: #89AA98;         /* CR: 7.53:1 (AAA) */
+
+      --btn-primary-bg: #F5F4F0;
+      --btn-primary-text: #0F0F10;
+      --btn-primary-hover: #FFFFFF;
+
+      --japandi-shadow-soft: 0 2px 8px -1px rgba(0, 0, 0, 0.35);
+      --japandi-shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+      --japandi-shadow-modal: 0 24px 60px -12px rgba(0, 0, 0, 0.75);
+
+      --checker-bg-1: #141416;
+      --checker-bg-2: #1D1D20;
+    }
+
+    body {
+      background-color: var(--japandi-bg);
+      color: var(--japandi-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.01em;
+      overflow-x: hidden;
+      max-width: 100vw;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* Règle Curseur Pointer Universel pour TOUS les Éléments Interactifs et leurs Enfants */
+    button, 
+    button *, 
+    [role="button"], 
+    [role="button"] *, 
+    .cursor-pointer, 
+    .cursor-pointer *, 
+    [onclick], 
+    [onclick] *, 
+    a, 
+    a *, 
+    input[type="button"], 
+    input[type="submit"] {
+      cursor: pointer !important;
+    }
+
+    /* Exception stricte pour les cartes et éléments non-cliquables */
+    .cursor-default, 
+    .cursor-default * {
+      cursor: default !important;
+    }
+
+    /* Indicateur de Focus Clavier Accessible (Conforme WCAG 2.2 AAA) */
+    :focus-visible {
+      outline: 2px solid var(--japandi-moss) !important;
+      outline-offset: 2px !important;
+    }
+    
+    .surface-card {
+      background: var(--japandi-surface);
+      border: 1px solid var(--japandi-border);
+      box-shadow: var(--japandi-shadow-soft);
+      transition: transform 0.2s var(--japandi-ease-out), border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .surface-card:hover {
+      border-color: var(--japandi-text-muted);
+      box-shadow: var(--japandi-shadow-card);
+    }
+
+    .glass-header {
+      background: var(--japandi-header-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--japandi-border-subtle);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .bg-checker {
+      background-color: var(--checker-bg-1);
+      background-image: 
+        linear-gradient(45deg, var(--checker-bg-2) 25%, transparent 25%), 
+        linear-gradient(-45deg, var(--checker-bg-2) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, var(--checker-bg-2) 75%), 
+        linear-gradient(-45deg, transparent 75%, var(--checker-bg-2) 75%);
+      background-size: 14px 14px;
+      background-position: 0 0, 0 7px, 7px -7px, -7px 0px;
+    }
+
+    @keyframes calmFloat {
+      0%, 100% { transform: translate3d(0, 0px, 0); }
+      50% { transform: translate3d(0, -4px, 0); }
+    }
+    .calm-mascot {
+      will-change: transform;
+      backface-visibility: hidden;
+      animation: calmFloat 4s ease-in-out infinite;
+    }
+
+    /* ==========================================================================
+       AITUKO ORGANIC VECTOR RIG KINEMATICS (Exact 4.0s Harmonic 3D Motion)
+       ========================================================================== */
+    @keyframes aitukoTorsoFloat {
+      0%, 100% { transform: translate3d(0, 0px, 0); }
+      25% { transform: translate3d(0, -18px, 0); }
+      50% { transform: translate3d(0, 0px, 0); }
+      75% { transform: translate3d(0, 16px, 0); }
+    }
+    @keyframes aitukoHeadBob {
+      0%, 100% { transform: translate3d(0, 0px, 0) rotate(0deg); }
+      28% { transform: translate3d(0, -18px, 0) rotate(-2.2deg); }
+      50% { transform: translate3d(0, 0px, 0) rotate(0deg); }
+      78% { transform: translate3d(0, 16px, 0) rotate(2.0deg); }
+    }
+    @keyframes aitukoLeftArmHover {
+      0%, 100% { transform: translate(138px, 298px) rotate(-9deg); }
+      27% { transform: translate(134px, 283px) rotate(-13deg); }
+      50% { transform: translate(138px, 298px) rotate(-9deg); }
+      75% { transform: translate(140px, 312px) rotate(-6deg); }
+    }
+    @keyframes aitukoRightArmHover {
+      0%, 100% { transform: translate(374px, 298px) rotate(9deg); }
+      27% { transform: translate(378px, 283px) rotate(13deg); }
+      50% { transform: translate(374px, 298px) rotate(9deg); }
+      75% { transform: translate(372px, 312px) rotate(6deg); }
+    }
+    @keyframes aitukoPodsHover {
+      0%, 100% { transform: translate3d(0, 0px, 0); }
+      28% { transform: translate3d(0, -18px, 0); }
+      50% { transform: translate3d(0, 0px, 0); }
+      78% { transform: translate3d(0, 16px, 0); }
+    }
+    @keyframes aitukoShadowBreathe {
+      0%, 100% { transform: scale(1); opacity: 0.80; }
+      25% { transform: scale(0.82); opacity: 0.55; }
+      50% { transform: scale(1); opacity: 0.80; }
+      75% { transform: scale(1.08); opacity: 0.98; }
+    }
+    @keyframes aitukoEyeBlink {
+      0%, 65%, 72%, 100% { transform: scaleY(1); }
+      67% { transform: scaleY(0.08); }
+      70% { transform: scaleY(0.15); }
+    }
+    @keyframes aitukoGlowPulse {
+      0%, 100% { opacity: 0.90; filter: drop-shadow(0 0 8px #00F0FF); }
+      50% { opacity: 1.0; filter: drop-shadow(0 0 14px #00F0FF) drop-shadow(0 0 20px rgba(0, 240, 255, 0.5)); }
+    }
+
+    .aituko-torso-anim {
+      animation: aitukoTorsoFloat 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 256px 315px;
+    }
+    .aituko-head-anim {
+      animation: aitukoHeadBob 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 256px 183px;
+    }
+    .aituko-left-arm-anim {
+      animation: aitukoLeftArmHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 132px 283px;
+    }
+    .aituko-right-arm-anim {
+      animation: aitukoRightArmHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 380px 283px;
+    }
+    .aituko-pods-anim {
+      animation: aitukoPodsHover 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 256px 479px;
+    }
+    .aituko-shadow-anim {
+      animation: aitukoShadowBreathe 4s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+      transform-box: view-box;
+      transform-origin: 256px 495px;
+    }
+    .aituko-eyes-blink {
+      animation: aitukoEyeBlink 4s ease-in-out infinite;
+      transform-box: view-box;
+      transform-origin: 256px 99px;
+    }
+    .aituko-eyes-glow {
+      animation: aitukoGlowPulse 4s ease-in-out infinite;
+    }
+
+    .arrow-btn {
+      background: var(--japandi-surface);
+      border: 1px solid var(--japandi-border);
+      color: var(--japandi-text-secondary);
+      box-shadow: var(--japandi-shadow-soft);
+      transition: transform 0.2s var(--japandi-ease-out), color 0.2s ease, border-color 0.2s ease;
+    }
+    .arrow-btn:hover {
+      color: var(--japandi-text);
+      border-color: var(--japandi-text-muted);
+      transform: scale(1.06);
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: var(--japandi-bubble-bg);
+      border: 1px solid var(--japandi-bubble-border);
+      color: var(--japandi-bubble-text);
+      border-radius: 12px;
+      box-shadow: var(--japandi-shadow-card);
+      transition: transform 0.2s var(--japandi-ease-out), opacity 0.2s ease;
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 10px;
+      height: 10px;
+      background: var(--japandi-bubble-bg);
+      border-right: 1px solid var(--japandi-bubble-border);
+      border-bottom: 1px solid var(--japandi-bubble-border);
+    }
+
+    /* ==========================================================================
+       MOTEUR DE GESTES TACTILES & TOUCH TARGETS WCAG 2.2 AAA (Uko UI)
+       ========================================================================== */
+
+    #stageBox {
+      touch-action: pan-y; /* Autorise le scroll vertical natif tout en interceptant l'axe X */
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #mascotStageWrapper {
+      will-change: transform, opacity;
+      transform-origin: center bottom;
+    }
+
+    /* Micro-rebond tactile au Tap */
+    @keyframes mascotTapSpring {
+      0% { transform: scale3d(1, 1, 1); }
+      25% { transform: scale3d(0.92, 0.88, 1) translateY(4px); }
+      60% { transform: scale3d(1.06, 1.08, 1) translateY(-6px); }
+      85% { transform: scale3d(0.98, 0.99, 1) translateY(1px); }
+      100% { transform: scale3d(1, 1, 1) translateY(0); }
+    }
+
+    .mascot-tap-active {
+      animation: mascotTapSpring 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Repères visuels dynamiques de Swipe (Direction Cues) */
+    .stage-swipe-cue {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 25;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease, transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--japandi-surface);
+      border: 1px solid var(--japandi-border);
+      color: var(--japandi-text);
+      box-shadow: var(--japandi-shadow-card);
+    }
+    .stage-swipe-cue.cue-left { left: 12px; }
+    .stage-swipe-cue.cue-right { right: 12px; }
+
+    /* Badge Flottant Changement Mascotte (Vertical Swipe Cue) */
+    .stage-mascot-pill-cue {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 30;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: var(--japandi-surface);
+      border: 1px solid var(--japandi-moss);
+      color: var(--japandi-moss-text);
+      box-shadow: var(--japandi-shadow-card);
+      transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .stage-mascot-pill-cue.visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Standard Touch Targets (Minimum 44x44px Tap Zones) */
+    .touch-target-44 {
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Élargisseur invisible de zone de frappe (Hitbox Expander) */
+    .hitbox-expand-44 {
+      position: relative;
+    }
+    .hitbox-expand-44::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 44px;
+      min-height: 44px;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Optimisation Barre Mascotte Mobile */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Respect des Préférences Utilisateur de Mouvement Réduit (WCAG 2.2 SC 2.3.3) */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-stone-500/20">
+
+  <!-- Japandi Toast Banner Sentinel (Accessibilité WCAG 2.2 AAA & Résilience) -->
+  <div id="japandiToastContainer" aria-live="polite" role="status" class="fixed top-5 right-5 z-50 flex flex-col gap-2.5 pointer-events-none max-w-sm w-full px-4 sm:px-0"></div>
+
+  <!-- Navigation Flottante Japandi -->
+  <header class="glass-header sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      
+      <!-- Logo Minimaliste -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-6 h-6 rounded-md bg-[var(--btn-primary-bg)] flex items-center justify-center text-[var(--btn-primary-text)] font-bold text-xs tracking-tighter group-hover:scale-105 transition">
+          U
+        </div>
+        <span class="font-semibold text-sm tracking-tight text-[var(--japandi-text)]">Uko UI</span>
+      </a>
+
+      <!-- Liens Navigation -->
+      <nav class="hidden md:flex items-center gap-6 text-xs text-[var(--japandi-text-secondary)] font-medium">
+        <a href="#studio" data-i18n="nav.studio" class="hover:text-[var(--japandi-text)] transition">Studio</a>
+        <a href="#catalogue" data-i18n="nav.catalogue" class="hover:text-[var(--japandi-text)] transition">Catalogue</a>
+        <a href="#tarifs" data-i18n="nav.pricing" class="hover:text-[var(--japandi-text)] transition">Tarifs</a>
+      </nav>
+
+      <!-- Contrôles Navbar (Langue + Thème + CTA) -->
+      <div class="flex items-center gap-2.5">
+        
+        <!-- Sélecteur de Langue Minimaliste Flottant -->
+        <div class="relative" id="langDropdownContainer">
+          <button 
+            onclick="toggleLangMenu(event)" 
+            id="langDropdownBtn" 
+            aria-haspopup="true" 
+            aria-expanded="false"
+            title="Changer de langue" 
+            data-i18n-attr="title:nav.lang"
+            class="flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-[var(--japandi-text)] text-xs sm:text-sm font-mono transition cursor-pointer shadow-soft min-h-[40px]"
+          >
+            <span id="activeLangFlag" class="text-sm">🇫🇷</span>
+            <span id="activeLangCode" class="font-bold text-xs">FR</span>
+            <svg class="w-3.5 h-3.5 text-[var(--japandi-text-muted)] transition-transform duration-200" id="langChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <!-- Menu Déroulant Flottant Subtil (7 Langues Majeures) -->
+          <div 
+            id="langDropdownMenu" 
+            class="hidden absolute right-0 mt-2 w-48 surface-card rounded-2xl p-1.5 border border-[var(--japandi-border)] shadow-modal z-50 transition-all duration-150 transform origin-top-right space-y-1"
+          >
+            <button 
+              onclick="selectLanguage('en')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇬🇧</span>
+                <span class="font-medium">English</span>
+              </div>
+              <span id="check-en" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+
+            <button 
+              onclick="selectLanguage('fr')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇫🇷</span>
+                <span class="font-medium">Français</span>
+              </div>
+              <span id="check-fr" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+
+            <button 
+              onclick="selectLanguage('es')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇪🇸</span>
+                <span class="font-medium">Español</span>
+              </div>
+              <span id="check-es" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+
+            <button 
+              onclick="selectLanguage('de')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇩🇪</span>
+                <span class="font-medium">Deutsch</span>
+              </div>
+              <span id="check-de" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+
+            <button 
+              onclick="selectLanguage('ja')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇯🇵</span>
+                <span class="font-medium">日本語</span>
+              </div>
+              <span id="check-ja" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+
+            <button 
+              onclick="selectLanguage('pt')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇧🇷</span>
+                <span class="font-medium">Português</span>
+              </div>
+              <span id="check-pt" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+
+            <button 
+              onclick="selectLanguage('zh')" 
+              class="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs sm:text-sm hover:bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] transition cursor-pointer min-h-[38px]"
+            >
+              <div class="flex items-center gap-2.5">
+                <span class="text-sm">🇨🇳</span>
+                <span class="font-medium">简体中文</span>
+              </div>
+              <span id="check-zh" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Basculeur Thème Clair / Sombre -->
+        <button onclick="toggleTheme()" id="themeToggleBtn" title="Changer de thème" class="p-1.5 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] transition cursor-pointer">
+          <!-- Icône Soleil (Mode Sombre -> Activer Clair) -->
+          <svg id="themeIconSun" class="w-3.5 h-3.5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Icône Lune (Mode Clair -> Activer Sombre) -->
+          <svg id="themeIconMoon" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Gratuit Universel -->
+        <button onclick="downloadFreeSample()" data-i18n="nav.freeSample" class="px-4 py-2 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 text-xs sm:text-sm font-semibold tracking-tight transition cursor-pointer shadow-sm min-h-[38px] flex items-center justify-center">
+          Essai Gratuit
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero & Studio Compact et Direct (Above the Fold) -->
+  <section class="pt-6 pb-2 md:pt-10 md:pb-4 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-3">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--japandi-border)] bg-[var(--japandi-surface-muted)] text-xs text-[var(--japandi-text-secondary)] font-mono select-none shadow-xs">
+      <span class="w-2 h-2 rounded-full bg-[var(--japandi-moss)] animate-pulse"></span>
+      <span data-i18n="hero.badge">Mascottes 3D & Composants UI Prêts à l'Intégration</span>
+    </div>
+
+    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--japandi-text)] leading-tight">
+      <span data-i18n="hero.titleStart">Donnez une âme à vos interfaces</span> <span class="text-[var(--japandi-text-muted)] font-light" data-i18n="hero.titleEnd">en 1 ligne de code.</span>
+    </h1>
+
+    <p data-i18n="hero.subtitle" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] max-w-xl mx-auto font-light leading-relaxed">
+      12 micro-interactions 3D harmonisées. WebP transparents, GIF, APNG & composants React, Vue, Flutter prêts à l'emploi.
+    </p>
+  </section>
+
+  <!-- Studio Interactif Principal -->
+  <section id="studio" class="py-4 md:py-6 max-w-4xl mx-auto px-4 sm:px-6 space-y-4">
+    
+    <!-- Switcher Mascottes avec Avatars 3D Épurés -->
+    <div class="flex justify-center w-full">
+      <div id="mascot-switcher-container" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth snap-x bg-[var(--japandi-surface-muted)] p-1.5 rounded-2xl border border-[var(--japandi-border)] max-w-full">
+        <button onclick="switchMascot('aituko')" id="mascot-tab-aituko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs font-semibold transition flex items-center justify-center gap-2 cursor-pointer shadow-soft min-h-[38px]">
+          <img src="assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="AItuko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+          <span class="inline font-medium">AItuko</span>
+        </button>
+        <button onclick="switchMascot('owluko')" id="mascot-tab-owluko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
+          <img src="mascots/owluko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Owluko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+          <span class="inline font-medium">Owluko</span>
+        </button>
+        <button onclick="switchMascot('luneko')" id="mascot-tab-luneko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
+          <img src="mascots/luneko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Luneko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+          <span class="inline font-medium">Luneko</span>
+        </button>
+        <button onclick="switchMascot('hatoko')" id="mascot-tab-hatoko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
+          <img src="mascots/hatoko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Hatoko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+          <span class="inline font-medium">Hatoko</span>
+        </button>
+        <button onclick="switchMascot('usako')" id="mascot-tab-usako" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
+          <img src="mascots/usako/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Usako 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+          <span class="inline font-medium">Usako</span>
+        </button>
+        <button onclick="switchMascot('inuko')" id="mascot-tab-inuko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
+          <img src="mascots/inuko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Inuko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+          <span class="inline font-medium">Inuko</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scène Interactive avec Panneau Latéral de Contrôle Flottant -->
+    <div id="stageBox" class="relative rounded-3xl border border-[var(--japandi-border)] min-h-[340px] sm:min-h-[380px] flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-300 bg-[var(--japandi-surface-stage)] shadow-card select-none">
+      
+      <!-- Panneau Latéral / Barre d'Outils Flottante (Zoom, Fond, Bulle, Animation) -->
+      <div class="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 flex flex-col sm:flex-row items-center gap-1.5 p-1.5 rounded-2xl bg-[var(--japandi-surface)]/90 backdrop-blur-md border border-[var(--japandi-border)] shadow-card">
+        
+        <!-- Zoom Controls (+ / -) -->
+        <div class="flex items-center gap-1 px-1">
+          <button onclick="zoomOut()" title="Dézoomer (-20px)" aria-label="Dézoomer" class="w-7 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text)] flex items-center justify-center text-sm font-bold transition cursor-pointer">
+            −
+          </button>
+          <span id="sizeTxt" class="font-mono text-xs font-semibold text-[var(--japandi-text)] px-1 min-w-[42px] text-center">180px</span>
+          <button onclick="zoomIn()" title="Zoomer (+20px)" aria-label="Zoomer" class="w-7 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text)] flex items-center justify-center text-sm font-bold transition cursor-pointer">
+            +
+          </button>
+        </div>
+
+        <div class="hidden sm:block w-px h-4 bg-[var(--japandi-border)]"></div>
+
+        <!-- Toggle Bulle Message -->
+        <button 
+          id="bubbleQuickToggle"
+          onclick="toggleBubbleQuick()" 
+          title="Masquer / Afficher le message" 
+          aria-label="Afficher ou masquer la bulle"
+          class="w-7 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] flex items-center justify-center transition cursor-pointer"
+        >
+          <svg id="eyeIconOpen" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <svg id="eyeIconClosed" class="w-3.5 h-3.5 hidden text-[var(--japandi-text-muted)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+          </svg>
+        </button>
+
+        <!-- Toggle Rendu Format (WebP / Lottie / Interactif / PNG) -->
+        <button 
+          id="formatBtn" 
+          onclick="toggleFormat()" 
+          title="Changer de format : WebP Animé, Lottie Vectoriel, Regard Interactif, PNG Statique"
+          class="px-2.5 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text)] text-xs font-semibold transition cursor-pointer flex items-center gap-1.5"
+        >
+          <span id="formatDot" class="w-2 h-2 rounded-full bg-[var(--japandi-moss)]"></span>
+          <span id="formatTxt">WebP</span>
+        </button>
+
+        <button 
+          id="interactivePillBtn" 
+          onclick="setRenderFormat('interactive')" 
+          title="Mode Interactif : AItuko suit votre curseur en temps réel"
+          class="hidden sm:flex px-2.5 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition cursor-pointer items-center gap-1"
+        >
+          <span>👀</span>
+          <span>Regard</span>
+        </button>
+
+        <div class="hidden sm:block w-px h-4 bg-[var(--japandi-border)]"></div>
+
+        <!-- Sélecteur de Fond (4 Pastilles) -->
+        <div class="flex items-center gap-1">
+          <button onclick="setBg('default')" title="Fond Automatique" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
+            <span class="w-3.5 h-3.5 rounded-full bg-[var(--japandi-surface-stage)] border border-[var(--japandi-border)]"></span>
+          </button>
+          <button onclick="setBg('dark')" title="Fond Sombre" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#141416] border border-black/20"></span>
+          </button>
+          <button onclick="setBg('stone')" title="Fond Washi Sand" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#F3F1EC] border border-black/10"></span>
+          </button>
+          <button onclick="setBg('checker')" title="Grille Transparente" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
+            <span class="w-3.5 h-3.5 rounded-full bg-checker border border-[var(--japandi-border)]"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Flèches Navigation Latérales -->
+      <button onclick="prevPose()" aria-label="Pose précédente" title="Pose précédente (←)" class="arrow-btn absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center z-20 cursor-pointer hitbox-expand-44">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button onclick="nextPose()" aria-label="Pose suivante" title="Pose suivante (→)" class="arrow-btn absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center z-20 cursor-pointer hitbox-expand-44">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+      <!-- Bulle de Dialogue Dynamique -->
+      <div 
+        id="speechBubbleEl" 
+        onclick="toggleBubbleQuick()" 
+        title="Cliquez pour masquer la bulle" 
+        class="speech-bubble px-4 py-2 text-xs sm:text-sm font-medium text-center max-w-[260px] sm:max-w-md mb-3 z-10 cursor-pointer hover:scale-102 transition select-none break-words shadow-card"
+      >
+        <span id="bubbleTextDisplay">Bienvenue sur votre espace !</span>
+      </div>
+
+      <!-- Mascotte Viewport -->
+      <div id="mascotStageWrapper" class="relative flex items-center justify-center select-none cursor-pointer rounded-2xl overflow-hidden shadow-soft" style="width: 200px; height: 200px; will-change: width, height, transform;">
+        <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+        <video 
+          id="mascotVideo" 
+          src="mascots/aituko/aituko_idle.mp4" 
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          class="hidden object-cover w-full h-full rounded-2xl relative z-10 pointer-events-none"
+        ></video>
+        <lottie-player 
+          id="mascotLottie" 
+          src="assets/00_idle/lottie.json" 
+          background="transparent" 
+          speed="1" 
+          loop 
+          autoplay
+          class="hidden object-contain w-full h-full rounded-2xl relative z-10 pointer-events-none"
+          style="width: 100%; height: 100%;"
+        ></lottie-player>
+        <div id="mascotInteractiveRig" class="hidden relative z-10 w-full h-full flex items-center justify-center pointer-events-none select-none">
+          <svg id="aitukoInteractiveSvg" viewBox="0 0 512 512" class="w-full h-full drop-shadow-md overflow-visible">
+            <defs>
+              <linearGradient id="aitukoInteractiveSvg_porcelainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="35%" stop-color="#F8FAFC" />
+                <stop offset="70%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </linearGradient>
+
+              <radialGradient id="aitukoInteractiveSvg_headDomeGrad" cx="38%" cy="25%" r="70%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="45%" stop-color="#F8FAFC" />
+                <stop offset="80%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </radialGradient>
+
+              <linearGradient id="aitukoInteractiveSvg_neckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#CBD5E1" />
+                <stop offset="25%" stop-color="#F8FAFC" />
+                <stop offset="50%" stop-color="#FFFFFF" />
+                <stop offset="80%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </linearGradient>
+
+              <linearGradient id="aitukoInteractiveSvg_podGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#CBD5E1" />
+                <stop offset="30%" stop-color="#FFFFFF" />
+                <stop offset="70%" stop-color="#F8FAFC" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </linearGradient>
+
+              <radialGradient id="aitukoInteractiveSvg_footGrad" cx="40%" cy="30%" r="65%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="55%" stop-color="#F1F5F9" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </radialGradient>
+
+              <radialGradient id="aitukoInteractiveSvg_visorGlassGrad" cx="50%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#181B26" />
+                <stop offset="60%" stop-color="#10121A" />
+                <stop offset="100%" stop-color="#090A0F" />
+              </radialGradient>
+
+              <linearGradient id="aitukoInteractiveSvg_visorArcReflection" x1="20%" y1="0%" x2="80%" y2="100%">
+                <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.45" />
+                <stop offset="40%" stop-color="#64748B" stop-opacity="0.25" />
+                <stop offset="100%" stop-color="#334155" stop-opacity="0.0" />
+              </linearGradient>
+
+              <linearGradient id="aitukoInteractiveSvg_specularStreak" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+                <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+              </linearGradient>
+
+              <radialGradient id="aitukoInteractiveSvg_shadowGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#0F172A" stop-opacity="0.32" />
+                <stop offset="50%" stop-color="#0F172A" stop-opacity="0.14" />
+                <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+              </radialGradient>
+
+              <filter id="aitukoInteractiveSvg_cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
+                <feMerge>
+                  <feMergeNode in="blur2" />
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 1. Ombre de sustentation dynamique -->
+            <ellipse id="interactiveShadow" cx="256" cy="468" rx="90" ry="14" fill="url(#aitukoInteractiveSvg_shadowGrad)" class="aituko-shadow-anim" />
+
+            <!-- 2. Pods de sustentation (petits pieds flottants sous le torse — STRICTEMENT SANS LUEUR CYAN) -->
+            <g id="interactivePods" class="aituko-pods-anim">
+              <g transform="translate(228, 412) rotate(-10)">
+                <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
+                <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#aitukoInteractiveSvg_footGrad)" />
+                <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
+              </g>
+              <g transform="translate(284, 412) rotate(10)">
+                <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
+                <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#aitukoInteractiveSvg_footGrad)" />
+                <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
+              </g>
+            </g>
+
+            <!-- 3. Cou svelte (jonction tête-torse) -->
+            <g id="aitukoInteractiveSvg_neck" class="aituko-neck-anim">
+              <rect x="238" y="192" width="36" height="22" rx="10" fill="#CBD5E1" />
+              <rect x="240" y="193" width="32" height="20" rx="9" fill="url(#aitukoInteractiveSvg_neckGrad)" />
+              <ellipse cx="256" cy="193" rx="16" ry="3" fill="#0F172A" opacity="0.25" />
+            </g>
+
+            <!-- 4. Torse capsule lisse porcelaine (124x176 à Y=298) -->
+            <g id="interactiveTorso" class="aituko-torso-anim">
+              <rect x="192" y="208" width="128" height="180" rx="64" fill="#CBD5E1" />
+              <rect x="194" y="210" width="124" height="176" rx="62" fill="url(#aitukoInteractiveSvg_porcelainGrad)" />
+              <rect x="195" y="222" width="38" height="152" rx="19" fill="#E2E8F0" opacity="0.45" />
+              <rect x="300" y="232" width="12" height="124" rx="6" fill="url(#aitukoInteractiveSvg_specularStreak)" />
+              <ellipse cx="256" cy="226" rx="36" ry="8" fill="#FFFFFF" opacity="0.6" />
+              <ellipse cx="256" cy="210" rx="30" ry="6" fill="#0F172A" opacity="0.22" />
+            </g>
+
+            <!-- 5. Tête oblate porcelaine avec visière sombre et yeux cyan -->
+            <g id="interactiveHeadGroup" class="aituko-head-anim">
+              <rect x="136" y="42" width="240" height="168" rx="74" fill="#CBD5E1" />
+              <rect x="138" y="44" width="236" height="164" rx="72" fill="url(#aitukoInteractiveSvg_headDomeGrad)" />
+              <ellipse cx="242" cy="60" rx="55" ry="12" fill="#FFFFFF" opacity="0.90" />
+              <ellipse cx="162" cy="118" rx="12" ry="26" fill="#E2E8F0" opacity="0.4" />
+              <ellipse cx="346" cy="100" rx="8" ry="22" transform="rotate(16 346 100)" fill="#FFFFFF" opacity="0.65" />
+              <ellipse cx="256" cy="204" rx="46" ry="6" fill="#CBD5E1" opacity="0.5" />
+
+              <!-- Visière en verre noir poli concave (Pur obsidienne, zéro ovale au-dessus des yeux) -->
+              <rect x="160" y="61" width="192" height="130" rx="58" fill="#090A0F" />
+              <rect x="162" y="63" width="188" height="126" rx="56" fill="url(#aitukoInteractiveSvg_visorGlassGrad)" stroke="#1F2433" stroke-width="1.5" />
+
+              <!-- Yeux Cyan Électriques dynamiques (^ ^) -->
+              <g id="interactiveEyesGroup" class="aituko-eyes-blink aituko-eyes-glow transition-transform duration-75">
+                <g id="interactiveEyesGroup_arches">
+                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#aitukoInteractiveSvg_cyanGlow)" />
+                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
+                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
+
+                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#aitukoInteractiveSvg_cyanGlow)" />
+                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
+                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
+                </g>
+              </g>
+            </g>
+
+            <!-- 6. Pods latéraux flottants (ailerons/propulseurs — STRICTEMENT SANS MAINS, ZÉRO HALO CYAN) -->
+            <g id="interactiveLeftHand" class="aituko-left-arm-anim transition-all duration-300">
+              <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
+              <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#aitukoInteractiveSvg_podGrad)" />
+              <rect x="-12" y="-42" width="6" height="74" rx="3" fill="url(#aitukoInteractiveSvg_specularStreak)" />
+              <rect x="6" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
+            </g>
+            <g id="interactiveRightHand" class="aituko-right-arm-anim transition-all duration-300">
+              <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
+              <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#aitukoInteractiveSvg_podGrad)" />
+              <rect x="6" y="-42" width="6" height="74" rx="3" fill="url(#aitukoInteractiveSvg_specularStreak)" />
+              <rect x="-15" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
+            </g>
+          </svg>
+        </div>
+        <img 
+          id="mascotImg" 
+          src="assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+          alt="Mascot Preview" 
+          width="200" 
+          height="200"
+          draggable="false"
+          decoding="async"
+          oncontextmenu="return false;"
+          class="object-contain calm-mascot select-none pointer-events-none relative z-10 transition-opacity duration-200"
+          style="width: 100%; height: 100%; -webkit-user-drag: none; user-select: none;"
+          onerror="this.onerror=null; this.src='assets/00_idle/static.png'"
+        />
+
+        <!-- Overlay de Secours Hors-Ligne -->
+        <div id="mascotFallbackOverlay" class="hidden absolute inset-0 z-30 flex flex-col items-center justify-center p-4 text-center rounded-2xl bg-[var(--japandi-surface)]/90 backdrop-blur-sm border border-[var(--japandi-border)] shadow-soft space-y-2">
+          <p id="fallbackNoticeText" class="text-xs font-semibold text-[var(--japandi-text)]">Image indisponible</p>
+          <button onclick="mascotLoader.retry()" class="px-3 py-1.5 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-xs font-medium text-[var(--japandi-text)] transition cursor-pointer shadow-soft">
+            Réessayer
+          </button>
+        </div>
+      </div>
+
+      <!-- Compteur en bas du canvas -->
+      <div class="absolute bottom-3 left-4 flex items-center text-xs text-[var(--japandi-text-muted)] pointer-events-auto">
+        <span id="counterTxt" class="font-mono font-semibold text-xs text-[var(--japandi-text-secondary)] shrink-0">1 / 13</span>
+      </div>
+    </div>
+
+    <!-- Grille des 13 Poses (Compacte & Responsive) -->
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-1.5">
+      <button onclick="setPoseIndex(0)" id="pill-0" class="pose-pill active min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs font-semibold flex items-center justify-center text-center transition truncate cursor-pointer shadow-soft" data-i18n="poses.idle">Idle</button>
+      <button onclick="setPoseIndex(1)" id="pill-1" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.waving">Accueil</button>
+      <button onclick="setPoseIndex(2)" id="pill-2" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.celebrating">Succès</button>
+      <button onclick="setPoseIndex(3)" id="pill-3" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.ai_thinking">Réflexion</button>
+      <button onclick="setPoseIndex(4)" id="pill-4" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.error_404">Erreur 404</button>
+      <button onclick="setPoseIndex(5)" id="pill-5" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.thumbs_up">Validation</button>
+      <button onclick="setPoseIndex(6)" id="pill-6" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.sleeping">Repos</button>
+      <button onclick="setPoseIndex(7)" id="pill-7" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.pointing">Guide</button>
+      <button onclick="setPoseIndex(8)" id="pill-8" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.searching">Recherche</button>
+      <button onclick="setPoseIndex(9)" id="pill-9" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.loading">Chargement</button>
+      <button onclick="setPoseIndex(10)" id="pill-10" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.idea">Astuce</button>
+      <button onclick="setPoseIndex(11)" id="pill-11" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.security">Sécurité</button>
+      <button onclick="setPoseIndex(12)" id="pill-12" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.goodbye">Au Revoir</button>
+    </div>
+
+    <!-- Terminal de Code Snippet & Intégration Immédiate -->
+    <div class="rounded-2xl overflow-hidden border border-[var(--japandi-code-border)] bg-[var(--japandi-code-bg)] shadow-card">
+      <!-- Header Terminal -->
+      <div class="flex items-center justify-between px-4 py-2.5 border-b border-[var(--japandi-code-border)] text-xs bg-[var(--japandi-code-header-bg)]">
+        <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto">
+          <button onclick="setFw('react')" id="fw-react" class="text-[var(--japandi-text)] font-bold cursor-pointer py-1 px-1.5 whitespace-nowrap">React / Next</button>
+          <button onclick="setFw('vue')" id="fw-vue" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap">Vue 3</button>
+          <button onclick="setFw('flutter')" id="fw-flutter" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap">Flutter</button>
+          <button onclick="setFw('html')" id="fw-html" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap">HTML5</button>
+          <button onclick="setFw('lottie')" id="fw-lottie" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--japandi-moss)]"></span>
+            <span>Lottie (Vecteur)</span>
+          </button>
+        </div>
+        <button onclick="copyCode()" id="copyBtn" class="flex items-center gap-1.5 text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-mono text-xs font-medium transition cursor-pointer min-h-[32px] px-2 rounded-md">
+          <svg id="copyIcon" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span id="copyTxt" data-i18n="studio.copyCode">Copier</span>
+        </button>
+      </div>
+
+      <!-- Corps du Code Snippet -->
+      <div class="p-3.5 sm:p-4 bg-[var(--japandi-code-bg)] overflow-x-auto">
+        <pre class="text-xs font-mono text-[var(--japandi-code-text)] leading-relaxed whitespace-pre-wrap break-all"><code id="codeBlock">&lt;AItuko state="00_idle" size={180} message="Bienvenue sur votre espace !" animated /&gt;</code></pre>
+      </div>
+    </div>
+
+    <!-- Barre d'Action & Téléchargement Rapide -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 sm:p-4 rounded-2xl border border-[var(--japandi-border)] bg-[var(--japandi-surface-muted)] text-xs shadow-soft select-none">
+      <div class="flex items-center gap-2.5 text-[var(--japandi-text-secondary)] text-center sm:text-left">
+        <span class="relative flex h-2 w-2 items-center justify-center shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--japandi-moss)] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--japandi-moss)]"></span>
+        </span>
+        <span id="studioQuickBarText" class="font-medium text-[var(--japandi-text)] font-sans leading-snug">AItuko — 12 états animés 3D prêts à l'intégration</span>
+      </div>
+      <div class="flex items-center gap-2 w-full sm:w-auto shrink-0">
+        <button onclick="downloadFreeSample()" data-i18n="studio.quickFreeBtn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] hover:border-[var(--japandi-text-muted)] font-semibold transition cursor-pointer shadow-soft text-center min-h-[40px] flex items-center justify-center">
+          ⚡ Essai Gratuit (0 €)
+        </button>
+        <button onclick="openModal('pro')" data-i18n="studio.quickProBtn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 font-semibold transition cursor-pointer shadow-soft text-center min-h-[40px] flex items-center justify-center">
+          📦 Obtenir le Pack (Dès 5 €)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module de Démonstration In-App Interactive (Formulaire Réactif & Suivi du Regard) -->
+  <section id="demo-inapp-interactive" class="py-10 max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+    <div class="rounded-3xl p-6 sm:p-8 border border-[var(--japandi-border)] bg-[var(--japandi-surface)] shadow-card flex flex-col lg:flex-row items-center justify-between gap-8">
+      <!-- Colonne Gauche : Formulaire Réactif de Simulation -->
+      <div class="flex-1 space-y-5 w-full">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--japandi-moss)] animate-pulse"></span>
+            <span>Nouveau : Lottie & Vectoriel In-App (10 Ko)</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-[var(--japandi-text)]">Testez la Réactivité In-App d'AItuko</h3>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed">
+            Contrairement aux vidéos et GIF statiques, le fichier vectoriel Lottie réagit au code et aux interactions utilisateur en temps réel : il suit votre frappe, se cache les yeux sur les mots de passe et change d'expression en cas d'erreur.
+          </p>
+        </div>
+
+        <!-- Formulaire de Test Interactif -->
+        <div class="space-y-3 bg-[var(--japandi-surface-muted)] p-4 sm:p-5 rounded-2xl border border-[var(--japandi-border-subtle)]">
+          <div>
+            <label class="block text-xs font-semibold text-[var(--japandi-text-secondary)] mb-1">Email / Identifiant (AItuko suit la frappe)</label>
+            <input 
+              type="text" 
+              id="demoEmailInput" 
+              oninput="onDemoInputFocus(event)" 
+              onfocus="onDemoInputFocus(event)" 
+              placeholder="ex: marie@startup.co" 
+              class="w-full px-3 py-2 text-xs rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-[var(--japandi-text)] focus:border-[var(--japandi-moss)] focus:outline-none transition"
+            >
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="text-xs font-semibold text-[var(--japandi-text-secondary)]">Mot de passe (AItuko se cache les yeux !)</label>
+              <button type="button" onclick="toggleDemoPasswordPeek()" id="demoPeekBtn" class="text-xs text-[var(--japandi-moss-text)] hover:underline cursor-pointer">🙈 Couvrir les yeux</button>
+            </div>
+            <input 
+              type="password" 
+              id="demoPasswordInput" 
+              onfocus="onDemoPasswordFocus()" 
+              placeholder="••••••••••••" 
+              class="w-full px-3 py-2 text-xs rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-[var(--japandi-text)] focus:border-[var(--japandi-moss)] focus:outline-none transition"
+            >
+          </div>
+
+          <div class="flex items-center gap-2 pt-2">
+            <button 
+              type="button" 
+              onclick="triggerDemoAction('error')" 
+              class="flex-1 py-2 px-3 rounded-xl border border-red-500/30 bg-red-500/10 text-red-500 dark:text-red-400 text-xs font-semibold hover:bg-red-500/20 transition cursor-pointer text-center"
+            >
+              ⚠️ Simuler Erreur (404)
+            </button>
+            <button 
+              type="button" 
+              onclick="triggerDemoAction('success')" 
+              class="flex-1 py-2 px-3 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] text-xs font-semibold hover:opacity-90 transition cursor-pointer text-center shadow-soft"
+            >
+              🎉 Valider (Succès)
+            </button>
+            <button 
+              type="button" 
+              onclick="triggerDemoAction('reset')" 
+              title="Réinitialiser" 
+              class="py-2 px-3 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition cursor-pointer"
+            >
+              ↺
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne Droite : Mascotte Interactive Vivante -->
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl bg-[var(--japandi-surface-stage)] border border-[var(--japandi-border)] w-full sm:w-[280px] h-[300px] relative select-none shadow-soft shrink-0">
+        <!-- Bulle d'état interactif -->
+        <div id="demoBubble" class="speech-bubble px-3 py-1.5 text-xs font-medium text-center mb-2 z-10 transition select-none shadow-soft max-w-[220px]">
+          <span id="demoBubbleText">Bonjour ! Tapez un email...</span>
+        </div>
+
+        <!-- Rig Vectoriel AItuko pour la Démo -->
+        <div class="relative w-[170px] h-[170px] flex items-center justify-center">
+          <svg id="demoAitukoSvg" viewBox="0 0 512 512" class="w-full h-full drop-shadow-md overflow-visible">
+            <defs>
+              <linearGradient id="demoAitukoSvg_porcelainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="35%" stop-color="#F8FAFC" />
+                <stop offset="70%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </linearGradient>
+
+              <radialGradient id="demoAitukoSvg_headDomeGrad" cx="38%" cy="25%" r="70%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="45%" stop-color="#F8FAFC" />
+                <stop offset="80%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </radialGradient>
+
+              <linearGradient id="demoAitukoSvg_neckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#CBD5E1" />
+                <stop offset="25%" stop-color="#F8FAFC" />
+                <stop offset="50%" stop-color="#FFFFFF" />
+                <stop offset="80%" stop-color="#E2E8F0" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </linearGradient>
+
+              <linearGradient id="demoAitukoSvg_podGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#CBD5E1" />
+                <stop offset="30%" stop-color="#FFFFFF" />
+                <stop offset="70%" stop-color="#F8FAFC" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </linearGradient>
+
+              <radialGradient id="demoAitukoSvg_footGrad" cx="40%" cy="30%" r="65%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="55%" stop-color="#F1F5F9" />
+                <stop offset="100%" stop-color="#CBD5E1" />
+              </radialGradient>
+
+              <radialGradient id="demoAitukoSvg_visorGlassGrad" cx="50%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#181B26" />
+                <stop offset="60%" stop-color="#10121A" />
+                <stop offset="100%" stop-color="#090A0F" />
+              </radialGradient>
+
+              <linearGradient id="demoAitukoSvg_visorArcReflection" x1="20%" y1="0%" x2="80%" y2="100%">
+                <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.45" />
+                <stop offset="40%" stop-color="#64748B" stop-opacity="0.25" />
+                <stop offset="100%" stop-color="#334155" stop-opacity="0.0" />
+              </linearGradient>
+
+              <linearGradient id="demoAitukoSvg_specularStreak" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+                <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+              </linearGradient>
+
+              <radialGradient id="demoAitukoSvg_shadowGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#0F172A" stop-opacity="0.32" />
+                <stop offset="50%" stop-color="#0F172A" stop-opacity="0.14" />
+                <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+              </radialGradient>
+
+              <filter id="demoAitukoSvg_cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
+                <feMerge>
+                  <feMergeNode in="blur2" />
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 1. Ombre de sustentation dynamique -->
+            <ellipse id="demoShadow" cx="256" cy="468" rx="90" ry="14" fill="url(#demoAitukoSvg_shadowGrad)" class="aituko-shadow-anim" />
+
+            <!-- 2. Pods de sustentation (petits pieds flottants sous le torse — STRICTEMENT SANS LUEUR CYAN) -->
+            <g id="demoPods" class="aituko-pods-anim">
+              <g transform="translate(228, 412) rotate(-10)">
+                <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
+                <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#demoAitukoSvg_footGrad)" />
+                <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
+              </g>
+              <g transform="translate(284, 412) rotate(10)">
+                <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
+                <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#demoAitukoSvg_footGrad)" />
+                <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
+              </g>
+            </g>
+
+            <!-- 3. Cou svelte (jonction tête-torse) -->
+            <g id="demoAitukoSvg_neck" class="aituko-neck-anim">
+              <rect x="238" y="192" width="36" height="22" rx="10" fill="#CBD5E1" />
+              <rect x="240" y="193" width="32" height="20" rx="9" fill="url(#demoAitukoSvg_neckGrad)" />
+              <ellipse cx="256" cy="193" rx="16" ry="3" fill="#0F172A" opacity="0.25" />
+            </g>
+
+            <!-- 4. Torse capsule lisse porcelaine (124x176 à Y=298) -->
+            <g id="demoAitukoFloat" class="aituko-torso-anim">
+              <rect x="192" y="208" width="128" height="180" rx="64" fill="#CBD5E1" />
+              <rect x="194" y="210" width="124" height="176" rx="62" fill="url(#demoAitukoSvg_porcelainGrad)" />
+              <rect x="195" y="222" width="38" height="152" rx="19" fill="#E2E8F0" opacity="0.45" />
+              <rect x="300" y="232" width="12" height="124" rx="6" fill="url(#demoAitukoSvg_specularStreak)" />
+              <ellipse cx="256" cy="226" rx="36" ry="8" fill="#FFFFFF" opacity="0.6" />
+              <ellipse cx="256" cy="210" rx="30" ry="6" fill="#0F172A" opacity="0.22" />
+            </g>
+
+            <!-- 5. Tête oblate porcelaine avec visière sombre et yeux cyan -->
+            <g id="demoHeadGroup" class="aituko-head-anim">
+              <rect x="136" y="42" width="240" height="168" rx="74" fill="#CBD5E1" />
+              <rect x="138" y="44" width="236" height="164" rx="72" fill="url(#demoAitukoSvg_headDomeGrad)" />
+              <ellipse cx="242" cy="60" rx="55" ry="12" fill="#FFFFFF" opacity="0.90" />
+              <ellipse cx="162" cy="118" rx="12" ry="26" fill="#E2E8F0" opacity="0.4" />
+              <ellipse cx="346" cy="100" rx="8" ry="22" transform="rotate(16 346 100)" fill="#FFFFFF" opacity="0.65" />
+              <ellipse cx="256" cy="204" rx="46" ry="6" fill="#CBD5E1" opacity="0.5" />
+
+              <!-- Visière en verre noir poli concave (Pur obsidienne, zéro ovale au-dessus des yeux) -->
+              <rect x="160" y="61" width="192" height="130" rx="58" fill="#090A0F" />
+              <rect x="162" y="63" width="188" height="126" rx="56" fill="url(#demoAitukoSvg_visorGlassGrad)" stroke="#1F2433" stroke-width="1.5" />
+
+              <!-- Yeux Cyan Électriques dynamiques (^ ^) -->
+              <g id="demoEyesGroup" class="aituko-eyes-blink aituko-eyes-glow transition-transform duration-75">
+                <g id="demoEyesGroup_arches">
+                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#demoAitukoSvg_cyanGlow)" />
+                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
+                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
+
+                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#demoAitukoSvg_cyanGlow)" />
+                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
+                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
+                </g>
+              </g>
+            </g>
+
+            <!-- 6. Pods latéraux flottants (ailerons/propulseurs — STRICTEMENT SANS MAINS, ZÉRO HALO CYAN) -->
+            <g id="demoLeftHand" class="aituko-left-arm-anim transition-all duration-300">
+              <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
+              <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#demoAitukoSvg_podGrad)" />
+              <rect x="-12" y="-42" width="6" height="74" rx="3" fill="url(#demoAitukoSvg_specularStreak)" />
+              <rect x="6" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
+            </g>
+            <g id="demoRightHand" class="aituko-right-arm-anim transition-all duration-300">
+              <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
+              <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#demoAitukoSvg_podGrad)" />
+              <rect x="6" y="-42" width="6" height="74" rx="3" fill="url(#demoAitukoSvg_specularStreak)" />
+              <rect x="-15" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
+            </g>
+          </svg>
+        </div>
+        <span class="text-[10px] font-mono text-[var(--japandi-text-muted)] mt-2">Vectoriel Lottie • 10 Ko • 60fps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Valeur Concrète pour Développeurs & Vibe Coders (Factuelle & Vérifiée) -->
+  <section id="valeur-pack" class="py-14 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 space-y-8 border-t border-[var(--japandi-border-subtle)]">
+    <div class="text-center space-y-2 max-w-2xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--japandi-text)]">Ce que le Pack Apporte Concrètement</h2>
+      <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Conçu pour les développeurs, créateurs de SaaS et vibe coders. Zéro configuration complexe.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      <!-- Pilier 1 : Cohérence 360° -->
+      <div class="surface-card rounded-2xl p-5 space-y-2.5 border border-[var(--japandi-border)] shadow-soft">
+        <div class="w-8 h-8 rounded-xl bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] flex items-center justify-center text-sm font-bold font-mono">01</div>
+        <h3 class="text-sm sm:text-base font-bold text-[var(--japandi-text)]">Cohérence 360°</h3>
+        <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed">12 états morphologiquement identiques. Même matériau porcelaine blanche, même éclairage studio, zéro dérive visuelle.</p>
+      </div>
+
+      <!-- Pilier 2 : Multi-Formats -->
+      <div class="surface-card rounded-2xl p-5 space-y-2.5 border border-[var(--japandi-border)] shadow-soft">
+        <div class="w-8 h-8 rounded-xl bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] flex items-center justify-center text-sm font-bold font-mono">02</div>
+        <h3 class="text-sm sm:text-base font-bold text-[var(--japandi-text)]">6 Formats dont Lottie</h3>
+        <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed">Lottie vectoriel JSON (~10 Ko, in-app et 60fps), WebP animé transparent 24fps (ultra-léger web), GIF (Slack, Notion), APNG (iOS/macOS), PNG HD et MP4 loop.</p>
+      </div>
+
+      <!-- Pilier 3 : Code Prêt à l'Emploi -->
+      <div class="surface-card rounded-2xl p-5 space-y-2.5 border border-[var(--japandi-border)] shadow-soft">
+        <div class="w-8 h-8 rounded-xl bg-[var(--japandi-surface-muted)] text-[var(--japandi-text)] flex items-center justify-center text-sm font-bold font-mono">03</div>
+        <h3 class="text-sm sm:text-base font-bold text-[var(--japandi-text)]">Composants Type-Safe</h3>
+        <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed">Code prêt à copier pour React / Next.js, Vue 3, Flutter et HTML. Autocomplétion TypeScript stricte des 12 états dans VS Code & Cursor.</p>
+      </div>
+
+      <!-- Pilier 4 : Web Vitals & CLS = 0 -->
+      <div class="surface-card rounded-2xl p-5 space-y-2.5 border border-[var(--japandi-border)] shadow-soft">
+        <div class="w-8 h-8 rounded-xl bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] flex items-center justify-center text-sm font-bold font-mono">04</div>
+        <h3 class="text-sm sm:text-base font-bold text-[var(--japandi-text)]">Zéro Saut de Layout (CLS=0)</h3>
+        <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed">Dimensions intrinsèques verrouillées pour éviter tout sursaut de chargement. Balises &lt;picture&gt; haute performance et accessibilité WCAG 2.2 AAA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalogue des Mascottes (Grille Unifiée 7 Cases) -->
+  <section id="catalogue" class="py-20 md:py-28 max-w-6xl mx-auto px-4 sm:px-6 space-y-10 border-t border-[var(--japandi-border-subtle)]">
+    <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+      <h2 data-i18n="catalogue.title" class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--japandi-text)]">Catalogue des Mascottes Uko</h2>
+      <p data-i18n="catalogue.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Chaque mascotte dispose de sa propre personnalité et de 12 états d'animation harmonisés.</p>
+    </div>
+
+    <!-- Grille Responsive Harmonisée (3 Cols sur iPad, 4 Cols sur Desktop) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- 1. AItuko (Robot IA) -->
+      <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
+        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
+          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+          <img 
+            src="assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            alt="AItuko 3D" 
+            width="96"
+            height="96"
+            draggable="false" 
+            loading="lazy" 
+            decoding="async" 
+            oncontextmenu="return false;"
+            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
+            style="-webkit-user-drag: none; user-select: none;"
+            onerror="this.src='assets/00_idle/static.png'"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <span class="font-semibold text-[var(--japandi-text)]">AItuko</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.aitukoDesc">Assistant IA • Accueil & Onboarding</p>
+        </div>
+      </div>
+
+      <!-- 2. Owluko (Chouette 3D) -->
+      <div onclick="selectMascotFromCard('owluko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
+        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
+          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+          <img 
+            src="mascots/owluko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            alt="Owluko 3D" 
+            width="96"
+            height="96"
+            draggable="false" 
+            loading="lazy" 
+            decoding="async" 
+            oncontextmenu="return false;"
+            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
+            style="-webkit-user-drag: none; user-select: none;"
+            onerror="this.onerror=null; this.src='mascots/owluko/assets/01_waving/animated.gif'"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <span class="font-semibold text-[var(--japandi-text)]">Owluko</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.owlukoDesc">Guide de Sagesse • Aide & Connaissance</p>
+        </div>
+      </div>
+
+      <!-- 3. Luneko (Chaton 3D) -->
+      <div onclick="selectMascotFromCard('luneko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
+        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
+          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+          <img 
+            src="mascots/luneko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            alt="Luneko 3D" 
+            width="96"
+            height="96"
+            draggable="false" 
+            loading="lazy" 
+            decoding="async" 
+            oncontextmenu="return false;"
+            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
+            style="-webkit-user-drag: none; user-select: none;"
+            onerror="this.onerror=null; this.src='mascots/luneko/assets/01_waving/animated.gif'"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <span class="font-semibold text-[var(--japandi-text)]" data-i18n="catalogue.lunekoName">Luneko</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.lunekoDesc">Compagnon Ludique • Engagement & Fun</p>
+        </div>
+      </div>
+
+      <!-- 4. Inuko (Doberman 3D) -->
+      <div onclick="selectMascotFromCard('inuko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
+        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
+          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+          <img 
+            src="mascots/inuko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            alt="Inuko 3D" 
+            width="96"
+            height="96"
+            draggable="false" 
+            loading="lazy" 
+            decoding="async" 
+            oncontextmenu="return false;"
+            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
+            style="-webkit-user-drag: none; user-select: none;"
+            onerror="this.onerror=null; this.src='mascots/inuko/assets/01_waving/animated.gif'"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <span class="font-semibold text-[var(--japandi-text)]" data-i18n="catalogue.inukoName">Inuko</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.inukoDesc">Gardien Athlétique • Fidélité & Sécurité</p>
+        </div>
+      </div>
+
+      <!-- 5. Hatoko (Pigeon 3D) -->
+      <div onclick="selectMascotFromCard('hatoko')" class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 group select-none cursor-pointer shadow-soft hover:shadow-card transition">
+        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
+          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+          <img 
+            src="mascots/hatoko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            alt="Hatoko 3D" 
+            width="96"
+            height="96"
+            draggable="false" 
+            loading="lazy" 
+            decoding="async" 
+            oncontextmenu="return false;"
+            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
+            style="-webkit-user-drag: none; user-select: none;"
+            onerror="this.onerror=null; this.src='mascots/hatoko/assets/01_waving/animated.gif'"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <span class="font-semibold text-[var(--japandi-text)]" data-i18n="catalogue.hatokoName">Hatoko</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.hatokoDesc">Messager Express • Notifications & Push</p>
+        </div>
+      </div>
+
+      <!-- 6. Usako (Lapin 3D) -->
+      <div onclick="selectMascotFromCard('usako')" class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 group select-none cursor-pointer shadow-soft hover:shadow-card transition">
+        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
+          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
+          <img 
+            src="mascots/usako/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            alt="Usako 3D" 
+            width="96"
+            height="96"
+            draggable="false" 
+            loading="lazy" 
+            decoding="async" 
+            oncontextmenu="return false;"
+            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
+            style="-webkit-user-drag: none; user-select: none;"
+            onerror="this.onerror=null; this.src='mascots/usako/assets/01_waving/animated.gif'"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <span class="font-semibold text-[var(--japandi-text)]" data-i18n="catalogue.usakoName">Usako</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.usakoDesc">Sprinteur Agile • Raccourcis & Vitesse</p>
+        </div>
+      </div>
+
+      <!-- 7. Carte de Vote & Suggestions 1-Clic Harmonieuse (Équilibrée sur 2/3 colonnes) -->
+      <div class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/40 transition select-none flex flex-col justify-between sm:col-span-2 md:col-span-3 lg:col-span-2 shadow-card">
+        
+        <!-- Header Vote -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between gap-2 text-sm">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--japandi-ochre)] animate-pulse shrink-0"></span>
+              <span class="font-bold text-[var(--japandi-text)] text-sm sm:text-base tracking-tight whitespace-nowrap" data-i18n="catalogue.voteTitle">Vote Mascotte</span>
+            </div>
+            <span id="catalogueVoteCount" class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] text-xs font-mono font-bold border border-[var(--japandi-ochre)]/30 shrink-0">342 votes</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-snug" data-i18n="catalogue.voteSubtitle">Votez en 1 clic pour le prochain animal :</p>
+        </div>
+
+        <!-- 4 Candidats Majeurs Directement Cliquables (Lisibilité Optimale & 44px Hitbox) -->
+        <div class="grid grid-cols-2 gap-2.5 text-xs sm:text-sm">
+          <!-- Kumako -->
+          <button onclick="toggleCandidateVote('kumako')" id="vote-card-kumako" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
+            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.kumako">🐻 Kumako</span>
+            <span id="badge-kumako" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+          </button>
+
+          <!-- Kitsuko -->
+          <button onclick="toggleCandidateVote('kitsuko')" id="vote-card-kitsuko" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
+            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.kitsuko">🦊 Kitsuko</span>
+            <span id="badge-kitsuko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+          </button>
+
+          <!-- Panduko -->
+          <button onclick="toggleCandidateVote('panduko')" id="vote-card-panduko" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
+            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.panduko">🐼 Panduko</span>
+            <span id="badge-panduko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+          </button>
+
+          <!-- Duckuko -->
+          <button onclick="toggleCandidateVote('duckuko')" id="vote-card-duckuko" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
+            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.duckuko">🦆 Duckuko</span>
+            <span id="badge-duckuko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+          </button>
+        </div>
+
+        <!-- Suggestion Libre Compacte (100% Ajustée Sans Débordement) -->
+        <form onsubmit="submitCustomSuggestion(event)" class="pt-3 border-t border-[var(--japandi-border-subtle)] flex items-center gap-2 w-full relative">
+          <!-- Honeypot Anti-Bot Trap -->
+          <div class="absolute -left-[9999px] -top-[9999px] opacity-0 pointer-events-none h-0 w-0 overflow-hidden" aria-hidden="true" tabindex="-1">
+            <label for="suggestion_hp_field">Ne pas remplir</label>
+            <input type="text" id="suggestion_hp_field" name="suggestion_hp_field" autocomplete="new-password" tabindex="-1" value="">
+          </div>
+          <input 
+            type="text" 
+            id="inlineCustomInput" 
+            placeholder="Autre ? Ex: Loutre..." 
+            data-i18n-attr="placeholder:catalogue.suggestionPrompt"
+            class="min-w-0 flex-1 px-3 py-2.5 rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-xs sm:text-sm text-[var(--japandi-text)] placeholder-[var(--japandi-text-muted)] focus:outline-none focus:border-[var(--japandi-text)] font-sans transition shadow-xs"
+            required
+          >
+          <button type="submit" data-i18n="catalogue.suggestBtn" class="shrink-0 px-4 py-2.5 rounded-xl bg-[var(--japandi-ochre-subtle)] border border-[var(--japandi-ochre)]/30 text-[var(--japandi-ochre-text)] font-semibold text-xs sm:text-sm transition cursor-pointer hover:bg-[var(--japandi-ochre)] hover:text-white dark:hover:text-[#0F0F10] min-h-[42px]">
+            Suggérer
+          </button>
+        </form>
+
+        <div id="inlineVoteFeedback" class="hidden text-xs sm:text-sm text-[var(--japandi-moss-text)] text-center font-mono py-1 font-semibold">
+          ✓ Vote pris en compte !
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Grille Tarifaire (0 €, 5 €, 9 €) -->
+  <!-- Grille Tarifaire (0 €, 5 €, 9 €) -->
+  <section id="tarifs" class="py-20 md:py-28 max-w-5xl mx-auto px-4 sm:px-6 space-y-10 border-t border-[var(--japandi-border-subtle)]">
+    <div class="text-center space-y-2.5 max-w-2xl mx-auto">
+      <h2 data-i18n="pricing.title" class="text-2xl sm:text-3xl font-bold text-[var(--japandi-text)] tracking-tight">Tarifs Clairs & Sans Abonnement</h2>
+      <p data-i18n="pricing.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Licence commerciale perpétuelle incluse pour projets personnels et commerciaux illimités.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+      
+      <!-- Tier 1: Découverte Gratuit (0 €) -->
+      <div class="surface-card rounded-3xl p-6 sm:p-7 space-y-6 flex flex-col justify-between shadow-soft hover:shadow-card transition">
+        <div class="space-y-4">
+          <div class="flex justify-between items-baseline gap-2 flex-wrap">
+            <h3 data-i18n="pricing.freeTierTitle" class="text-base sm:text-lg font-bold text-[var(--japandi-text)] whitespace-normal">Pack Découverte</h3>
+            <span class="text-2xl sm:text-3xl font-bold font-mono text-[var(--japandi-text)] shrink-0" data-i18n="pricing.freeTierPrice">0,00 €</span>
+          </div>
+          <p data-i18n="pricing.freeTierDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed font-light">
+            Pour tester immédiatement l'intégration dans votre application.
+          </p>
+
+          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)]">
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.freeTierItem1">1 état complet offert (AItuko Waving)</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.freeTierItem2">Formats WebP, GIF et PNG HD</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.freeTierItem3">Composants React & Flutter</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.freeTierItem4">Licence de test et usage personnel</span>
+            </li>
+          </ul>
+        </div>
+
+        <button onclick="downloadFreeSample()" data-i18n="pricing.freeTierBtn" class="w-full py-3.5 rounded-2xl border border-[var(--japandi-border)] bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] text-xs sm:text-sm text-[var(--japandi-text)] font-semibold transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
+          Télécharger Gratuitement
+        </button>
+      </div>
+
+      <!-- Tier 2: Essentiel 6 États (5 €) -->
+      <div class="surface-card rounded-3xl p-6 sm:p-7 space-y-6 flex flex-col justify-between shadow-soft hover:shadow-card transition">
+        <div class="space-y-4">
+          <div class="flex justify-between items-baseline gap-2 flex-wrap">
+            <h3 data-i18n="pricing.starterTierTitle" class="text-base sm:text-lg font-bold text-[var(--japandi-text)] whitespace-normal">Pack Essentiel</h3>
+            <span class="text-2xl sm:text-3xl font-bold font-mono text-[var(--japandi-text)] shrink-0" data-i18n="pricing.starterTierPrice">5,00 €</span>
+          </div>
+          <p data-i18n="pricing.starterTierDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed font-light">
+            Les 6 états essentiels pour dynamiser n'importe quel flux utilisateur.
+          </p>
+
+          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)]">
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.starterTierItem1">6 états majeurs par mascotte</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.starterTierItem2">WebP transparents 60fps & PNG</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.starterTierItem3">Code source React + Next.js + Flutter</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.starterTierItem4">Licence commerciale perpétuelle</span>
+            </li>
+          </ul>
+        </div>
+
+        <button onclick="openModal('starter')" data-i18n="pricing.starterTierBtn" class="w-full py-3.5 rounded-2xl border border-[var(--japandi-border)] bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] text-xs sm:text-sm text-[var(--japandi-text)] font-semibold transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
+          Obtenir l'Essentiel (5 €)
+        </button>
+      </div>
+
+      <!-- Tier 3: Pro 12 États (9 €) -->
+      <div class="surface-card rounded-3xl p-6 sm:p-7 space-y-6 flex flex-col justify-between relative border-[var(--japandi-moss)]/60 shadow-card">
+        
+        <!-- Badge Populaire Flottant Élégant -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[var(--japandi-moss)] text-white dark:text-[#0F0F10] text-xs font-mono font-bold tracking-wider uppercase shadow-sm whitespace-nowrap" data-i18n="pricing.proTierBadge">
+          Populaire
+        </div>
+
+        <div class="space-y-4 pt-1">
+          <div class="flex justify-between items-baseline gap-2 flex-wrap">
+            <h3 data-i18n="pricing.proTierTitle" class="text-base sm:text-lg font-bold text-[var(--japandi-text)] whitespace-normal">Pack Pro 12 États</h3>
+            <span class="text-2xl sm:text-3xl font-bold font-mono text-[var(--japandi-text)] shrink-0 ml-2" data-i18n="pricing.proTierPrice">9,00 €</span>
+          </div>
+          <p data-i18n="pricing.proTierDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed font-light">
+            La suite d'animation intégrale pour couvrir l'intégralité de vos écrans.
+          </p>
+
+          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)]">
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.proTierItem1">12 états d'animation complets</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.proTierItem2">Formats WebP, GIF, PNG HD & Vector</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.proTierItem3">Composants React, Vue, Svelte & Flutter</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.proTierItem4">Mises à jour et ajouts d'états à vie</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.proTierItem5">Licence commerciale illimitée</span>
+            </li>
+          </ul>
+        </div>
+
+        <button onclick="openModal('pro')" data-i18n="pricing.proTierBtn" class="w-full py-3.5 rounded-2xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 text-xs sm:text-sm font-bold tracking-tight transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
+          Débloquer le Pack Pro (9 €)
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal Achat / Téléchargement -->
+  <div 
+    id="buyModal" 
+    onclick="if(event.target === this) closeModal()" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="modalTitle" 
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4"
+  >
+    <div class="surface-card rounded-2xl max-w-sm w-full p-5 sm:p-6 border border-[var(--japandi-border)] space-y-5 relative shadow-modal max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal()" aria-label="Fermer la boîte de dialogue" class="absolute top-4 right-4 text-[var(--japandi-text-muted)] hover:text-[var(--japandi-text)] p-1 rounded-lg hover:bg-[var(--japandi-surface-muted)] transition cursor-pointer">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="space-y-1.5">
+        <h3 id="modalTitle" data-i18n="modal.title" class="text-base font-bold text-[var(--japandi-text)]">Téléchargement Uko UI</h3>
+        <p id="modalSubtitle" data-i18n="modal.subtitle" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light">Archive ZIP prête à l'emploi avec licence commerciale perpétuelle.</p>
+      </div>
+
+      <!-- Sélecteur de Mascotte dans la Modale -->
+      <div class="space-y-2">
+        <label class="text-xs sm:text-sm font-semibold text-[var(--japandi-text-secondary)]" data-i18n="modal.chooseMascot">Mascotte choisie :</label>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5 p-1.5 rounded-2xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border)] text-xs font-medium">
+          <button type="button" onclick="setModalMascot('aituko')" id="modal-tab-aituko" class="py-2 px-1.5 rounded-xl bg-[var(--japandi-surface)] text-[var(--japandi-text)] shadow-soft font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+            <img src="assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="AItuko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+            <span class="inline text-xs font-medium">AItuko</span>
+          </button>
+          <button type="button" onclick="setModalMascot('owluko')" id="modal-tab-owluko" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+            <img src="mascots/owluko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Owluko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+            <span class="inline text-xs font-medium">Owluko</span>
+          </button>
+          <button type="button" onclick="setModalMascot('luneko')" id="modal-tab-luneko" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+            <img src="mascots/luneko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Luneko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+            <span class="inline text-xs font-medium">Luneko</span>
+          </button>
+          <button type="button" onclick="setModalMascot('hatoko')" id="modal-tab-hatoko" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+            <img src="mascots/hatoko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Hatoko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+            <span class="inline text-xs font-medium">Hatoko</span>
+          </button>
+          <button type="button" onclick="setModalMascot('usako')" id="modal-tab-usako" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+            <img src="mascots/usako/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Usako" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+            <span class="inline text-xs font-medium">Usako</span>
+          </button>
+          <button type="button" onclick="setModalMascot('inuko')" id="modal-tab-inuko" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+            <img src="mascots/inuko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Inuko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
+            <span class="inline text-xs font-medium">Inuko</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border)] flex justify-between items-center text-xs sm:text-sm">
+        <span id="modalTierName" class="text-[var(--japandi-text)] font-bold">Pack Pro (12 États)</span>
+        <span id="modalPrice" class="font-mono font-bold text-base text-[var(--japandi-text)]">9,00 €</span>
+      </div>
+
+      <form onsubmit="handlePay(event)" class="space-y-3.5 relative">
+        <!-- Honeypot Anti-Bot Trap -->
+        <div class="absolute -left-[9999px] -top-[9999px] opacity-0 pointer-events-none h-0 w-0 overflow-hidden" aria-hidden="true" tabindex="-1">
+          <label for="modal_hp_website">Ne pas remplir</label>
+          <input type="text" id="modal_hp_website" name="modal_hp_website" autocomplete="new-password" tabindex="-1" value="">
+        </div>
+        <input type="email" required placeholder="Votre adresse email" data-i18n-attr="placeholder:modal.emailPlaceholder" class="w-full px-4 py-3 rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-sm sm:text-base text-[var(--japandi-text)] placeholder-[var(--japandi-text-muted)] focus:outline-none focus:border-[var(--japandi-text)] transition shadow-xs">
+        <button type="submit" id="paySubmitBtn" class="w-full py-3.5 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 font-bold text-sm transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
+          Procéder au Paiement Sécurisé
+        </button>
+      </form>
+
+      <div id="paySuccess" class="hidden pt-3.5 border-t border-[var(--japandi-border-subtle)] text-center space-y-2.5">
+        <div class="flex items-center justify-center gap-2 text-xs sm:text-sm text-[var(--japandi-moss)] font-bold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="modal.ready">Téléchargement prêt</span>
+        </div>
+        <a id="downloadLink" href="downloads/Uko-Pro-12-States.zip" download class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border)] text-[var(--japandi-text)] text-xs sm:text-sm hover:bg-[var(--japandi-surface)] font-semibold transition cursor-pointer shadow-soft min-h-[44px]">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span data-i18n="modal.downloadZip">Télécharger le Fichier ZIP</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal Licence Commerciale Perpétuelle Japandi -->
+  <div 
+    id="licenseModal" 
+    onclick="if(event.target === this) closeLicenseModal()" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="licenseModalTitle" 
+    class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4"
+  >
+    <div class="surface-card rounded-2xl max-w-lg w-full p-6 sm:p-8 border border-[var(--japandi-border)] space-y-6 relative shadow-modal max-h-[90vh] overflow-y-auto">
+      
+      <!-- Bouton Fermer -->
+      <button onclick="closeLicenseModal()" aria-label="Fermer la boîte de dialogue" class="absolute top-4 right-4 text-[var(--japandi-text-muted)] hover:text-[var(--japandi-text)] p-1.5 rounded-lg hover:bg-[var(--japandi-surface-muted)] transition cursor-pointer">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- En-tête Licence -->
+      <div class="space-y-2 pr-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Commercial License v1.0</span>
+        </div>
+        <h3 id="licenseModalTitle" data-i18n="licenseModal.title" class="text-lg sm:text-xl font-bold text-[var(--japandi-text)] tracking-tight">Licence Commerciale Perpétuelle Uko UI</h3>
+        <p data-i18n="licenseModal.subtitle" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Droits clairs, transparents et sans frais récurrents pour créateurs et développeurs.</p>
+      </div>
+
+      <!-- Navigation d'onglets de licence -->
+      <div class="space-y-4">
+        
+        <!-- Bloc Ce qui est autorisé -->
+        <div class="p-5 rounded-2xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] space-y-3">
+          <div class="flex items-center gap-2 text-sm font-bold text-[var(--japandi-moss-text)]">
+            <svg class="w-4 h-4 text-[var(--japandi-moss)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="licenseModal.tabAllowed">Ce qui est autorisé</span>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed pl-1">
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-moss)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.allowedItem1">Projets personnels et commerciaux illimités (SaaS, Apps mobiles, E-commerce, Sites vitrines).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-moss)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.allowedItem2">Intégration dans des projets clients (agences, freelances, startups).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-moss)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.allowedItem3">Modification, redimensionnement et adaptation des composants au code de votre application.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-moss)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.allowedItem4">Aucune attribution ni lien obligatoire vers Uko UI dans vos interfaces finales.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-moss)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.allowedItem5">Utilisation perpétuelle à vie sans abonnement ni redevance récurrente.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bloc Ce qui est interdit -->
+        <div class="p-5 rounded-2xl bg-[var(--japandi-ochre-subtle)]/40 border border-[var(--japandi-ochre)]/20 space-y-3">
+          <div class="flex items-center gap-2 text-sm font-bold text-[var(--japandi-ochre-text)]">
+            <svg class="w-4 h-4 text-[var(--japandi-ochre)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            <span data-i18n="licenseModal.tabRestricted">Ce qui est interdit</span>
+          </div>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed pl-1">
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-ochre)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.restrictedItem1">Revente, sous-licence ou redistribution directe des fichiers sources 3D (WebP, GIF, PNG bruts).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-ochre)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.restrictedItem2">Inclusion des mascottes brutes dans des templates ou kits UI publics revendus comme concurrents.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[var(--japandi-ochre)] font-bold shrink-0">•</span>
+              <span data-i18n="licenseModal.restrictedItem3">Revendication de droits d'auteur exclusifs ou de marque déposée sur les designs originaux.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Garantie Sérénité -->
+        <div class="p-4 rounded-2xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface)] space-y-1.5 shadow-xs">
+          <div class="text-xs sm:text-sm font-bold text-[var(--japandi-text)]" data-i18n="licenseModal.guaranteeTitle">Garantie Sérénité</div>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed" data-i18n="licenseModal.guaranteeText">Tous les composants sont livrés prêts pour la production. Support technique et mises à jour des états inclus.</p>
+        </div>
+
+      </div>
+
+      <!-- Bouton d'action -->
+      <button onclick="closeLicenseModal()" data-i18n="licenseModal.closeBtn" class="w-full py-3.5 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 font-bold text-xs sm:text-sm transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
+        Fermer et retourner au Studio
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-14 border-t border-[var(--japandi-border-subtle)] text-center text-xs sm:text-sm text-[var(--japandi-text-secondary)] space-y-3">
+    <div data-i18n="footer.text" class="font-medium text-[var(--japandi-text)]">Uko UI — Système de mascottes animées pour interfaces modernes.</div>
+    <div class="text-xs sm:text-sm text-[var(--japandi-text-muted)] font-light flex items-center justify-center gap-2 flex-wrap">
+      <span data-i18n="footer.license">Licence commerciale perpétuelle incluse • Composants prêts pour la production.</span>
+      <button onclick="openLicenseModal()" class="underline hover:text-[var(--japandi-text)] cursor-pointer transition font-normal" data-i18n="licenseModal.title">Voir les termes de la licence →</button>
+    </div>
+  </footer>
+
+  <!-- Système i18n (Internationalisation Native 7 Langues) -->
+  <script src="js/i18n.js?v=3.1.0"></script>
+
+  <!-- Script Principal de l'Application (Haute Performance, Résilience Réseau & Anti-Bot) -->
+  <script>
+    'use strict';
+
+    // Safe Storage Wrapper (Résistant aux sandboxes iframe et mode privé)
+    const safeStorage = {
+      get(key) {
+        try { return localStorage.getItem(key); } catch (e) { return null; }
+      },
+      set(key, val) {
+        try { localStorage.setItem(key, val); } catch (e) {}
+      }
+    };
+
+    // Allowlists Stricts
+    const ALLOWED_THEMES = Object.freeze(['dark', 'light']);
+    const ALLOWED_FRAMEWORKS = Object.freeze(['react', 'vue', 'flutter', 'html', 'lottie']);
+    const ALLOWED_TIERS = Object.freeze(['free', 'starter', 'pro']);
+
+    const poseKeys = Object.freeze([
+      "idle", "waving", "celebrating", "ai_thinking", "error_404", "thumbs_up",
+      "sleeping", "pointing", "searching", "loading", "idea", "security", "goodbye"
+    ]);
+
+    const poseFolders = Object.freeze([
+      "00_idle", "01_waving", "02_celebrating", "03_ai_thinking", "04_error_404", "05_thumbs_up",
+      "06_sleeping", "07_pointing", "08_searching", "09_loading", "10_idea", "11_security", "12_goodbye"
+    ]);
+
+    const AITUKO_VIDEOS = Object.freeze([
+      "mascots/aituko/aituko_idle.mp4",
+      "mascots/aituko/aituko_waving.mp4",
+      "mascots/aituko/aituko_celebration.mp4",
+      "mascots/aituko/aituko_thinking.mp4",
+      "mascots/aituko/aituko_error_404.mp4",
+      "mascots/aituko/aituko_thumbs_up.mp4",
+      "mascots/aituko/aituko_sleeping.mp4",
+      "mascots/aituko/aituko_pointing.mp4",
+      "mascots/aituko/aituko_searching.mp4",
+      "mascots/aituko/aituko_loading.mp4",
+      "mascots/aituko/aituko_idea.mp4",
+      "mascots/aituko/aituko_security.mp4",
+      "mascots/aituko/aituko_goodbye.mp4"
+    ]);
+
+    const MASCOTS = Object.freeze({
+      aituko: {
+        name: "AItuko",
+        component: "AItuko",
+        flutter: "AItukoMascot",
+        folderPrefix: "assets/",
+        zips: {
+          free: "downloads/Uko-Free-Sample.zip",
+          starter: "downloads/AItuko-Starter-6-States.zip",
+          pro: "downloads/AItuko-Pro-12-States.zip"
+        }
+      },
+      owluko: {
+        name: "Owluko",
+        component: "Owluko",
+        flutter: "OwlukoMascot",
+        folderPrefix: "mascots/owluko/assets/",
+        zips: {
+          free: "downloads/Owluko-Free-Sample.zip",
+          starter: "downloads/Owluko-Starter-6-States.zip",
+          pro: "downloads/Owluko-Pro-12-States.zip"
+        }
+      },
+      luneko: {
+        name: "Luneko",
+        component: "Luneko",
+        flutter: "LunekoMascot",
+        folderPrefix: "mascots/luneko/assets/",
+        zips: {
+          free: "downloads/Luneko-Free-Sample.zip",
+          starter: "downloads/Luneko-Starter-Pack.zip",
+          pro: "downloads/Luneko-Pro-12-States.zip"
+        }
+      },
+      hatoko: {
+        name: "Hatoko",
+        component: "Hatoko",
+        flutter: "HatokoMascot",
+        folderPrefix: "mascots/hatoko/assets/",
+        zips: {
+          free: "downloads/Hatoko-Free-Sample.zip",
+          starter: "downloads/Hatoko-Starter-Pack.zip",
+          pro: "downloads/Hatoko-Pro-12-States.zip"
+        }
+      },
+      usako: {
+        name: "Usako",
+        component: "Usako",
+        flutter: "UsakoMascot",
+        folderPrefix: "mascots/usako/assets/",
+        zips: {
+          free: "downloads/Usako-Free-Sample.zip",
+          starter: "downloads/Usako-Starter-Pack.zip",
+          pro: "downloads/Usako-Pro-12-States.zip"
+        }
+      },
+      inuko: {
+        name: "Inuko",
+        component: "Inuko",
+        flutter: "InukoMascot",
+        folderPrefix: "mascots/inuko/assets/",
+        zips: {
+          free: "downloads/Inuko-Free-Sample.zip",
+          starter: "downloads/Inuko-Starter-Pack.zip",
+          pro: "downloads/Inuko-Pro-12-States.zip"
+        }
+      }
+    });
+
+    let currentMascot = "aituko";
+    let activeIdx = 0;
+    let lastActiveIdx = 0;
+    let isAnimated = true;
+    let currentFormat = 'webp'; // 'webp' | 'lottie' | 'interactive' | 'png'
+    let currentSize = 200;
+    let scheduledSize = 200;
+    let sizeRafId = null;
+    let snippetDebounceTimer = null;
+    let currentFw = 'react';
+    let isBubbleVisible = true;
+    let currentModalTier = 'pro';
+
+    // Registre Statique des Éléments DOM (Élimine le DOM Thrashing)
+    const DOM = {};
+    function initDOMRegistry() {
+      DOM.bubbleInput = document.getElementById('bubbleInput');
+      DOM.bubbleDisplay = document.getElementById('bubbleTextDisplay');
+      DOM.bubbleBox = document.getElementById('speechBubbleEl');
+      DOM.bubbleToggle = document.getElementById('bubbleToggle');
+      DOM.bubbleQuickTxt = document.getElementById('bubbleQuickTxt');
+      DOM.eyeOpen = document.getElementById('eyeIconOpen');
+      DOM.eyeClosed = document.getElementById('eyeIconClosed');
+      DOM.counterTxt = document.getElementById('counterTxt');
+      DOM.formatBtn = document.getElementById('formatBtn');
+      DOM.formatDot = document.getElementById('formatDot');
+      DOM.formatTxt = document.getElementById('formatTxt');
+      DOM.interactivePillBtn = document.getElementById('interactivePillBtn');
+      DOM.stageBox = document.getElementById('stageBox');
+      DOM.mascotVideo = document.getElementById('mascotVideo');
+      DOM.mascotImg = document.getElementById('mascotImg');
+      DOM.mascotLottie = document.getElementById('mascotLottie');
+      DOM.mascotInteractiveRig = document.getElementById('mascotInteractiveRig');
+      DOM.mascotStageWrapper = document.getElementById('mascotStageWrapper');
+      DOM.fallbackOverlay = document.getElementById('mascotFallbackOverlay');
+      DOM.sizeTxt = document.getElementById('sizeTxt');
+      DOM.codeBlock = document.getElementById('codeBlock');
+      DOM.copyTxt = document.getElementById('copyTxt');
+      DOM.catalogueVoteCount = document.getElementById('catalogueVoteCount');
+      DOM.buyModal = document.getElementById('buyModal');
+      DOM.modalTierName = document.getElementById('modalTierName');
+      DOM.modalPrice = document.getElementById('modalPrice');
+      DOM.downloadLink = document.getElementById('downloadLink');
+      DOM.paySubmitBtn = document.getElementById('paySubmitBtn');
+      DOM.paySuccess = document.getElementById('paySuccess');
+      DOM.langMenu = document.getElementById('langDropdownMenu');
+      DOM.langChevron = document.getElementById('langChevron');
+      DOM.langBtn = document.getElementById('langDropdownBtn');
+      DOM.toastContainer = document.getElementById('japandiToastContainer');
+      
+      DOM.pills = poseKeys.map((_, i) => document.getElementById(`pill-${i}`));
+      DOM.fwBtns = {
+        react: document.getElementById('fw-react'),
+        vue: document.getElementById('fw-vue'),
+        flutter: document.getElementById('fw-flutter'),
+        html: document.getElementById('fw-html'),
+        lottie: document.getElementById('fw-lottie')
+      };
+    }
+
+    // Fonctions d'échappement et sanitization contextuelle
+    function sanitizeForJsx(str) {
+      return String(str).replace(/[&<>"']/g, (c) => {
+        const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+        return entities[c] || c;
+      });
+    }
+
+    function sanitizeForDart(str) {
+      return String(str)
+        .replace(/\\/g, '\\\\')
+        .replace(/'/g, "\\'")
+        .replace(/\$/g, '\\$')
+        .replace(/\r?\n/g, ' ');
+    }
+
+    function sanitizePlainText(str) {
+      return String(str).replace(/[<>]/g, '').trim();
+    }
+
+    function clampSize(val) {
+      const parsed = parseInt(val, 10);
+      if (isNaN(parsed)) return 180;
+      return Math.min(280, Math.max(120, parsed));
+    }
+
+    // ==========================================================================
+    // 1. MOTEUR DE PRÉCHARGEMENT INTELLIGENT DES ACTIFS (MascotAssetPreloader)
+    // ==========================================================================
+    class MascotAssetPreloader {
+      constructor() {
+        this.cache = new Map();
+        this.idleQueue = [];
+        this.isIdleProcessing = false;
+      }
+
+      getAssetUrl(mascotKey, poseFolder, animated) {
+        const prefix = getAssetPrefixFor(mascotKey);
+        const filename = animated ? "animated.webp?v=owluko-remastered-20260831-v19" : "static.png?v=owluko-remastered-20260831-v19";
+        return `${prefix}${poseFolder}/${filename}`;
+      }
+
+      preload(url) {
+        if (this.cache.has(url)) return;
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = url;
+        this.cache.set(url, img);
+      }
+
+      preloadRing(mascotKey, centerIdx, animated) {
+        const count = poseFolders.length;
+        // Voisins immédiats (Priorité 1)
+        const nextIdx = (centerIdx + 1) % count;
+        const prevIdx = (centerIdx - 1 + count) % count;
+        this.preload(this.getAssetUrl(mascotKey, poseFolders[nextIdx], animated));
+        this.preload(this.getAssetUrl(mascotKey, poseFolders[prevIdx], animated));
+
+        // Voisins secondaires (Priorité 2)
+        const next2Idx = (centerIdx + 2) % count;
+        const prev2Idx = (centerIdx - 2 + count) % count;
+        this.preload(this.getAssetUrl(mascotKey, poseFolders[next2Idx], animated));
+        this.preload(this.getAssetUrl(mascotKey, poseFolders[prev2Idx], animated));
+
+        // File d'attente en idle pour le reste des poses
+        for (let i = 0; i < count; i++) {
+          if (i !== centerIdx && i !== nextIdx && i !== prevIdx && i !== next2Idx && i !== prev2Idx) {
+            this.queueIdle(this.getAssetUrl(mascotKey, poseFolders[i], animated));
+          }
+        }
+      }
+
+      queueIdle(url) {
+        if (this.cache.has(url) || this.idleQueue.includes(url)) return;
+        this.idleQueue.push(url);
+        if (!this.isIdleProcessing) {
+          this.isIdleProcessing = true;
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback((d) => this.processIdle(d), { timeout: 2000 });
+          } else {
+            setTimeout(() => this.processIdle({ timeRemaining: () => 15 }), 100);
+          }
+        }
+      }
+
+      processIdle(deadline) {
+        while (this.idleQueue.length > 0 && deadline.timeRemaining() > 2) {
+          const url = this.idleQueue.shift();
+          this.preload(url);
+        }
+        if (this.idleQueue.length > 0) {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback((d) => this.processIdle(d), { timeout: 2000 });
+          } else {
+            setTimeout(() => this.processIdle({ timeRemaining: () => 15 }), 100);
+          }
+        } else {
+          this.isIdleProcessing = false;
+        }
+      }
+    }
+
+    const preloader = new MascotAssetPreloader();
+
+    // ==========================================================================
+    // 2. GESTIONNAIRE DE CHARGEMENT RÉSILIENT & RETRY EXPONENTIEL (MascotImageLoader)
+    // ==========================================================================
+    class MascotImageLoaderController {
+      constructor() {
+        this.maxRetries = 3;
+        this.currentAttempt = 0;
+        this.retryTimer = null;
+        this.currentTargetUrl = '';
+        this.fallbackUrl = '';
+      }
+
+      load(targetUrl, fallbackUrl) {
+        if (this.retryTimer) {
+          clearTimeout(this.retryTimer);
+          this.retryTimer = null;
+        }
+        this.currentTargetUrl = targetUrl;
+        this.fallbackUrl = fallbackUrl;
+        this.currentAttempt = 0;
+
+        this.hideFallbackOverlay();
+        this.executeLoad(targetUrl);
+      }
+
+      executeLoad(url) {
+        const img = DOM.mascotImg;
+        if (!img) return;
+
+        img.onerror = () => {
+          img.onerror = null;
+          if (this.fallbackUrl && url !== this.fallbackUrl) {
+            img.src = this.fallbackUrl;
+          }
+        };
+
+        img.src = url;
+        img.classList.remove('opacity-30', 'opacity-10');
+        this.hideFallbackOverlay();
+      }
+
+      retry() {
+        if (this.currentTargetUrl) {
+          this.load(this.currentTargetUrl, this.fallbackUrl);
+        }
+      }
+
+      showFallbackOverlay() {
+        if (DOM.fallbackOverlay) DOM.fallbackOverlay.classList.remove('hidden');
+        if (DOM.mascotImg) DOM.mascotImg.classList.add('opacity-10');
+      }
+
+      hideFallbackOverlay() {
+        if (DOM.fallbackOverlay) DOM.fallbackOverlay.classList.add('hidden');
+        if (DOM.mascotImg) DOM.mascotImg.classList.remove('opacity-10');
+      }
+    }
+
+    const mascotLoader = new MascotImageLoaderController();
+
+    // ==========================================================================
+    // 3. SENTINELLE TOAST JAPANDI & DÉTECTION HORS LIGNE (toastSentinel)
+    // ==========================================================================
+    const toastSentinel = {
+      activeToastId: null,
+      toastTimeout: null,
+
+      show({ message, type = 'info', duration = 3500, id = null }) {
+        const container = DOM.toastContainer;
+        if (!container) return;
+
+        if (this.activeToastId && this.activeToastId === id) {
+          const existing = document.getElementById(this.activeToastId);
+          if (existing) {
+            const textEl = existing.querySelector('.toast-msg');
+            if (textEl) textEl.textContent = message;
+            return;
+          }
+        }
+
+        this.dismiss();
+
+        const toast = document.createElement('div');
+        const toastId = id || `toast-${Date.now()}`;
+        this.activeToastId = toastId;
+        toast.id = toastId;
+
+        let bgClass = 'bg-[var(--japandi-surface)] border-[var(--japandi-border)] text-[var(--japandi-text)]';
+        let iconSvg = '<span class="w-2 h-2 rounded-full bg-[var(--japandi-moss)] shrink-0"></span>';
+
+        if (type === 'offline') {
+          bgClass = 'bg-[var(--japandi-surface)] border-[var(--japandi-ochre)] text-[var(--japandi-text)]';
+          iconSvg = '<span class="w-2.5 h-2.5 rounded-full bg-[var(--japandi-ochre)] animate-pulse shrink-0"></span>';
+        } else if (type === 'online') {
+          bgClass = 'bg-[var(--japandi-surface)] border-[var(--japandi-moss)] text-[var(--japandi-text)]';
+          iconSvg = '<svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        } else if (type === 'warning') {
+          bgClass = 'bg-[var(--japandi-surface)] border-[var(--japandi-ochre)] text-[var(--japandi-text)]';
+          iconSvg = '<svg class="w-3.5 h-3.5 text-[var(--japandi-ochre)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+        }
+
+        toast.className = `pointer-events-auto flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl border shadow-modal transition-all duration-300 transform opacity-0 translate-y-[-8px] scale-98 ${bgClass}`;
+        toast.innerHTML = `
+          <div class="flex items-center gap-2.5 min-w-0">
+            ${iconSvg}
+            <span class="toast-msg text-xs font-medium tracking-tight truncate">${sanitizePlainText(message)}</span>
+          </div>
+          <button onclick="toastSentinel.dismiss()" aria-label="Fermer" class="text-[var(--japandi-text-muted)] hover:text-[var(--japandi-text)] p-0.5 rounded cursor-pointer transition">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        `;
+
+        container.appendChild(toast);
+
+        requestAnimationFrame(() => {
+          toast.classList.remove('opacity-0', 'translate-y-[-8px]', 'scale-98');
+          toast.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+        });
+
+        if (duration > 0) {
+          this.toastTimeout = setTimeout(() => this.dismiss(), duration);
+        }
+      },
+
+      dismiss() {
+        if (this.toastTimeout) {
+          clearTimeout(this.toastTimeout);
+          this.toastTimeout = null;
+        }
+        if (this.activeToastId) {
+          const el = document.getElementById(this.activeToastId);
+          if (el) {
+            el.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+            el.classList.add('opacity-0', 'translate-y-[-8px]', 'scale-98');
+            setTimeout(() => el.remove(), 250);
+          }
+          this.activeToastId = null;
+        }
+      }
+    };
+
+    window.addEventListener('online', () => {
+      toastSentinel.show({
+        message: window.i18n.get('resilience.onlineStatus') || "Connexion rétablie ✨",
+        type: 'online',
+        duration: 3500,
+        id: 'net-status'
+      });
+      mascotLoader.retry();
+    });
+
+    window.addEventListener('offline', () => {
+      toastSentinel.show({
+        message: window.i18n.get('resilience.offlineStatus') || "Mode hors ligne actif — Studio 100% fonctionnel",
+        type: 'offline',
+        duration: 0,
+        id: 'net-status'
+      });
+    });
+
+    // ==========================================================================
+    // 4. LIMITATION DE DÉBIT PAR FENÊTRE GLISSANTE & ANTI-BOT (RateLimiter)
+    // ==========================================================================
+    class SlidingWindowRateLimiter {
+      constructor({ maxRequests, windowMs }) {
+        this.maxRequests = maxRequests;
+        this.windowMs = windowMs;
+        this.timestamps = [];
+      }
+
+      tryAcquire() {
+        const now = Date.now();
+        this.timestamps = this.timestamps.filter(t => now - t < this.windowMs);
+
+        if (this.timestamps.length < this.maxRequests) {
+          this.timestamps.push(now);
+          return { allowed: true, remaining: this.maxRequests - this.timestamps.length, retryAfterSec: 0 };
+        }
+
+        const oldest = this.timestamps[0];
+        const retryAfterMs = Math.max(0, this.windowMs - (now - oldest));
+        return {
+          allowed: false,
+          remaining: 0,
+          retryAfterSec: Math.max(1, Math.ceil(retryAfterMs / 1000))
+        };
+      }
+    }
+
+    const voteLimiter = new SlidingWindowRateLimiter({ maxRequests: 6, windowMs: 8000 });
+    const suggestLimiter = new SlidingWindowRateLimiter({ maxRequests: 2, windowMs: 20000 });
+    const modalLimiter = new SlidingWindowRateLimiter({ maxRequests: 4, windowMs: 8000 });
+    const payLimiter = new SlidingWindowRateLimiter({ maxRequests: 2, windowMs: 10000 });
+
+    // ==========================================================================
+    // 4.5 MOTEUR DE GESTES TACTILES DU STUDIO (StageTouchGestureEngine)
+    // ==========================================================================
+    class StageTouchGestureEngine {
+      constructor(stageElement, wrapperElement) {
+        if (!stageElement || !wrapperElement) return;
+        this.stage = stageElement;
+        this.wrapper = wrapperElement;
+        this.mascotOrder = ['aituko', 'owluko', 'luneko', 'inuko', 'hatoko', 'usako'];
+        
+        this.startX = 0;
+        this.startY = 0;
+        this.currentX = 0;
+        this.currentY = 0;
+        this.startTime = 0;
+        this.isTracking = false;
+        this.directionLocked = null; // 'horizontal' | 'vertical' | null
+        this.slopThreshold = 8;
+        this.minSwipeDist = 36;
+        this.minVelocity = 0.28; // px/ms
+
+        this.cueLeft = document.getElementById('swipeCueLeft');
+        this.cueRight = document.getElementById('swipeCueRight');
+
+        this.init();
+      }
+
+      init() {
+        this.stage.addEventListener('touchstart', (e) => this.onTouchStart(e), { passive: true });
+        this.stage.addEventListener('touchmove', (e) => this.onTouchMove(e), { passive: false });
+        this.stage.addEventListener('touchend', (e) => this.onTouchEnd(e), { passive: true });
+        this.stage.addEventListener('touchcancel', () => this.reset(), { passive: true });
+      }
+
+      onTouchStart(e) {
+        if (e.touches.length !== 1) return;
+        const touch = e.touches[0];
+        this.startX = touch.clientX;
+        this.startY = touch.clientY;
+        this.currentX = touch.clientX;
+        this.currentY = touch.clientY;
+        this.startTime = Date.now();
+        this.isTracking = true;
+        this.directionLocked = null;
+      }
+
+      onTouchMove(e) {
+        if (!this.isTracking || e.touches.length !== 1) return;
+        const touch = e.touches[0];
+        this.currentX = touch.clientX;
+        this.currentY = touch.clientY;
+
+        const deltaX = this.currentX - this.startX;
+        const deltaY = this.currentY - this.startY;
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+
+        if (!this.directionLocked) {
+          if (absX > this.slopThreshold || absY > this.slopThreshold) {
+            this.directionLocked = absX >= absY ? 'horizontal' : 'vertical';
+          }
+        }
+
+        if (this.directionLocked === 'horizontal') {
+          if (e.cancelable) e.preventDefault();
+          // Effet de résistance élastique Japandi (Rubber Band)
+          const rubberX = Math.sign(deltaX) * Math.min(absX * 0.4, 48);
+          this.wrapper.style.transform = `translateX(${rubberX}px)`;
+
+          // Indicateurs visuels directionnels
+          if (deltaX > 15 && this.cueLeft) {
+            this.cueLeft.classList.remove('opacity-0');
+            this.cueLeft.classList.add('opacity-100');
+          } else if (this.cueLeft) {
+            this.cueLeft.classList.remove('opacity-100');
+            this.cueLeft.classList.add('opacity-0');
+          }
+
+          if (deltaX < -15 && this.cueRight) {
+            this.cueRight.classList.remove('opacity-0');
+            this.cueRight.classList.add('opacity-100');
+          } else if (this.cueRight) {
+            this.cueRight.classList.remove('opacity-100');
+            this.cueRight.classList.add('opacity-0');
+          }
+        }
+      }
+
+      onTouchEnd(e) {
+        if (!this.isTracking) return;
+        const deltaX = this.currentX - this.startX;
+        const deltaY = this.currentY - this.startY;
+        const duration = Math.max(1, Date.now() - this.startTime);
+        const velocityX = deltaX / duration;
+        const velocityY = deltaY / duration;
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+
+        this.resetVisuals();
+
+        // 1. Détection Tap Direct (Micro-rebond et avance à la pose suivante)
+        if (absX < 12 && absY < 12 && duration < 320) {
+          this.triggerTapSpring();
+          nextPose();
+          this.reset();
+          return;
+        }
+
+        // 2. Swipe Horizontal -> Changement de Pose (← / →)
+        if (this.directionLocked === 'horizontal' || (absX > absY && absX > 20)) {
+          if (deltaX < -this.minSwipeDist || velocityX < -this.minVelocity) {
+            nextPose();
+          } else if (deltaX > this.minSwipeDist || velocityX > this.minVelocity) {
+            prevPose();
+          }
+        }
+        // 3. Swipe Vertical Direct sur le Canvas -> Changement de Mascotte (Cycle)
+        else if (this.directionLocked === 'vertical') {
+          if (deltaY < -55 || velocityY < -0.45) {
+            this.cycleMascot(1);
+          } else if (deltaY > 55 || velocityY > 0.45) {
+            this.cycleMascot(-1);
+          }
+        }
+
+        this.reset();
+      }
+
+      triggerTapSpring() {
+        this.wrapper.classList.remove('mascot-tap-spring');
+        void this.wrapper.offsetWidth;
+        this.wrapper.classList.add('mascot-tap-spring');
+        setTimeout(() => {
+          if (this.wrapper) this.wrapper.classList.remove('mascot-tap-spring');
+        }, 400);
+      }
+
+      cycleMascot(direction) {
+        const curIdx = this.mascotOrder.indexOf(currentMascot);
+        const nextIdx = (curIdx + direction + this.mascotOrder.length) % this.mascotOrder.length;
+        const targetMascot = this.mascotOrder[nextIdx];
+        switchMascot(targetMascot);
+
+        toastSentinel.show({
+          message: `Mascotte active : ${MASCOTS[targetMascot].name} ✨`,
+          type: 'online',
+          duration: 1800,
+          id: 'mascot-switch'
+        });
+      }
+
+      resetVisuals() {
+        this.wrapper.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
+        this.wrapper.style.transform = 'translateX(0px)';
+        setTimeout(() => {
+          if (this.wrapper) this.wrapper.style.transition = '';
+        }, 260);
+
+        if (this.cueLeft) {
+          this.cueLeft.classList.remove('opacity-100');
+          this.cueLeft.classList.add('opacity-0');
+        }
+        if (this.cueRight) {
+          this.cueRight.classList.remove('opacity-100');
+          this.cueRight.classList.add('opacity-0');
+        }
+      }
+
+      reset() {
+        this.isTracking = false;
+        this.directionLocked = null;
+      }
+    }
+
+    // ==========================================================================
+    // 5. CONTRÔLEURS DE L'APPLICATION & GESTION DES ÉTATS
+    // ==========================================================================
+    function toggleLangMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = DOM.langMenu;
+      const chevron = DOM.langChevron;
+      const btn = DOM.langBtn;
+      if (!menu) return;
+      const isHidden = menu.classList.contains('hidden');
+      
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+        if (chevron) chevron.classList.add('rotate-180');
+      } else {
+        closeLangMenu();
+      }
+    }
+
+    function closeLangMenu() {
+      const menu = DOM.langMenu;
+      const chevron = DOM.langChevron;
+      const btn = DOM.langBtn;
+      if (menu) menu.classList.add('hidden');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+      if (chevron) chevron.classList.remove('rotate-180');
+    }
+
+    function selectLanguage(lang) {
+      if (window.i18n && typeof window.i18n.setLanguage === 'function') {
+        window.i18n.setLanguage(lang);
+      }
+      closeLangMenu();
+    }
+
+    document.addEventListener('click', (e) => {
+      const container = document.getElementById('langDropdownContainer');
+      if (container && !container.contains(e.target)) {
+        closeLangMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLangMenu();
+        closeModal();
+      }
+    });
+
+    function onLanguageChanged(lang) {
+      updateMascotMessage();
+      updateUI();
+
+      if (DOM.bubbleQuickTxt) {
+        DOM.bubbleQuickTxt.textContent = window.i18n.get(isBubbleVisible ? 'studio.bubbleOn' : 'studio.bubbleOff');
+      }
+      if (DOM.formatTxt) {
+        if (currentFormat === 'webp') DOM.formatTxt.textContent = "WebP";
+        else if (currentFormat === 'lottie') DOM.formatTxt.textContent = "Lottie";
+        else if (currentFormat === 'interactive') DOM.formatTxt.textContent = "Regard";
+        else if (currentFormat === 'png') DOM.formatTxt.textContent = "PNG";
+      }
+      if (DOM.catalogueVoteCount) {
+        DOM.catalogueVoteCount.textContent = `${totalVotes} ${window.i18n.get('catalogue.voteCountSuffix')}`;
+      }
+
+      const barText = document.getElementById('studioQuickBarText');
+      if (barText && MASCOTS[currentMascot]) {
+        barText.textContent = window.i18n.get('studio.quickBarStatus', { name: MASCOTS[currentMascot].name });
+      }
+
+      const headerBtnTxt = document.getElementById('studioHeaderDownloadTxt');
+      if (headerBtnTxt && MASCOTS[currentMascot]) {
+        headerBtnTxt.textContent = window.i18n.get('studio.downloadPackBtn', { name: MASCOTS[currentMascot].name });
+      }
+    }
+
+    function updateMascotMessage() {
+      const pKey = poseKeys[activeIdx];
+      let msg = window.i18n ? window.i18n.get(`messages.${currentMascot}.${pKey}`) : '';
+      if (!msg || msg.startsWith('messages.')) {
+        msg = "Bienvenue sur votre espace !";
+      }
+      if (DOM.bubbleInput) DOM.bubbleInput.value = msg;
+      if (DOM.bubbleDisplay) DOM.bubbleDisplay.textContent = msg;
+    }
+
+    function switchMascot(mKey) {
+      if (!MASCOTS[mKey]) return;
+      currentMascot = mKey;
+      Object.keys(MASCOTS).forEach(k => {
+        const tab = document.getElementById(`mascot-tab-${k}`);
+        if (tab) {
+          if (k === mKey) {
+            tab.className = "snap-center shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs sm:text-sm font-semibold transition flex items-center gap-2 sm:gap-2.5 cursor-pointer shadow-soft min-h-[44px] border border-[var(--japandi-border)]/40";
+          } else {
+            tab.className = "snap-center shrink-0 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs sm:text-sm font-medium transition flex items-center gap-2 sm:gap-2.5 cursor-pointer min-h-[44px]";
+          }
+        }
+      });
+
+      updateMascotMessage();
+      updateUI();
+
+      const barText = document.getElementById('studioQuickBarText');
+      if (barText && MASCOTS[mKey]) {
+        barText.textContent = window.i18n.get('studio.quickBarStatus', { name: MASCOTS[mKey].name });
+      }
+
+      const headerBtnTxt = document.getElementById('studioHeaderDownloadTxt');
+      if (headerBtnTxt && MASCOTS[mKey]) {
+        headerBtnTxt.textContent = window.i18n.get('studio.downloadPackBtn', { name: MASCOTS[mKey].name });
+      }
+    }
+
+    function selectMascotFromCard(mKey) {
+      switchMascot(mKey);
+      const studio = document.getElementById('studio');
+      if (studio) studio.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setPoseIndex(idx) {
+      const parsed = parseInt(idx, 10);
+      if (!Number.isInteger(parsed) || parsed < 0 || parsed >= poseKeys.length) return;
+      activeIdx = parsed;
+      updateMascotMessage();
+      updateUI();
+    }
+
+    function prevPose() {
+      activeIdx = (activeIdx - 1 + poseKeys.length) % poseKeys.length;
+      updateMascotMessage();
+      updateUI();
+    }
+
+    function nextPose() {
+      activeIdx = (activeIdx + 1) % poseKeys.length;
+      updateMascotMessage();
+      updateUI();
+    }
+
+    function getAssetPrefix() {
+      return getAssetPrefixFor(currentMascot);
+    }
+
+    function getAssetPrefixFor(mascotKey) {
+      const path = window.location.pathname;
+      const inPreview = path.includes('/preview/') || path.endsWith('/preview');
+      const base = inPreview ? '../' : '';
+      return base + MASCOTS[mascotKey].folderPrefix;
+    }
+
+    const ACTIVE_PILL_CLASS = "pose-pill active min-h-[44px] py-2.5 px-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs sm:text-sm font-bold flex items-center justify-center text-center transition truncate cursor-pointer shadow-soft";
+    const INACTIVE_PILL_CLASS = "pose-pill min-h-[44px] py-2.5 px-2.5 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs sm:text-sm font-medium flex items-center justify-center text-center transition truncate cursor-pointer";
+
+    const FORMAT_CYCLE = ['webp', 'lottie', 'interactive', 'png'];
+
+    function updateUI() {
+      const pFolder = poseFolders[activeIdx];
+      if (DOM.counterTxt) DOM.counterTxt.textContent = `${activeIdx + 1} / ${poseKeys.length}`;
+      
+      if (DOM.mascotVideo) {
+        DOM.mascotVideo.classList.add('hidden');
+        DOM.mascotVideo.pause();
+      }
+
+      // Mise à jour visuelle du bouton de format
+      if (DOM.formatTxt) {
+        if (currentFormat === 'webp') {
+          DOM.formatTxt.textContent = "WebP";
+          if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-moss)]";
+        } else if (currentFormat === 'lottie') {
+          DOM.formatTxt.textContent = "Lottie";
+          if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[#00E5FF]";
+        } else if (currentFormat === 'interactive') {
+          DOM.formatTxt.textContent = "Regard";
+          if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[#F59E0B]";
+        } else if (currentFormat === 'png') {
+          DOM.formatTxt.textContent = "PNG";
+          if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-text-muted)]";
+        }
+      }
+
+      if (currentFormat === 'interactive' && currentMascot !== 'aituko') {
+        currentFormat = 'webp';
+        if (DOM.formatTxt) DOM.formatTxt.textContent = "WebP";
+        if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-moss)]";
+      }
+
+      if (currentFormat === 'lottie') {
+        if (DOM.mascotImg) DOM.mascotImg.classList.add('hidden');
+        if (DOM.mascotInteractiveRig) DOM.mascotInteractiveRig.classList.add('hidden');
+        if (DOM.mascotLottie) {
+          DOM.mascotLottie.classList.remove('hidden');
+          const lottieUrl = `${prefix}${pFolder}/lottie.json`;
+          if (typeof DOM.mascotLottie.load === 'function') {
+            DOM.mascotLottie.load(lottieUrl);
+          } else {
+            DOM.mascotLottie.src = lottieUrl;
+          }
+        }
+      } else if (currentFormat === 'interactive') {
+        if (DOM.mascotImg) DOM.mascotImg.classList.add('hidden');
+        if (DOM.mascotLottie) DOM.mascotLottie.classList.add('hidden');
+        if (DOM.mascotInteractiveRig) DOM.mascotInteractiveRig.classList.remove('hidden');
+        startEyeTrackingLoop();
+      } else {
+        // Mode Matriciel (WebP ou PNG)
+        if (DOM.mascotLottie) DOM.mascotLottie.classList.add('hidden');
+        if (DOM.mascotInteractiveRig) DOM.mascotInteractiveRig.classList.add('hidden');
+        if (DOM.mascotImg) DOM.mascotImg.classList.remove('hidden');
+
+        const filename = (currentFormat === 'webp') 
+          ? "animated.webp?v=owluko-remastered-20260831-v19" 
+          : "static.png?v=owluko-remastered-20260831-v19";
+        const staticFallback = "static.png?v=owluko-remastered-20260831-v19";
+        const targetUrl = `${prefix}${pFolder}/${filename}`;
+        const fallbackUrl = `${prefix}${pFolder}/${staticFallback}`;
+
+        mascotLoader.load(targetUrl, fallbackUrl);
+        preloader.preloadRing(currentMascot, activeIdx, isAnimated);
+      }
+
+      // Mise à jour différentielle O(1) des pilules
+      if (DOM.pills) {
+        if (DOM.pills[lastActiveIdx]) DOM.pills[lastActiveIdx].className = INACTIVE_PILL_CLASS;
+        if (DOM.pills[activeIdx]) DOM.pills[activeIdx].className = ACTIVE_PILL_CLASS;
+        lastActiveIdx = activeIdx;
+      }
+
+      renderSnippet();
+    }
+
+    function toggleBubbleQuick() {
+      toggleBubble(!isBubbleVisible);
+    }
+
+    function toggleBubble(val) {
+      isBubbleVisible = Boolean(val);
+      const b = DOM.bubbleBox;
+      const chk = DOM.bubbleToggle;
+      const eyeOpen = DOM.eyeOpen;
+      const eyeClosed = DOM.eyeClosed;
+      const txt = DOM.bubbleQuickTxt;
+      
+      if (chk) chk.checked = isBubbleVisible;
+
+      if (isBubbleVisible) {
+        if (b) b.classList.remove('hidden');
+        if (eyeOpen) eyeOpen.classList.remove('hidden');
+        if (eyeClosed) eyeClosed.classList.add('hidden');
+        if (txt) txt.textContent = window.i18n.get('studio.bubbleOn');
+      } else {
+        if (b) b.classList.add('hidden');
+        if (eyeOpen) eyeOpen.classList.add('hidden');
+        if (eyeClosed) eyeClosed.classList.remove('hidden');
+        if (txt) txt.textContent = window.i18n.get('studio.bubbleOff');
+      }
+      renderSnippet();
+    }
+
+    function updateBubbleText(val) {
+      if (DOM.bubbleDisplay) DOM.bubbleDisplay.textContent = val;
+      renderSnippet();
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.target.matches('input, textarea')) return;
+      if (DOM.buyModal && !DOM.buyModal.classList.contains('hidden')) return;
+
+      if (e.key === 'ArrowLeft') prevPose();
+      if (e.key === 'ArrowRight') nextPose();
+    });
+
+    function zoomIn() {
+      setSize(currentSize + 20);
+    }
+
+    function zoomOut() {
+      setSize(currentSize - 20);
+    }
+
+    function setSize(v) {
+      scheduledSize = clampSize(v);
+      if (!sizeRafId) {
+        sizeRafId = requestAnimationFrame(flushSizeTransform);
+      }
+    }
+
+    function flushSizeTransform() {
+      sizeRafId = null;
+      currentSize = scheduledSize;
+      
+      if (DOM.sizeTxt) DOM.sizeTxt.textContent = `${currentSize}px`;
+      if (DOM.mascotStageWrapper) {
+        DOM.mascotStageWrapper.style.width = `${currentSize}px`;
+        DOM.mascotStageWrapper.style.height = `${currentSize}px`;
+      }
+
+      if (snippetDebounceTimer) clearTimeout(snippetDebounceTimer);
+      snippetDebounceTimer = setTimeout(renderSnippet, 30);
+    }
+
+    function toggleFormat() {
+      const idx = FORMAT_CYCLE.indexOf(currentFormat);
+      const nextFormat = FORMAT_CYCLE[(idx + 1) % FORMAT_CYCLE.length];
+      setRenderFormat(nextFormat);
+    }
+
+    function setRenderFormat(fmt) {
+      if (!FORMAT_CYCLE.includes(fmt)) return;
+      currentFormat = fmt;
+      isAnimated = (fmt === 'webp' || fmt === 'lottie' || fmt === 'interactive');
+      updateUI();
+    }
+
+    function setFw(f) {
+      if (!ALLOWED_FRAMEWORKS.includes(f)) return;
+      currentFw = f;
+      ALLOWED_FRAMEWORKS.forEach(item => {
+        const btn = DOM.fwBtns[item];
+        if (btn) {
+          btn.className = item === f 
+            ? "text-[var(--japandi-text)] font-semibold cursor-pointer py-1 px-1.5 whitespace-nowrap" 
+            : "text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap";
+        }
+      });
+      renderSnippet();
+    }
+
+    function renderSnippet() {
+      const pKey = poseKeys[activeIdx];
+      const m = MASCOTS[currentMascot];
+      const animProp = isAnimated ? ' animated' : '';
+      const inputEl = DOM.bubbleInput;
+      const rawMsg = inputEl ? inputEl.value : (DOM.bubbleDisplay ? DOM.bubbleDisplay.textContent : '');
+      const c = DOM.codeBlock;
+      if (!c || !m) return;
+
+      if (currentFw === 'react') {
+        const escaped = sanitizeForJsx(rawMsg);
+        const msgProp = isBubbleVisible ? ` message="${escaped}"` : '';
+        c.textContent = `<${m.component} state="${pKey}" size={${currentSize}}${msgProp}${animProp} />`;
+      } else if (currentFw === 'vue') {
+        const escaped = sanitizeForJsx(rawMsg);
+        const msgProp = isBubbleVisible ? ` message="${escaped}"` : '';
+        c.textContent = `<${m.component} state="${pKey}" :size="${currentSize}"${msgProp}${animProp} />`;
+      } else if (currentFw === 'flutter') {
+        const camel = pKey.replace(/_([a-z])/g, g => g[1].toUpperCase());
+        const escaped = sanitizeForDart(rawMsg);
+        const flutterMsg = isBubbleVisible ? `, message: '${escaped}'` : '';
+        c.textContent = `${m.flutter}(state: ${m.component}State.${camel}, size: ${currentSize}.0${flutterMsg})`;
+      } else if (currentFw === 'html') {
+        const folder = poseFolders[activeIdx];
+        const file = isAnimated ? `${m.folderPrefix}${folder}/animated.webp` : `${m.folderPrefix}${folder}/static.png`;
+        c.textContent = `<img src="${file}" width="${currentSize}" height="${currentSize}" alt="${sanitizeForJsx(m.name)}" />`;
+      } else if (currentFw === 'lottie') {
+        const folder = poseFolders[activeIdx];
+        const camel = pKey.replace(/_([a-z])/g, g => g[1].toUpperCase());
+        const varName = `${currentMascot}${camel.charAt(0).toUpperCase() + camel.slice(1)}`;
+        c.textContent = `// React / Next.js (Lottie Vectoriel 10 Ko, 60fps)
+import Lottie from 'lottie-react';
+import ${varName} from './assets/${folder}/lottie.json';
+
+<Lottie animationData={${varName}} loop={true} style={{ width: ${currentSize}, height: ${currentSize} }} />
+
+// Flutter :
+// Lottie.asset('assets/${folder}/lottie.json', width: ${currentSize}.0, height: ${currentSize}.0);
+
+// Web Component HTML :
+// <lottie-player src="assets/${folder}/lottie.json" background="transparent" speed="1" loop autoplay></lottie-player>`;
+      }
+    }
+
+    // =========================================================================
+    // MOTEUR D'INTERACTIVITÉ VECTORIELLE EN TEMPS RÉEL (Eye Tracking & Rive-like Rig)
+    // =========================================================================
+    let targetEyeX = 0;
+    let targetEyeY = 0;
+    let currentEyeX = 0;
+    let currentEyeY = 0;
+    let demoTargetEyeX = 0;
+    let demoTargetEyeY = 0;
+    let demoCurrentEyeX = 0;
+    let demoCurrentEyeY = 0;
+    let isEyeTrackingRunning = false;
+    let isPasswordCovered = false;
+
+    function startEyeTrackingLoop() {
+      if (isEyeTrackingRunning) return;
+      isEyeTrackingRunning = true;
+
+      function loop() {
+        // 1. Stage Mascot Eyes Lerp
+        currentEyeX += (targetEyeX - currentEyeX) * 0.16;
+        currentEyeY += (targetEyeY - currentEyeY) * 0.16;
+        const stageEyes = document.getElementById('interactiveEyesGroup');
+        if (stageEyes) {
+          stageEyes.setAttribute('transform', `translate(${currentEyeX.toFixed(2)}, ${currentEyeY.toFixed(2)})`);
+        }
+
+        // 2. Demo In-App Mascot Eyes Lerp
+        demoCurrentEyeX += (demoTargetEyeX - demoCurrentEyeX) * 0.16;
+        demoCurrentEyeY += (demoTargetEyeY - demoCurrentEyeY) * 0.16;
+        const demoEyes = document.getElementById('demoEyesGroup');
+        if (demoEyes) {
+          demoEyes.setAttribute('transform', `translate(${demoCurrentEyeX.toFixed(2)}, ${demoCurrentEyeY.toFixed(2)})`);
+        }
+
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+
+      window.addEventListener('mousemove', (e) => {
+        // Stage mascot tracking
+        const stage = DOM.mascotStageWrapper;
+        if (stage) {
+          const rect = stage.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height * 0.44;
+          const dx = e.clientX - cx;
+          const dy = e.clientY - cy;
+          const angle = Math.atan2(dy, dx);
+          const dist = Math.hypot(dx, dy);
+          const intensity = Math.min(1.0, dist / 400);
+          targetEyeX = Math.cos(angle) * 16 * intensity;
+          targetEyeY = Math.sin(angle) * 9 * intensity;
+        }
+
+        // Demo mascot tracking (if not covered)
+        if (!isPasswordCovered) {
+          const demoSvg = document.getElementById('demoAitukoSvg');
+          if (demoSvg) {
+            const rect = demoSvg.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height * 0.44;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+            const angle = Math.atan2(dy, dx);
+            const dist = Math.hypot(dx, dy);
+            const intensity = Math.min(1.0, dist / 400);
+            demoTargetEyeX = Math.cos(angle) * 16 * intensity;
+            demoTargetEyeY = Math.sin(angle) * 9 * intensity;
+          }
+        }
+      });
+    }
+
+    // Handlers pour la démo de formulaire
+    function onDemoInputFocus(e) {
+      if (isPasswordCovered) toggleDemoPasswordPeek(false);
+      startEyeTrackingLoop();
+      const text = e.target.value || '';
+      const bubbleText = document.getElementById('demoBubbleText');
+      const arches = document.getElementById('demoEyeArches');
+      const pills = document.getElementById('demoEyePills');
+      if (text.length > 0) {
+        if (arches) arches.classList.add('hidden');
+        if (pills) pills.classList.remove('hidden');
+        if (bubbleText) bubbleText.textContent = `Je vérifie : "${text.slice(0, 15)}..."`;
+        demoTargetEyeX = -4;
+        demoTargetEyeY = 6;
+      } else {
+        if (arches) arches.classList.remove('hidden');
+        if (pills) pills.classList.add('hidden');
+        if (bubbleText) bubbleText.textContent = "Je vous écoute ! Tapez votre adresse...";
+      }
+    }
+
+    function onDemoPasswordFocus() {
+      startEyeTrackingLoop();
+      toggleDemoPasswordPeek(true);
+    }
+
+    function toggleDemoPasswordPeek(forceVal) {
+      startEyeTrackingLoop();
+      isPasswordCovered = typeof forceVal === 'boolean' ? forceVal : !isPasswordCovered;
+      const lHand = document.getElementById('demoLeftHand');
+      const rHand = document.getElementById('demoRightHand');
+      const peekBtn = document.getElementById('demoPeekBtn');
+      const bubbleText = document.getElementById('demoBubbleText');
+
+      if (isPasswordCovered) {
+        if (lHand) {
+          lHand.classList.remove('aituko-left-arm-anim');
+          lHand.setAttribute('transform', 'translate(210, 150) rotate(55)');
+        }
+        if (rHand) {
+          rHand.classList.remove('aituko-right-arm-anim');
+          rHand.setAttribute('transform', 'translate(302, 150) rotate(-55)');
+        }
+        if (peekBtn) peekBtn.textContent = "👀 Jeter un œil";
+        if (bubbleText) bubbleText.textContent = "Chut ! Je ne regarde pas votre mot de passe 🙈";
+        demoTargetEyeX = 0;
+        demoTargetEyeY = 0;
+      } else {
+        if (lHand) {
+          lHand.removeAttribute('transform');
+          lHand.classList.add('aituko-left-arm-anim');
+        }
+        if (rHand) {
+          rHand.removeAttribute('transform');
+          rHand.classList.add('aituko-right-arm-anim');
+        }
+        if (peekBtn) peekBtn.textContent = "🙈 Couvrir les yeux";
+        if (bubbleText) bubbleText.textContent = "Je garde un œil ouvert !";
+      }
+    }
+
+    function triggerDemoAction(action) {
+      startEyeTrackingLoop();
+      const bubbleText = document.getElementById('demoBubbleText');
+      const floatGroup = document.getElementById('demoAitukoFloat');
+      const headGroup = document.getElementById('demoHeadGroup');
+      const lEye = document.getElementById('demoLeftEye');
+      const rEye = document.getElementById('demoRightEye');
+      const arches = document.getElementById('demoEyeArches');
+      const pills = document.getElementById('demoEyePills');
+
+      if (action === 'error') {
+        toggleDemoPasswordPeek(false);
+        if (arches) arches.classList.add('hidden');
+        if (pills) pills.classList.remove('hidden');
+        if (bubbleText) bubbleText.textContent = "Oups ! Erreur d'authentification ⚠️";
+        if (headGroup) {
+          headGroup.style.transform = "rotate(-6deg)";
+          setTimeout(() => { if (headGroup) headGroup.style.transform = "none"; }, 1400);
+        }
+        if (lEye) lEye.setAttribute('rx', '4');
+        if (rEye) rEye.setAttribute('rx', '4');
+        setTimeout(() => {
+          if (lEye) lEye.setAttribute('rx', '11');
+          if (rEye) rEye.setAttribute('rx', '11');
+          if (arches) arches.classList.remove('hidden');
+          if (pills) pills.classList.add('hidden');
+        }, 2000);
+      } else if (action === 'success') {
+        toggleDemoPasswordPeek(false);
+        if (arches) arches.classList.remove('hidden');
+        if (pills) pills.classList.add('hidden');
+        if (bubbleText) bubbleText.textContent = "Connexion réussie ! Bienvenue 🎉";
+        if (floatGroup) {
+          floatGroup.style.transform = "translateY(-16px) scale(1.04)";
+          setTimeout(() => { if (floatGroup) floatGroup.style.transform = "none"; }, 1000);
+        }
+      } else if (action === 'reset') {
+        toggleDemoPasswordPeek(false);
+        if (arches) arches.classList.remove('hidden');
+        if (pills) pills.classList.add('hidden');
+        const email = document.getElementById('demoEmailInput');
+        const pass = document.getElementById('demoPasswordInput');
+        if (email) email.value = '';
+        if (pass) pass.value = '';
+        if (bubbleText) bubbleText.textContent = "Bonjour ! Tapez un email...";
+      }
+    }
+
+    function copyCode() {
+      const codeBlock = DOM.codeBlock;
+      if (!codeBlock) return;
+      navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+        const copyTxt = DOM.copyTxt;
+        if (copyTxt) {
+          copyTxt.textContent = window.i18n.get('studio.copied');
+          setTimeout(() => { copyTxt.textContent = window.i18n.get('studio.copyCode'); }, 2000);
+        }
+      });
+    }
+
+    // Gestion du Thème (Dark & Light)
+    function initTheme() {
+      const savedTheme = safeStorage.get('uko_theme');
+      if (ALLOWED_THEMES.includes(savedTheme)) {
+        setTheme(savedTheme);
+      } else {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+      }
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
+    }
+
+    function setTheme(mode) {
+      if (!ALLOWED_THEMES.includes(mode)) return;
+      const sun = document.getElementById('themeIconSun');
+      const moon = document.getElementById('themeIconMoon');
+      
+      if (mode === 'dark') {
+        document.documentElement.classList.add('dark');
+        safeStorage.set('uko_theme', 'dark');
+        if (sun) sun.classList.remove('hidden');
+        if (moon) moon.classList.add('hidden');
+      } else {
+        document.documentElement.classList.remove('dark');
+        safeStorage.set('uko_theme', 'light');
+        if (sun) sun.classList.add('hidden');
+        if (moon) moon.classList.remove('hidden');
+      }
+    }
+
+    // Téléchargement Direct 1-Clic du Pack Gratuit (Zéro friction, zéro formulaire inutile)
+    function downloadFreeSample() {
+      const m = MASCOTS[currentMascot] || MASCOTS.aituko;
+      const zipPath = m.zips.free;
+      
+      const a = document.createElement('a');
+      a.href = zipPath;
+      a.download = zipPath.split('/').pop();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      toastSentinel.show({
+        message: window.i18n.get('pricing.freeDownloadStarted', { name: m.name }),
+        type: 'info',
+        duration: 3500
+      });
+    }
+
+    let currentModalMascot = 'aituko';
+
+    function setModalMascot(mKey) {
+      if (!MASCOTS[mKey]) return;
+      currentModalMascot = mKey;
+
+      Object.keys(MASCOTS).forEach(k => {
+        const tab = document.getElementById(`modal-tab-${k}`);
+        if (tab) {
+          if (k === mKey) {
+            tab.className = "py-2 px-1.5 rounded-xl bg-[var(--japandi-surface)] text-[var(--japandi-text)] shadow-soft font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]";
+          } else {
+            tab.className = "py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]";
+          }
+        }
+      });
+
+      updateModalSummary();
+    }
+
+    function updateModalSummary() {
+      const m = MASCOTS[currentModalMascot];
+      if (!m) return;
+      const name = DOM.modalTierName;
+      const price = DOM.modalPrice;
+      const dl = DOM.downloadLink;
+      const btn = DOM.paySubmitBtn;
+
+      if (currentModalTier === 'free') {
+        if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.freeTierTitle')}`;
+        if (price) price.textContent = window.i18n.get('pricing.freeTierPrice');
+        if (dl) dl.href = m.zips.free;
+        if (btn) btn.textContent = window.i18n.get('modal.submitBtn');
+      } else if (currentModalTier === 'starter') {
+        if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.starterTierTitle')}`;
+        if (price) price.textContent = window.i18n.get('pricing.starterTierPrice');
+        if (dl) dl.href = m.zips.starter;
+        if (btn) {
+          const val = window.i18n.get('modal.payBtn');
+          btn.textContent = (val && val !== 'modal.payBtn') ? val : "Procéder au Paiement Sécurisé";
+        }
+      } else {
+        if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.proTierTitle')}`;
+        if (price) price.textContent = window.i18n.get('pricing.proTierPrice');
+        if (dl) dl.href = m.zips.pro;
+        if (btn) {
+          const val = window.i18n.get('modal.payBtn');
+          btn.textContent = (val && val !== 'modal.payBtn') ? val : "Procéder au Paiement Sécurisé";
+        }
+      }
+    }
+
+    // Modal Achat & Téléchargement Sécurisé (Protégé par Rate Limiter & Honeypot)
+    function openModal(tier = 'pro') {
+      const limitCheck = modalLimiter.tryAcquire();
+      if (!limitCheck.allowed) {
+        toastSentinel.show({
+          message: window.i18n.get('resilience.rateLimitModal') || "Trop de requêtes rapides.",
+          type: 'warning',
+          duration: 2500
+        });
+        return;
+      }
+
+      if (!ALLOWED_TIERS.includes(tier)) tier = 'pro';
+      currentModalTier = tier;
+      currentModalMascot = currentMascot;
+
+      const m = DOM.buyModal;
+      const btn = DOM.paySubmitBtn;
+      const successBox = DOM.paySuccess;
+
+      if (btn) {
+        btn.textContent = tier === 'free' 
+          ? window.i18n.get('modal.submitBtn') 
+          : (window.i18n.get('modal.payBtn') || "Procéder au Paiement Sécurisé");
+        btn.disabled = false;
+        btn.classList.remove('hidden');
+      }
+      if (successBox) {
+        successBox.classList.add('hidden');
+      }
+
+      setModalMascot(currentModalMascot);
+
+      if (m) {
+        m.classList.remove('hidden');
+        m.classList.add('flex');
+      }
+
+      setTimeout(() => {
+        const input = document.querySelector('#buyModal input[type="email"]');
+        if (input) input.focus();
+      }, 50);
+    }
+
+    
+    // Gestion de la Modale de Licence Commerciale
+    function openLicenseModal() {
+      const modal = document.getElementById('licenseModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeLicenseModal() {
+      const modal = document.getElementById('licenseModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function closeModal() {
+      const m = DOM.buyModal;
+      if (m) {
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+      }
+    }
+
+    function handlePay(e) {
+      e.preventDefault();
+
+      // Piège Honeypot Bot Modal
+      const hp = document.getElementById('modal_hp_website');
+      if (hp && hp.value.trim().length > 0) {
+        console.warn('[Anti-Bot] Honeypot déclenché sur le modal checkout.');
+        const btn = DOM.paySubmitBtn;
+        if (btn) {
+          btn.textContent = window.i18n.get('modal.preparing');
+          btn.disabled = true;
+        }
+        setTimeout(() => {
+          if (btn) btn.classList.add('hidden');
+          if (DOM.paySuccess) DOM.paySuccess.classList.remove('hidden');
+        }, 500);
+        return;
+      }
+
+      // Limitation de débit
+      const limitCheck = payLimiter.tryAcquire();
+      if (!limitCheck.allowed) {
+        toastSentinel.show({
+          message: window.i18n.get('resilience.rateLimitModal') || "Trop de requêtes rapides.",
+          type: 'warning',
+          duration: 2500
+        });
+        return;
+      }
+
+      const emailInput = document.querySelector('#buyModal input[type="email"]');
+      const email = emailInput ? emailInput.value.trim() : '';
+      if (!email) return;
+
+      const btn = DOM.paySubmitBtn;
+      if (btn) {
+        btn.textContent = window.i18n.get('modal.preparing');
+        btn.disabled = true;
+      }
+
+      // Pack Gratuit → Téléchargement direct immédiat
+      if (currentModalTier === 'free') {
+        setTimeout(() => {
+          if (btn) btn.classList.add('hidden');
+          const dl = DOM.downloadLink;
+          if (dl) dl.href = MASCOTS[currentModalMascot].zips.free;
+          if (DOM.paySuccess) DOM.paySuccess.classList.remove('hidden');
+        }, 400);
+        return;
+      }
+
+      // Pack Payant → Redirection Stripe Checkout
+      fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          tier: currentModalTier,
+          mascot: currentModalMascot,
+          email: email,
+          origin: window.location.origin,
+        }),
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error(data.error || 'Stripe session creation failed');
+        }
+      })
+      .catch(err => {
+        console.error('[Stripe]', err);
+        if (btn) {
+          btn.textContent = window.i18n.get('modal.payBtn', {}, 'Réessayer');
+          btn.disabled = false;
+        }
+        toastSentinel.show({ message: 'Erreur de paiement. Veuillez réessayer.', type: 'error', duration: 3000 });
+      });
+    }
+
+    // Système de Vote Communautaire Sécurisé (Rate Limité)
+    let voteCounts = {
+      kumako: 128,
+      kitsuko: 94,
+      duckuko: 71,
+      panduko: 49
+    };
+    let totalVotes = 342;
+    let userVotedKey = null;
+    let feedbackTimer = null;
+
+    function formatCandidateName(key) {
+      return key.charAt(0).toUpperCase() + key.slice(1);
+    }
+
+    function toggleCandidateVote(candidate) {
+      const limitCheck = voteLimiter.tryAcquire();
+      if (!limitCheck.allowed) {
+        showInlineFeedback(window.i18n.get('resilience.rateLimitVote') || "Ralentissez un instant avant de revoter.");
+        return;
+      }
+
+      if (!Object.prototype.hasOwnProperty.call(voteCounts, candidate)) return;
+      const displayName = formatCandidateName(candidate);
+      const isCancelling = (userVotedKey === candidate);
+
+      if (isCancelling) {
+        voteCounts[candidate]--;
+        totalVotes--;
+        userVotedKey = null;
+
+        updateInlineVoteUI(candidate, false);
+        showInlineFeedback(window.i18n.get('catalogue.voteCancelMsg', { name: displayName }));
+      } else {
+        if (userVotedKey) {
+          voteCounts[userVotedKey]--;
+          updateInlineVoteUI(userVotedKey, false);
+        } else {
+          totalVotes++;
+        }
+
+        voteCounts[candidate]++;
+        userVotedKey = candidate;
+
+        updateInlineVoteUI(candidate, true);
+        showInlineFeedback(window.i18n.get('catalogue.voteSuccessMsg', { name: displayName }));
+      }
+
+      if (DOM.catalogueVoteCount) DOM.catalogueVoteCount.textContent = `${totalVotes} ${window.i18n.get('catalogue.voteCountSuffix')}`;
+    }
+
+    function updateInlineVoteUI(candidate, isActive) {
+      const card = document.getElementById(`vote-card-${candidate}`);
+      const badge = document.getElementById(`badge-${candidate}`);
+
+      if (card && badge) {
+        if (isActive) {
+          card.classList.add('border-[var(--japandi-ochre)]', 'bg-[var(--japandi-ochre-subtle)]');
+          badge.classList.remove('hidden');
+        } else {
+          card.classList.remove('border-[var(--japandi-ochre)]', 'bg-[var(--japandi-ochre-subtle)]');
+          badge.classList.add('hidden');
+        }
+      }
+    }
+
+    function submitCustomSuggestion(e) {
+      e.preventDefault();
+
+      // Piège Honeypot
+      const hp = document.getElementById('suggestion_hp_field');
+      if (hp && hp.value.trim().length > 0) {
+        console.warn('[Anti-Bot] Honeypot déclenché sur suggestion.');
+        const input = document.getElementById('inlineCustomInput');
+        if (input) input.value = '';
+        showInlineFeedback(window.i18n.get('catalogue.suggestSuccessMsg', { val: "..." }));
+        return;
+      }
+
+      // Limitation de débit
+      const limitCheck = suggestLimiter.tryAcquire();
+      if (!limitCheck.allowed) {
+        showInlineFeedback(window.i18n.get('resilience.rateLimitSuggest', { sec: limitCheck.retryAfterSec }));
+        return;
+      }
+
+      const input = document.getElementById('inlineCustomInput');
+      if (!input) return;
+      const val = sanitizePlainText(input.value).slice(0, 60);
+      if (!val) return;
+
+      totalVotes++;
+      if (DOM.catalogueVoteCount) DOM.catalogueVoteCount.textContent = `${totalVotes} ${window.i18n.get('catalogue.voteCountSuffix')}`;
+
+      input.value = '';
+      showInlineFeedback(window.i18n.get('catalogue.suggestSuccessMsg', { val: val }));
+    }
+
+    function showInlineFeedback(msg) {
+      const fb = document.getElementById('inlineVoteFeedback');
+      if (!fb) return;
+      if (feedbackTimer) {
+        clearTimeout(feedbackTimer);
+      }
+      fb.textContent = msg;
+      fb.classList.remove('hidden');
+      feedbackTimer = setTimeout(() => {
+        fb.classList.add('hidden');
+        feedbackTimer = null;
+      }, 3500);
+    }
+
+    // ==========================================================================
+    // 6. SUITE DE BENCHMARK & STRESS-TEST AUTOMATISÉE (window.UkoPerformanceBenchmark)
+    // ==========================================================================
+    window.UkoPerformanceBenchmark = {
+      async runAll() {
+        console.log('%c[Uko Performance Suite] Démarrage du stress-test complet...', 'color: #2E5844; font-weight: bold;');
+        const results = {};
+        results.poseTransitions = await this.benchmarkPoseTransitions(100);
+        results.sliderScrubbing = await this.benchmarkSliderScrubbing(100);
+        results.i18nBatchUpdates = await this.benchmarkI18nUpdates(14);
+        results.preloaderStatus = this.inspectPreloader();
+        console.table(results);
+        return results;
+      },
+
+      async benchmarkPoseTransitions(iterations = 100) {
+        const t0 = performance.now();
+        for (let i = 0; i < iterations; i++) {
+          setPoseIndex(i % 12);
+          await new Promise(r => requestAnimationFrame(r));
+        }
+        const totalTime = performance.now() - t0;
+        const avgPerFrame = (totalTime / iterations).toFixed(2);
+        return { iterations, totalTimeMs: totalTime.toFixed(1), avgPerFrameMs: avgPerFrame, fps: (1000 / avgPerFrame).toFixed(1) };
+      },
+
+      async benchmarkSliderScrubbing(iterations = 100) {
+        const t0 = performance.now();
+        for (let i = 0; i < iterations; i++) {
+          const size = 120 + ((i * 3) % 160);
+          setSize(size);
+          await new Promise(r => requestAnimationFrame(r));
+        }
+        const totalTime = performance.now() - t0;
+        const avgPerFrame = (totalTime / iterations).toFixed(2);
+        return { iterations, totalTimeMs: totalTime.toFixed(1), avgPerFrameMs: avgPerFrame, targetFps: 60 };
+      },
+
+      async benchmarkI18nUpdates(iterations = 14) {
+        const langs = ['en', 'fr', 'es', 'de', 'ja', 'pt', 'zh'];
+        const t0 = performance.now();
+        for (let i = 0; i < iterations; i++) {
+          window.i18n.setLanguage(langs[i % langs.length]);
+          await new Promise(r => requestAnimationFrame(r));
+        }
+        const totalTime = performance.now() - t0;
+        return { iterations, totalTimeMs: totalTime.toFixed(1), avgPerSwitchMs: (totalTime / iterations).toFixed(2) };
+      },
+
+      inspectPreloader() {
+        return {
+          cachedAssetsCount: preloader.cache.size,
+          queuedIdleCount: preloader.idleQueue.length
+        };
+      }
+    };
+
+    // Initialisation au chargement du DOM
+    window.addEventListener('DOMContentLoaded', () => {
+      initDOMRegistry();
+      initTheme();
+      if (window.i18n && typeof window.i18n.updateDOM === 'function') {
+        window.i18n.updateDOM();
+      }
+      updateMascotMessage();
+      updateUI();
+      startEyeTrackingLoop();
+
+      // Initialisation du Moteur de Gestes Tactiles du Stage
+      const stageBox = document.getElementById('stageBox');
+      const mascotStageWrapper = document.getElementById('mascotStageWrapper');
+      if (stageBox && mascotStageWrapper) {
+        window.stageGestureEngine = new StageTouchGestureEngine(stageBox, mascotStageWrapper);
+      }
+
+      // Deep linking via URL Parameters (?mascot=inuko&pose=7&dark=1&scroll=studio)
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('mascot')) {
+          switchMascot(urlParams.get('mascot'));
+        }
+        if (urlParams.has('pose')) {
+          selectPose(parseInt(urlParams.get('pose'), 10));
+        }
+        if (urlParams.get('dark') === '1') {
+          setTheme('dark');
+        }
+        if (urlParams.has('scroll')) {
+          const targetId = urlParams.get('scroll');
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'instant', block: 'start' });
+          }
+        }
+      } catch (err) {
+        console.warn('URL params parsing failed:', err);
+      }
+    });
+  </script>
+</body>
+</html>

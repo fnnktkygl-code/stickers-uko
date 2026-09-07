@@ -1,0 +1,11 @@
+{
+  "mascot": "aituko",
+  "state": "04_error_404",
+  "react": "<AItuko state=\"04_error_404\" size={180} animated />",
+  "vue": "<AItuko state=\"04_error_404\" :size=\"180\" animated />",
+  "flutter": "AItukoMascot(state: AItukoState.04_error_404, size: 180.0)",
+  "html": "<img src=\"assets/04_error_404/animated.webp\" width=\"180\" height=\"180\" alt=\"AItuko\" />",
+  "lottie_react": "<Lottie animationData={aituko_04_error_404} loop={true} style={{ width: 180, height: 180 }} />",
+  "lottie_flutter": "Lottie.asset('assets/04_error_404/lottie.json', width: 180, height: 180)",
+  "lottie_web": "<lottie-player src=\"assets/04_error_404/lottie.json\" background=\"transparent\" speed=\"1\" style=\"width: 180px; height: 180px;\" loop autoplay></lottie-player>"
+}

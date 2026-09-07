@@ -1,0 +1,227 @@
+import os, subprocess
+import cv2, numpy as np
+from PIL import Image
+
+def generate_svg():
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Multi-stop authentic porcelain ceramic shaders -->
+    <linearGradient id="gingerCoatMaster" x1="25%" y1="10%" x2="75%" y2="90%">
+      <stop offset="0%" stop-color="#F9B36E" />
+      <stop offset="25%" stop-color="#EF9345" />
+      <stop offset="60%" stop-color="#DA7724" />
+      <stop offset="100%" stop-color="#B24E0C" />
+    </linearGradient>
+
+    <linearGradient id="tailGradient" x1="20%" y1="20%" x2="80%" y2="80%">
+      <stop offset="0%" stop-color="#EF9345" />
+      <stop offset="50%" stop-color="#D46E1E" />
+      <stop offset="100%" stop-color="#9C4008" />
+    </linearGradient>
+
+    <radialGradient id="creamPorcelainBody" cx="50%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#FAF7F2" />
+      <stop offset="78%" stop-color="#ECE5D7" />
+      <stop offset="100%" stop-color="#D8CCBA" />
+    </radialGradient>
+
+    <radialGradient id="pinkEarCavityL" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FDCABC" />
+      <stop offset="45%" stop-color="#F8A796" />
+      <stop offset="80%" stop-color="#E88270" />
+      <stop offset="100%" stop-color="#CE5C48" />
+    </radialGradient>
+
+    <radialGradient id="pinkEarCavityR" cx="65%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FDCABC" />
+      <stop offset="45%" stop-color="#F8A796" />
+      <stop offset="80%" stop-color="#E88270" />
+      <stop offset="100%" stop-color="#CE5C48" />
+    </radialGradient>
+
+    <radialGradient id="amberIrisL" cx="65%" cy="65%" r="55%">
+      <stop offset="0%" stop-color="#FFF066" />
+      <stop offset="35%" stop-color="#E5B52B" />
+      <stop offset="70%" stop-color="#9C7314" />
+      <stop offset="100%" stop-color="#3A2303" />
+    </radialGradient>
+
+    <radialGradient id="amberIrisR" cx="35%" cy="65%" r="55%">
+      <stop offset="0%" stop-color="#FFF066" />
+      <stop offset="35%" stop-color="#E5B52B" />
+      <stop offset="70%" stop-color="#9C7314" />
+      <stop offset="100%" stop-color="#3A2303" />
+    </radialGradient>
+
+    <radialGradient id="chestSpecularHighlight" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </radialGradient>
+
+    <linearGradient id="noseGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FBA49A" />
+      <stop offset="100%" stop-color="#EB7E72" />
+    </linearGradient>
+
+    <linearGradient id="flankLGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F39C4E" />
+      <stop offset="100%" stop-color="#B85614" />
+    </linearGradient>
+
+    <linearGradient id="flankRGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F39C4E" />
+      <stop offset="100%" stop-color="#B85614" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="512" height="512" fill="#0B0F17" />
+
+  <!-- 1. Tail (Backmost layer, sweeps from left hip to outer curve) -->
+  <path d="M 185 435 C 155 438, 130 442, 122 458 C 117 468, 122 478, 134 478 C 150 478, 172 462, 192 446 C 190 440, 188 437, 185 435 Z" fill="url(#tailGradient)" stroke="#8A3806" stroke-width="0.8" />
+  <path d="M 122 458 C 118 450, 122 436, 136 422 C 146 412, 158 410, 166 418 C 172 425, 170 435, 156 445 C 142 455, 132 460, 122 458 Z" fill="url(#tailGradient)" stroke="#8A3806" stroke-width="0.8" />
+
+  <!-- 2. Body Silhouette Shell (Ginger Porcelain) -->
+  <!-- Left Ear: from temple (152, 125) to apex (167, 41) to inner root (200, 85) -->
+  <!-- Crown: (200, 85) to (268, 72) to (336, 85) -->
+  <!-- Right Ear: (336, 85) to apex (368, 41) to outer temple (384, 125) -->
+  <!-- Right Temple / Cheek: (384, 125) to (388, 175) to (378, 225) to neck (328, 275) -->
+  <!-- Right Flank: (328, 275) to (376, 335) to (388, 400) to (374, 455) to paw (336, 485) -->
+  <!-- Base: paws line Y=490 -->
+  <!-- Left Flank: paw (200, 485) to (174, 445) to (172, 380) to (195, 310) to neck (208, 275) -->
+  <!-- Left Temple / Cheek: (208, 275) to (158, 225) to (148, 175) to (152, 125) -->
+  <path d="M 152 125 C 150 95, 158 60, 167 41 C 176 58, 188 74, 200 85 C 220 76, 245 72, 268 72 C 291 72, 316 76, 336 85 C 348 74, 360 58, 368 41 C 378 60, 386 95, 384 125 C 390 155, 390 190, 378 225 C 368 250, 348 268, 328 275 C 352 300, 376 345, 388 400 C 394 430, 388 460, 370 475 C 356 486, 340 489, 328 490 L 208 490 C 196 489, 180 486, 172 470 C 162 450, 164 415, 174 370 C 182 330, 196 295, 208 275 C 188 268, 168 250, 158 225 C 146 190, 146 155, 152 125 Z" fill="url(#gingerCoatMaster)" stroke="#8A3806" stroke-width="0.8" />
+
+  <!-- 3. Left & Right Flank Depth Shading -->
+  <path d="M 174 370 C 184 330, 196 295, 208 275 C 218 310, 228 350, 234 400 C 238 435, 238 465, 236 488 L 208 490 C 196 489, 180 486, 172 470 C 162 450, 164 415, 174 370 Z" fill="url(#flankLGrad)" opacity="0.9" />
+  <path d="M 388 400 C 376 345, 352 300, 328 275 C 318 310, 308 350, 302 400 C 298 435, 298 465, 300 488 L 328 490 C 340 489, 356 486, 370 475 C 388 460, 394 430, 388 400 Z" fill="url(#flankRGrad)" opacity="0.9" />
+
+  <!-- 4. Inner Ear Cavities (Soft Peach Porcelain) -->
+  <!-- Left Inner Ear -->
+  <path d="M 167 48 C 172 65, 182 85, 194 92 C 192 105, 176 130, 164 126 C 158 110, 160 75, 167 48 Z" fill="url(#pinkEarCavityL)" stroke="#BF5340" stroke-width="0.8" />
+  <!-- Left Ear Tufts (3 sculpted cream tufts) -->
+  <path d="M 172 104 C 178 106, 186 102, 192 98 C 186 104, 180 110, 170 112" fill="#FAF7F2" />
+  <path d="M 170 114 C 176 116, 184 112, 190 108 C 184 114, 178 120, 168 122" fill="#FAF7F2" />
+  <path d="M 166 124 C 172 126, 180 122, 186 118 C 180 124, 174 128, 164 130" fill="#FAF7F2" />
+
+  <!-- Right Inner Ear -->
+  <path d="M 368 48 C 363 65, 354 85, 342 92 C 344 105, 360 130, 372 126 C 378 110, 376 75, 368 48 Z" fill="url(#pinkEarCavityR)" stroke="#BF5340" stroke-width="0.8" />
+  <!-- Right Ear Tufts (3 sculpted cream tufts) -->
+  <path d="M 364 104 C 358 106, 350 102, 344 98 C 350 104, 356 110, 366 112" fill="#FAF7F2" />
+  <path d="M 366 114 C 360 116, 352 112, 346 108 C 352 114, 358 120, 368 122" fill="#FAF7F2" />
+  <path d="M 370 124 C 364 126, 356 122, 350 118 C 356 124, 362 128, 372 130" fill="#FAF7F2" />
+
+  <!-- 5. Forehead Tabby Stripes (Soft amber rounded drops) -->
+  <!-- Center stripe: drops from crown (268, 72) down to (268, 116) -->
+  <path d="M 264 74 C 264 72, 272 72, 272 74 L 271 110 C 271 114, 265 114, 265 110 Z" fill="#B85210" opacity="0.85" />
+  <!-- Left stripe: curves from (238, 80) to (248, 122) -->
+  <path d="M 235 80 C 237 78, 243 79, 244 82 L 250 118 C 251 122, 245 123, 243 119 Z" fill="#B85210" opacity="0.80" />
+  <!-- Right stripe: curves from (298, 80) to (288, 122) -->
+  <path d="M 301 80 C 299 78, 293 79, 292 82 L 286 118 C 285 122, 291 123, 293 119 Z" fill="#B85210" opacity="0.80" />
+
+  <!-- 6. White Fur Marking (Blaze, Chubby Cheeks, Chest, Front Legs, Paws) -->
+  <!-- Blaze starts at peak (268, 112) -->
+  <!-- Curves down left: (268, 112) -> (242, 142) -> (232, 155) -> (220, 160) around left eye socket -->
+  <!-- Sweeps into plump left cheek: (195, 175) -> (165, 210) -> (170, 240) -> (200, 265) -->
+  <!-- Narrows into chest & left front leg: (218, 275) -> (224, 340) -> (230, 420) -> (224, 460) -->
+  <!-- Rear Left Paw pad: (204, 468) -> (204, 490) -> (232, 490) -->
+  <!-- Front Left Paw 3 toes: (232, 490) -> Toe1 arch (238, 466) -> Toe2 arch (250, 463) -> Toe3 arch (262, 465) -> center cleft (268, 490) -->
+  <!-- Front Right Paw 3 toes: center cleft (268, 490) -> Toe1 arch (274, 465) -> Toe2 arch (286, 463) -> Toe3 arch (298, 466) -> (304, 490) -->
+  <!-- Rear Right Paw pad: (304, 490) -> (332, 490) -> (332, 468) -->
+  <!-- Right front leg: (312, 460) -> (306, 420) -> (312, 340) -> (318, 275) -->
+  <!-- Sweeps into plump right cheek: (336, 265) -> (366, 240) -> (371, 210) -> (341, 175) -->
+  <!-- Around right eye socket into blaze: (316, 160) -> (304, 155) -> (294, 142) -> (268, 112) -->
+  <path d="M 268 112 C 254 130, 238 145, 226 156 C 205 165, 185 180, 168 206 C 158 222, 162 242, 180 258 C 196 270, 214 275, 222 285 C 228 320, 230 370, 228 420 C 226 445, 216 458, 204 468 C 200 472, 202 490, 212 490 L 232 490 C 232 478, 234 468, 242 466 C 248 468, 248 478, 252 490 L 254 490 C 256 478, 258 465, 266 465 C 268 475, 268 485, 268 490 C 268 485, 268 475, 270 465 C 278 465, 280 478, 282 490 L 284 490 C 288 478, 288 468, 294 466 C 302 468, 304 478, 304 490 L 324 490 C 334 490, 336 472, 332 468 C 320 458, 310 445, 308 420 C 306 370, 308 320, 314 285 C 322 275, 340 270, 356 258 C 374 242, 378 222, 368 206 C 351 180, 331 165, 310 156 C 298 145, 282 130, 268 112 Z" fill="url(#creamPorcelainBody)" stroke="#C6BAA8" stroke-width="0.8" />
+
+  <!-- 7. Sculpted Leg Divide & Paw Clefts -->
+  <!-- Leg separation groove -->
+  <path d="M 268 380 C 268 410, 268 450, 268 490" stroke="#B8AC98" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.85" />
+  <!-- Left Paw Toe Clefts -->
+  <path d="M 244 472 C 244 478, 244 485, 244 490" stroke="#B8AC98" stroke-width="1.4" stroke-linecap="round" fill="none" />
+  <path d="M 256 472 C 256 478, 256 485, 256 490" stroke="#B8AC98" stroke-width="1.4" stroke-linecap="round" fill="none" />
+  <!-- Right Paw Toe Clefts -->
+  <path d="M 280 472 C 280 478, 280 485, 280 490" stroke="#B8AC98" stroke-width="1.4" stroke-linecap="round" fill="none" />
+  <path d="M 292 472 C 292 478, 292 485, 292 490" stroke="#B8AC98" stroke-width="1.4" stroke-linecap="round" fill="none" />
+
+  <!-- Chest Curvature Specular Highlight -->
+  <ellipse cx="268" cy="320" rx="36" ry="46" fill="url(#chestSpecularHighlight)" />
+
+  <!-- 8. Glassy Amber Orb Eyes -->
+  <!-- Left Eye: Center (224, 171) -->
+  <g transform="translate(224, 171) rotate(-3)">
+    <!-- Dark Eyeliner Socket -->
+    <ellipse cx="0" cy="0" rx="24" ry="26" fill="#180E04" />
+    <!-- Amber Iris -->
+    <ellipse cx="0" cy="0" rx="22.5" ry="24.5" fill="url(#amberIrisL)" />
+    <!-- Black Pupil -->
+    <ellipse cx="0.5" cy="0" rx="16" ry="17.5" fill="#0A0501" />
+    <!-- Crisp Primary Specular Highlight -->
+    <circle cx="3" cy="-7.5" r="7.2" fill="#FFFFFF" />
+    <!-- Secondary Specular Highlight -->
+    <circle cx="-5.5" cy="9.5" r="3.2" fill="#FFFFFF" opacity="0.65" />
+  </g>
+
+  <!-- Right Eye: Center (318, 171) -->
+  <g transform="translate(318, 171) rotate(3)">
+    <!-- Dark Eyeliner Socket -->
+    <ellipse cx="0" cy="0" rx="24" ry="26" fill="#180E04" />
+    <!-- Amber Iris -->
+    <ellipse cx="0" cy="0" rx="22.5" ry="24.5" fill="url(#amberIrisR)" />
+    <!-- Black Pupil -->
+    <ellipse cx="-0.5" cy="0" rx="16" ry="17.5" fill="#0A0501" />
+    <!-- Crisp Primary Specular Highlight -->
+    <circle cx="3" cy="-7.5" r="7.2" fill="#FFFFFF" />
+    <!-- Secondary Specular Highlight -->
+    <circle cx="-5.5" cy="9.5" r="3.2" fill="#FFFFFF" opacity="0.65" />
+  </g>
+
+  <!-- 9. Soft Coral/Peach Nose -->
+  <!-- Inverted triangle from (259, 194) to (277, 194) with apex at (268, 206) -->
+  <path d="M 259 195 C 263 193, 273 193, 277 195 C 279 198, 271 206, 268 206 C 265 206, 257 198, 259 195 Z" fill="url(#noseGradient)" stroke="#DC6D60" stroke-width="0.8" />
+
+  <!-- 10. Philtrum & Mouth Line ω -->
+  <path d="M 268 206 L 268 214" stroke="#7C6958" stroke-width="1.4" stroke-linecap="round" fill="none" />
+  <path d="M 248 221 C 254 224, 262 222, 268 214 C 274 222, 282 224, 288 221" stroke="#7C6958" stroke-width="1.4" stroke-linecap="round" fill="none" />
+  <!-- Chin Shadow -->
+  <ellipse cx="268" cy="235" rx="10" ry="4" fill="#DECFC0" opacity="0.5" />
+
+  <!-- 11. Delicate Feline Whiskers (3 left, 3 right) -->
+  <!-- Left Whiskers -->
+  <path d="M 246 212 C 222 211, 200 215, 182 216" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.92" />
+  <path d="M 244 218 C 220 220, 198 227, 180 232" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.92" />
+  <path d="M 245 224 C 224 230, 205 238, 192 246" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.85" />
+  <!-- Right Whiskers -->
+  <path d="M 290 212 C 314 211, 336 215, 354 216" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.92" />
+  <path d="M 292 218 C 316 220, 338 227, 356 232" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.92" />
+  <path d="M 291 224 C 312 230, 331 238, 344 246" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.85" />
+</svg>"""
+    return svg
+
+with open("scratch/meoweko_proto_vector.svg", "w") as f:
+    f.write(generate_svg())
+
+cmd = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless",
+    "--disable-gpu",
+    "--screenshot=scratch/meoweko_proto_vector.png",
+    "--window-size=512,512",
+    "--default-background-color=00000000",
+    "file:///Users/richard/Developer/Stickers Uko/scratch/meoweko_proto_vector.svg"
+]
+subprocess.run(cmd, check=True)
+
+# Build side-by-side comparison
+ref = Image.open("mascots/meoweko/meoweko_master_exact_512.png").convert("RGBA")
+vec = Image.open("scratch/meoweko_proto_vector.png").convert("RGBA")
+
+comp = Image.new("RGBA", (1024, 512), (11, 15, 23, 255))
+comp.paste(ref, (0, 0), ref)
+comp.paste(vec, (512, 0), vec)
+
+draw = ImageDraw.Draw(comp)
+draw.line([(512, 0), (512, 512)], fill=(217, 155, 38), width=2)
+comp.save("scratch/meoweko_proto_comparison.png")
+print("Saved scratch/meoweko_proto_comparison.png!")

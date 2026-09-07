@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Owluko — Visualiseur 3D Interactif 360°</title>
+  <style>
+    body { margin: 0; background: #0B0F17; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+    .card { background: #111827; border: 1px solid #1F2937; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    h1 { margin: 0 0 8px 0; font-size: 20px; font-weight: 600; }
+    p { margin: 0 0 20px 0; font-size: 13px; color: #94A3B8; }
+    #canvas-container { width: 512px; height: 512px; position: relative; cursor: grab; }
+    #canvas-container:active { cursor: grabbing; }
+    img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+    .controls { margin-top: 16px; display: flex; gap: 12px; align-items: center; }
+    button { background: #1F2937; border: 1px solid #374151; color: #E2E8F0; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.2s; }
+    button:hover { background: #374151; }
+    .badge { background: rgba(217, 155, 38, 0.15); border: 1px solid #D99B26; color: #D99B26; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">🦉 OWLUKO MASTER TURNAROUND 360°</div>
+    <h1>Visualiseur 360° — Modèle Étalon Canonique</h1>
+    <p>Glissez horizontalement pour inspecter Owluko sous tous les angles (Porcelaine & Yeux Ambre).</p>
+    <div id="canvas-container">
+      <img id="viewer-img" src="owluko_master_exact_512.png" alt="Owluko 3D" />
+    </div>
+    <div class="controls">
+      <button onclick="setAngle(0)">0° Face</button>
+      <button onclick="setAngle(1)">90°R Profil Droit</button>
+      <button onclick="setAngle(2)">90°L Profil Gauche</button>
+      <button onclick="setAngle(3)">180° Dos</button>
+      <button id="toggle-spin" onclick="toggleAutoSpin()">Auto-Rotation</button>
+    </div>
+  </div>
+  <script>
+    const views = [
+      'owluko_turnaround_view_1_front.png',
+      'owluko_turnaround_view_2_profile_right.png',
+      'owluko_turnaround_view_3_profile_left.png',
+      'owluko_turnaround_view_4_back.png'
+    ];
+    let curIndex = 0;
+    let autoSpin = false;
+    let spinInterval = null;
+    const imgEl = document.getElementById('viewer-img');
+
+    function setAngle(idx) {
+      curIndex = (idx + views.length) % views.length;
+      imgEl.src = views[curIndex];
+    }
+
+    function toggleAutoSpin() {
+      autoSpin = !autoSpin;
+      document.getElementById('toggle-spin').innerText = autoSpin ? 'Pause' : 'Auto-Rotation';
+      if (autoSpin) {
+        spinInterval = setInterval(() => { setAngle(curIndex + 1); }, 800);
+      } else {
+        clearInterval(spinInterval);
+      }
+    }
+
+    let startX = 0;
+    const container = document.getElementById('canvas-container');
+    container.addEventListener('mousedown', e => { startX = e.clientX; });
+    container.addEventListener('mouseup', e => {
+      let diff = e.clientX - startX;
+      if (Math.abs(diff) > 40) {
+        setAngle(curIndex + (diff > 0 ? -1 : 1));
+      }
+    });
+  </script>
+</body>
+</html>

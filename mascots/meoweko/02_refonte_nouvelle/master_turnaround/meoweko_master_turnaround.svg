@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 820" width="1920" height="820">
+  <defs>
+    <radialGradient id="meoweko_porcelainCream" cx="38%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FAF8F5" />
+      <stop offset="75%" stop-color="#F2EDE4" />
+      <stop offset="100%" stop-color="#E2D9CB" />
+    </radialGradient>
+    <radialGradient id="meoweko_amberEye" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="45%" stop-color="#D99B26" />
+      <stop offset="85%" stop-color="#92400E" />
+      <stop offset="100%" stop-color="#451A03" />
+    </radialGradient>
+    <radialGradient id="meoweko_pinkEar" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FED7AA" />
+      <stop offset="60%" stop-color="#FDBA74" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </radialGradient>
+    <linearGradient id="meoweko_tailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5" />
+      <stop offset="100%" stop-color="#E2D9CB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="820" fill="#0B0F17" />
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1920" height="70" fill="#0F172A" />
+  <line x1="0" y1="70" x2="1920" y2="70" stroke="#D99B26" stroke-width="2" />
+  <text x="40" y="32" fill="#FFFFFF" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="bold">MEOWEKO (EX-LUNEKO) — CANONICAL MASTER VECTOR TURNAROUND (4 VUES TOURNANTE)</text>
+  <text x="40" y="55" fill="#94A3B8" font-family="Helvetica, Arial, sans-serif" font-size="12">Modèle vectoriel officiel • Porcelaine lustrée • Yeux ambre vitreux • Oreilles et queue félines • Zéro ombre</text>
+
+  <!-- Guidelines -->
+  <line x1="35" y1="175" x2="1885" y2="175" stroke="#334155" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="45" y="168" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="10">SOMMET OREILLES FÉLINES (Y = 175)</text>
+
+  <line x1="35" y1="301" x2="1885" y2="301" stroke="#334155" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="45" y="294" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="10">HORIZON YEUX ORBES AMBRE (Y = 301)</text>
+
+  <line x1="35" y1="355" x2="1885" y2="355" stroke="#334155" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="45" y="348" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="10">MÂCHOIRE / COLLIER (Y = 355)</text>
+
+  <line x1="35" y1="460" x2="1885" y2="460" stroke="#334155" stroke-width="1" stroke-dasharray="4,4" />
+  <text x="45" y="453" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="10">PATTES AVANT / POITRAIL (Y = 460)</text>
+
+  <line x1="35" y1="640" x2="1885" y2="640" stroke="#334155" stroke-width="1" />
+  <text x="45" y="633" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="10">LIGNE DE SOL / PATTES — ZÉRO OMBRE (Y = 640)</text>
+
+  <!-- COLUMN 1: 0° FRONT -->
+  <g id="col_front" transform="translate(40, 80)">
+    <rect x="5" y="2" width="450" height="713" fill="#0F172A" stroke="#1F2937" stroke-width="1" rx="8" />
+    <text x="25" y="32" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold">0° — VUE DE FACE (FRONT)</text>
+    <g transform="translate(230, 407)">
+      <!-- Feline Ears -->
+      <polygon points="-75,-220 -40,-140 -105,-155" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <polygon points="-70,-205 -45,-145 -95,-158" fill="url(#meoweko_pinkEar)" />
+      <polygon points="75,-220 105,-155 40,-140" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <polygon points="70,-205 95,-158 45,-145" fill="url(#meoweko_pinkEar)" />
+      <!-- Torso Capsule -->
+      <ellipse cx="0" cy="95" rx="110" ry="135" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Head Dome -->
+      <ellipse cx="0" cy="-75" rx="125" ry="98" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Amber Eyes -->
+      <circle cx="-46" cy="-75" r="26" fill="url(#meoweko_amberEye)" stroke="#451A03" stroke-width="1.8" />
+      <circle cx="46" cy="-75" r="26" fill="url(#meoweko_amberEye)" stroke="#451A03" stroke-width="1.8" />
+      <circle cx="-38" cy="-82" r="5" fill="#FFFFFF" />
+      <circle cx="54" cy="-82" r="5" fill="#FFFFFF" />
+      <!-- Nose & Mouth -->
+      <polygon points="0,-48 -4,-42 4,-42" fill="#FDBA74" />
+      <path d="M -8 -36 C -4 -32 0 -34 0 -38 C 0 -34 4 -32 8 -36" fill="none" stroke="#94A3B8" stroke-width="1.2" />
+      <!-- Whiskers -->
+      <line x1="-80" y1="-50" x2="-135" y2="-55" stroke="#CBD5E1" stroke-width="1.0" />
+      <line x1="-80" y1="-42" x2="-135" y2="-38" stroke="#CBD5E1" stroke-width="1.0" />
+      <line x1="80" y1="-50" x2="135" y2="-55" stroke="#CBD5E1" stroke-width="1.0" />
+      <line x1="80" y1="-42" x2="135" y2="-38" stroke="#CBD5E1" stroke-width="1.0" />
+      <!-- Front Paws -->
+      <ellipse cx="-42" cy="225" rx="22" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <ellipse cx="42" cy="225" rx="22" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+    </g>
+  </g>
+
+  <!-- COLUMN 2: 90°R PROFILE RIGHT -->
+  <g id="col_profile_r" transform="translate(500, 80)">
+    <rect x="5" y="2" width="450" height="713" fill="#0F172A" stroke="#1F2937" stroke-width="1" rx="8" />
+    <text x="25" y="32" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold">90°R — PROFIL DROIT (SIDE RIGHT)</text>
+    <g transform="translate(230, 407)">
+      <!-- Right Ear Profile -->
+      <polygon points="25,-220 55,-140 -15,-155" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <polygon points="20,-205 48,-145 -5,-158" fill="url(#meoweko_pinkEar)" />
+      <!-- Tail Ascending -->
+      <path d="M -75 145 C -125 110 -135 15 -115 -45 C -105 -75 -85 -65 -95 -35 C -105 5 -95 95 -65 165 Z" fill="url(#meoweko_tailGrad)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Torso Profile -->
+      <ellipse cx="0" cy="95" rx="95" ry="135" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Head Profile -->
+      <ellipse cx="15" cy="-75" rx="110" ry="98" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Amber Eye Profile -->
+      <circle cx="65" cy="-75" r="24" fill="url(#meoweko_amberEye)" stroke="#451A03" stroke-width="1.8" />
+      <circle cx="72" cy="-82" r="4.5" fill="#FFFFFF" />
+      <!-- Paws Profile -->
+      <ellipse cx="45" cy="225" rx="22" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <ellipse cx="-45" cy="225" rx="22" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+    </g>
+  </g>
+
+  <!-- COLUMN 3: 90°L PROFILE LEFT -->
+  <g id="col_profile_l" transform="translate(960, 80)">
+    <rect x="5" y="2" width="450" height="713" fill="#0F172A" stroke="#1F2937" stroke-width="1" rx="8" />
+    <text x="25" y="32" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold">90°L — PROFIL GAUCHE (SIDE LEFT)</text>
+    <g transform="translate(230, 407)">
+      <!-- Left Ear Profile -->
+      <polygon points="-25,-220 -55,-140 15,-155" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <polygon points="-20,-205 -48,-145 5,-158" fill="url(#meoweko_pinkEar)" />
+      <!-- Tail Ascending Left -->
+      <path d="M 75 145 C 125 110 135 15 115 -45 C 105 -75 85 -65 95 -35 C 105 5 95 95 65 165 Z" fill="url(#meoweko_tailGrad)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Torso Profile -->
+      <ellipse cx="0" cy="95" rx="95" ry="135" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Head Profile -->
+      <ellipse cx="-15" cy="-75" rx="110" ry="98" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Amber Eye Profile Left -->
+      <circle cx="-65" cy="-75" r="24" fill="url(#meoweko_amberEye)" stroke="#451A03" stroke-width="1.8" />
+      <circle cx="-58" cy="-82" r="4.5" fill="#FFFFFF" />
+      <!-- Paws Profile -->
+      <ellipse cx="-45" cy="225" rx="22" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <ellipse cx="45" cy="225" rx="22" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+    </g>
+  </g>
+
+  <!-- COLUMN 4: 180° BACK -->
+  <g id="col_back" transform="translate(1420, 80)">
+    <rect x="5" y="2" width="450" height="713" fill="#0F172A" stroke="#1F2937" stroke-width="1" rx="8" />
+    <text x="25" y="32" fill="#D99B26" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold">180° — VUE DE DOS (BACK)</text>
+    <g transform="translate(230, 407)">
+      <!-- Back of Ears -->
+      <polygon points="-75,-220 -40,-140 -105,-155" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <polygon points="75,-220 105,-155 40,-140" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Torso Back -->
+      <ellipse cx="0" cy="95" rx="110" ry="135" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Feline Tail Back -->
+      <path d="M 0 160 C 45 130 55 30 35 -30 C 25 -60 5 -50 15 -20 C 25 20 15 110 0 175 Z" fill="url(#meoweko_tailGrad)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Head Dome Back -->
+      <ellipse cx="0" cy="-75" rx="125" ry="98" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <!-- Hind Paws Back -->
+      <ellipse cx="-52" cy="225" rx="24" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+      <ellipse cx="52" cy="225" rx="24" ry="14" fill="url(#meoweko_porcelainCream)" stroke="#C8BEAD" stroke-width="1.2" />
+    </g>
+  </g>
+</svg>

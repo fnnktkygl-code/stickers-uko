@@ -1,0 +1,437 @@
+import os
+import math
+
+def generate_owluko_user_exact_svg(filepath):
+    """
+    100% Faithful Vector Owluko matching user's canonical reference:
+    - Ground truth: media_1788762027946.png / owluko_user_master_ref.png (1024x1024)
+    - Perfectly measured landmarks and sampled palette
+    """
+    svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Soft Background Radial Ground Shadow -->
+    <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2D1A0D" stop-opacity="0.28" />
+      <stop offset="45%" stop-color="#2D1A0D" stop-opacity="0.12" />
+      <stop offset="80%" stop-color="#2D1A0D" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#2D1A0D" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Master Chubby Body Warm Down Gradient -->
+    <radialGradient id="bodyGrad" cx="50%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FCF9F3" />
+      <stop offset="35%" stop-color="#F5EEDA" />
+      <stop offset="65%" stop-color="#EEDFC8" />
+      <stop offset="85%" stop-color="#E5D1B5" />
+      <stop offset="100%" stop-color="#D4BEA2" />
+    </radialGradient>
+
+    <!-- Facial Mask Soft Ivory Gradient -->
+    <radialGradient id="faceMaskGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#FAF6EE" />
+      <stop offset="75%" stop-color="#F3E9D7" />
+      <stop offset="100%" stop-color="#EAD5B8" />
+    </radialGradient>
+
+    <!-- Eye Socket Soft Depression Gradients -->
+    <radialGradient id="leftSocketGrad" cx="46%" cy="46%" r="54%">
+      <stop offset="0%" stop-color="#E8D4B8" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#E8D4B8" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#FAF6EE" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="rightSocketGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8D4B8" stop-opacity="0.65" />
+      <stop offset="60%" stop-color="#E8D4B8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#FAF6EE" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Left Eye Glassy Amber Radial Gradient -->
+    <radialGradient id="irisGrad" cx="35%" cy="32%" r="65%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="18%" stop-color="#FDE047" />
+      <stop offset="38%" stop-color="#F59E0B" />
+      <stop offset="65%" stop-color="#B45309" />
+      <stop offset="85%" stop-color="#78350F" />
+      <stop offset="100%" stop-color="#451A03" />
+    </radialGradient>
+
+    <!-- Lower Iris Radiant Honey-Gold Arc -->
+    <radialGradient id="honeyCrescentGrad" cx="40%" cy="65%" r="52%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#F59E0B" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Wing Volume Linear Gradients -->
+    <linearGradient id="wingLeftGrad" x1="10%" y1="20%" x2="85%" y2="80%">
+      <stop offset="0%" stop-color="#F7EFE3" />
+      <stop offset="40%" stop-color="#EBD9C0" />
+      <stop offset="80%" stop-color="#DBC2A2" />
+      <stop offset="100%" stop-color="#C5AA86" />
+    </linearGradient>
+    <linearGradient id="wingRightGrad" x1="90%" y1="20%" x2="15%" y2="80%">
+      <stop offset="0%" stop-color="#F7EFE3" />
+      <stop offset="40%" stop-color="#EBD9C0" />
+      <stop offset="80%" stop-color="#DBC2A2" />
+      <stop offset="100%" stop-color="#C5AA86" />
+    </linearGradient>
+
+    <!-- Beak Orange-Gold Shading -->
+    <radialGradient id="beakDomeGrad" cx="50%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#FED7AA" />
+      <stop offset="35%" stop-color="#FBA343" />
+      <stop offset="70%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </radialGradient>
+
+    <!-- Lower Beak Jaw Cup -->
+    <linearGradient id="lowerBeakGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C" />
+      <stop offset="45%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Tongue Coral-Pink Gradient -->
+    <linearGradient id="tongueGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#F87171" />
+      <stop offset="40%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+
+    <!-- Toe Sausage Gradients -->
+    <linearGradient id="toeGrad" x1="30%" y1="10%" x2="70%" y2="90%">
+      <stop offset="0%" stop-color="#FED7AA" />
+      <stop offset="35%" stop-color="#FBA343" />
+      <stop offset="75%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#9A3412" />
+    </linearGradient>
+  </defs>
+
+  <!-- 01. SOFT GROUND SHADOW UNDER FEET -->
+  <g id="ground_shadow">
+    <ellipse cx="512" cy="876" rx="260" ry="28" fill="url(#groundShadow)" />
+    <ellipse cx="512" cy="874" rx="175" ry="15" fill="#1A0D06" opacity="0.16" />
+  </g>
+
+  <!-- 02. FEET (3 plump elongated bean toes per foot grounded under belly) -->
+  <g id="feet_layer">
+    <!-- LEFT FOOT (Centered around x=408, baseline y=875) -->
+    <g id="foot_l">
+      <!-- Outer Toe (leftmost, angled outward) -->
+      <path d="M 390 844
+               C 370 842, 350 852, 352 866
+               C 354 876, 368 880, 386 876
+               C 400 872, 408 860, 404 848
+               C 402 844, 396 844, 390 844 Z"
+            fill="url(#toeGrad)" />
+      <ellipse cx="376" cy="858" rx="8" ry="4" fill="#FED7AA" opacity="0.8" transform="rotate(-15 376 858)" />
+
+      <!-- Middle Toe (proud, longest, grounded at y=875) -->
+      <path d="M 416 838
+               C 398 838, 388 850, 390 866
+               C 392 880, 408 884, 424 882
+               C 440 880, 448 868, 446 852
+               C 444 840, 432 838, 416 838 Z"
+            fill="url(#toeGrad)" />
+      <ellipse cx="416" cy="854" rx="9" ry="5" fill="#FED7AA" opacity="0.85" />
+
+      <!-- Inner Toe (right toe of left foot, angled forward-right) -->
+      <path d="M 444 844
+               C 432 844, 426 854, 428 866
+               C 430 878, 442 882, 456 880
+               C 470 878, 478 868, 476 856
+               C 474 846, 460 844, 444 844 Z"
+            fill="url(#toeGrad)" />
+      <ellipse cx="452" cy="858" rx="7.5" ry="4.5" fill="#FED7AA" opacity="0.8" transform="rotate(10 452 858)" />
+    </g>
+
+    <!-- RIGHT FOOT (Centered around x=615, baseline y=875) -->
+    <g id="foot_r">
+      <!-- Inner Toe (left toe of right foot, angled forward-left) -->
+      <path d="M 580 844
+               C 564 844, 550 846, 548 856
+               C 546 868, 554 878, 568 880
+               C 582 882, 594 878, 596 866
+               C 598 854, 592 844, 580 844 Z"
+            fill="url(#toeGrad)" />
+      <ellipse cx="572" cy="858" rx="7.5" ry="4.5" fill="#FED7AA" opacity="0.8" transform="rotate(-10 572 858)" />
+
+      <!-- Middle Toe (proud, longest, grounded at y=875) -->
+      <path d="M 608 838
+               C 592 838, 580 840, 578 852
+               C 576 868, 584 880, 600 882
+               C 616 884, 632 880, 634 866
+               C 636 850, 626 838, 608 838 Z"
+            fill="url(#toeGrad)" />
+      <ellipse cx="608" cy="854" rx="9" ry="5" fill="#FED7AA" opacity="0.85" />
+
+      <!-- Outer Toe (rightmost, angled outward) -->
+      <path d="M 634 844
+               C 628 844, 622 844, 620 848
+               C 616 860, 624 872, 638 876
+               C 656 880, 670 876, 672 866
+               C 674 852, 654 842, 634 844 Z"
+            fill="url(#toeGrad)" />
+      <ellipse cx="648" cy="858" rx="8" ry="4" fill="#FED7AA" opacity="0.8" transform="rotate(15 648 858)" />
+    </g>
+  </g>
+
+  <!-- 03. CHUBBY MAIN BODY SILHOUETTE -->
+  <g id="body_layer">
+    <path id="body_silhouette"
+          d="M 512 144
+             C 635 144, 735 190, 775 285
+             C 805 350, 805 420, 810 470
+             C 835 500, 858 540, 858 600
+             C 858 660, 842 710, 785 765
+             C 725 825, 630 852, 512 852
+             C 394 852, 299 825, 239 765
+             C 182 710, 166 660, 166 600
+             C 166 540, 189 500, 214 470
+             C 219 420, 219 350, 249 285
+             C 289 190, 389 144, 512 144 Z"
+          fill="url(#bodyGrad)" />
+  </g>
+
+  <!-- 04. INTEGRATED WINGS WITH 3 OVERLAPPING SCALLOP TIPS -->
+  <g id="wings_layer">
+    <!-- LEFT WING -->
+    <path d="M 220 465
+             C 240 520, 255 580, 252 645
+             C 250 690, 235 725, 210 742
+             C 190 730, 180 705, 172 680
+             C 166 650, 166 610, 166 580
+             C 175 520, 195 480, 220 465 Z"
+          fill="#D0BCA0" opacity="0.35" />
+
+    <path id="wing_left_main"
+          d="M 218 450
+             C 188 485, 168 535, 166 595
+             C 165 620, 170 635, 180 642
+             C 174 652, 175 672, 186 685
+             C 182 696, 188 718, 208 732
+             C 225 742, 246 730, 252 708
+             C 258 675, 258 615, 254 555
+             C 250 505, 238 470, 218 450 Z"
+          fill="url(#wingLeftGrad)" />
+
+    <!-- RIGHT WING -->
+    <path d="M 804 465
+             C 784 520, 769 580, 772 645
+             C 774 690, 789 725, 814 742
+             C 834 730, 844 705, 852 680
+             C 858 650, 858 610, 858 580
+             C 849 520, 829 480, 804 465 Z"
+          fill="#D0BCA0" opacity="0.35" />
+
+    <path id="wing_right_main"
+          d="M 806 450
+             C 836 485, 856 535, 858 595
+             C 859 620, 854 635, 844 642
+             C 850 652, 849 672, 838 685
+             C 842 696, 836 718, 816 732
+             C 799 742, 778 730, 772 708
+             C 766 675, 766 615, 770 555
+             C 774 505, 786 470, 806 450 Z"
+          fill="url(#wingRightGrad)" />
+  </g>
+
+  <!-- 05. CHEST DOWN FEATHERS (5 PUFFY VOLUMETRIC CRESCENT CUSHIONS) -->
+  <g id="chest_down_layer">
+    <!-- Helper macro style for each scallop:
+         A soft base shadow crescent in #D0BCA0,
+         and a filled puffy ivory cushion in #FDFBF7 with soft opacity.
+    -->
+    <!-- Top-Left Scallop 1 (cx=395, cy=618) -->
+    <g id="scallop_1">
+      <path d="M 358 614 C 362 644, 428 644, 432 614 C 418 636, 372 636, 358 614 Z" fill="#CDB69B" opacity="0.32" />
+      <path d="M 360 612 C 374 634, 416 634, 430 612 C 416 618, 374 618, 360 612 Z" fill="#FFFFFE" opacity="0.45" />
+    </g>
+
+    <!-- Top-Mid Scallop 2 (cx=512, cy=638) -->
+    <g id="scallop_2">
+      <path d="M 470 634 C 474 668, 550 668, 554 634 C 540 658, 484 658, 470 634 Z" fill="#CDB69B" opacity="0.32" />
+      <path d="M 472 632 C 488 656, 536 656, 552 632 C 536 638, 488 638, 472 632 Z" fill="#FFFFFE" opacity="0.45" />
+    </g>
+
+    <!-- Top-Right Scallop 3 (cx=629, cy=618) -->
+    <g id="scallop_3">
+      <path d="M 592 614 C 596 644, 662 644, 666 614 C 652 636, 606 636, 592 614 Z" fill="#CDB69B" opacity="0.32" />
+      <path d="M 594 612 C 608 634, 650 634, 664 612 C 650 618, 608 618, 594 612 Z" fill="#FFFFFE" opacity="0.45" />
+    </g>
+
+    <!-- Bot-Left Scallop 4 (cx=450, cy=694) -->
+    <g id="scallop_4">
+      <path d="M 412 688 C 416 720, 484 720, 488 688 C 474 712, 426 712, 412 688 Z" fill="#CDB69B" opacity="0.32" />
+      <path d="M 414 686 C 428 710, 472 710, 486 686 C 472 692, 428 692, 414 686 Z" fill="#FFFFFE" opacity="0.45" />
+    </g>
+
+    <!-- Bot-Right Scallop 5 (cx=574, cy=694) -->
+    <g id="scallop_5">
+      <path d="M 536 688 C 540 720, 608 720, 612 688 C 598 712, 550 712, 536 688 Z" fill="#CDB69B" opacity="0.32" />
+      <path d="M 538 686 C 552 710, 596 710, 610 686 C 596 692, 552 692, 538 686 Z" fill="#FFFFFE" opacity="0.45" />
+    </g>
+  </g>
+
+  <!-- 06. BARN OWL FACIAL MASK (Continuous Sculpted Boundary with Brow Tufts and Chin Feathers) -->
+  <g id="facial_mask_layer">
+    <!-- Ambient shadow under chin tufts -->
+    <path d="M 512 276
+             C 475 220, 360 215, 290 265
+             C 220 320, 214 410, 246 470
+             C 275 515, 330 545, 390 535
+             C 430 535, 480 558, 512 558
+             C 544 558, 594 535, 634 535
+             C 694 545, 749 515, 778 470
+             C 810 410, 804 320, 734 265
+             C 664 215, 549 220, 512 276 Z"
+          fill="#D6C1A4" opacity="0.45" transform="translate(0, 5)" />
+
+    <!-- Main Facial Mask Path with EXACT Traced Chin Down-Feather Spikes:
+         Center spike at (512, 532).
+         Left spikes: (488, 526), (470, 522), (452, 518), (428, 508).
+         Right spikes: (536, 526), (554, 522), (572, 518), (596, 508).
+         Left brow tufts: (465, 238), (425, 232), (380, 238).
+         Right brow tufts: (559, 238), (599, 232), (644, 238).
+    -->
+    <path id="facial_mask_silhouette"
+          d="M 512 276
+             C 498 252, 478 238, 465 238
+             C 460 246, 442 234, 425 232
+             C 420 242, 398 238, 380 238
+             C 340 244, 295 258, 274 284
+             C 246 318, 230 364, 234 412
+             C 238 456, 258 494, 292 518
+             C 334 538, 380 522, 410 500
+             L 428 508 L 438 496
+             L 452 518 L 460 508
+             L 470 522 L 478 514
+             L 488 526 L 498 518
+             L 512 532
+             L 526 518 L 536 526
+             L 546 514 L 554 522
+             L 564 508 L 572 518
+             L 586 496 L 596 508
+             C 626 522, 672 538, 714 518
+             C 748 494, 768 456, 772 412
+             C 776 364, 760 318, 732 284
+             C 711 258, 666 244, 626 238
+             C 608 238, 586 242, 581 232
+             C 564 234, 546 246, 541 238
+             C 528 238, 508 252, 512 276 Z"
+          fill="url(#faceMaskGrad)" />
+
+    <!-- Left Eye Socket Soft Depression -->
+    <ellipse cx="395" cy="372" rx="74" ry="70" fill="url(#leftSocketGrad)" />
+
+    <!-- Right Eye Socket Soft Depression -->
+    <ellipse cx="616" cy="365" rx="72" ry="62" fill="url(#rightSocketGrad)" />
+  </g>
+
+  <!-- 07. EYES (Left: Luminous Glassy Amber Orb | Right: Iconic Wink) -->
+  <g id="eyes_layer">
+    <!-- LEFT EYE (Glassy Amber Sphere: cx=397.5, cy=361.5) -->
+    <g id="eye_left">
+      <!-- Soft Taupe Socket Rim Shadow -->
+      <circle cx="397.5" cy="361.5" r="63" fill="#6B4B32" opacity="0.6" />
+      <circle cx="397.5" cy="361.5" r="60.5" fill="#24140A" />
+
+      <!-- Luminous Amber Iris -->
+      <circle cx="397.5" cy="361.5" r="58" fill="url(#irisGrad)" />
+
+      <!-- Honey-Gold Radiant Lower Crescent -->
+      <ellipse cx="390" cy="386" rx="46" ry="28" fill="url(#honeyCrescentGrad)" />
+
+      <!-- Deep Espresso Pupil (Offset to top-right cx=410, cy=354, r=36) -->
+      <circle cx="410" cy="354" r="36" fill="#1C0E06" />
+
+      <!-- Specular Highlight 1: Brilliant oval at 11 o'clock (cx=387, cy=338, rx=14, ry=10) -->
+      <ellipse cx="387" cy="338" rx="14" ry="10" fill="#FFFFFF" transform="rotate(-25 387 338)" />
+
+      <!-- Specular Highlight 2: Medium circular catchlight at 10 o'clock (cx=369, cy=344, r=5) -->
+      <circle cx="369" cy="344" r="5" fill="#FFFFFF" opacity="0.95" />
+
+      <!-- Specular Highlight 3: Micro catchlight at 4:30 o'clock (cx=432, cy=392, r=3.8) -->
+      <circle cx="432" cy="392" r="3.8" fill="#FFFFFF" opacity="0.9" />
+    </g>
+
+    <!-- RIGHT EYE (The Iconic Relaxed Smile Wink) -->
+    <g id="eye_right">
+      <!-- Soft ambient shadow underneath the wink stroke -->
+      <path d="M 572 380
+               C 592 352, 614 342, 634 342
+               C 654 342, 678 354, 694 374
+               C 674 362, 652 356, 634 356
+               C 614 356, 592 364, 572 380 Z"
+            fill="#CBB99F" opacity="0.65" transform="translate(0, 3)" />
+
+      <!-- Thick Tapered Chocolate Smile Stroke (#5C3D2E) -->
+      <path id="wink_main_stroke"
+            d="M 572 380
+               C 592 350, 614 340, 634 340
+               C 654 340, 678 352, 694 372
+               C 674 362, 652 354, 634 354
+               C 614 354, 592 362, 572 380 Z"
+            fill="#5C3D2E" />
+    </g>
+  </g>
+
+  <!-- 08. BEAK WITH OPEN MOUTH SMILE & PINK TONGUE -->
+  <g id="beak_layer">
+    <!-- Lower Beak Jaw Cup (Supports open mouth) -->
+    <path id="beak_lower_cup"
+          d="M 466 414
+             C 480 448, 502 464, 513 464
+             C 524 464, 546 448, 560 414
+             C 544 422, 482 422, 466 414 Z"
+          fill="url(#lowerBeakGrad)" />
+
+    <!-- Open Mouth Dark Cavity (#3D140D) -->
+    <path id="mouth_cavity"
+          d="M 474 416
+             C 488 444, 504 456, 513 456
+             C 522 456, 538 444, 552 416
+             C 538 424, 488 424, 474 416 Z"
+          fill="#3D140D" />
+
+    <!-- Cheerful Pink Tongue Inside Mouth -->
+    <path id="mouth_tongue"
+          d="M 488 434
+             C 500 452, 513 454, 513 454
+             C 513 454, 526 452, 538 434
+             C 526 446, 500 446, 488 434 Z"
+          fill="url(#tongueGrad)" />
+    <!-- Tongue top sheen -->
+    <ellipse cx="513" cy="446" rx="9" ry="3.5" fill="#FFA5A5" opacity="0.75" />
+
+    <!-- Upper Beak Dome (Golden-Orange Visor with nasal highlight) -->
+    <path id="beak_upper_dome"
+          d="M 513 378
+             C 534 378, 556 394, 562 414
+             C 544 424, 528 428, 513 430
+             C 498 428, 482 424, 464 414
+             C 470 394, 492 378, 513 378 Z"
+          fill="url(#beakDomeGrad)" />
+
+    <!-- Beak Top Ridge Vertical Highlight -->
+    <ellipse cx="513" cy="396" rx="8" ry="14" fill="#FED7AA" opacity="0.75" />
+    <ellipse cx="513" cy="390" rx="4" ry="7" fill="#FFFFFE" opacity="0.7" />
+
+    <!-- Smiling Chocolate Upper Beak Lip Line -->
+    <path d="M 464 414
+             C 482 424, 498 428, 513 430
+             C 528 428, 544 424, 562 414"
+          fill="none"
+          stroke="#5C3D2E"
+          stroke-width="3"
+          stroke-linecap="round" />
+  </g>
+</svg>'''
+
+    with open(filepath, 'w') as f:
+        f.write(svg)
+    print(f"Generated 100% exact reference SVG at {filepath}")
+
+if __name__ == "__main__":
+    generate_owluko_user_exact_svg("scratch/owluko_user_exact_master.svg")

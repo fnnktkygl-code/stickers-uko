@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><ns0:defs xmlns:ns0="http://www.w3.org/2000/svg">
+    
+    <ns0:linearGradient id="gingerTail" x1="15%" y1="25%" x2="85%" y2="75%">
+      <ns0:stop offset="0%" stop-color="#B86B3E" />
+      <ns0:stop offset="40%" stop-color="#9A5026" />
+      <ns0:stop offset="75%" stop-color="#783614" />
+      <ns0:stop offset="100%" stop-color="#54220A" />
+    </ns0:linearGradient>
+
+    
+    <ns0:linearGradient id="gingerBody" x1="25%" y1="15%" x2="75%" y2="85%">
+      <ns0:stop offset="0%" stop-color="#D69368" />
+      <ns0:stop offset="30%" stop-color="#C77E50" />
+      <ns0:stop offset="65%" stop-color="#A86236" />
+      <ns0:stop offset="100%" stop-color="#84421C" />
+    </ns0:linearGradient>
+
+    
+    <ns0:radialGradient id="whiteCoatGrad" cx="58%" cy="34%" r="65%">
+      <ns0:stop offset="0%" stop-color="#ECE1D6" />
+      <ns0:stop offset="35%" stop-color="#DFD2C6" />
+      <ns0:stop offset="70%" stop-color="#C8B8AB" />
+      <ns0:stop offset="100%" stop-color="#AFA094" />
+    </ns0:radialGradient>
+
+    
+    <ns0:radialGradient id="earCavityL" cx="40%" cy="35%" r="65%">
+      <ns0:stop offset="0%" stop-color="#D28876" />
+      <ns0:stop offset="45%" stop-color="#B66958" />
+      <ns0:stop offset="80%" stop-color="#924C3C" />
+      <ns0:stop offset="100%" stop-color="#6E3224" />
+    </ns0:radialGradient>
+
+    <ns0:radialGradient id="earCavityR" cx="60%" cy="35%" r="65%">
+      <ns0:stop offset="0%" stop-color="#E09684" />
+      <ns0:stop offset="45%" stop-color="#C47664" />
+      <ns0:stop offset="80%" stop-color="#A05444" />
+      <ns0:stop offset="100%" stop-color="#783628" />
+    </ns0:radialGradient>
+
+    
+    <ns0:radialGradient id="flankL" cx="30%" cy="50%" r="70%">
+      <ns0:stop offset="0%" stop-color="#BC6A38" />
+      <ns0:stop offset="50%" stop-color="#9E4E20" />
+      <ns0:stop offset="100%" stop-color="#743010" />
+    </ns0:radialGradient>
+
+    <ns0:radialGradient id="flankR" cx="70%" cy="50%" r="70%">
+      <ns0:stop offset="0%" stop-color="#E09652" />
+      <ns0:stop offset="50%" stop-color="#CF803A" />
+      <ns0:stop offset="100%" stop-color="#A6541E" />
+    </ns0:radialGradient>
+
+    
+    <ns0:linearGradient id="legLeftGrad" x1="228" y1="430" x2="271" y2="430" gradientUnits="userSpaceOnUse">
+      <ns0:stop offset="0%" stop-color="#BAA898" />
+      <ns0:stop offset="30%" stop-color="#DFD1C4" />
+      <ns0:stop offset="65%" stop-color="#E8DDD2" />
+      <ns0:stop offset="88%" stop-color="#C8B6A6" />
+      <ns0:stop offset="100%" stop-color="#88563E" />
+    </ns0:linearGradient>
+
+    <ns0:linearGradient id="legRightGrad" x1="271" y1="430" x2="314" y2="430" gradientUnits="userSpaceOnUse">
+      <ns0:stop offset="0%" stop-color="#88563E" />
+      <ns0:stop offset="15%" stop-color="#BFAFA0" />
+      <ns0:stop offset="50%" stop-color="#DACCC0" />
+      <ns0:stop offset="85%" stop-color="#C8B8AB" />
+      <ns0:stop offset="100%" stop-color="#A69486" />
+    </ns0:linearGradient>
+
+    
+    <ns0:linearGradient id="creaseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <ns0:stop offset="0%" stop-color="#7D4E3C" stop-opacity="0.3" />
+      <ns0:stop offset="40%" stop-color="#583222" stop-opacity="0.8" />
+      <ns0:stop offset="85%" stop-color="#321A10" stop-opacity="0.95" />
+      <ns0:stop offset="100%" stop-color="#1A0B06" stop-opacity="1.0" />
+    </ns0:linearGradient>
+
+    
+    <ns0:linearGradient id="toeLGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <ns0:stop offset="0%" stop-color="#DACDC0" />
+      <ns0:stop offset="60%" stop-color="#C4B4A6" />
+      <ns0:stop offset="100%" stop-color="#A29080" />
+    </ns0:linearGradient>
+    <ns0:linearGradient id="toeRGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <ns0:stop offset="0%" stop-color="#D4C4B6" />
+      <ns0:stop offset="60%" stop-color="#BFADA0" />
+      <ns0:stop offset="100%" stop-color="#9C8676" />
+    </ns0:linearGradient>
+
+    
+    <ns0:radialGradient id="amberIrisL" cx="42%" cy="38%" r="60%">
+      <ns0:stop offset="0%" stop-color="#FFE06E" />
+      <ns0:stop offset="40%" stop-color="#EAA626" />
+      <ns0:stop offset="75%" stop-color="#9C5A0C" />
+      <ns0:stop offset="100%" stop-color="#2D1602" />
+    </ns0:radialGradient>
+
+    <ns0:radialGradient id="amberIrisR" cx="58%" cy="38%" r="60%">
+      <ns0:stop offset="0%" stop-color="#FFE06E" />
+      <ns0:stop offset="40%" stop-color="#EAA626" />
+      <ns0:stop offset="75%" stop-color="#9C5A0C" />
+      <ns0:stop offset="100%" stop-color="#2D1602" />
+    </ns0:radialGradient>
+
+    
+    <ns0:linearGradient id="noseGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <ns0:stop offset="0%" stop-color="#E49284" />
+      <ns0:stop offset="100%" stop-color="#C26252" />
+    </ns0:linearGradient>
+
+    
+    <ns0:radialGradient id="cheekBlendL" cx="15%" cy="50%" r="70%">
+      <ns0:stop offset="0%" stop-color="#A85222" stop-opacity="0.90" />
+      <ns0:stop offset="50%" stop-color="#A85222" stop-opacity="0.50" />
+      <ns0:stop offset="100%" stop-color="#A85222" stop-opacity="0.0" />
+    </ns0:radialGradient>
+
+    <ns0:radialGradient id="cheekBlendR" cx="85%" cy="50%" r="70%">
+      <ns0:stop offset="0%" stop-color="#EA9240" stop-opacity="0.90" />
+      <ns0:stop offset="50%" stop-color="#EA9240" stop-opacity="0.50" />
+      <ns0:stop offset="100%" stop-color="#EA9240" stop-opacity="0.0" />
+    </ns0:radialGradient>
+
+    
+    <ns0:style>
+      @keyframes breathe_pos {
+        0%, 50%, 100% { transform: translateY(0px); }
+        25% { transform: translateY(2.0px); }
+        75% { transform: translateY(-2.0px); }
+      }
+      @keyframes breathe_scale {
+        0%, 50%, 100% { transform: scale(1.0, 1.0); }
+        25% { transform: scale(1.008, 0.992); }
+        75% { transform: scale(0.992, 1.008); }
+      }
+      @keyframes tail_sway {
+        0%, 100% { transform: rotate(-3.5deg); }
+        50% { transform: rotate(3.5deg); }
+      }
+      @keyframes ear_twitch {
+        0%, 38%, 52%, 100% { transform: rotate(0deg); }
+        42% { transform: rotate(-2.2deg); }
+        47% { transform: rotate(1.8deg); }
+      }
+      @keyframes eye_blink {
+        0%, 15%, 26%, 60%, 75%, 100% { transform: scaleY(1); }
+        18%, 23%, 68%, 73% { transform: scaleY(0.08); }
+      }
+
+      .anim-torso {
+        transform-box: view-box;
+        transform-origin: 271.5px 360px;
+        animation: breathe_pos 4s ease-in-out infinite, breathe_scale 4s ease-in-out infinite;
+      }
+      .anim-head {
+        transform-box: view-box;
+        transform-origin: 271.5px 180px;
+        animation: ear_twitch 4s ease-in-out infinite;
+      }
+      .anim-tail {
+        transform-box: view-box;
+        transform-origin: 185px 445px;
+        animation: tail_sway 4s ease-in-out infinite;
+      }
+      .anim-eyes {
+        transform-box: view-box;
+        transform-origin: 271.5px 169px;
+        animation: eye_blink 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+      }
+    </ns0:style>
+  </ns0:defs>
+
+  
+  <ns0:path xmlns:ns0="http://www.w3.org/2000/svg" d="M 252 221 C 257 225, 266 223, 271.5 214 C 277 223, 286 225, 291 221" stroke="#68483B" stroke-width="1.3" stroke-linecap="round" fill="none" />
+    </svg>
