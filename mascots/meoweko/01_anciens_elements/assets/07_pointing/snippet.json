@@ -1,8 +1,0 @@
-{
-  "mascot": "luneko",
-  "state": "07_pointing",
-  "react": "<Luneko state=\"07_pointing\" size={180} animated />",
-  "vue": "<Luneko state=\"07_pointing\" :size=\"180\" animated />",
-  "flutter": "LunekoMascot(state: LunekoState.07_pointing, size: 180.0)",
-  "html": "<img src=\"assets/07_pointing/animated.webp\" width=\"180\" height=\"180\" alt=\"Luneko\" />"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "AItuko - Chargement & Orbite Étoile",
-  "html": "<picture>\n  <source srcset=\"assets/09_loading/animated.webp\" type=\"image/webp\">\n  <img src=\"assets/09_loading/animated.gif\" alt=\"AItuko Chargement & Orbite Étoile\" width=\"512\" height=\"512\">\n</picture>",
-  "react": "import React from \"react\";\n\nexport const AitukoLoading = ({ size = 180, className = \"\" }) => (\n  <picture>\n    <source srcSet=\"/assets/09_loading/animated.webp\" type=\"image/webp\" />\n    <img src=\"/assets/09_loading/animated.gif\" alt=\"AItuko Chargement & Orbite Étoile\" width={size} height={size} className={\"object-contain \" + className} />\n  </picture>\n);",
-  "vue": "<template>\n  <picture>\n    <source :srcset=\"`/assets/09_loading/animated.webp`\" type=\"image/webp\">\n    <img :src=\"`/assets/09_loading/animated.gif`\" :alt=\"`AItuko Chargement & Orbite Étoile`\" :width=\"size\" :height=\"size\" class=\"object-contain\">\n  </picture>\n</template>\n<script setup>\ndefineProps({ size: { type: Number, default: 180 } });\n</script>",
-  "flutter": "// Flutter Widget for AItuko Chargement & Orbite Étoile\nImage.asset(\"assets/09_loading/animated.webp\", width: 180.0, height: 180.0, fit: BoxFit.contain);"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "AItuko - Pouce en l'Air & Validation",
-  "html": "<picture>\n  <source srcset=\"assets/05_thumbs_up/animated.webp\" type=\"image/webp\">\n  <img src=\"assets/05_thumbs_up/animated.gif\" alt=\"AItuko Pouce en l'Air & Validation\" width=\"512\" height=\"512\">\n</picture>",
-  "react": "import React from \"react\";\n\nexport const AitukoThumbs = ({ size = 180, className = \"\" }) => (\n  <picture>\n    <source srcSet=\"/assets/05_thumbs_up/animated.webp\" type=\"image/webp\" />\n    <img src=\"/assets/05_thumbs_up/animated.gif\" alt=\"AItuko Pouce en l'Air & Validation\" width={size} height={size} className={\"object-contain \" + className} />\n  </picture>\n);",
-  "vue": "<template>\n  <picture>\n    <source :srcset=\"`/assets/05_thumbs_up/animated.webp`\" type=\"image/webp\">\n    <img :src=\"`/assets/05_thumbs_up/animated.gif`\" :alt=\"`AItuko Pouce en l'Air & Validation`\" :width=\"size\" :height=\"size\" class=\"object-contain\">\n  </picture>\n</template>\n<script setup>\ndefineProps({ size: { type: Number, default: 180 } });\n</script>",
-  "flutter": "// Flutter Widget for AItuko Pouce en l'Air & Validation\nImage.asset(\"assets/05_thumbs_up/animated.webp\", width: 180.0, height: 180.0, fit: BoxFit.contain);"
-}
