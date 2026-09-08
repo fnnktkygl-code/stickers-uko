@@ -297,9 +297,9 @@
       50% { transform: translate3d(0, -4px, 0); }
     }
     .calm-mascot {
+      /* Flottement désactivé selon directive utilisateur */
       will-change: transform;
       backface-visibility: hidden;
-      animation: calmFloat 4s ease-in-out infinite;
     }
 
     /* ==========================================================================
@@ -929,7 +929,7 @@
       </div>
 
       <!-- Mascotte Viewport -->
-      <div id="mascotStageWrapper" class="relative flex items-center justify-center select-none cursor-pointer rounded-2xl overflow-hidden shadow-soft" style="width: 200px; height: 200px; will-change: width, height, transform;">
+      <div id="mascotStageWrapper" class="relative flex items-center justify-center select-none cursor-pointer overflow-hidden" style="width: 200px; height: 200px; will-change: width, height, transform;">
         <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
         <video 
           id="mascotVideo" 
@@ -959,7 +959,7 @@
           draggable="false"
           decoding="async"
           oncontextmenu="return false;"
-          class="hidden object-contain calm-mascot select-none pointer-events-none relative z-10 transition-opacity duration-200"
+          class="hidden object-contain select-none pointer-events-none relative z-10 transition-opacity duration-200"
           style="width: 100%; height: 100%; -webkit-user-drag: none; user-select: none;"
           onerror="this.onerror=null; this.src='mascots/aituko/assets/00_idle/static.png'"
         />
@@ -1096,7 +1096,7 @@
         <!-- AItuko Card -->
         <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-4 sm:p-5 cursor-pointer group select-none hover:shadow-card transition border border-[var(--japandi-border)] flex-1 flex flex-col justify-between">
           <div class="flex items-center gap-4">
-            <div class="w-24 h-24 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 group-hover:border-[var(--japandi-border)] transition p-1">
+            <div class="w-24 h-24 flex items-center justify-center overflow-hidden shrink-0 p-1">
               <img
                 src="assets/previews/aituko_idle_animated.webp"
                 alt="AItuko animé"
@@ -1105,7 +1105,7 @@
                 loading="lazy"
                 decoding="async"
                 oncontextmenu="return false;"
-                class="w-full h-full object-contain calm-mascot select-none pointer-events-none"
+                class="w-full h-full object-contain select-none pointer-events-none"
                 style="-webkit-user-drag: none; user-select: none;"
                 onerror="this.src='assets/previews/owluko_idle.webp'"
               />
@@ -1117,7 +1117,7 @@
               </div>
               <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.aitukoDesc">Assistant IA autonome en porcelaine • Accueil & Onboarding interactif</p>
               <div class="text-[11px] font-mono text-[var(--japandi-text-muted)] flex items-center gap-2">
-                <span>3 poses actives</span>
+                <span>12 états animés</span>
                 <span>•</span>
                 <span>Lottie & WebP</span>
               </div>
@@ -1139,8 +1139,8 @@
           <div class="grid grid-cols-2 gap-2.5">
             <!-- Owluko -->
             <button onclick="toggleCandidateVote('owluko')" id="vote-card-owluko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-3 p-2.5 cursor-pointer shadow-soft">
-              <div class="w-14 h-14 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 p-1">
-                <img src="assets/previews/owluko_idle_animated.webp" alt="Owluko" width="52" height="52" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+              <div class="w-14 h-14 flex items-center justify-center overflow-hidden shrink-0 p-1">
+                <img src="assets/previews/owluko_idle_animated.webp" alt="Owluko" width="52" height="52" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none" style="-webkit-user-drag: none;" />
               </div>
               <div class="flex-1 min-w-0 text-left">
                 <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.owluko">🦉 Owluko</span>
@@ -1150,8 +1150,8 @@
 
             <!-- Luneko -->
             <button onclick="toggleCandidateVote('luneko')" id="vote-card-luneko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-3 p-2.5 cursor-pointer shadow-soft">
-              <div class="w-14 h-14 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 p-1">
-                <img src="assets/previews/luneko_idle_animated.webp" alt="Luneko" width="52" height="52" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+              <div class="w-14 h-14 flex items-center justify-center overflow-hidden shrink-0 p-1">
+                <img src="assets/previews/luneko_idle_animated.webp" alt="Luneko" width="52" height="52" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none" style="-webkit-user-drag: none;" />
               </div>
               <div class="flex-1 min-w-0 text-left">
                 <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.luneko">🐱 Luneko</span>
@@ -1188,19 +1188,19 @@
         <ul class="text-xs text-[var(--japandi-text)] space-y-2.5 pt-3 border-t border-[var(--japandi-border-subtle)]">
           <li class="flex items-start gap-2.5">
             <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-i18n="pricing.uniqueItem1">3 poses animées finalisées (Idle, Accueil, Guide)</span>
+            <span data-i18n="pricing.uniqueItem1">Pack complet des 12 états essentiels (Onboarding, Succès, Erreur, Chargement...)</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-i18n="pricing.uniqueItem2">Fichiers Lottie JSON + WebP 60fps animé</span>
+            <span data-i18n="pricing.uniqueItem2">Multi-formats inclus : Lottie vectoriel (&lt; 50 Ko), WebP 60fps animé &amp; PNG HD</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-i18n="pricing.uniqueItem3">Composants React / Next.js prêts à l'intégration</span>
+            <span data-i18n="pricing.uniqueItem3">Composants prêts à copier pour React / Next.js, Vue, Flutter &amp; HTML</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <span data-i18n="pricing.uniqueItem4">Mises à jour incluses — 9 poses bientôt disponibles</span>
+            <span data-i18n="pricing.uniqueItem4">Détourage transparent net sur fond sombre et fond clair</span>
           </li>
           <li class="flex items-start gap-2.5">
             <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
