@@ -201,9 +201,9 @@
       --japandi-code-border: #2B2A2E;
       --japandi-code-text: #89AA98;         /* CR: 7.53:1 (AAA) */
 
-      --btn-primary-bg: #F5F4F0;
-      --btn-primary-text: #0F0F10;
-      --btn-primary-hover: #FFFFFF;
+      --btn-primary-bg: #E2DFD7;
+      --btn-primary-text: #121214;
+      --btn-primary-hover: #ECEAE3;
 
       --japandi-shadow-soft: 0 2px 8px -1px rgba(0, 0, 0, 0.35);
       --japandi-shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
@@ -211,6 +211,17 @@
 
       --checker-bg-1: #141416;
       --checker-bg-2: #1D1D20;
+    }
+
+/* Boutons principaux harmonieux en mode sombre (évite le blanc agressif) */
+    html.dark {
+      --btn-primary-bg: #28282E;
+      --btn-primary-text: #F5F4F0;
+      --btn-primary-hover: #34343B;
+    }
+    html.dark button[class*="bg-[var(--btn-primary-bg)]"] {
+      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.5) !important;
     }
 
     body {
@@ -428,8 +439,17 @@
       transition: background-color 0.25s ease;
     }
 
-    #stageBox.stage-bg-dark  { background-color: #141416 !important; }
-    #stageBox.stage-bg-stone { background-color: #F3F1EC !important; }
+/* ==========================================================================
+       HARMONISATION DES COULEURS & CONTRASTES SCÈNE ET BOUTONS
+       ========================================================================== */
+    #stageBox.stage-bg-dark {
+      background-color: #121214 !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    #stageBox.stage-bg-stone {
+      background-color: #F6F5F2 !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+    }
     #stageBox.stage-bg-checker {
       background-color: var(--checker-bg-1) !important;
       background-image:
@@ -439,6 +459,91 @@
         linear-gradient(-45deg, transparent 75%, var(--checker-bg-2) 75%) !important;
       background-size: 16px 16px !important;
       background-position: 0 0, 0 8px, 8px -8px, -8px 0 !important;
+    }
+
+    /* Quand la scène a un fond sombre (explicite .stage-bg-dark ou en thème dark sans fond clair forcé) */
+    #stageBox.stage-bg-dark .stage-toolbar,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .stage-toolbar {
+      background-color: rgba(26, 26, 30, 0.88) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      color: #F5F4F0 !important;
+    }
+
+    #stageBox.stage-bg-dark .stage-toolbar button,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .stage-toolbar button {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #E2DFD7;
+    }
+    #stageBox.stage-bg-dark .stage-toolbar button:hover,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .stage-toolbar button:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+
+    #stageBox.stage-bg-dark .arrow-btn,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .arrow-btn {
+      background: rgba(28, 28, 32, 0.9) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      color: #D4D2CB !important;
+    }
+    #stageBox.stage-bg-dark .arrow-btn:hover,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .arrow-btn:hover {
+      background: rgba(40, 40, 46, 0.98) !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      color: #FFFFFF !important;
+    }
+
+    #stageBox.stage-bg-dark .speech-bubble,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .speech-bubble {
+      background: #1C1C20 !important;
+      border-color: #2F2E34 !important;
+      color: #F5F4F0 !important;
+    }
+    #stageBox.stage-bg-dark .speech-bubble::after,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .speech-bubble::after {
+      background: #1C1C20 !important;
+      border-right-color: #2F2E34 !important;
+      border-bottom-color: #2F2E34 !important;
+    }
+
+    /* Quand la scène a un fond clair forcé en mode dark (.stage-bg-stone) */
+    #stageBox.stage-bg-stone .speech-bubble {
+      background: #FFFFFF !important;
+      border-color: #E2DFD6 !important;
+      color: #171614 !important;
+    }
+    #stageBox.stage-bg-stone .speech-bubble::after {
+      background: #FFFFFF !important;
+      border-right-color: #E2DFD6 !important;
+      border-bottom-color: #E2DFD6 !important;
+    }
+    #stageBox.stage-bg-stone .arrow-btn {
+      background: #FFFFFF !important;
+      border-color: #E2DFD6 !important;
+      color: #4A4843 !important;
+    }
+    #stageBox.stage-bg-stone .arrow-btn:hover {
+      border-color: #171614 !important;
+      color: #171614 !important;
+    }
+    #stageBox.stage-bg-stone .stage-toolbar {
+      background-color: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(0, 0, 0, 0.1) !important;
+      color: #171614 !important;
+    }
+    #stageBox.stage-bg-stone .stage-toolbar button {
+      background-color: rgba(0, 0, 0, 0.04) !important;
+      border-color: rgba(0, 0, 0, 0.08) !important;
+      color: #2C2A26 !important;
+    }
+    #stageBox.stage-bg-stone #counterTxt {
+      color: #716F68 !important;
+    }
+
+    /* Pastille active du sélecteur de fond */
+    .bg-swatch-active {
+      box-shadow: 0 0 0 2px var(--japandi-moss) !important;
     }
 
     #mascotStageWrapper.mirrored { transform: scaleX(-1); }
@@ -745,7 +850,7 @@
     <div id="stageBox" class="relative rounded-3xl border border-[var(--japandi-border)] min-h-[340px] sm:min-h-[380px] flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-300 bg-[var(--japandi-surface-stage)] shadow-card select-none">
       
       <!-- Panneau Latéral / Barre d'Outils Flottante (Zoom, Fond, Bulle, Animation) -->
-      <div class="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 flex flex-col sm:flex-row items-center gap-1.5 p-1.5 rounded-2xl bg-[var(--japandi-surface)]/90 backdrop-blur-md border border-[var(--japandi-border)] shadow-card">
+      <div id="stageFloatingToolbar" class="stage-toolbar absolute top-3 right-3 sm:top-4 sm:right-4 z-30 flex flex-col sm:flex-row items-center gap-1.5 p-1.5 rounded-2xl bg-[var(--japandi-surface)]/90 backdrop-blur-md border border-[var(--japandi-border)] shadow-card">
         
         <!-- Zoom Controls (+ / -) -->
         <div class="flex items-center gap-1 px-1">
@@ -791,19 +896,16 @@
 
         <div class="hidden sm:block w-px h-4 bg-[var(--japandi-border)]"></div>
 
-        <!-- Sélecteur de Fond (4 Pastilles) -->
-        <div class="flex items-center gap-1">
-          <button onclick="setBg('default')" title="Fond Automatique" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
-            <span class="w-3.5 h-3.5 rounded-full bg-[var(--japandi-surface-stage)] border border-[var(--japandi-border)]"></span>
+        <!-- Sélecteur de Fond (3 Pastilles : Noir · Blanc · Transparent) -->
+        <div class="flex items-center gap-1.5" id="bgBtns">
+          <button onclick="setBg('dark')" id="bg-btn-dark" title="Fond Noir" class="w-5 h-5 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer ring-offset-1 ring-offset-[var(--japandi-surface)]">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#141416] border border-white/20 block"></span>
           </button>
-          <button onclick="setBg('dark')" title="Fond Sombre" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
-            <span class="w-3.5 h-3.5 rounded-full bg-[#141416] border border-black/20"></span>
+          <button onclick="setBg('stone')" id="bg-btn-stone" title="Fond Blanc" class="w-5 h-5 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer ring-offset-1 ring-offset-[var(--japandi-surface)]">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#F8F7F4] border border-black/15 block"></span>
           </button>
-          <button onclick="setBg('stone')" title="Fond Washi Sand" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
-            <span class="w-3.5 h-3.5 rounded-full bg-[#F3F1EC] border border-black/10"></span>
-          </button>
-          <button onclick="setBg('checker')" title="Grille Transparente" class="w-6 h-6 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer">
-            <span class="w-3.5 h-3.5 rounded-full bg-checker border border-[var(--japandi-border)]"></span>
+          <button onclick="setBg('checker')" id="bg-btn-checker" title="Fond Transparent (Damier)" class="w-5 h-5 rounded-full flex items-center justify-center hover:scale-110 transition cursor-pointer ring-offset-1 ring-offset-[var(--japandi-surface)]">
+            <span class="w-3.5 h-3.5 rounded-full bg-checker border border-[var(--japandi-border)] block"></span>
           </button>
         </div>
       </div>
@@ -980,26 +1082,25 @@
 
   <!-- Catalogue + Tarifs — Section unifiée côte à côte -->
   <section id="catalogue" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6 border-t border-[var(--japandi-border-subtle)]">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
       <!-- ── Colonne Gauche : Catalogue ── -->
-      <div id="tarifs" class="space-y-6">
+      <div id="tarifs" class="flex flex-col justify-between h-full space-y-4">
 
         <!-- Header -->
-        <div class="space-y-1.5">
+        <div class="space-y-1">
           <h2 data-i18n="catalogue.title" class="text-xl sm:text-2xl font-bold tracking-tight text-[var(--japandi-text)]">Catalogue des Mascottes Uko</h2>
           <p data-i18n="catalogue.desc" class="text-xs text-[var(--japandi-text-secondary)] font-light leading-relaxed">Chaque mascotte dispose de sa propre personnalité et de 12 états d'animation harmonisés.</p>
         </div>
 
-        <!-- AItuko -->
-        <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-4 cursor-pointer group select-none hover:shadow-card transition border border-[var(--japandi-border)]">
+        <!-- AItuko Card -->
+        <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-4 sm:p-5 cursor-pointer group select-none hover:shadow-card transition border border-[var(--japandi-border)] flex-1 flex flex-col justify-between">
           <div class="flex items-center gap-4">
-            <div class="w-20 h-20 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 group-hover:border-[var(--japandi-border)] transition">
-              <div class="absolute z-20 w-20 h-20 cursor-pointer" oncontextmenu="return false;"></div>
+            <div class="w-24 h-24 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 group-hover:border-[var(--japandi-border)] transition p-1">
               <img
                 src="assets/previews/aituko_idle_animated.webp"
                 alt="AItuko animé"
-                width="72" height="72"
+                width="84" height="84"
                 draggable="false"
                 loading="lazy"
                 decoding="async"
@@ -1009,32 +1110,37 @@
                 onerror="this.src='assets/previews/owluko_idle.webp'"
               />
             </div>
-            <div class="flex-1 min-w-0 space-y-1">
+            <div class="flex-1 min-w-0 space-y-1.5">
               <div class="flex items-center justify-between gap-2">
-                <span class="font-semibold text-[var(--japandi-text)] text-sm">AItuko</span>
-                <span class="px-2 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium shrink-0" data-i18n="catalogue.available">Disponible</span>
+                <span class="font-bold text-[var(--japandi-text)] text-base">AItuko</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-semibold shrink-0" data-i18n="catalogue.available">Disponible</span>
               </div>
-              <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.aitukoDesc">Assistant IA • Accueil & Onboarding</p>
+              <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.aitukoDesc">Assistant IA autonome en porcelaine • Accueil & Onboarding interactif</p>
+              <div class="text-[11px] font-mono text-[var(--japandi-text-muted)] flex items-center gap-2">
+                <span>3 poses actives</span>
+                <span>•</span>
+                <span>Lottie & WebP</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Vote Owluko vs Luneko -->
-        <div class="surface-card rounded-2xl p-4 space-y-3 border border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/30 select-none">
+        <div class="surface-card rounded-2xl p-4 sm:p-5 space-y-3.5 border border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/30 select-none flex-1 flex flex-col justify-between">
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-[var(--japandi-ochre)] animate-pulse shrink-0"></span>
-              <span class="font-semibold text-[var(--japandi-text)] text-sm" data-i18n="catalogue.voteTitle">Vote Mascotte</span>
-              <p class="text-xs text-[var(--japandi-text-secondary)] font-light" data-i18n="catalogue.voteSubtitle">— Quelle sera la prochaine ?</p>
+              <span class="font-bold text-[var(--japandi-text)] text-sm" data-i18n="catalogue.voteTitle">Vote Prochaine Mascotte</span>
             </div>
             <span id="catalogueVoteCount" class="px-2 py-0.5 rounded-md bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] text-xs font-mono font-bold border border-[var(--japandi-ochre)]/30 shrink-0">342 votes</span>
           </div>
+          <p class="text-xs text-[var(--japandi-text-secondary)] font-light leading-snug" data-i18n="catalogue.voteSubtitle">Choisissez la prochaine mascotte qui sera finalisée :</p>
 
-          <div class="grid grid-cols-2 gap-2">
+          <div class="grid grid-cols-2 gap-2.5">
             <!-- Owluko -->
             <button onclick="toggleCandidateVote('owluko')" id="vote-card-owluko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-3 p-2.5 cursor-pointer shadow-soft">
-              <div class="w-12 h-12 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0">
-                <img src="assets/previews/owluko_idle_animated.webp" alt="Owluko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+              <div class="w-14 h-14 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 p-1">
+                <img src="assets/previews/owluko_idle_animated.webp" alt="Owluko" width="52" height="52" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
               </div>
               <div class="flex-1 min-w-0 text-left">
                 <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.owluko">🦉 Owluko</span>
@@ -1044,8 +1150,8 @@
 
             <!-- Luneko -->
             <button onclick="toggleCandidateVote('luneko')" id="vote-card-luneko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-3 p-2.5 cursor-pointer shadow-soft">
-              <div class="w-12 h-12 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0">
-                <img src="assets/previews/luneko_idle_animated.webp" alt="Luneko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+              <div class="w-14 h-14 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 p-1">
+                <img src="assets/previews/luneko_idle_animated.webp" alt="Luneko" width="52" height="52" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
               </div>
               <div class="flex-1 min-w-0 text-left">
                 <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.luneko">🐱 Luneko</span>
@@ -1062,7 +1168,7 @@
       </div>
 
       <!-- ── Colonne Droite : Tarif Pack Unique ── -->
-      <div class="surface-card rounded-2xl p-6 sm:p-7 space-y-5 flex flex-col border border-[var(--japandi-moss)]/50 relative shadow-card">
+      <div class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 flex flex-col justify-between border border-[var(--japandi-moss)]/50 relative shadow-card h-full">
 
         <!-- Badge -->
         <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[var(--japandi-moss)] text-white dark:text-[#0F0F10] text-xs font-mono font-bold tracking-wide uppercase shadow-sm whitespace-nowrap" data-i18n="pricing.uniqueBadge">Pack Unique</div>
@@ -2178,16 +2284,33 @@
       updateUI();
     }
 
-    // Fonds de scène (4 pastilles)
+    // Fonds de scène (3 pastilles : Noir · Blanc · Transparent)
     const BG_CLASSES = ['stage-bg-dark', 'stage-bg-stone', 'stage-bg-checker'];
+    let currentBgKey = 'default';
+
     function setBg(key) {
       const box = document.getElementById('stageBox');
       if (!box) return;
+      currentBgKey = key;
       BG_CLASSES.forEach(cls => box.classList.remove(cls));
       if (key === 'dark')    box.classList.add('stage-bg-dark');
       if (key === 'stone')   box.classList.add('stage-bg-stone');
       if (key === 'checker') box.classList.add('stage-bg-checker');
-      // 'default' = aucune classe supplémentaire (retour au thème)
+
+      // Met à jour l'anneau actif sur la pastille sélectionnée
+      const btnMap = {
+        dark: document.getElementById('bg-btn-dark'),
+        stone: document.getElementById('bg-btn-stone'),
+        checker: document.getElementById('bg-btn-checker')
+      };
+      Object.entries(btnMap).forEach(([k, btn]) => {
+        if (!btn) return;
+        if (k === key) {
+          btn.classList.add('ring-2', 'ring-[var(--japandi-moss)]');
+        } else {
+          btn.classList.remove('ring-2', 'ring-[var(--japandi-moss)]');
+        }
+      });
     }
 
     // Bascule direction gauche ↔ droite pour la pose Guide (07_pointing)
