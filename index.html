@@ -425,8 +425,23 @@
       user-select: none;
       position: relative;
       overflow: hidden;
+      transition: background-color 0.25s ease;
     }
 
+    #stageBox.stage-bg-dark  { background-color: #141416 !important; }
+    #stageBox.stage-bg-stone { background-color: #F3F1EC !important; }
+    #stageBox.stage-bg-checker {
+      background-color: var(--checker-bg-1) !important;
+      background-image:
+        linear-gradient(45deg, var(--checker-bg-2) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--checker-bg-2) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--checker-bg-2) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--checker-bg-2) 75%) !important;
+      background-size: 16px 16px !important;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0 !important;
+    }
+
+    #mascotStageWrapper.mirrored { transform: scaleX(-1); }
     #mascotStageWrapper {
       will-change: transform, opacity;
       transform-origin: center bottom;
@@ -871,7 +886,10 @@
       <button id="pill-4" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.error_404">Erreur 404</button>
       <button id="pill-5" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.thumbs_up">Validation</button>
       <button id="pill-6" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.sleeping">Repos</button>
-      <button onclick="setPoseIndex(7)" id="pill-7" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.pointing">Guide</button>
+      <div class="flex items-center gap-1">
+        <button onclick="setPoseIndex(7)" id="pill-7" class="pose-pill flex-1 min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.pointing">Guide</button>
+        <button onclick="togglePointingDirection()" id="flipBtn" title="Changer la direction du pointage (Gauche ↔ Droite)" class="w-7 h-7 rounded-lg border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] flex items-center justify-center text-xs transition cursor-pointer shrink-0">↔</button>
+      </div>
       <button id="pill-8" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.searching">Recherche</button>
       <button id="pill-9" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.loading">Chargement</button>
       <button id="pill-10" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.idea">Astuce</button>
@@ -921,101 +939,6 @@
     </div>
   </section>
 
-  <!-- Module de Démonstration In-App Interactive (Formulaire Réactif & Suivi du Regard) -->
-  <section id="demo-inapp-interactive" class="py-10 max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
-    <div class="rounded-3xl p-6 sm:p-8 border border-[var(--japandi-border)] bg-[var(--japandi-surface)] shadow-card flex flex-col lg:flex-row items-center justify-between gap-8">
-      <!-- Colonne Gauche : Formulaire Réactif de Simulation -->
-      <div class="flex-1 space-y-5 w-full">
-        <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-semibold">
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--japandi-moss)] animate-pulse"></span>
-            <span>Lottie vectoriel · 60fps · ~35 Ko · React / Flutter</span>
-          </div>
-          <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-[var(--japandi-text)]">Testez la Réactivité In-App d'AItuko</h3>
-          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed">
-            Le fichier vectoriel Lottie réagit au code en temps réel : AItuko change de pose selon l'état de votre interface (chargement, erreur, succès, etc.) pour un onboarding et une UX engageante.
-          </p>
-        </div>
-
-        <!-- Formulaire de Test Interactif -->
-        <div class="space-y-3 bg-[var(--japandi-surface-muted)] p-4 sm:p-5 rounded-2xl border border-[var(--japandi-border-subtle)]">
-          <div>
-            <label class="block text-xs font-semibold text-[var(--japandi-text-secondary)] mb-1">Email / Identifiant (AItuko analyse la saisie)</label>
-            <input 
-              type="text" 
-              id="demoEmailInput" 
-              oninput="onDemoInputFocus(event)" 
-              onfocus="onDemoInputFocus(event)" 
-              placeholder="ex: marie@startup.co" 
-              class="w-full px-3 py-2 text-xs rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-[var(--japandi-text)] focus:border-[var(--japandi-moss)] focus:outline-none transition"
-            >
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <label class="text-xs font-semibold text-[var(--japandi-text-secondary)]">Mot de passe (mode confidentiel)</label>
-              <button type="button" onclick="toggleDemoPasswordPeek()" id="demoPeekBtn" class="text-xs text-[var(--japandi-moss-text)] hover:underline cursor-pointer">👁️ Révéler</button>
-            </div>
-            <input 
-              type="password" 
-              id="demoPasswordInput" 
-              onfocus="onDemoPasswordFocus()" 
-              placeholder="••••••••••••" 
-              class="w-full px-3 py-2 text-xs rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-[var(--japandi-text)] focus:border-[var(--japandi-moss)] focus:outline-none transition"
-            >
-          </div>
-
-          <div class="flex items-center gap-2 pt-2">
-            <button 
-              type="button" 
-              onclick="triggerDemoAction('error')" 
-              class="flex-1 py-2 px-3 rounded-xl border border-red-500/30 bg-red-500/10 text-red-500 dark:text-red-400 text-xs font-semibold hover:bg-red-500/20 transition cursor-pointer text-center"
-            >
-              ⚠️ Simuler Erreur (404)
-            </button>
-            <button 
-              type="button" 
-              onclick="triggerDemoAction('success')" 
-              class="flex-1 py-2 px-3 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] text-xs font-semibold hover:opacity-90 transition cursor-pointer text-center shadow-soft"
-            >
-              🎉 Valider (Succès)
-            </button>
-            <button 
-              type="button" 
-              onclick="triggerDemoAction('reset')" 
-              title="Réinitialiser" 
-              class="py-2 px-3 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition cursor-pointer"
-            >
-              ↺
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Colonne Droite : Mascotte Interactive Vivante -->
-      <div class="flex flex-col items-center justify-center p-6 rounded-2xl bg-[var(--japandi-surface-stage)] border border-[var(--japandi-border)] w-full sm:w-[280px] h-[300px] relative select-none shadow-soft shrink-0">
-        <!-- Bulle d'état interactif -->
-        <div id="demoBubble" class="speech-bubble px-3 py-1.5 text-xs font-medium text-center mb-2 z-10 transition select-none shadow-soft max-w-[220px]">
-          <span id="demoBubbleText">Bonjour ! Tapez un email...</span>
-        </div>
-
-        <!-- AItuko — Lottie interactif pour la Démo -->
-        <div id="demoMascotWrapper" class="relative w-[170px] h-[170px] flex items-center justify-center">
-          <lottie-player
-            id="demoMascotLottie"
-            src="mascots/aituko/assets/00_idle/lottie.json"
-            background="transparent"
-            speed="1"
-            loop
-            autoplay
-            class="w-full h-full object-contain pointer-events-none"
-            style="width:170px;height:170px;"
-          ></lottie-player>
-        </div>
-        <span class="text-[10px] font-mono text-[var(--japandi-text-muted)] mt-2">AItuko • Lottie vectoriel • ~35 Ko • 60fps</span>
-      </div>
-    </div>
-  </section>
 
   <!-- Section Valeur Concrète pour Développeurs & Vibe Coders (Factuelle & Vérifiée) -->
   <section id="valeur-pack" class="py-14 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 space-y-8 border-t border-[var(--japandi-border-subtle)]">
@@ -2022,10 +1945,7 @@
         DOM.bubbleQuickTxt.textContent = window.i18n.get(isBubbleVisible ? 'studio.bubbleOn' : 'studio.bubbleOff');
       }
       if (DOM.formatTxt) {
-        if (currentFormat === 'webp') DOM.formatTxt.textContent = "WebP";
-        else if (currentFormat === 'lottie') DOM.formatTxt.textContent = "Lottie";
-
-        else if (currentFormat === 'png') DOM.formatTxt.textContent = "PNG";
+        DOM.formatTxt.textContent = currentFormat === 'webp' ? "WebP animé" : "Lottie";
       }
       if (DOM.catalogueVoteCount) {
         DOM.catalogueVoteCount.textContent = `${totalVotes} ${window.i18n.get('catalogue.voteCountSuffix')}`;
@@ -2093,6 +2013,7 @@
       const parsed = parseInt(idx, 10);
       if (!Number.isInteger(parsed) || parsed < 0 || parsed >= poseKeys.length) return;
       if (!AVAILABLE_POSE_INDICES.includes(parsed)) return; // bloquer les poses non finalisées
+      if (parsed !== 7) resetPointingMirror(); // réinitialise le miroir si on quitte "Guide"
       activeIdx = parsed;
       updateMascotMessage();
       updateUI();
@@ -2102,6 +2023,7 @@
       const currentPos = AVAILABLE_POSE_INDICES.indexOf(activeIdx);
       const prevPos = (currentPos - 1 + AVAILABLE_POSE_INDICES.length) % AVAILABLE_POSE_INDICES.length;
       activeIdx = AVAILABLE_POSE_INDICES[prevPos];
+      if (activeIdx !== 7) resetPointingMirror();
       updateMascotMessage();
       updateUI();
     }
@@ -2110,6 +2032,7 @@
       const currentPos = AVAILABLE_POSE_INDICES.indexOf(activeIdx);
       const nextPos = (currentPos + 1) % AVAILABLE_POSE_INDICES.length;
       activeIdx = AVAILABLE_POSE_INDICES[nextPos];
+      if (activeIdx !== 7) resetPointingMirror();
       updateMascotMessage();
       updateUI();
     }
@@ -2128,7 +2051,7 @@
     const ACTIVE_PILL_CLASS = "pose-pill active min-h-[44px] py-2.5 px-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs sm:text-sm font-bold flex items-center justify-center text-center transition truncate cursor-pointer shadow-soft";
     const INACTIVE_PILL_CLASS = "pose-pill min-h-[44px] py-2.5 px-2.5 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs sm:text-sm font-medium flex items-center justify-center text-center transition truncate cursor-pointer";
 
-    const FORMAT_CYCLE = ['lottie', 'png'];
+    const FORMAT_CYCLE = ['lottie', 'webp'];
 
     function updateUI() {
       const prefix = getAssetPrefixFor(currentMascot);
@@ -2143,14 +2066,11 @@
       // Mise à jour visuelle du bouton de format
       if (DOM.formatTxt) {
         if (currentFormat === 'webp') {
-          DOM.formatTxt.textContent = "WebP";
+          DOM.formatTxt.textContent = "WebP animé";
           if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-moss)]";
-        } else if (currentFormat === 'lottie') {
+        } else {
           DOM.formatTxt.textContent = "Lottie";
           if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[#00E5FF]";
-        } else if (currentFormat === 'png') {
-          DOM.formatTxt.textContent = "PNG";
-          if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-text-muted)]";
         }
       }
 
@@ -2168,16 +2088,12 @@
           }
         }
       } else {
-        // Mode Matriciel (WebP ou PNG)
+        // Mode WebP Animé
         if (DOM.mascotLottie) DOM.mascotLottie.classList.add('hidden');
         if (DOM.mascotImg) DOM.mascotImg.classList.remove('hidden');
 
-        const filename = (currentFormat === 'webp') 
-          ? "static.png?v=owluko-remastered-20260831-v19" 
-          : "static.png?v=owluko-remastered-20260831-v19";
-        const staticFallback = "static.png?v=owluko-remastered-20260831-v19";
-        const targetUrl = `${prefix}${pFolder}/${filename}`;
-        const fallbackUrl = `${prefix}${pFolder}/${staticFallback}`;
+        const targetUrl = `${prefix}${pFolder}/animated.webp`;
+        const fallbackUrl = `${prefix}${pFolder}/static.webp`;
 
         mascotLoader.load(targetUrl, fallbackUrl);
         preloader.preloadRing(currentMascot, activeIdx, isAnimated);
@@ -2274,6 +2190,44 @@
       currentFormat = fmt;
       isAnimated = (fmt === 'lottie');
       updateUI();
+    }
+
+    // Fonds de scène (4 pastilles)
+    const BG_CLASSES = ['stage-bg-dark', 'stage-bg-stone', 'stage-bg-checker'];
+    function setBg(key) {
+      const box = document.getElementById('stageBox');
+      if (!box) return;
+      BG_CLASSES.forEach(cls => box.classList.remove(cls));
+      if (key === 'dark')    box.classList.add('stage-bg-dark');
+      if (key === 'stone')   box.classList.add('stage-bg-stone');
+      if (key === 'checker') box.classList.add('stage-bg-checker');
+      // 'default' = aucune classe supplémentaire (retour au thème)
+    }
+
+    // Bascule direction gauche ↔ droite pour la pose Guide (07_pointing)
+    let isPointingMirrored = false;
+    function togglePointingDirection() {
+      const wrapper = document.getElementById('mascotStageWrapper');
+      const btn = document.getElementById('flipBtn');
+      if (!wrapper) return;
+      isPointingMirrored = !isPointingMirrored;
+      if (isPointingMirrored) {
+        wrapper.classList.add('mirrored');
+        if (btn) btn.textContent = '↔ ◀';
+      } else {
+        wrapper.classList.remove('mirrored');
+        if (btn) btn.textContent = '↔';
+      }
+    }
+
+    // Réinitialise le miroir quand on change de pose
+    function resetPointingMirror() {
+      if (!isPointingMirrored) return;
+      isPointingMirrored = false;
+      const wrapper = document.getElementById('mascotStageWrapper');
+      const btn = document.getElementById('flipBtn');
+      if (wrapper) wrapper.classList.remove('mirrored');
+      if (btn) btn.textContent = '↔';
     }
 
     function setFw(f) {
