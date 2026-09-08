@@ -482,14 +482,19 @@
 
     #stageBox.stage-bg-dark .stage-toolbar button,
     html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .stage-toolbar button {
-      background-color: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.1);
-      color: #E2DFD7;
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      color: #E2DFD7 !important;
     }
     #stageBox.stage-bg-dark .stage-toolbar button:hover,
     html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .stage-toolbar button:hover {
-      background-color: rgba(255, 255, 255, 0.12);
-      color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.15) !important;
+      color: #FFFFFF !important;
+    }
+    #stageBox.stage-bg-dark .stage-toolbar div[class*="bg-["],
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) .stage-toolbar div[class*="bg-["] {
+      background-color: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
     }
 
     #stageBox.stage-bg-dark .arrow-btn,
@@ -555,6 +560,13 @@
     /* Pastille active du sélecteur de fond */
     .bg-swatch-active {
       box-shadow: 0 0 0 2px var(--japandi-moss) !important;
+    }
+
+    /* Le conteneur de pastilles de fond s'adapte aussi au fond sombre du stage */
+    #stageBox.stage-bg-dark #bgBtns,
+    html.dark #stageBox:not(.stage-bg-stone):not(.stage-bg-checker) #bgBtns {
+      background-color: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
     }
 
     #mascotStageWrapper.mirrored { transform: scaleX(-1); }
@@ -1148,7 +1160,7 @@
           <div class="flex items-center gap-4 sm:gap-5">
             <div class="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center overflow-hidden shrink-0 p-1">
               <img
-                src="assets/previews/aituko_idle_animated.webp"
+                src="mascots/aituko/assets/01_waving/animated.webp"
                 alt="AItuko animé"
                 width="84" height="84"
                 draggable="false"
@@ -1157,7 +1169,7 @@
                 oncontextmenu="return false;"
                 class="w-full h-full object-contain select-none pointer-events-none"
                 style="-webkit-user-drag: none; user-select: none;"
-                onerror="this.src='assets/previews/owluko_idle.webp'"
+                onerror="this.src='assets/previews/aituko_idle_animated.webp'"
               />
             </div>
             <div class="flex-1 min-w-0 space-y-1.5">
@@ -1192,7 +1204,7 @@
             <!-- Owluko -->
             <button onclick="toggleCandidateVote('owluko')" id="vote-card-owluko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-2.5 p-2.5 cursor-pointer shadow-soft">
               <div class="w-12 h-12 flex items-center justify-center overflow-hidden shrink-0 p-0.5">
-                <img src="assets/previews/owluko_idle_animated.webp" alt="Owluko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none" style="-webkit-user-drag: none;" />
+                <img src="mascots/owluko/assets/01_waving/animated.webp" alt="Owluko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none" style="-webkit-user-drag: none;" onerror="this.src='assets/previews/owluko_idle_animated.webp'" />
               </div>
               <div class="flex-1 min-w-0 text-left">
                 <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.owluko">🦉 Owluko</span>
@@ -1203,7 +1215,7 @@
             <!-- Luneko -->
             <button onclick="toggleCandidateVote('luneko')" id="vote-card-luneko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-2.5 p-2.5 cursor-pointer shadow-soft">
               <div class="w-12 h-12 flex items-center justify-center overflow-hidden shrink-0 p-0.5">
-                <img src="assets/previews/luneko_idle_animated.webp" alt="Luneko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none" style="-webkit-user-drag: none;" />
+                <img src="mascots/luneko/assets/01_waving/animated.webp" alt="Luneko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none" style="-webkit-user-drag: none;" onerror="this.src='assets/previews/luneko_idle_animated.webp'" />
               </div>
               <div class="flex-1 min-w-0 text-left">
                 <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.luneko">🐱 Luneko</span>
