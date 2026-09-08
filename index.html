@@ -2509,6 +2509,12 @@ import ${varName} from './assets/${folder}/lottie.json';
 
     // Gestion du Thème (Dark & Light)
     function initTheme() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlTheme = urlParams.get('theme');
+      if (ALLOWED_THEMES.includes(urlTheme)) {
+        setTheme(urlTheme);
+        return;
+      }
       const savedTheme = safeStorage.get('uko_theme');
       if (ALLOWED_THEMES.includes(savedTheme)) {
         setTheme(savedTheme);
