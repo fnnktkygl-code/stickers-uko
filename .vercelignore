@@ -26,10 +26,12 @@ mascots/hatoko
 mascots/usako
 mascots/inuko
 
-# Heavy asset files inside pose folders (only lottie.json goes through)
+# Heavy asset files inside pose folders (only lottie.json + bundle WebP goes through)
 mascots/aituko/assets/**/*.mp4
-mascots/aituko/assets/**/*.webp
 mascots/aituko/assets/**/*.gif
 mascots/aituko/assets/**/*.png
 mascots/aituko/assets/**/*.apng
 mascots/aituko/assets/**/*.zip
+# WebP: allow animated.webp and static.webp per pose folder (used in studio WebP mode)
+# (Glob negation: !mascots/aituko/assets/*/animated.webp not supported by Vercel — copy to assets/previews/ instead)
+mascots/aituko/assets/**/*.webp

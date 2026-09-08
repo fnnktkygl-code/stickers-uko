@@ -978,151 +978,137 @@
     </div>
   </section>
 
-  <!-- Catalogue des Mascottes (Grille Unifiée 7 Cases) -->
-  <section id="catalogue" class="py-20 md:py-28 max-w-6xl mx-auto px-4 sm:px-6 space-y-10 border-t border-[var(--japandi-border-subtle)]">
-    <div class="text-center space-y-2.5 max-w-2xl mx-auto">
-      <h2 data-i18n="catalogue.title" class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--japandi-text)]">Catalogue des Mascottes Uko</h2>
-      <p data-i18n="catalogue.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Chaque mascotte dispose de sa propre personnalité et de 12 états d'animation harmonisés.</p>
-    </div>
+  <!-- Catalogue + Tarifs — Section unifiée côte à côte -->
+  <section id="catalogue" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6 border-t border-[var(--japandi-border-subtle)]">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
-    <!-- Grille Responsive Harmonisée (AItuko Unique + Vote) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-      
-      <!-- 1. AItuko (Robot IA) -->
-      <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
-        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
-          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
-          <img 
-            src="mascots/aituko/assets/00_idle/static.png" 
-            alt="AItuko 3D" 
-            width="96"
-            height="96"
-            draggable="false" 
-            loading="lazy" 
-            decoding="async" 
-            oncontextmenu="return false;"
-            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
-            style="-webkit-user-drag: none; user-select: none;"
-            onerror="this.src='mascots/aituko/assets/00_idle/static.png'"
-          />
-        </div>
+      <!-- ── Colonne Gauche : Catalogue ── -->
+      <div id="tarifs" class="space-y-6">
+
+        <!-- Header -->
         <div class="space-y-1.5">
-          <div class="flex justify-between items-center text-sm">
-            <span class="font-semibold text-[var(--japandi-text)]">AItuko</span>
-            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
-          </div>
-          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.aitukoDesc">Assistant IA • Accueil & Onboarding</p>
+          <h2 data-i18n="catalogue.title" class="text-xl sm:text-2xl font-bold tracking-tight text-[var(--japandi-text)]">Catalogue des Mascottes Uko</h2>
+          <p data-i18n="catalogue.desc" class="text-xs text-[var(--japandi-text-secondary)] font-light leading-relaxed">Chaque mascotte dispose de sa propre personnalité et de 12 états d'animation harmonisés.</p>
         </div>
+
+        <!-- AItuko -->
+        <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-4 cursor-pointer group select-none hover:shadow-card transition border border-[var(--japandi-border)]">
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0 group-hover:border-[var(--japandi-border)] transition">
+              <div class="absolute z-20 w-20 h-20 cursor-pointer" oncontextmenu="return false;"></div>
+              <img
+                src="assets/previews/aituko_idle_animated.webp"
+                alt="AItuko animé"
+                width="72" height="72"
+                draggable="false"
+                loading="lazy"
+                decoding="async"
+                oncontextmenu="return false;"
+                class="w-full h-full object-contain calm-mascot select-none pointer-events-none"
+                style="-webkit-user-drag: none; user-select: none;"
+                onerror="this.src='assets/previews/owluko_idle.webp'"
+              />
+            </div>
+            <div class="flex-1 min-w-0 space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-semibold text-[var(--japandi-text)] text-sm">AItuko</span>
+                <span class="px-2 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium shrink-0" data-i18n="catalogue.available">Disponible</span>
+              </div>
+              <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.aitukoDesc">Assistant IA • Accueil & Onboarding</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vote Owluko vs Luneko -->
+        <div class="surface-card rounded-2xl p-4 space-y-3 border border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/30 select-none">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[var(--japandi-ochre)] animate-pulse shrink-0"></span>
+              <span class="font-semibold text-[var(--japandi-text)] text-sm" data-i18n="catalogue.voteTitle">Vote Mascotte</span>
+              <p class="text-xs text-[var(--japandi-text-secondary)] font-light" data-i18n="catalogue.voteSubtitle">— Quelle sera la prochaine ?</p>
+            </div>
+            <span id="catalogueVoteCount" class="px-2 py-0.5 rounded-md bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] text-xs font-mono font-bold border border-[var(--japandi-ochre)]/30 shrink-0">342 votes</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <!-- Owluko -->
+            <button onclick="toggleCandidateVote('owluko')" id="vote-card-owluko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-3 p-2.5 cursor-pointer shadow-soft">
+              <div class="w-12 h-12 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0">
+                <img src="assets/previews/owluko_idle_animated.webp" alt="Owluko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+              </div>
+              <div class="flex-1 min-w-0 text-left">
+                <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.owluko">🦉 Owluko</span>
+                <span id="badge-owluko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓ Voté</span>
+              </div>
+            </button>
+
+            <!-- Luneko -->
+            <button onclick="toggleCandidateVote('luneko')" id="vote-card-luneko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex items-center gap-3 p-2.5 cursor-pointer shadow-soft">
+              <div class="w-12 h-12 rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden shrink-0">
+                <img src="assets/previews/luneko_idle_animated.webp" alt="Luneko" width="48" height="48" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="w-full h-full object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+              </div>
+              <div class="flex-1 min-w-0 text-left">
+                <span class="text-[var(--japandi-text)] font-semibold text-xs block truncate" data-i18n="candidates.luneko">🐱 Luneko</span>
+                <span id="badge-luneko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓ Voté</span>
+              </div>
+            </button>
+          </div>
+
+          <div id="inlineVoteFeedback" class="hidden text-xs text-[var(--japandi-moss-text)] text-center font-mono font-semibold">
+            ✓ Vote pris en compte !
+          </div>
+        </div>
+
       </div>
 
-      <!-- 2. Vote Prochaine Mascotte — Owluko vs Luneko -->
-      <div class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/40 transition select-none flex flex-col justify-between shadow-card">
-        
-        <!-- Header Vote -->
-        <div class="space-y-1.5">
-          <div class="flex items-center justify-between gap-2 text-sm">
-            <div class="flex items-center gap-2 min-w-0">
-              <span class="w-2.5 h-2.5 rounded-full bg-[var(--japandi-ochre)] animate-pulse shrink-0"></span>
-              <span class="font-bold text-[var(--japandi-text)] text-sm sm:text-base tracking-tight whitespace-nowrap" data-i18n="catalogue.voteTitle">Vote Mascotte</span>
-            </div>
-            <span id="catalogueVoteCount" class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] text-xs font-mono font-bold border border-[var(--japandi-ochre)]/30 shrink-0">342 votes</span>
-          </div>
-          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-snug" data-i18n="catalogue.voteSubtitle">Quelle sera la prochaine mascotte ?</p>
+      <!-- ── Colonne Droite : Tarif Pack Unique ── -->
+      <div class="surface-card rounded-2xl p-6 sm:p-7 space-y-5 flex flex-col border border-[var(--japandi-moss)]/50 relative shadow-card">
+
+        <!-- Badge -->
+        <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[var(--japandi-moss)] text-white dark:text-[#0F0F10] text-xs font-mono font-bold tracking-wide uppercase shadow-sm whitespace-nowrap" data-i18n="pricing.uniqueBadge">Pack Unique</div>
+
+        <!-- Prix + titre -->
+        <div class="pt-2 space-y-1">
+          <h2 data-i18n="pricing.title" class="text-xl sm:text-2xl font-bold text-[var(--japandi-text)] tracking-tight">Un seul pack. Tout AItuko.</h2>
+          <p data-i18n="pricing.desc" class="text-xs text-[var(--japandi-text-secondary)] font-light leading-relaxed">Licence commerciale perpétuelle incluse — usage personnel et commercial illimité.</p>
         </div>
 
-        <!-- 2 Candidats avec aperçu WebP -->
-        <div class="grid grid-cols-2 gap-3">
-          <!-- Owluko -->
-          <button onclick="toggleCandidateVote('owluko')" id="vote-card-owluko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex flex-col items-center gap-2 p-3 cursor-pointer shadow-soft group">
-            <div class="h-20 w-full rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden group-hover:border-[var(--japandi-border)] transition">
-              <img src="assets/previews/owluko_idle.webp" alt="Owluko" width="72" height="72" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="h-16 object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
-            </div>
-            <div class="flex items-center justify-between w-full">
-              <span class="text-[var(--japandi-text)] font-semibold text-xs whitespace-nowrap" data-i18n="candidates.owluko">🦉 Owluko</span>
-              <span id="badge-owluko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
-            </div>
-          </button>
-
-          <!-- Luneko -->
-          <button onclick="toggleCandidateVote('luneko')" id="vote-card-luneko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex flex-col items-center gap-2 p-3 cursor-pointer shadow-soft group">
-            <div class="h-20 w-full rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden group-hover:border-[var(--japandi-border)] transition">
-              <img src="assets/previews/luneko_idle.webp" alt="Luneko" width="72" height="72" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="h-16 object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
-            </div>
-            <div class="flex items-center justify-between w-full">
-              <span class="text-[var(--japandi-text)] font-semibold text-xs whitespace-nowrap" data-i18n="candidates.luneko">🐱 Luneko</span>
-              <span id="badge-luneko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
-            </div>
-          </button>
+        <div class="flex items-baseline gap-2">
+          <span class="text-4xl font-bold font-mono text-[var(--japandi-text)]" data-i18n="pricing.uniquePrice">5,99 €</span>
+          <span class="text-xs text-[var(--japandi-text-secondary)] font-light" data-i18n="pricing.uniqueDesc">paiement unique</span>
         </div>
 
-        <div id="inlineVoteFeedback" class="hidden text-xs sm:text-sm text-[var(--japandi-moss-text)] text-center font-mono py-1 font-semibold">
-          ✓ Vote pris en compte !
-        </div>
+        <!-- Checklist -->
+        <ul class="text-xs text-[var(--japandi-text)] space-y-2.5 pt-3 border-t border-[var(--japandi-border-subtle)]">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="pricing.uniqueItem1">3 poses animées finalisées (Idle, Accueil, Guide)</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="pricing.uniqueItem2">Fichiers Lottie JSON + WebP 60fps animé</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="pricing.uniqueItem3">Composants React / Next.js prêts à l'intégration</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="pricing.uniqueItem4">Mises à jour incluses — 9 poses bientôt disponibles</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-3.5 h-3.5 text-[var(--japandi-moss)] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-i18n="pricing.uniqueItem5">Licence commerciale perpétuelle illimitée</span>
+          </li>
+        </ul>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Pack Unique AItuko — 5,99 € -->
-  <section id="tarifs" class="py-20 md:py-28 max-w-5xl mx-auto px-4 sm:px-6 space-y-10 border-t border-[var(--japandi-border-subtle)]">
-    <div class="text-center space-y-2.5 max-w-2xl mx-auto">
-      <h2 data-i18n="pricing.title" class="text-2xl sm:text-3xl font-bold text-[var(--japandi-text)] tracking-tight">Un seul pack. Tout AItuko.</h2>
-      <p data-i18n="pricing.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Licence commerciale perpétuelle incluse — usage personnel et commercial illimité.</p>
-    </div>
-
-    <div class="flex justify-center pt-4">
-      <!-- Pack AItuko Unique -->
-      <div class="surface-card rounded-3xl p-7 sm:p-9 space-y-6 flex flex-col items-center justify-between relative border border-[var(--japandi-moss)]/60 shadow-card w-full max-w-sm">
-
-        <!-- Badge Populaire -->
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[var(--japandi-moss)] text-white dark:text-[#0F0F10] text-xs font-mono font-bold tracking-wider uppercase shadow-sm whitespace-nowrap" data-i18n="pricing.uniqueBadge">
-          Pack Unique
-        </div>
-
-        <div class="space-y-5 w-full pt-1">
-          <div class="text-center space-y-2">
-            <h3 data-i18n="pricing.uniqueTitle" class="text-lg sm:text-xl font-bold text-[var(--japandi-text)]">Pack AItuko</h3>
-            <div class="text-4xl sm:text-5xl font-bold font-mono text-[var(--japandi-text)]" data-i18n="pricing.uniquePrice">5,99 €</div>
-            <p data-i18n="pricing.uniqueDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">
-              Paiement unique • Aucun abonnement • Accès immédiat
-            </p>
-          </div>
-
-          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)] w-full">
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.uniqueItem1">3 poses animées finalisées (Idle, Accueil, Guide)</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.uniqueItem2">Fichiers Lottie JSON + WebP 60fps + PNG HD</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.uniqueItem3">Composants React / Next.js prêts à l'intégration</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.uniqueItem4">Mises à jour incluses — 9 poses bientôt disponibles</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.uniqueItem5">Licence commerciale perpétuelle illimitée</span>
-            </li>
-          </ul>
-        </div>
-
-        <button onclick="openModal('unique')" data-i18n="pricing.uniqueBtn" class="w-full py-4 rounded-2xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 text-sm font-bold tracking-tight transition cursor-pointer shadow-soft min-h-[52px] flex items-center justify-center">
+        <button onclick="openModal('unique')" data-i18n="pricing.uniqueBtn" class="w-full py-3.5 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 text-sm font-bold tracking-tight transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center mt-auto">
           📦 Obtenir le Pack AItuko — 5,99 €
         </button>
+
       </div>
     </div>
   </section>
-      
-
-
-
   <!-- Modal Achat / Téléchargement -->
   <div 
     id="buyModal" 
