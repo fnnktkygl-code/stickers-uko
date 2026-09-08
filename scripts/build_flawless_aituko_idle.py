@@ -108,13 +108,15 @@ def get_kinematics(f, total_frames=120):
     tau = 2.0 * math.pi * (f / total_frames)
     s_main = math.sin(tau)
     
-    dy_root = -11.0 * s_main  # Authentic studio amplitude
-    scale_torso_x = 1.0 - 0.015 * s_main
-    scale_torso_y = 1.0 + 0.015 * s_main
+    dy_root = 0.0  # No vertical floating — mascot stays grounded
+    scale_torso_x = 1.0 - 0.006 * s_main  # Subtle breathing scale only
+    scale_torso_y = 1.0 + 0.006 * s_main
+
     
     tau_head = 2.0 * math.pi * ((f - 4) / total_frames)
-    dy_head = dy_root - 1.2 * math.sin(tau_head)
+    dy_head = -1.2 * math.sin(tau_head)  # Tiny independent head micro-bob (< 1.2px)
     rot_head = -0.6 * math.sin(tau_head)
+
     
     scale_eye_y = 1.0
     if 77 <= f <= 84:
@@ -128,16 +130,17 @@ def get_kinematics(f, total_frames=120):
         elif f == 84: scale_eye_y = 1.00
         
     tau_pod = 2.0 * math.pi * ((f - 6) / total_frames)
-    dy_pod = dy_root - 1.8 * math.sin(tau_pod)
+    dy_pod = -1.8 * math.sin(tau_pod)  # Independent pod micro-bob only
     flare_x = -1.8 * math.sin(tau_pod)
     rot_left_pod = -9.0 - 2.0 * math.sin(tau_pod)
     rot_right_pod = 9.0 + 2.0 * math.sin(tau_pod)
     
     tau_feet = 2.0 * math.pi * ((f - 3) / total_frames)
-    dy_feet = dy_root - 1.2 * math.sin(tau_feet)
+    dy_feet = -1.2 * math.sin(tau_feet)  # Independent feet micro-bob only
     
-    shadow_s = 1.0 - 0.08 * s_main
-    shadow_a = int(140 - 28 * s_main)
+    shadow_s = 1.0 - 0.02 * s_main  # Very subtle shadow breath
+    shadow_a = int(140 - 8 * s_main)
+
     
     return {
         'dy_root': dy_root,
@@ -506,30 +509,22 @@ def build_pure_vector_lottie(points_512):
         "ip": 0, "op": 120, "st": 0, "bm": 0
     }
 
-    # 2. Torso Kinematics (Studio float amplitude)
+    # 2. Torso — fixed Y, subtle breathing scale only
     torso_pos_kf = [
-        make_lottie_kf(0,   [256, 312, 0], [256, 301, 0]),
-        make_lottie_kf(30,  [256, 301, 0], [256, 312, 0]),
-        make_lottie_kf(60,  [256, 312, 0], [256, 323, 0]),
-        make_lottie_kf(90,  [256, 323, 0], [256, 312, 0]),
-        make_lottie_kf(120, [256, 312, 0])
+        make_lottie_kf(0,   [256, 312, 0])
     ]
     torso_scale_kf = [
-        make_lottie_kf(0,   [100, 100, 100], [98.5, 101.5, 100]),
-        make_lottie_kf(30,  [98.5, 101.5, 100], [100, 100, 100]),
-        make_lottie_kf(60,  [100, 100, 100], [101.5, 98.5, 100]),
-        make_lottie_kf(90,  [101.5, 98.5, 100], [100, 100, 100]),
+        make_lottie_kf(0,   [100, 100, 100], [99.4, 100.6, 100]),
+        make_lottie_kf(60,  [99.4, 100.6, 100], [100.6, 99.4, 100]),
         make_lottie_kf(120, [100, 100, 100])
     ]
 
+
     # 4. Landing Feet Pods (ind: 8)
     feet_pos_kf = [
-        make_lottie_kf(0,   [256, 448, 0], [256, 435.8, 0]),
-        make_lottie_kf(27,  [256, 435.8, 0], [256, 448, 0]),
-        make_lottie_kf(57,  [256, 448, 0], [256, 460.2, 0]),
-        make_lottie_kf(87,  [256, 460.2, 0], [256, 448, 0]),
-        make_lottie_kf(120, [256, 448, 0])
+        make_lottie_kf(0,   [256, 448, 0])
     ]
+
     feet_layer = {
         "ddd": 0, "ind": 8, "ty": 4, "nm": "Landing Feet Pods", "sr": 1,
         "ks": {
@@ -594,13 +589,9 @@ def build_pure_vector_lottie(points_512):
         "ip": 0, "op": 120, "st": 0, "bm": 0
     }
 
-    # 6. Floating Winglet Pods Kinematics (Studio float amplitude)
+    # 6. Floating Winglet Pods — fixed Y, rotation only
     left_pod_pos_kf = [
-        make_lottie_kf(0,   [147, 321, 0], [148.8, 308.2, 0]),
-        make_lottie_kf(24,  [148.8, 308.2, 0], [147, 321, 0]),
-        make_lottie_kf(54,  [147, 321, 0], [145.2, 333.8, 0]),
-        make_lottie_kf(84,  [145.2, 333.8, 0], [147, 321, 0]),
-        make_lottie_kf(120, [147, 321, 0])
+        make_lottie_kf(0,   [147, 321, 0])
     ]
     left_pod_rot_kf = [
         make_lottie_kf(0,   -9.0, -11.0),
@@ -610,11 +601,7 @@ def build_pure_vector_lottie(points_512):
         make_lottie_kf(120, -9.0)
     ]
     right_pod_pos_kf = [
-        make_lottie_kf(0,   [364, 321, 0], [362.2, 308.2, 0]),
-        make_lottie_kf(24,  [362.2, 308.2, 0], [364, 321, 0]),
-        make_lottie_kf(54,  [364, 321, 0], [365.8, 333.8, 0]),
-        make_lottie_kf(84,  [365.8, 333.8, 0], [364, 321, 0]),
-        make_lottie_kf(120, [364, 321, 0])
+        make_lottie_kf(0,   [364, 321, 0])
     ]
     right_pod_rot_kf = [
         make_lottie_kf(0,   9.0, 11.0),
@@ -623,6 +610,7 @@ def build_pure_vector_lottie(points_512):
         make_lottie_kf(84,  7.0, 9.0),
         make_lottie_kf(120, 9.0)
     ]
+
 
     # Floating Left Winglet Pod (ind: 5)
     left_pod_layer = {
@@ -676,21 +664,18 @@ def build_pure_vector_lottie(points_512):
         "ip": 0, "op": 120, "st": 0, "bm": 0
     }
 
-    # 7. Head & Neck Kinematics (Studio float amplitude)
+    # 7. Head & Neck — fixed Y, keep subtle rotation only
     head_pos_kf = [
-        make_lottie_kf(0,   [256, 204, 0], [256, 191.8, 0]),
-        make_lottie_kf(26,  [256, 191.8, 0], [256, 204, 0]),
-        make_lottie_kf(56,  [256, 204, 0], [256, 216.2, 0]),
-        make_lottie_kf(86,  [256, 216.2, 0], [256, 204, 0]),
-        make_lottie_kf(120, [256, 204, 0])
+        make_lottie_kf(0,   [256, 204, 0])
     ]
     head_rot_kf = [
         make_lottie_kf(0,   0.0, -0.6),
-        make_lottie_kf(26,  -0.6, 0.0),
-        make_lottie_kf(56,  0.0, 0.6),
-        make_lottie_kf(86,  0.6, 0.0),
+        make_lottie_kf(30,  -0.6, 0.0),
+        make_lottie_kf(60,  0.0, 0.6),
+        make_lottie_kf(90,  0.6, 0.0),
         make_lottie_kf(120, 0.0)
     ]
+
 
     # Mechanical Neck Collar (ind: 4)
     neck_layer = {

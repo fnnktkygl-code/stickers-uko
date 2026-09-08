@@ -101,13 +101,13 @@ def get_wave_kinematics(f, total_frames=120):
     """
     t = (float(f) / float(total_frames)) * 4.0
     
-    dy_head = float(cs_head_dy(t))
+    dy_head = 0.0  # No vertical head float — only rotation from cs_head_rot
     rot_head = float(cs_head_rot(t))
-    dy_root = dy_head * 0.6
-    dy_feet = dy_head * 0.8
+    dy_root = 0.0  # No vertical body float
+    dy_feet = 0.0  # No feet float
     
-    scale_torso_x = 1.0 - 0.015 * (dy_root / 15.0)
-    scale_torso_y = 1.0 + 0.015 * (dy_root / 15.0)
+    scale_torso_x = 1.0  # No breathing scale distortion
+    scale_torso_y = 1.0
     
     # Left pod (viewer's left - WAVING around shoulder pivot)
     rot_lpod = float(cs_wave_rot(t))
@@ -115,8 +115,8 @@ def get_wave_kinematics(f, total_frames=120):
     # Right pod (viewer's right - STABILIZING strictly along flank, tx strictly 0)
     rot_rpod = float(cs_rrot(t))
     
-    shadow_s = 1.0 - 0.05 * (dy_root / 15.0)
-    shadow_a = int(round(135 - 20 * (dy_root / 15.0)))
+    shadow_s = 1.0  # Static shadow
+    shadow_a = 135
     
     # Conscious single blink once per loop during return/settling (f=86..91)
     if f in [88, 89]:
@@ -141,14 +141,15 @@ def get_wave_kinematics(f, total_frames=120):
         'scale_eye_y': scale_eye_y,
         'dy_feet': dy_feet,
         'tx_lpod': 0.0,
-        'ty_lpod': dy_root,
+        'ty_lpod': 0.0,
         'rot_lpod': rot_lpod,
         'tx_rpod': 0.0,
-        'ty_rpod': dy_root,
+        'ty_rpod': 0.0,
         'rot_rpod': rot_rpod,
         'shadow_s': shadow_s,
         'shadow_a': shadow_a
     }
+
 
 def generate_animated_svg(points_512, bg_mode="dark"):
     """
