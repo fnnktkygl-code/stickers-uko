@@ -723,14 +723,6 @@
           <img src="mascots/aituko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="AItuko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
           <span class="inline font-medium">AItuko</span>
         </button>
-        <button onclick="switchMascot('owluko')" id="mascot-tab-owluko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
-          <img src="mascots/owluko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Owluko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
-          <span class="inline font-medium">Owluko</span>
-        </button>
-        <button onclick="switchMascot('luneko')" id="mascot-tab-luneko" class="shrink-0 snap-start px-3 py-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition flex items-center justify-center gap-2 cursor-pointer min-h-[38px]">
-          <img src="mascots/luneko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Luneko 3D" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
-          <span class="inline font-medium">Luneko</span>
-        </button>
       </div>
     </div>
 
@@ -1025,12 +1017,12 @@
 
       <!-- Compteur en bas du canvas -->
       <div class="absolute bottom-3 left-4 flex items-center text-xs text-[var(--japandi-text-muted)] pointer-events-auto">
-        <span id="counterTxt" class="font-mono font-semibold text-xs text-[var(--japandi-text-secondary)] shrink-0">1 / 13</span>
+        <span id="counterTxt" class="font-mono font-semibold text-xs text-[var(--japandi-text-secondary)] shrink-0">1 / 12</span>
       </div>
     </div>
 
-    <!-- Grille des 13 Poses (Compacte & Responsive) -->
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-1.5">
+    <!-- Grille des 12 Poses (Compacte & Responsive) -->
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5">
       <button onclick="setPoseIndex(0)" id="pill-0" class="pose-pill active min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs font-semibold flex items-center justify-center text-center transition truncate cursor-pointer shadow-soft" data-i18n="poses.idle">Idle</button>
       <button onclick="setPoseIndex(1)" id="pill-1" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.waving">Accueil</button>
       <button onclick="setPoseIndex(2)" id="pill-2" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.celebrating">Succès</button>
@@ -1042,8 +1034,7 @@
       <button onclick="setPoseIndex(8)" id="pill-8" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.searching">Recherche</button>
       <button onclick="setPoseIndex(9)" id="pill-9" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.loading">Chargement</button>
       <button onclick="setPoseIndex(10)" id="pill-10" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.idea">Astuce</button>
-      <button onclick="setPoseIndex(11)" id="pill-11" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.security">Sécurité</button>
-      <button onclick="setPoseIndex(12)" id="pill-12" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.goodbye">Au Revoir</button>
+      <button onclick="setPoseIndex(11)" id="pill-11" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.goodbye">Au Revoir</button>
     </div>
 
     <!-- Terminal de Code Snippet & Intégration Immédiate -->
@@ -1373,8 +1364,8 @@
       <p data-i18n="catalogue.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Chaque mascotte dispose de sa propre personnalité et de 12 états d'animation harmonisés.</p>
     </div>
 
-    <!-- Grille Responsive Harmonisée (3 Cols sur iPad, 4 Cols sur Desktop) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+    <!-- Grille Responsive Harmonisée (AItuko Unique + Vote) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
       
       <!-- 1. AItuko (Robot IA) -->
       <div onclick="selectMascotFromCard('aituko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
@@ -1403,62 +1394,8 @@
         </div>
       </div>
 
-      <!-- 2. Owluko (Chouette 3D) -->
-      <div onclick="selectMascotFromCard('owluko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
-        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
-          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
-          <img 
-            src="mascots/owluko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
-            alt="Owluko 3D" 
-            width="96"
-            height="96"
-            draggable="false" 
-            loading="lazy" 
-            decoding="async" 
-            oncontextmenu="return false;"
-            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
-            style="-webkit-user-drag: none; user-select: none;"
-            onerror="this.onerror=null; this.src='mascots/owluko/assets/01_waving/animated.gif'"
-          />
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex justify-between items-center text-sm">
-            <span class="font-semibold text-[var(--japandi-text)]">Owluko</span>
-            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
-          </div>
-          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.owlukoDesc">Guide de Sagesse • Aide & Connaissance</p>
-        </div>
-      </div>
-
-      <!-- 3. Luneko (Chaton 3D) -->
-      <div onclick="selectMascotFromCard('luneko')" class="surface-card rounded-2xl p-5 sm:p-6 cursor-pointer space-y-4 group select-none shadow-soft hover:shadow-card transition">
-        <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
-          <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
-          <img 
-            src="mascots/luneko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
-            alt="Luneko 3D" 
-            width="96"
-            height="96"
-            draggable="false" 
-            loading="lazy" 
-            decoding="async" 
-            oncontextmenu="return false;"
-            class="h-28 object-contain calm-mascot select-none pointer-events-none relative z-10"
-            style="-webkit-user-drag: none; user-select: none;"
-            onerror="this.onerror=null; this.src='mascots/luneko/assets/01_waving/animated.gif'"
-          />
-        </div>
-        <div class="space-y-1.5">
-          <div class="flex justify-between items-center text-sm">
-            <span class="font-semibold text-[var(--japandi-text)]" data-i18n="catalogue.lunekoName">Luneko</span>
-            <span class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-mono font-medium" data-i18n="catalogue.available">Disponible</span>
-          </div>
-          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed" data-i18n="catalogue.lunekoDesc">Compagnon Ludique • Engagement & Fun</p>
-        </div>
-      </div>
-
-      <!-- 4. Carte de Vote & Suggestions 1-Clic Harmonieuse -->
-      <div class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/40 transition select-none flex flex-col justify-between sm:col-span-2 md:col-span-3 lg:col-span-1 shadow-card">
+      <!-- 2. Carte de Vote & Suggestions 1-Clic Harmonieuse -->
+      <div class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/40 transition select-none flex flex-col justify-between shadow-card">
         
         <!-- Header Vote -->
         <div class="space-y-1.5">
@@ -1684,18 +1621,10 @@
       <!-- Sélecteur de Mascotte dans la Modale -->
       <div class="space-y-2">
         <label class="text-xs sm:text-sm font-semibold text-[var(--japandi-text-secondary)]" data-i18n="modal.chooseMascot">Mascotte choisie :</label>
-        <div class="grid grid-cols-3 gap-1.5 p-1.5 rounded-2xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border)] text-xs font-medium">
-          <button type="button" onclick="setModalMascot('aituko')" id="modal-tab-aituko" class="py-2 px-1.5 rounded-xl bg-[var(--japandi-surface)] text-[var(--japandi-text)] shadow-soft font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
+        <div class="p-1.5 rounded-2xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border)] text-xs font-medium">
+          <button type="button" onclick="setModalMascot('aituko')" id="modal-tab-aituko" class="w-full py-2 px-1.5 rounded-xl bg-[var(--japandi-surface)] text-[var(--japandi-text)] shadow-soft font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
             <img src="mascots/aituko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="AItuko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
             <span class="inline text-xs font-medium">AItuko</span>
-          </button>
-          <button type="button" onclick="setModalMascot('owluko')" id="modal-tab-owluko" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
-            <img src="mascots/owluko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Owluko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
-            <span class="inline text-xs font-medium">Owluko</span>
-          </button>
-          <button type="button" onclick="setModalMascot('luneko')" id="modal-tab-luneko" class="py-2 px-1.5 rounded-xl text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium transition flex items-center justify-center gap-1.5 cursor-pointer min-h-[44px]">
-            <img src="mascots/luneko/assets/avatar.png?v=owluko-remastered-20260831-v19" width="28" height="28" alt="Luneko" class="w-7 h-7 rounded-full object-cover shrink-0 ring-1 ring-[var(--japandi-border)] shadow-xs bg-[var(--japandi-surface-muted)]">
-            <span class="inline text-xs font-medium">Luneko</span>
           </button>
         </div>
       </div>
@@ -1867,12 +1796,12 @@
 
     const poseKeys = Object.freeze([
       "idle", "waving", "celebrating", "ai_thinking", "error_404", "thumbs_up",
-      "sleeping", "pointing", "searching", "loading", "idea", "security", "goodbye"
+      "sleeping", "pointing", "searching", "loading", "idea", "goodbye"
     ]);
 
     const poseFolders = Object.freeze([
       "00_idle", "01_waving", "02_celebrating", "03_ai_thinking", "04_error_404", "05_thumbs_up",
-      "06_sleeping", "07_pointing", "08_searching", "09_loading", "10_idea", "11_security", "12_goodbye"
+      "06_sleeping", "07_pointing", "08_searching", "09_loading", "10_idea", "12_goodbye"
     ]);
 
     const AITUKO_VIDEOS = Object.freeze([
@@ -1887,7 +1816,6 @@
       "mascots/aituko/aituko_searching.mp4",
       "mascots/aituko/aituko_loading.mp4",
       "mascots/aituko/aituko_idea.mp4",
-      "mascots/aituko/aituko_security.mp4",
       "mascots/aituko/aituko_goodbye.mp4"
     ]);
 
@@ -1901,28 +1829,6 @@
           free: "downloads/Uko-Free-Sample.zip",
           starter: "downloads/AItuko-Starter-6-States.zip",
           pro: "downloads/AItuko-Pro-12-States.zip"
-        }
-      },
-      owluko: {
-        name: "Owluko",
-        component: "Owluko",
-        flutter: "OwlukoMascot",
-        folderPrefix: "mascots/owluko/assets/",
-        zips: {
-          free: "downloads/Owluko-Free-Sample.zip",
-          starter: "downloads/Owluko-Starter-6-States.zip",
-          pro: "downloads/Owluko-Pro-12-States.zip"
-        }
-      },
-      luneko: {
-        name: "Luneko",
-        component: "Luneko",
-        flutter: "LunekoMascot",
-        folderPrefix: "mascots/luneko/assets/",
-        zips: {
-          free: "downloads/Luneko-Free-Sample.zip",
-          starter: "downloads/Luneko-Starter-Pack.zip",
-          pro: "downloads/Luneko-Pro-12-States.zip"
         }
       }
     });
@@ -2293,7 +2199,7 @@
         if (!stageElement || !wrapperElement) return;
         this.stage = stageElement;
         this.wrapper = wrapperElement;
-        this.mascotOrder = ['aituko', 'owluko', 'luneko'];
+        this.mascotOrder = ['aituko'];
         
         this.startX = 0;
         this.startY = 0;

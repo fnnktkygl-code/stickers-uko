@@ -70,7 +70,6 @@ const TRANSLATIONS = {
       "searching": "Recherche",
       "loading": "Chargement",
       "idea": "Astuce",
-      "security": "Sécurité",
       "goodbye": "Au revoir"
     },
     "messages": {
@@ -85,39 +84,8 @@ const TRANSLATIONS = {
         "searching": "Recherche en cours...",
         "loading": "Chargement de votre profil...",
         "idea": "Astuce : utilisez les raccourcis clavier !",
-        "security": "Connexion 100% sécurisée.",
         "goodbye": "À très bientôt sur l'application !",
         "idle": "Systèmes nominaux et prêts."
-      },
-      "owluko": {
-        "waving": "Coucou ! Bienvenue à bord !",
-        "celebrating": "Objectif atteint ! Bravo !",
-        "ai_thinking": "Je réfléchis à la meilleure solution...",
-        "error_404": "Oups ! Nid introuvable.",
-        "thumbs_up": "C'est validé par la chouette !",
-        "sleeping": "Zzz... Petite sieste de jour...",
-        "pointing": "Regarde par ici !",
-        "searching": "Je scrute l'horizon...",
-        "loading": "Synchronisation du savoir...",
-        "idea": "J'ai une idée lumineuse !",
-        "security": "Données protégées sous mon aile.",
-        "goodbye": "Bon vol et à bientôt !",
-        "idle": "Nid calme et bienveillant."
-      },
-      "luneko": {
-        "waving": "Miaou ! Ravi de vous rencontrer !",
-        "celebrating": "Youpi ! C est une victoire éclatante !",
-        "ai_thinking": "Le chaton réfléchit à toute vitesse...",
-        "error_404": "Oups ! La pelote s est emmêlée (404).",
-        "thumbs_up": "Coup de patte validé à 100% !",
-        "sleeping": "Ronron... Sieste réparatrice...",
-        "pointing": "Par ici, regarde la nouveauté !",
-        "searching": "Je furette partout pour trouver ça...",
-        "loading": "Chargement tout doux en cours...",
-        "idea": "Eurêka ! J ai une super astuce !",
-        "security": "Espace ultra sécurisé sous ma garde !",
-        "goodbye": "À très vite, prends soin de toi !",
-        "idle": "Ronronnement apaisant..."
       },
       "hatoko": {
         "waving": "Roucoule ! Prêt à livrer vos messages !",
@@ -130,7 +98,6 @@ const TRANSLATIONS = {
         "searching": "Je survole la zone pour vous...",
         "loading": "En plein vol vers votre destination...",
         "idea": "Une idée express vient d'atterrir !",
-        "security": "Vos plis sont sous scellé sécurisé.",
         "goodbye": "Bonne route et bon vent !",
         "idle": "Prêt pour la prochaine lettre !"
       },
@@ -145,7 +112,6 @@ const TRANSLATIONS = {
         "searching": "Je furette à la vitesse de l'éclair...",
         "loading": "Accélération maximale en cours...",
         "idea": "Bond de génie ! J'ai la solution !",
-        "security": "Zone protégée par mes réflexes d'acier.",
         "goodbye": "À toute vitesse, à très bientôt !",
         "idle": "En harmonie avec la nature."
       },
@@ -161,7 +127,6 @@ const TRANSLATIONS = {
         "searching": "Je traque l'information à la trace...",
         "loading": "Patrouille active en cours de chargement...",
         "idea": "Flair affûté ! J'ai trouvé la solution !",
-        "security": "Périmètre sous protection rapprochée.",
         "goodbye": "Toujours fidèle au poste, à bientôt !"
       }
     },
@@ -338,7 +303,6 @@ const TRANSLATIONS = {
       "searching": "Searching",
       "loading": "Loading",
       "idea": "Idea",
-      "security": "Security",
       "goodbye": "Goodbye"
     },
     "messages": {
@@ -353,39 +317,8 @@ const TRANSLATIONS = {
         "searching": "Searching the database...",
         "loading": "Syncing your account...",
         "idea": "Pro tip: Keyboard shortcuts save time!",
-        "security": "100% secure connection.",
         "goodbye": "Catch you later!",
         "idle": "Systems nominal and ready."
-      },
-      "owluko": {
-        "waving": "Hello! Welcome aboard!",
-        "celebrating": "Milestone reached! Great job!",
-        "ai_thinking": "Contemplating the optimal path...",
-        "error_404": "Whoops! Nest not found.",
-        "thumbs_up": "Owl-certified & approved!",
-        "sleeping": "Zzz... Daytime nap...",
-        "pointing": "Take a look over here!",
-        "searching": "Scanning the skies...",
-        "loading": "Syncing wisdom...",
-        "idea": "Bright idea incoming!",
-        "security": "Safely guarded under my wing.",
-        "goodbye": "Have a safe flight!",
-        "idle": "Calm and watchful nest."
-      },
-      "luneko": {
-        "waving": "Meow! So happy to see you!",
-        "celebrating": "Yay! Mission accomplished!",
-        "ai_thinking": "Kitten is calculating with curiosity...",
-        "error_404": "Oops! Yarn ball lost (404 error).",
-        "thumbs_up": "Paw-fect! Validated and approved!",
-        "sleeping": "Purr... Cozy power nap time...",
-        "pointing": "Right over here! Check this out!",
-        "searching": "Sniffing out the best results...",
-        "loading": "Smooth synchronization underway...",
-        "idea": "Spark of inspiration found!",
-        "security": "Secure lock activated and guarded!",
-        "goodbye": "See you soon! Have a pawsome day!",
-        "idle": "Gentle purring..."
       },
       "hatoko": {
         "waving": "Coo! Ready to deliver your messages!",
@@ -398,7 +331,6 @@ const TRANSLATIONS = {
         "searching": "Scouting the skies for your data...",
         "loading": "In mid-flight to destination...",
         "idea": "An express spark just landed!",
-        "security": "Your parcel is locked and sealed.",
         "goodbye": "Safe travels and smooth flights!",
         "idle": "Ready for the next delivery!"
       },
@@ -413,7 +345,6 @@ const TRANSLATIONS = {
         "searching": "Scouting ahead at top speed...",
         "loading": "Maximum acceleration in progress...",
         "idea": "Quantum leap! I've got the solution!",
-        "security": "Guarded with lightning-fast reflexes.",
         "goodbye": "Speed off safely, see you soon!",
         "idle": "In harmony with nature."
       },
@@ -429,7 +360,6 @@ const TRANSLATIONS = {
         "searching": "Sniffing out the exact data you need...",
         "loading": "Active patrol in progress...",
         "idea": "Sharp instinct! I found the answer!",
-        "security": "Perimeter locked and fully secured.",
         "goodbye": "Stay safe and see you soon!"
       }
     },
@@ -606,7 +536,6 @@ const TRANSLATIONS = {
       "searching": "Búsqueda",
       "loading": "Carga",
       "idea": "Consejo",
-      "security": "Seguridad",
       "goodbye": "Despedida"
     },
     "messages": {
@@ -621,39 +550,8 @@ const TRANSLATIONS = {
         "searching": "Buscando en la base de datos...",
         "loading": "Sincronizando tus datos...",
         "idea": "Consejo: ¡Usa los atajos de teclado!",
-        "security": "Conexión 100% segura.",
         "goodbye": "¡Hasta muy pronto!",
         "idle": "Sistemas listos y nominales."
-      },
-      "owluko": {
-        "waving": "¡Hola! ¡Bienvenido a bordo!",
-        "celebrating": "¡Meta alcanzada! ¡Enhorabuena!",
-        "ai_thinking": "Meditando la solución óptima...",
-        "error_404": "¡Vaya! Nido no encontrado.",
-        "thumbs_up": "¡Aprobado por el búho!",
-        "sleeping": "Zzz... Siesta diurna...",
-        "pointing": "¡Mira por aquí!",
-        "searching": "Oteando el horizonte...",
-        "loading": "Sincronizando sabiduría...",
-        "idea": "¡Idea brillante en camino!",
-        "security": "Protegido bajo mi ala.",
-        "goodbye": "¡Buen vuelo y hasta pronto!",
-        "idle": "Nido tranquilo y atento."
-      },
-      "luneko": {
-        "waving": "¡Miau! ¡Qué alegría verte por aquí!",
-        "celebrating": "¡Genial! ¡Objetivo completado con éxito!",
-        "ai_thinking": "El gatito analiza cada detalle...",
-        "error_404": "¡Ups! Página perdida como ovillo de lana.",
-        "thumbs_up": "¡Aprobado con garra!",
-        "sleeping": "Ronroneo... Modo descanso activado...",
-        "pointing": "¡Por aquí! Mira esta opción.",
-        "searching": "Rastreando la información...",
-        "loading": "Sincronizando de forma segura...",
-        "idea": "¡Tengo una idea brillante!",
-        "security": "Conexión totalmente blindada.",
-        "goodbye": "¡Hasta pronto! Cuídate mucho.",
-        "idle": "Ronroneo relajante..."
       },
       "hatoko": {
         "waving": "¡Cú-cú! ¡Listo para entregar tus mensajes!",
@@ -666,7 +564,6 @@ const TRANSLATIONS = {
         "searching": "Explorando los cielos para ti...",
         "loading": "En pleno vuelo hacia tu destino...",
         "idea": "¡Una idea exprés acaba de aterrizar!",
-        "security": "Tus paquetes están bajo sello seguro.",
         "goodbye": "¡Buen viaje y hasta pronto!",
         "idle": "¡Listo para la próxima entrega!"
       },
@@ -681,7 +578,6 @@ const TRANSLATIONS = {
         "searching": "Rastreando a la velocidad de la luz...",
         "loading": "Aceleración máxima en marcha...",
         "idea": "¡Salto de genio! ¡Tengo la solución!",
-        "security": "Protegido con reflejos de acero.",
         "goodbye": "¡A toda velocidad, hasta pronto!",
         "idle": "En armonía con la naturaleza."
       },
@@ -697,7 +593,6 @@ const TRANSLATIONS = {
         "searching": "Rastreando los datos al detalle...",
         "loading": "Patrulla activa en curso...",
         "idea": "¡Instinto agudo! ¡Tengo la respuesta!",
-        "security": "Perímetro totalmente protegido.",
         "goodbye": "¡Siempre leal, hasta pronto!"
       }
     },
@@ -874,7 +769,6 @@ const TRANSLATIONS = {
       "searching": "Suche",
       "loading": "Laden",
       "idea": "Tipp",
-      "security": "Sicherheit",
       "goodbye": "Abschied"
     },
     "messages": {
@@ -889,39 +783,8 @@ const TRANSLATIONS = {
         "searching": "Datenbank wird durchsucht...",
         "loading": "Konto wird synchronisiert...",
         "idea": "Tipp: Tastenkürzel sparen Zeit!",
-        "security": "100% sichere Verbindung.",
         "goodbye": "Bis zum nächsten Mal!",
         "idle": "Systeme bereit und stabil."
-      },
-      "owluko": {
-        "waving": "Hallo! Willkommen an Bord!",
-        "celebrating": "Ziel erreicht! Großartig!",
-        "ai_thinking": "Ich grüble über der besten Lösung...",
-        "error_404": "Hoppla! Nest nicht gefunden.",
-        "thumbs_up": "Von der Eule genehmigt!",
-        "sleeping": "Zzz... Kleines Tagesschläfchen...",
-        "pointing": "Schau mal hier rüber!",
-        "searching": "Ich scanne den Horizont...",
-        "loading": "Wissen wird synchronisiert...",
-        "idea": "Ich habe eine glänzende Idee!",
-        "security": "Sicher unter meinen Flügeln.",
-        "goodbye": "Guten Flug und bis bald!",
-        "idle": "Ruhiges und wachsames Nest."
-      },
-      "luneko": {
-        "waving": "Miau! Schön, dass du da bist!",
-        "celebrating": "Juhu! Erfolg auf ganzer Linie!",
-        "ai_thinking": "Das Kätzchen denkt aufmerksam nach...",
-        "error_404": "Hoppla! Seite im Wollknäuel verloren.",
-        "thumbs_up": "Mit Pfote bestätigt und genehmigt!",
-        "sleeping": "Schnurr... Zeit für ein Nickerchen...",
-        "pointing": "Hier entlang! Schau mal hier.",
-        "searching": "Suche läuft auf Hochtouren...",
-        "loading": "Sanftes Laden im Gange...",
-        "idea": "Ein genialer Einfall!",
-        "security": "Vollständig geschützter Bereich.",
-        "goodbye": "Bis bald und einen tollen Tag!",
-        "idle": "Sanftes Schnurren..."
       },
       "hatoko": {
         "waving": "Gurrr! Bereit, deine Nachrichten zu liefern!",
@@ -934,7 +797,6 @@ const TRANSLATIONS = {
         "searching": "Überfliege das Gebiet für dich...",
         "loading": "Im Direktflug zum Ziel...",
         "idea": "Ein Geistesblitz ist gelandet!",
-        "security": "Deine Daten sind sicher versiegelt.",
         "goodbye": "Guten Flug und bis bald!",
         "idle": "Bereit für die nächste Zustellung!"
       },
@@ -949,7 +811,6 @@ const TRANSLATIONS = {
         "searching": "Suche mit Höchstgeschwindigkeit...",
         "loading": "Maximale Beschleunigung läuft...",
         "idea": "Geistesblitz! Ich hab die Lösung!",
-        "security": "Geschützt mit blitzschnellen Reflexen.",
         "goodbye": "Schnell wie der Wind, bis bald!",
         "idle": "In Harmonie mit der Natur."
       },
@@ -965,7 +826,6 @@ const TRANSLATIONS = {
         "searching": "Spüre die gesuchten Daten auf...",
         "loading": "Aktiver Rundgang läuft...",
         "idea": "Scharfer Instinkt! Lösung gefunden!",
-        "security": "Bereich lückenlos abgesichert.",
         "goodbye": "Stets treu an deiner Seite, bis bald!"
       }
     },
@@ -1142,7 +1002,6 @@ const TRANSLATIONS = {
       "searching": "検索中",
       "loading": "読込中",
       "idea": "ヒント",
-      "security": "安心安全",
       "goodbye": "またね"
     },
     "messages": {
@@ -1157,39 +1016,8 @@ const TRANSLATIONS = {
         "searching": "データベースを検索中...",
         "loading": "アカウントを同期中...",
         "idea": "ヒント：ショートカットキーで効率アップ！",
-        "security": "100%安全な暗号化接続です。",
         "goodbye": "またお会いしましょう！",
         "idle": "システム正常・待機中。"
-      },
-      "owluko": {
-        "waving": "やあ！ようこそ！",
-        "celebrating": "目標達成！素晴らしい！",
-        "ai_thinking": "最善の解決策を思案中...",
-        "error_404": "おっと！巣が見つかりません。",
-        "thumbs_up": "フクロウのお墨付き！",
-        "sleeping": "Zzz... お昼寝中...",
-        "pointing": "ここを見てみて！",
-        "searching": "大空を見渡し中...",
-        "loading": "知恵を同期中...",
-        "idea": "ひらめきました！",
-        "security": "翼の下でしっかり保護。",
-        "goodbye": "良い旅を！またね！",
-        "idle": "穏やかに見守る巣穴。"
-      },
-      "luneko": {
-        "waving": "にゃーん！いらっしゃいませ！",
-        "celebrating": "やったね！大成功だよ！",
-        "ai_thinking": "子猫が考え中ニャ...",
-        "error_404": "おっと！毛糸玉が迷子です（404）。",
-        "thumbs_up": "肉球スタンプで承認完了！",
-        "sleeping": "ゴロゴロ... お昼寝中ニャ...",
-        "pointing": "こっちを見てニャ！",
-        "searching": "一生懸命探しているよ...",
-        "loading": "スムーズに読み込み中...",
-        "idea": "ピコーン！ひらめいたニャ！",
-        "security": "安心・安全に保護されています。",
-        "goodbye": "またね！良い一日をニャ！",
-        "idle": "心地よいゴロゴロ音..."
       },
       "hatoko": {
         "waving": "クルックー！お届け物の準備完了です！",
@@ -1202,7 +1030,6 @@ const TRANSLATIONS = {
         "searching": "上空からくまなく探索中...",
         "loading": "目的地へ向かって飛行中...",
         "idea": "ひらめきのお便りが届きました！",
-        "security": "大切なお荷物は厳重に封印保護！",
         "goodbye": "良い空の旅を、また会いましょう！",
         "idle": "次の手紙の配達準備完了！"
       },
@@ -1217,7 +1044,6 @@ const TRANSLATIONS = {
         "searching": "光速スピードで探索中...",
         "loading": "フルスピード加速中...",
         "idea": "ピョンとひらめいた！答えがわかりました！",
-        "security": "電光石火の反射神経で完全ガード！",
         "goodbye": "ダッシュで行ってらっしゃい、またね！",
         "idle": "自然と調和した静けさ。"
       },
@@ -1233,7 +1059,6 @@ const TRANSLATIONS = {
         "searching": "必要なデータを鋭く捜索中...",
         "loading": "パトロール巡回中...",
         "idea": "ピンときた！解決策を発見！",
-        "security": "強固なセキュリティで完全防衛。",
         "goodbye": "いつもお傍にいます。またね！"
       }
     },
@@ -1410,7 +1235,6 @@ const TRANSLATIONS = {
       "searching": "Busca",
       "loading": "Carregando",
       "idea": "Dica",
-      "security": "Segurança",
       "goodbye": "Despedida"
     },
     "messages": {
@@ -1425,39 +1249,8 @@ const TRANSLATIONS = {
         "searching": "Buscando no banco de dados...",
         "loading": "Sincronizando seus dados...",
         "idea": "Dica pro: atalhos de teclado poupam tempo!",
-        "security": "Conexão 100% segura.",
         "goodbye": "Até logo mais!",
         "idle": "Sistemas prontos e nominais."
-      },
-      "owluko": {
-        "waving": "Olá! Bem-vindo a bordo!",
-        "celebrating": "Meta batida! Parabéns!",
-        "ai_thinking": "Calculando a melhor rota...",
-        "error_404": "Ops! Ninho não encontrado.",
-        "thumbs_up": "Aprovado pela coruja!",
-        "sleeping": "Zzz... Cochilo diurno...",
-        "pointing": "Dê uma olhada aqui!",
-        "searching": "Observando o horizonte...",
-        "loading": "Sincronizando sabedoria...",
-        "idea": "Tive uma ideia brilhante!",
-        "security": "Protegido sob minhas asas.",
-        "goodbye": "Bom voo e até breve!",
-        "idle": "Ninho calmo e vigilante."
-      },
-      "luneko": {
-        "waving": "Miau! Que bom ter você aqui!",
-        "celebrating": "Oba! Missão cumprida com sucesso!",
-        "ai_thinking": "O gatinho está pensando rapidinho...",
-        "error_404": "Ops! Novelo perdido (Erro 404).",
-        "thumbs_up": "Validado com carimbo de patinha!",
-        "sleeping": "Ronrom... Hora da soneca...",
-        "pointing": "Olha aqui! Dá uma conferida.",
-        "searching": "Procurando pelos melhores dados...",
-        "loading": "Carregamento suave em andamento...",
-        "idea": "Tive uma ideia excelente!",
-        "security": "Ambiente 100% blindado e seguro.",
-        "goodbye": "Até breve! Tenha um ótimo dia!",
-        "idle": "Ronronar suave..."
       },
       "hatoko": {
         "waving": "Arrulhar! Pronto para entregar seus recados!",
@@ -1470,7 +1263,6 @@ const TRANSLATIONS = {
         "searching": "Sobrevoando a área para encontrar...",
         "loading": "Em pleno voo até o destino...",
         "idea": "Uma ideia expressa acabou de pousar!",
-        "security": "Suas encomendas estão sob lacre seguro.",
         "goodbye": "Boa viagem e até logo!",
         "idle": "Pronto para a próxima entrega!"
       },
@@ -1485,7 +1277,6 @@ const TRANSLATIONS = {
         "searching": "Farejando na velocidade da luz...",
         "loading": "Aceleração máxima em andamento...",
         "idea": "Pulo de gênio! Encontrei a resposta!",
-        "security": "Protegido com reflexos rápidos de aço.",
         "goodbye": "A toda velocidade, até breve!",
         "idle": "Em harmonia com a natureza."
       },
@@ -1501,7 +1292,6 @@ const TRANSLATIONS = {
         "searching": "Rastreando os dados que você precisa...",
         "loading": "Patrulha ativa em andamento...",
         "idea": "Faro apurado! Encontrei a resposta!",
-        "security": "Perímetro totalmente blindado e seguro.",
         "goodbye": "Sempre fiel ao seu lado, até breve!"
       }
     },
@@ -1678,7 +1468,6 @@ const TRANSLATIONS = {
       "searching": "搜索",
       "loading": "加载中",
       "idea": "提示",
-      "security": "安全保护",
       "goodbye": "告别"
     },
     "messages": {
@@ -1693,39 +1482,8 @@ const TRANSLATIONS = {
         "searching": "正在全库检索中...",
         "loading": "正在同步您的数据...",
         "idea": "效率贴士：善用快捷键事半功倍！",
-        "security": "100% 安全加密连接。",
         "goodbye": "期待下次与您相遇！",
         "idle": "系统运行正常，随时待命。"
-      },
-      "owluko": {
-        "waving": "嗨！欢迎登船！",
-        "celebrating": "达成里程碑！祝贺！",
-        "ai_thinking": "正在思考最佳方案...",
-        "error_404": "哎呀！没有找到鸟巢。",
-        "thumbs_up": "猫头鹰认证通过！",
-        "sleeping": "Zzz... 白天打盹中...",
-        "pointing": "看这边哦！",
-        "searching": "正在极目远眺，搜寻目标...",
-        "loading": "正在同步智慧宝库...",
-        "idea": "我有了一个绝妙的点子！",
-        "security": "在我的羽翼下安全无忧。",
-        "goodbye": "祝飞行愉快，再见！",
-        "idle": "安静而警惕的树巢。"
-      },
-      "luneko": {
-        "waving": "喵～！很高兴遇见你！",
-        "celebrating": "太棒啦！目标圆满达成！",
-        "ai_thinking": "小猫咪正在飞速思考中...",
-        "error_404": "哎呀！毛线团迷路了（404）。",
-        "thumbs_up": "猫爪盖章，完美通过！",
-        "sleeping": "呼噜呼噜... 正在小憩中...",
-        "pointing": "往这边看！点这里开始。",
-        "searching": "正在全网搜寻中...",
-        "loading": "正在平稳加载中...",
-        "idea": "灵光一现！有了好主意！",
-        "security": "连接全面受保护，安全无忧。",
-        "goodbye": "下次再见！祝你拥有美好一天！",
-        "idle": "舒适温和的呼噜声..."
       },
       "hatoko": {
         "waving": "咕咕！随时为您递送信件与通知！",
@@ -1738,7 +1496,6 @@ const TRANSLATIONS = {
         "searching": "正在高空全面扫描搜索...",
         "loading": "正全速飞往目的地...",
         "idea": "灵感快件刚刚着陆！",
-        "security": "数据邮件均已严格加密封存。",
         "goodbye": "祝您旅途平安，下次见！",
         "idle": "信件已准备就绪，随时出发！"
       },
@@ -1753,7 +1510,6 @@ const TRANSLATIONS = {
         "searching": "正在以光速飞奔搜索...",
         "loading": "全马力加速载入中...",
         "idea": "灵机一跳！我有解决秘籍！",
-        "security": "凭借敏捷身手坚固防护！",
         "goodbye": "极速前行，期待与您再次相见！",
         "idle": "宁静专注，与自然同频。"
       },
@@ -1769,7 +1525,6 @@ const TRANSLATIONS = {
         "searching": "正在精准搜寻您所需的数据...",
         "loading": "守护巡视加载中...",
         "idea": "灵敏直觉！找到完美方案了！",
-        "security": "防线已加锁，提供全方位安全防护。",
         "goodbye": "时刻忠诚守候，期待下次再见！"
       }
     },
