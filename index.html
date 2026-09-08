@@ -866,16 +866,16 @@
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5">
       <button onclick="setPoseIndex(0)" id="pill-0" class="pose-pill active min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs font-semibold flex items-center justify-center text-center transition truncate cursor-pointer shadow-soft" data-i18n="poses.idle">Idle</button>
       <button onclick="setPoseIndex(1)" id="pill-1" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.waving">Accueil</button>
-      <button onclick="setPoseIndex(2)" id="pill-2" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.celebrating">Succès</button>
-      <button onclick="setPoseIndex(3)" id="pill-3" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.ai_thinking">Réflexion</button>
-      <button onclick="setPoseIndex(4)" id="pill-4" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.error_404">Erreur 404</button>
-      <button onclick="setPoseIndex(5)" id="pill-5" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.thumbs_up">Validation</button>
-      <button onclick="setPoseIndex(6)" id="pill-6" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.sleeping">Repos</button>
+      <button id="pill-2" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.celebrating">Succès</button>
+      <button id="pill-3" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.ai_thinking">Réflexion</button>
+      <button id="pill-4" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.error_404">Erreur 404</button>
+      <button id="pill-5" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.thumbs_up">Validation</button>
+      <button id="pill-6" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.sleeping">Repos</button>
       <button onclick="setPoseIndex(7)" id="pill-7" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.pointing">Guide</button>
-      <button onclick="setPoseIndex(8)" id="pill-8" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.searching">Recherche</button>
-      <button onclick="setPoseIndex(9)" id="pill-9" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.loading">Chargement</button>
-      <button onclick="setPoseIndex(10)" id="pill-10" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.idea">Astuce</button>
-      <button onclick="setPoseIndex(11)" id="pill-11" class="pose-pill min-h-[38px] py-2 px-2 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium flex items-center justify-center text-center transition truncate cursor-pointer" data-i18n="poses.goodbye">Au Revoir</button>
+      <button id="pill-8" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.searching">Recherche</button>
+      <button id="pill-9" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.loading">Chargement</button>
+      <button id="pill-10" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.idea">Astuce</button>
+      <button id="pill-11" disabled title="Bientôt disponible" class="pose-pill-disabled min-h-[38px] py-2 px-2 rounded-xl border border-dashed border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-muted)] text-xs font-medium flex items-center justify-center text-center truncate opacity-40 cursor-not-allowed pointer-events-none" data-i18n="poses.goodbye">Au Revoir</button>
     </div>
 
     <!-- Terminal de Code Snippet & Intégration Immédiate -->
@@ -884,9 +884,6 @@
       <div class="flex items-center justify-between px-4 py-2.5 border-b border-[var(--japandi-code-border)] text-xs bg-[var(--japandi-code-header-bg)]">
         <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto">
           <button onclick="setFw('react')" id="fw-react" class="text-[var(--japandi-text)] font-bold cursor-pointer py-1 px-1.5 whitespace-nowrap">React / Next</button>
-          <button onclick="setFw('vue')" id="fw-vue" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap">Vue 3</button>
-          <button onclick="setFw('flutter')" id="fw-flutter" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap">Flutter</button>
-          <button onclick="setFw('html')" id="fw-html" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap">HTML5</button>
           <button onclick="setFw('lottie')" id="fw-lottie" class="text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] font-medium cursor-pointer transition py-1 px-1.5 whitespace-nowrap flex items-center gap-1">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--japandi-moss)]"></span>
             <span>Lottie (Vecteur)</span>
@@ -914,14 +911,11 @@
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--japandi-moss)] opacity-75"></span>
           <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--japandi-moss)]"></span>
         </span>
-        <span id="studioQuickBarText" class="font-medium text-[var(--japandi-text)] font-sans leading-snug">AItuko — 12 états animés 3D prêts à l'intégration</span>
+        <span id="studioQuickBarText" class="font-medium text-[var(--japandi-text)] font-sans leading-snug">AItuko — Pack Complet 12 états animés</span>
       </div>
       <div class="flex items-center gap-2 w-full sm:w-auto shrink-0">
-        <button onclick="downloadFreeSample()" data-i18n="studio.quickFreeBtn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] hover:border-[var(--japandi-text-muted)] font-semibold transition cursor-pointer shadow-soft text-center min-h-[40px] flex items-center justify-center">
-          ⚡ Essai Gratuit (0 €)
-        </button>
-        <button onclick="openModal('pro')" data-i18n="studio.quickProBtn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 font-semibold transition cursor-pointer shadow-soft text-center min-h-[40px] flex items-center justify-center">
-          📦 Obtenir le Pack (Dès 5 €)
+        <button onclick="openModal('unique')" data-i18n="studio.quickProBtn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 font-semibold transition cursor-pointer shadow-soft text-center min-h-[40px] flex items-center justify-center">
+          📦 Obtenir le Pack AItuko — 5,99 €
         </button>
       </div>
     </div>
@@ -1098,7 +1092,7 @@
         </div>
       </div>
 
-      <!-- 2. Carte de Vote & Suggestions 1-Clic Harmonieuse -->
+      <!-- 2. Vote Prochaine Mascotte — Owluko vs Luneko -->
       <div class="surface-card rounded-2xl p-5 sm:p-6 space-y-4 border-[var(--japandi-ochre)]/40 bg-[var(--japandi-ochre-subtle)]/40 transition select-none flex flex-col justify-between shadow-card">
         
         <!-- Header Vote -->
@@ -1110,55 +1104,33 @@
             </div>
             <span id="catalogueVoteCount" class="px-2.5 py-0.5 rounded-md bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] text-xs font-mono font-bold border border-[var(--japandi-ochre)]/30 shrink-0">342 votes</span>
           </div>
-          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-snug" data-i18n="catalogue.voteSubtitle">Votez en 1 clic pour le prochain animal :</p>
+          <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-snug" data-i18n="catalogue.voteSubtitle">Quelle sera la prochaine mascotte ?</p>
         </div>
 
-        <!-- 4 Candidats Majeurs Directement Cliquables (Lisibilité Optimale & 44px Hitbox) -->
-        <div class="grid grid-cols-2 gap-2.5 text-xs sm:text-sm">
-          <!-- Kumako -->
-          <button onclick="toggleCandidateVote('kumako')" id="vote-card-kumako" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
-            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.kumako">🐻 Kumako</span>
-            <span id="badge-kumako" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+        <!-- 2 Candidats avec aperçu WebP -->
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Owluko -->
+          <button onclick="toggleCandidateVote('owluko')" id="vote-card-owluko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex flex-col items-center gap-2 p-3 cursor-pointer shadow-soft group">
+            <div class="h-20 w-full rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden group-hover:border-[var(--japandi-border)] transition">
+              <img src="assets/previews/owluko_idle.webp" alt="Owluko" width="72" height="72" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="h-16 object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+            </div>
+            <div class="flex items-center justify-between w-full">
+              <span class="text-[var(--japandi-text)] font-semibold text-xs whitespace-nowrap" data-i18n="candidates.owluko">🦉 Owluko</span>
+              <span id="badge-owluko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </div>
           </button>
 
-          <!-- Kitsuko -->
-          <button onclick="toggleCandidateVote('kitsuko')" id="vote-card-kitsuko" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
-            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.kitsuko">🦊 Kitsuko</span>
-            <span id="badge-kitsuko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
-          </button>
-
-          <!-- Panduko -->
-          <button onclick="toggleCandidateVote('panduko')" id="vote-card-panduko" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
-            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.panduko">🐼 Panduko</span>
-            <span id="badge-panduko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
-          </button>
-
-          <!-- Duckuko -->
-          <button onclick="toggleCandidateVote('duckuko')" id="vote-card-duckuko" class="min-h-[44px] px-3 py-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] text-left transition flex items-center justify-between cursor-pointer shadow-soft">
-            <span class="text-[var(--japandi-text)] font-semibold whitespace-nowrap" data-i18n="candidates.duckuko">🦆 Duckuko</span>
-            <span id="badge-duckuko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+          <!-- Luneko -->
+          <button onclick="toggleCandidateVote('luneko')" id="vote-card-luneko" class="rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] hover:border-[var(--japandi-text-muted)] transition flex flex-col items-center gap-2 p-3 cursor-pointer shadow-soft group">
+            <div class="h-20 w-full rounded-lg bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center overflow-hidden group-hover:border-[var(--japandi-border)] transition">
+              <img src="assets/previews/luneko_idle.webp" alt="Luneko" width="72" height="72" loading="lazy" decoding="async" oncontextmenu="return false;" draggable="false" class="h-16 object-contain pointer-events-none select-none calm-mascot" style="-webkit-user-drag: none;" />
+            </div>
+            <div class="flex items-center justify-between w-full">
+              <span class="text-[var(--japandi-text)] font-semibold text-xs whitespace-nowrap" data-i18n="candidates.luneko">🐱 Luneko</span>
+              <span id="badge-luneko" class="hidden text-xs font-mono text-[var(--japandi-moss)] font-bold">✓</span>
+            </div>
           </button>
         </div>
-
-        <!-- Suggestion Libre Compacte (100% Ajustée Sans Débordement) -->
-        <form onsubmit="submitCustomSuggestion(event)" class="pt-3 border-t border-[var(--japandi-border-subtle)] flex items-center gap-2 w-full relative">
-          <!-- Honeypot Anti-Bot Trap -->
-          <div class="absolute -left-[9999px] -top-[9999px] opacity-0 pointer-events-none h-0 w-0 overflow-hidden" aria-hidden="true" tabindex="-1">
-            <label for="suggestion_hp_field">Ne pas remplir</label>
-            <input type="text" id="suggestion_hp_field" name="suggestion_hp_field" autocomplete="new-password" tabindex="-1" value="">
-          </div>
-          <input 
-            type="text" 
-            id="inlineCustomInput" 
-            placeholder="Autre ? Ex: Loutre..." 
-            data-i18n-attr="placeholder:catalogue.suggestionPrompt"
-            class="min-w-0 flex-1 px-3 py-2.5 rounded-xl bg-[var(--japandi-surface)] border border-[var(--japandi-border)] text-xs sm:text-sm text-[var(--japandi-text)] placeholder-[var(--japandi-text-muted)] focus:outline-none focus:border-[var(--japandi-text)] font-sans transition shadow-xs"
-            required
-          >
-          <button type="submit" data-i18n="catalogue.suggestBtn" class="shrink-0 px-4 py-2.5 rounded-xl bg-[var(--japandi-ochre-subtle)] border border-[var(--japandi-ochre)]/30 text-[var(--japandi-ochre-text)] font-semibold text-xs sm:text-sm transition cursor-pointer hover:bg-[var(--japandi-ochre)] hover:text-white dark:hover:text-[#0F0F10] min-h-[42px]">
-            Suggérer
-          </button>
-        </form>
 
         <div id="inlineVoteFeedback" class="hidden text-xs sm:text-sm text-[var(--japandi-moss-text)] text-center font-mono py-1 font-semibold">
           ✓ Vote pris en compte !
@@ -1169,136 +1141,64 @@
     </div>
   </section>
 
-  <!-- Grille Tarifaire (0 €, 5 €, 9 €) -->
-  <!-- Grille Tarifaire (0 €, 5 €, 9 €) -->
+  <!-- Pack Unique AItuko — 5,99 € -->
   <section id="tarifs" class="py-20 md:py-28 max-w-5xl mx-auto px-4 sm:px-6 space-y-10 border-t border-[var(--japandi-border-subtle)]">
     <div class="text-center space-y-2.5 max-w-2xl mx-auto">
-      <h2 data-i18n="pricing.title" class="text-2xl sm:text-3xl font-bold text-[var(--japandi-text)] tracking-tight">Tarifs Clairs & Sans Abonnement</h2>
-      <p data-i18n="pricing.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Licence commerciale perpétuelle incluse pour projets personnels et commerciaux illimités.</p>
+      <h2 data-i18n="pricing.title" class="text-2xl sm:text-3xl font-bold text-[var(--japandi-text)] tracking-tight">Un seul pack. Tout AItuko.</h2>
+      <p data-i18n="pricing.desc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">Licence commerciale perpétuelle incluse — usage personnel et commercial illimité.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-      
-      <!-- Tier 1: Découverte Gratuit (0 €) -->
-      <div class="surface-card rounded-3xl p-6 sm:p-7 space-y-6 flex flex-col justify-between shadow-soft hover:shadow-card transition">
-        <div class="space-y-4">
-          <div class="flex justify-between items-baseline gap-2 flex-wrap">
-            <h3 data-i18n="pricing.freeTierTitle" class="text-base sm:text-lg font-bold text-[var(--japandi-text)] whitespace-normal">Pack Découverte</h3>
-            <span class="text-2xl sm:text-3xl font-bold font-mono text-[var(--japandi-text)] shrink-0" data-i18n="pricing.freeTierPrice">0,00 €</span>
-          </div>
-          <p data-i18n="pricing.freeTierDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed font-light">
-            Pour tester immédiatement l'intégration dans votre application.
-          </p>
+    <div class="flex justify-center pt-4">
+      <!-- Pack AItuko Unique -->
+      <div class="surface-card rounded-3xl p-7 sm:p-9 space-y-6 flex flex-col items-center justify-between relative border border-[var(--japandi-moss)]/60 shadow-card w-full max-w-sm">
 
-          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)]">
+        <!-- Badge Populaire -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[var(--japandi-moss)] text-white dark:text-[#0F0F10] text-xs font-mono font-bold tracking-wider uppercase shadow-sm whitespace-nowrap" data-i18n="pricing.uniqueBadge">
+          Pack Unique
+        </div>
+
+        <div class="space-y-5 w-full pt-1">
+          <div class="text-center space-y-2">
+            <h3 data-i18n="pricing.uniqueTitle" class="text-lg sm:text-xl font-bold text-[var(--japandi-text)]">Pack AItuko</h3>
+            <div class="text-4xl sm:text-5xl font-bold font-mono text-[var(--japandi-text)]" data-i18n="pricing.uniquePrice">5,99 €</div>
+            <p data-i18n="pricing.uniqueDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] font-light leading-relaxed">
+              Paiement unique • Aucun abonnement • Accès immédiat
+            </p>
+          </div>
+
+          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)] w-full">
             <li class="flex items-center gap-2.5">
               <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.freeTierItem1">1 état complet offert (AItuko Waving)</span>
+              <span data-i18n="pricing.uniqueItem1">3 poses animées finalisées (Idle, Accueil, Guide)</span>
             </li>
             <li class="flex items-center gap-2.5">
               <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.freeTierItem2">Formats WebP, GIF et PNG HD</span>
+              <span data-i18n="pricing.uniqueItem2">Fichiers Lottie JSON + WebP 60fps + PNG HD</span>
             </li>
             <li class="flex items-center gap-2.5">
               <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.freeTierItem3">Composants React & Flutter</span>
+              <span data-i18n="pricing.uniqueItem3">Composants React / Next.js prêts à l'intégration</span>
             </li>
             <li class="flex items-center gap-2.5">
               <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.freeTierItem4">Licence de test et usage personnel</span>
+              <span data-i18n="pricing.uniqueItem4">Mises à jour incluses — 9 poses bientôt disponibles</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="pricing.uniqueItem5">Licence commerciale perpétuelle illimitée</span>
             </li>
           </ul>
         </div>
 
-        <button onclick="downloadFreeSample()" data-i18n="pricing.freeTierBtn" class="w-full py-3.5 rounded-2xl border border-[var(--japandi-border)] bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] text-xs sm:text-sm text-[var(--japandi-text)] font-semibold transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
-          Télécharger Gratuitement
+        <button onclick="openModal('unique')" data-i18n="pricing.uniqueBtn" class="w-full py-4 rounded-2xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 text-sm font-bold tracking-tight transition cursor-pointer shadow-soft min-h-[52px] flex items-center justify-center">
+          📦 Obtenir le Pack AItuko — 5,99 €
         </button>
       </div>
-
-      <!-- Tier 2: Essentiel 6 États (5 €) -->
-      <div class="surface-card rounded-3xl p-6 sm:p-7 space-y-6 flex flex-col justify-between shadow-soft hover:shadow-card transition">
-        <div class="space-y-4">
-          <div class="flex justify-between items-baseline gap-2 flex-wrap">
-            <h3 data-i18n="pricing.starterTierTitle" class="text-base sm:text-lg font-bold text-[var(--japandi-text)] whitespace-normal">Pack Essentiel</h3>
-            <span class="text-2xl sm:text-3xl font-bold font-mono text-[var(--japandi-text)] shrink-0" data-i18n="pricing.starterTierPrice">5,00 €</span>
-          </div>
-          <p data-i18n="pricing.starterTierDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed font-light">
-            Les 6 états essentiels pour dynamiser n'importe quel flux utilisateur.
-          </p>
-
-          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)]">
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.starterTierItem1">6 états majeurs par mascotte</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.starterTierItem2">WebP transparents 60fps & PNG</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.starterTierItem3">Code source React + Next.js + Flutter</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.starterTierItem4">Licence commerciale perpétuelle</span>
-            </li>
-          </ul>
-        </div>
-
-        <button onclick="openModal('starter')" data-i18n="pricing.starterTierBtn" class="w-full py-3.5 rounded-2xl border border-[var(--japandi-border)] bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] text-xs sm:text-sm text-[var(--japandi-text)] font-semibold transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
-          Obtenir l'Essentiel (5 €)
-        </button>
-      </div>
-
-      <!-- Tier 3: Pro 12 États (9 €) -->
-      <div class="surface-card rounded-3xl p-6 sm:p-7 space-y-6 flex flex-col justify-between relative border-[var(--japandi-moss)]/60 shadow-card">
-        
-        <!-- Badge Populaire Flottant Élégant -->
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[var(--japandi-moss)] text-white dark:text-[#0F0F10] text-xs font-mono font-bold tracking-wider uppercase shadow-sm whitespace-nowrap" data-i18n="pricing.proTierBadge">
-          Populaire
-        </div>
-
-        <div class="space-y-4 pt-1">
-          <div class="flex justify-between items-baseline gap-2 flex-wrap">
-            <h3 data-i18n="pricing.proTierTitle" class="text-base sm:text-lg font-bold text-[var(--japandi-text)] whitespace-normal">Pack Pro 12 États</h3>
-            <span class="text-2xl sm:text-3xl font-bold font-mono text-[var(--japandi-text)] shrink-0 ml-2" data-i18n="pricing.proTierPrice">9,00 €</span>
-          </div>
-          <p data-i18n="pricing.proTierDesc" class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed font-light">
-            La suite d'animation intégrale pour couvrir l'intégralité de vos écrans.
-          </p>
-
-          <ul class="text-xs sm:text-sm text-[var(--japandi-text)] space-y-3 pt-4 border-t border-[var(--japandi-border-subtle)]">
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.proTierItem1">12 états d'animation complets</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.proTierItem2">Formats WebP, GIF, PNG HD & Vector</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.proTierItem3">Composants React, Vue, Svelte & Flutter</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.proTierItem4">Mises à jour et ajouts d'états à vie</span>
-            </li>
-            <li class="flex items-center gap-2.5">
-              <svg class="w-4 h-4 text-[var(--japandi-moss)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span data-i18n="pricing.proTierItem5">Licence commerciale illimitée</span>
-            </li>
-          </ul>
-        </div>
-
-        <button onclick="openModal('pro')" data-i18n="pricing.proTierBtn" class="w-full py-3.5 rounded-2xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] hover:opacity-90 text-xs sm:text-sm font-bold tracking-tight transition cursor-pointer shadow-soft min-h-[48px] flex items-center justify-center">
-          Débloquer le Pack Pro (9 €)
-        </button>
-      </div>
-
     </div>
   </section>
+      
+
+
 
   <!-- Modal Achat / Téléchargement -->
   <div 
@@ -1495,8 +1395,8 @@
 
     // Allowlists Stricts
     const ALLOWED_THEMES = Object.freeze(['dark', 'light']);
-    const ALLOWED_FRAMEWORKS = Object.freeze(['react', 'vue', 'flutter', 'html', 'lottie']);
-    const ALLOWED_TIERS = Object.freeze(['free', 'starter', 'pro']);
+    const ALLOWED_FRAMEWORKS = Object.freeze(['react', 'lottie']);
+    const ALLOWED_TIERS = Object.freeze(['unique']);
 
     const poseKeys = Object.freeze([
       "idle", "waving", "celebrating", "ai_thinking", "error_404", "thumbs_up",
@@ -1588,9 +1488,6 @@
       DOM.pills = poseKeys.map((_, i) => document.getElementById(`pill-${i}`));
       DOM.fwBtns = {
         react: document.getElementById('fw-react'),
-        vue: document.getElementById('fw-vue'),
-        flutter: document.getElementById('fw-flutter'),
-        html: document.getElementById('fw-html'),
         lottie: document.getElementById('fw-lottie')
       };
     }
@@ -2189,22 +2086,30 @@
       if (studio) studio.scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Poses disponibles (uniquement celles avec Lottie complet)
+    const AVAILABLE_POSE_INDICES = Object.freeze([0, 1, 7]);
+
     function setPoseIndex(idx) {
       const parsed = parseInt(idx, 10);
       if (!Number.isInteger(parsed) || parsed < 0 || parsed >= poseKeys.length) return;
+      if (!AVAILABLE_POSE_INDICES.includes(parsed)) return; // bloquer les poses non finalisées
       activeIdx = parsed;
       updateMascotMessage();
       updateUI();
     }
 
     function prevPose() {
-      activeIdx = (activeIdx - 1 + poseKeys.length) % poseKeys.length;
+      const currentPos = AVAILABLE_POSE_INDICES.indexOf(activeIdx);
+      const prevPos = (currentPos - 1 + AVAILABLE_POSE_INDICES.length) % AVAILABLE_POSE_INDICES.length;
+      activeIdx = AVAILABLE_POSE_INDICES[prevPos];
       updateMascotMessage();
       updateUI();
     }
 
     function nextPose() {
-      activeIdx = (activeIdx + 1) % poseKeys.length;
+      const currentPos = AVAILABLE_POSE_INDICES.indexOf(activeIdx);
+      const nextPos = (currentPos + 1) % AVAILABLE_POSE_INDICES.length;
+      activeIdx = AVAILABLE_POSE_INDICES[nextPos];
       updateMascotMessage();
       updateUI();
     }
@@ -2278,10 +2183,10 @@
         preloader.preloadRing(currentMascot, activeIdx, isAnimated);
       }
 
-      // Mise à jour différentielle O(1) des pilules
+      // Mise à jour différentielle O(1) des pilules (ne touche jamais les pilules désactivées)
       if (DOM.pills) {
-        if (DOM.pills[lastActiveIdx]) DOM.pills[lastActiveIdx].className = INACTIVE_PILL_CLASS;
-        if (DOM.pills[activeIdx]) DOM.pills[activeIdx].className = ACTIVE_PILL_CLASS;
+        if (DOM.pills[lastActiveIdx] && AVAILABLE_POSE_INDICES.includes(lastActiveIdx)) DOM.pills[lastActiveIdx].className = INACTIVE_PILL_CLASS;
+        if (DOM.pills[activeIdx] && AVAILABLE_POSE_INDICES.includes(activeIdx)) DOM.pills[activeIdx].className = ACTIVE_PILL_CLASS;
         lastActiveIdx = activeIdx;
       }
 
@@ -2398,19 +2303,6 @@
         const escaped = sanitizeForJsx(rawMsg);
         const msgProp = isBubbleVisible ? ` message="${escaped}"` : '';
         c.textContent = `<${m.component} state="${pKey}" size={${currentSize}}${msgProp}${animProp} />`;
-      } else if (currentFw === 'vue') {
-        const escaped = sanitizeForJsx(rawMsg);
-        const msgProp = isBubbleVisible ? ` message="${escaped}"` : '';
-        c.textContent = `<${m.component} state="${pKey}" :size="${currentSize}"${msgProp}${animProp} />`;
-      } else if (currentFw === 'flutter') {
-        const camel = pKey.replace(/_([a-z])/g, g => g[1].toUpperCase());
-        const escaped = sanitizeForDart(rawMsg);
-        const flutterMsg = isBubbleVisible ? `, message: '${escaped}'` : '';
-        c.textContent = `${m.flutter}(state: ${m.component}State.${camel}, size: ${currentSize}.0${flutterMsg})`;
-      } else if (currentFw === 'html') {
-        const folder = poseFolders[activeIdx];
-        const file = `${m.folderPrefix}${folder}/static.png`;
-        c.textContent = `<img src="${file}" width="${currentSize}" height="${currentSize}" alt="${sanitizeForJsx(m.name)}" />`;
       } else if (currentFw === 'lottie') {
         const folder = poseFolders[activeIdx];
         const camel = pKey.replace(/_([a-z])/g, g => g[1].toUpperCase());
@@ -2420,9 +2312,6 @@ import Lottie from 'lottie-react';
 import ${varName} from './assets/${folder}/lottie.json';
 
 <Lottie animationData={${varName}} loop={true} style={{ width: ${currentSize}, height: ${currentSize} }} />
-
-// Flutter :
-// Lottie.asset('assets/${folder}/lottie.json', width: ${currentSize}.0, height: ${currentSize}.0);
 
 // Web Component HTML :
 // <lottie-player src="assets/${folder}/lottie.json" background="transparent" speed="1" loop autoplay></lottie-player>`;
@@ -2446,17 +2335,17 @@ import ${varName} from './assets/${folder}/lottie.json';
       const text = (e && e.target && e.target.value) || '';
       const bubbleText = document.getElementById('demoBubbleText');
       if (text.length > 0) {
-        loadDemoLottie('03_ai_thinking');
-        if (bubbleText) bubbleText.textContent = `Je vérifie : "${text.slice(0, 15)}..."`;
+        loadDemoLottie('01_waving');
+        if (bubbleText) bubbleText.textContent = `Je vous écoute ! "${text.slice(0, 18)}"`;
       } else {
         loadDemoLottie('00_idle');
-        if (bubbleText) bubbleText.textContent = "Je vous écoute ! Tapez votre adresse...";
+        if (bubbleText) bubbleText.textContent = "Bonjour ! Tapez votre adresse...";
       }
     }
 
     function onDemoPasswordFocus() {
       const bubbleText = document.getElementById('demoBubbleText');
-      loadDemoLottie('06_sleeping');
+      loadDemoLottie('07_pointing');
       if (bubbleText) bubbleText.textContent = "Chut ! Mode confidentiel activé 🔒";
     }
 
@@ -2471,7 +2360,7 @@ import ${varName} from './assets/${folder}/lottie.json';
         if (btn) btn.textContent = "🙈 Masquer";
       } else if (pass) {
         pass.type = 'password';
-        loadDemoLottie('06_sleeping');
+        loadDemoLottie('00_idle');
         if (bubbleText) bubbleText.textContent = "Chut ! Mode confidentiel activé 🔒";
         const btn = document.getElementById('demoPeekBtn');
         if (btn) btn.textContent = "👁️ Révéler";
@@ -2483,15 +2372,15 @@ import ${varName} from './assets/${folder}/lottie.json';
       if (demoResetTimer) clearTimeout(demoResetTimer);
 
       if (action === 'error') {
-        if (bubbleText) bubbleText.textContent = "Oups ! Erreur d'authentification ⚠️";
-        loadDemoLottie('04_error_404');
+        if (bubbleText) bubbleText.textContent = "Oups ! Vérifiez vos informations ⚠️";
+        loadDemoLottie('01_waving');
         demoResetTimer = setTimeout(() => {
           loadDemoLottie('00_idle');
           if (bubbleText) bubbleText.textContent = "Réessayons ! Tapez un email...";
         }, 3000);
       } else if (action === 'success') {
         if (bubbleText) bubbleText.textContent = "Connexion réussie ! Bienvenue 🎉";
-        loadDemoLottie('02_celebrating');
+        loadDemoLottie('01_waving');
         demoResetTimer = setTimeout(() => {
           loadDemoLottie('00_idle');
           if (bubbleText) bubbleText.textContent = "Bonjour ! Tapez un email...";
@@ -2601,35 +2490,18 @@ import ${varName} from './assets/${folder}/lottie.json';
       if (!m) return;
       const name = DOM.modalTierName;
       const price = DOM.modalPrice;
-      const dl = DOM.downloadLink;
       const btn = DOM.paySubmitBtn;
 
-      if (currentModalTier === 'free') {
-        if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.freeTierTitle')}`;
-        if (price) price.textContent = window.i18n.get('pricing.freeTierPrice');
-        if (dl) dl.href = m.zips.free;
-        if (btn) btn.textContent = window.i18n.get('modal.submitBtn');
-      } else if (currentModalTier === 'starter') {
-        if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.starterTierTitle')}`;
-        if (price) price.textContent = window.i18n.get('pricing.starterTierPrice');
-        if (dl) dl.href = m.zips.starter;
-        if (btn) {
-          const val = window.i18n.get('modal.payBtn');
-          btn.textContent = (val && val !== 'modal.payBtn') ? val : "Procéder au Paiement Sécurisé";
-        }
-      } else {
-        if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.proTierTitle')}`;
-        if (price) price.textContent = window.i18n.get('pricing.proTierPrice');
-        if (dl) dl.href = m.zips.pro;
-        if (btn) {
-          const val = window.i18n.get('modal.payBtn');
-          btn.textContent = (val && val !== 'modal.payBtn') ? val : "Procéder au Paiement Sécurisé";
-        }
+      if (name) name.textContent = `${m.name} — ${window.i18n.get('pricing.uniqueTitle') || 'Pack AItuko'}`;
+      if (price) price.textContent = window.i18n.get('pricing.uniquePrice') || '5,99 €';
+      if (btn) {
+        const val = window.i18n.get('modal.payBtn');
+        btn.textContent = (val && val !== 'modal.payBtn') ? val : "Procéder au Paiement Sécurisé";
       }
     }
 
     // Modal Achat & Téléchargement Sécurisé (Protégé par Rate Limiter & Honeypot)
-    function openModal(tier = 'pro') {
+    function openModal(tier = 'unique') {
       const limitCheck = modalLimiter.tryAcquire();
       if (!limitCheck.allowed) {
         toastSentinel.show({
@@ -2640,7 +2512,7 @@ import ${varName} from './assets/${folder}/lottie.json';
         return;
       }
 
-      if (!ALLOWED_TIERS.includes(tier)) tier = 'pro';
+      if (!ALLOWED_TIERS.includes(tier)) tier = 'unique';
       currentModalTier = tier;
       currentModalMascot = currentMascot;
 
@@ -2649,9 +2521,7 @@ import ${varName} from './assets/${folder}/lottie.json';
       const successBox = DOM.paySuccess;
 
       if (btn) {
-        btn.textContent = tier === 'free' 
-          ? window.i18n.get('modal.submitBtn') 
-          : (window.i18n.get('modal.payBtn') || "Procéder au Paiement Sécurisé");
+        btn.textContent = window.i18n.get('modal.payBtn') || "Procéder au Paiement Sécurisé";
         btn.disabled = false;
         btn.classList.remove('hidden');
       }
@@ -2780,10 +2650,8 @@ import ${varName} from './assets/${folder}/lottie.json';
 
     // Système de Vote Communautaire Sécurisé (Rate Limité)
     let voteCounts = {
-      kumako: 128,
-      kitsuko: 94,
-      duckuko: 71,
-      panduko: 49
+      owluko: 198,
+      luneko: 144
     };
     let totalVotes = 342;
     let userVotedKey = null;

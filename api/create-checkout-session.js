@@ -2,8 +2,7 @@
 // Vercel Serverless Function — Uko UI Stripe Checkout
 
 const PRICE_IDS = {
-  starter: 'price_1U9YoM15gAppL16WabQvpP1n',
-  pro:     'price_1U9YoM15gAppL16W4heWCLLG',
+  unique:  'price_1U9YoM15gAppL16WabQvpP1n', // Pack AItuko Unique — 5,99 €
 };
 
 const MASCOT_NAMES = {
@@ -27,7 +26,7 @@ export default async function handler(req, res) {
 
   // Validation
   if (!tier || !PRICE_IDS[tier]) {
-    return res.status(400).json({ error: 'Invalid tier. Must be "starter" or "pro".' });
+    return res.status(400).json({ error: 'Invalid tier. Must be "unique".' });
   }
   if (!mascot || !MASCOT_NAMES[mascot]) {
     return res.status(400).json({ error: 'Invalid mascot. Must be "aituko", "owluko", or "luneko".' });
@@ -35,7 +34,7 @@ export default async function handler(req, res) {
 
   const baseUrl = origin || `https://${req.headers.host}`;
   const mascotName = MASCOT_NAMES[mascot];
-  const tierLabel = tier === 'pro' ? 'Pack Pro (12 États)' : 'Pack Essentiel (Starter)';
+  const tierLabel = 'Pack AItuko Unique';
 
   try {
     const stripe = (await import('stripe')).default(process.env.STRIPE_SECRET_KEY);
