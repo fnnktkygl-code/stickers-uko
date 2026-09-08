@@ -994,8 +994,8 @@
         </div>
         <img 
           id="mascotImg" 
-          src="mascots/aituko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
-          alt="Mascot Preview" 
+          src="mascots/aituko/assets/00_idle/static.png" 
+          alt="AItuko" 
           width="200" 
           height="200"
           draggable="false"
@@ -1094,11 +1094,11 @@
         <div class="space-y-2">
           <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[var(--japandi-moss-subtle)] text-[var(--japandi-moss-text)] text-xs font-semibold">
             <span class="w-1.5 h-1.5 rounded-full bg-[var(--japandi-moss)] animate-pulse"></span>
-            <span>Nouveau : Lottie & Vectoriel In-App (10 Ko)</span>
+            <span>Lottie vectoriel · 60fps · ~35 Ko · React / Flutter</span>
           </div>
           <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-[var(--japandi-text)]">Testez la Réactivité In-App d'AItuko</h3>
           <p class="text-xs sm:text-sm text-[var(--japandi-text-secondary)] leading-relaxed">
-            Contrairement aux vidéos et GIF statiques, le fichier vectoriel Lottie réagit au code et aux interactions utilisateur en temps réel : il suit votre frappe, se cache les yeux sur les mots de passe et change d'expression en cas d'erreur.
+            Le fichier vectoriel Lottie réagit au code en temps réel : AItuko change de pose selon l'état de votre interface (chargement, erreur, succès, etc.) pour un onboarding et une UX engageante.
           </p>
         </div>
 
@@ -1164,21 +1164,20 @@
           <span id="demoBubbleText">Bonjour ! Tapez un email...</span>
         </div>
 
-        <!-- AItuko Mascot 3D pour la Démo -->
+        <!-- AItuko — Lottie interactif pour la Démo -->
         <div id="demoMascotWrapper" class="relative w-[170px] h-[170px] flex items-center justify-center">
-          <img
-            id="demoMascotImg"
-            src="mascots/aituko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19"
-            alt="AItuko"
-            width="170"
-            height="170"
-            draggable="false"
-            decoding="async"
-            class="object-contain calm-mascot select-none pointer-events-none w-full h-full"
-            onerror="this.onerror=null; this.src='mascots/aituko/assets/00_idle/static.png'"
-          />
+          <lottie-player
+            id="demoMascotLottie"
+            src="mascots/aituko/assets/00_idle/lottie.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+            class="w-full h-full object-contain pointer-events-none"
+            style="width:170px;height:170px;"
+          ></lottie-player>
         </div>
-        <span class="text-[10px] font-mono text-[var(--japandi-text-muted)] mt-2">AItuko • Lottie • 10 Ko • 60fps</span>
+        <span class="text-[10px] font-mono text-[var(--japandi-text-muted)] mt-2">AItuko • Lottie vectoriel • ~35 Ko • 60fps</span>
       </div>
     </div>
   </section>
@@ -1202,7 +1201,7 @@
       <div class="surface-card rounded-2xl p-5 space-y-2.5 border border-[var(--japandi-border)] shadow-soft">
         <div class="w-8 h-8 rounded-xl bg-[var(--japandi-ochre-subtle)] text-[var(--japandi-ochre-text)] flex items-center justify-center text-sm font-bold font-mono">02</div>
         <h3 class="text-sm sm:text-base font-bold text-[var(--japandi-text)]">6 Formats dont Lottie</h3>
-        <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed">Lottie vectoriel JSON (~10 Ko, in-app et 60fps), WebP animé transparent 24fps (ultra-léger web), GIF (Slack, Notion), APNG (iOS/macOS), PNG HD et MP4 loop.</p>
+        <p class="text-xs text-[var(--japandi-text-secondary)] leading-relaxed">Lottie vectoriel JSON (~35 Ko, in-app et 60fps), PNG statique HD, MP4 loop (112 Ko, hardware-accelerated) et GIF (fond transparent, sombre ou vert chroma).</p>
       </div>
 
       <!-- Pilier 3 : Code Prêt à l'Emploi -->
@@ -1236,7 +1235,7 @@
         <div class="h-36 rounded-xl bg-[var(--japandi-surface-muted)] border border-[var(--japandi-border-subtle)] flex items-center justify-center p-3 relative group-hover:border-[var(--japandi-border)] transition">
           <div class="absolute inset-0 z-20 cursor-pointer" oncontextmenu="return false;"></div>
           <img 
-            src="mascots/aituko/assets/00_idle/animated.webp?v=owluko-remastered-20260831-v19" 
+            src="mascots/aituko/assets/00_idle/static.png" 
             alt="AItuko 3D" 
             width="96"
             height="96"
@@ -1701,7 +1700,7 @@
     let activeIdx = 0;
     let lastActiveIdx = 0;
     let isAnimated = true;
-    let currentFormat = 'webp'; // 'webp' | 'lottie' | 'interactive' | 'png'
+    let currentFormat = 'lottie'; // 'webp' | 'lottie' | 'interactive' | 'png'
     let currentSize = 200;
     let scheduledSize = 200;
     let sizeRafId = null;
@@ -1795,7 +1794,7 @@
 
       getAssetUrl(mascotKey, poseFolder, animated) {
         const prefix = getAssetPrefixFor(mascotKey);
-        const filename = animated ? "animated.webp?v=owluko-remastered-20260831-v19" : "static.png?v=owluko-remastered-20260831-v19";
+        const filename = animated ? "static.png?v=owluko-remastered-20260831-v19" : "static.png?v=owluko-remastered-20260831-v19";
         return `${prefix}${poseFolder}/${filename}`;
       }
 
@@ -2443,7 +2442,7 @@
         if (DOM.mascotImg) DOM.mascotImg.classList.remove('hidden');
 
         const filename = (currentFormat === 'webp') 
-          ? "animated.webp?v=owluko-remastered-20260831-v19" 
+          ? "static.png?v=owluko-remastered-20260831-v19" 
           : "static.png?v=owluko-remastered-20260831-v19";
         const staticFallback = "static.png?v=owluko-remastered-20260831-v19";
         const targetUrl = `${prefix}${pFolder}/${filename}`;
@@ -2584,7 +2583,7 @@
         c.textContent = `${m.flutter}(state: ${m.component}State.${camel}, size: ${currentSize}.0${flutterMsg})`;
       } else if (currentFw === 'html') {
         const folder = poseFolders[activeIdx];
-        const file = isAnimated ? `${m.folderPrefix}${folder}/animated.webp` : `${m.folderPrefix}${folder}/static.png`;
+        const file = `${m.folderPrefix}${folder}/static.png`;
         c.textContent = `<img src="${file}" width="${currentSize}" height="${currentSize}" alt="${sanitizeForJsx(m.name)}" />`;
       } else if (currentFw === 'lottie') {
         const folder = poseFolders[activeIdx];
@@ -2740,50 +2739,36 @@ import ${varName} from './assets/${folder}/lottie.json';
     }
 
     function triggerDemoAction(action) {
-      startEyeTrackingLoop();
       const bubbleText = document.getElementById('demoBubbleText');
-      const floatGroup = document.getElementById('demoAitukoFloat');
-      const headGroup = document.getElementById('demoHeadGroup');
-      const lEye = document.getElementById('demoLeftEye');
-      const rEye = document.getElementById('demoRightEye');
-      const arches = document.getElementById('demoEyeArches');
-      const pills = document.getElementById('demoEyePills');
+      const lottie = document.getElementById('demoMascotLottie');
+
+      function loadDemoLottie(poseFolder) {
+        if (!lottie) return;
+        const src = `mascots/aituko/assets/${poseFolder}/lottie.json`;
+        if (typeof lottie.load === 'function') lottie.load(src);
+        else lottie.src = src;
+      }
 
       if (action === 'error') {
-        toggleDemoPasswordPeek(false);
-        if (arches) arches.classList.add('hidden');
-        if (pills) pills.classList.remove('hidden');
         if (bubbleText) bubbleText.textContent = "Oups ! Erreur d'authentification ⚠️";
-        if (headGroup) {
-          headGroup.style.transform = "rotate(-6deg)";
-          setTimeout(() => { if (headGroup) headGroup.style.transform = "none"; }, 1400);
-        }
-        if (lEye) lEye.setAttribute('rx', '4');
-        if (rEye) rEye.setAttribute('rx', '4');
+        loadDemoLottie('04_error_404');
         setTimeout(() => {
-          if (lEye) lEye.setAttribute('rx', '11');
-          if (rEye) rEye.setAttribute('rx', '11');
-          if (arches) arches.classList.remove('hidden');
-          if (pills) pills.classList.add('hidden');
-        }, 2000);
+          loadDemoLottie('00_idle');
+          if (bubbleText) bubbleText.textContent = "Réessayons ! Tapez un email...";
+        }, 2500);
       } else if (action === 'success') {
-        toggleDemoPasswordPeek(false);
-        if (arches) arches.classList.remove('hidden');
-        if (pills) pills.classList.add('hidden');
         if (bubbleText) bubbleText.textContent = "Connexion réussie ! Bienvenue 🎉";
-        if (floatGroup) {
-          floatGroup.style.transform = "translateY(-16px) scale(1.04)";
-          setTimeout(() => { if (floatGroup) floatGroup.style.transform = "none"; }, 1000);
-        }
+        loadDemoLottie('02_celebrating');
+        setTimeout(() => {
+          loadDemoLottie('00_idle');
+        }, 3000);
       } else if (action === 'reset') {
-        toggleDemoPasswordPeek(false);
-        if (arches) arches.classList.remove('hidden');
-        if (pills) pills.classList.add('hidden');
         const email = document.getElementById('demoEmailInput');
         const pass = document.getElementById('demoPasswordInput');
         if (email) email.value = '';
         if (pass) pass.value = '';
         if (bubbleText) bubbleText.textContent = "Bonjour ! Tapez un email...";
+        loadDemoLottie('00_idle');
       }
     }
 
