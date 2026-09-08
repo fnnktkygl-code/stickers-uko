@@ -1637,6 +1637,8 @@ const TRANSLATIONS = {
   }
 };
 
+const SAFE_I18N_ATTRS = new Set(['placeholder', 'title', 'aria-label', 'alt', 'content', 'value']);
+
 class I18nManager {
   constructor() {
     this.supportedLangs = Object.freeze(['en', 'fr', 'es', 'de', 'ja', 'pt', 'zh']);
