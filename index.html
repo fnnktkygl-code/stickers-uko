@@ -767,21 +767,11 @@
         <button 
           id="formatBtn" 
           onclick="toggleFormat()" 
-          title="Changer de format : WebP Animé, Lottie Vectoriel, Regard Interactif, PNG Statique"
+          title="Changer de format : Lottie Vectoriel / PNG Statique"
           class="px-2.5 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text)] text-xs font-semibold transition cursor-pointer flex items-center gap-1.5"
         >
           <span id="formatDot" class="w-2 h-2 rounded-full bg-[#00E5FF]"></span>
           <span id="formatTxt">Lottie</span>
-        </button>
-
-        <button 
-          id="interactivePillBtn" 
-          onclick="setRenderFormat('interactive')" 
-          title="Mode Interactif : AItuko suit votre curseur en temps réel"
-          class="hidden sm:flex px-2.5 h-7 rounded-lg bg-[var(--japandi-surface-muted)] hover:bg-[var(--japandi-surface)] border border-[var(--japandi-border-subtle)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs font-medium transition cursor-pointer items-center gap-1"
-        >
-          <span>👀</span>
-          <span>Regard</span>
         </button>
 
         <div class="hidden sm:block w-px h-4 bg-[var(--japandi-border)]"></div>
@@ -843,155 +833,6 @@
           class="object-contain w-full h-full rounded-2xl relative z-10 pointer-events-none"
           style="width: 100%; height: 100%;"
         ></lottie-player>
-        <div id="mascotInteractiveRig" class="hidden relative z-10 w-full h-full flex items-center justify-center pointer-events-none select-none">
-          <svg id="aitukoInteractiveSvg" viewBox="0 0 512 512" class="w-full h-full drop-shadow-md overflow-visible">
-            <defs>
-              <linearGradient id="aitukoInteractiveSvg_porcelainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="35%" stop-color="#F8FAFC" />
-                <stop offset="70%" stop-color="#E2E8F0" />
-                <stop offset="100%" stop-color="#CBD5E1" />
-              </linearGradient>
-
-              <radialGradient id="aitukoInteractiveSvg_headDomeGrad" cx="38%" cy="25%" r="70%">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="45%" stop-color="#F8FAFC" />
-                <stop offset="80%" stop-color="#E2E8F0" />
-                <stop offset="100%" stop-color="#CBD5E1" />
-              </radialGradient>
-
-              <linearGradient id="aitukoInteractiveSvg_neckGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#CBD5E1" />
-                <stop offset="25%" stop-color="#F8FAFC" />
-                <stop offset="50%" stop-color="#FFFFFF" />
-                <stop offset="80%" stop-color="#E2E8F0" />
-                <stop offset="100%" stop-color="#CBD5E1" />
-              </linearGradient>
-
-              <linearGradient id="aitukoInteractiveSvg_podGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#CBD5E1" />
-                <stop offset="30%" stop-color="#FFFFFF" />
-                <stop offset="70%" stop-color="#F8FAFC" />
-                <stop offset="100%" stop-color="#CBD5E1" />
-              </linearGradient>
-
-              <radialGradient id="aitukoInteractiveSvg_footGrad" cx="40%" cy="30%" r="65%">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="55%" stop-color="#F1F5F9" />
-                <stop offset="100%" stop-color="#CBD5E1" />
-              </radialGradient>
-
-              <radialGradient id="aitukoInteractiveSvg_visorGlassGrad" cx="50%" cy="35%" r="65%">
-                <stop offset="0%" stop-color="#181B26" />
-                <stop offset="60%" stop-color="#10121A" />
-                <stop offset="100%" stop-color="#090A0F" />
-              </radialGradient>
-
-              <linearGradient id="aitukoInteractiveSvg_visorArcReflection" x1="20%" y1="0%" x2="80%" y2="100%">
-                <stop offset="0%" stop-color="#94A3B8" stop-opacity="0.45" />
-                <stop offset="40%" stop-color="#64748B" stop-opacity="0.25" />
-                <stop offset="100%" stop-color="#334155" stop-opacity="0.0" />
-              </linearGradient>
-
-              <linearGradient id="aitukoInteractiveSvg_specularStreak" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
-                <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
-                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
-              </linearGradient>
-
-              <radialGradient id="aitukoInteractiveSvg_shadowGrad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0F172A" stop-opacity="0.32" />
-                <stop offset="50%" stop-color="#0F172A" stop-opacity="0.14" />
-                <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
-              </radialGradient>
-
-              <filter id="aitukoInteractiveSvg_cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
-                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
-                <feMerge>
-                  <feMergeNode in="blur2" />
-                  <feMergeNode in="blur1" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            <!-- 1. Ombre de sustentation dynamique -->
-            <ellipse id="interactiveShadow" cx="256" cy="468" rx="90" ry="14" fill="url(#aitukoInteractiveSvg_shadowGrad)" class="aituko-shadow-anim" />
-
-            <!-- 2. Pods de sustentation (petits pieds flottants sous le torse — STRICTEMENT SANS LUEUR CYAN) -->
-            <g id="interactivePods" class="aituko-pods-anim">
-              <g transform="translate(228, 412) rotate(-10)">
-                <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
-                <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#aitukoInteractiveSvg_footGrad)" />
-                <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
-              </g>
-              <g transform="translate(284, 412) rotate(10)">
-                <rect x="-19" y="-23" width="38" height="46" rx="19" fill="#CBD5E1" />
-                <rect x="-17" y="-22" width="34" height="44" rx="17" fill="url(#aitukoInteractiveSvg_footGrad)" />
-                <ellipse cx="-3" cy="-12" rx="9" ry="4" fill="#FFFFFF" opacity="0.85" />
-              </g>
-            </g>
-
-            <!-- 3. Cou svelte (jonction tête-torse) -->
-            <g id="aitukoInteractiveSvg_neck" class="aituko-neck-anim">
-              <rect x="238" y="192" width="36" height="22" rx="10" fill="#CBD5E1" />
-              <rect x="240" y="193" width="32" height="20" rx="9" fill="url(#aitukoInteractiveSvg_neckGrad)" />
-              <ellipse cx="256" cy="193" rx="16" ry="3" fill="#0F172A" opacity="0.25" />
-            </g>
-
-            <!-- 4. Torse capsule lisse porcelaine (124x176 à Y=298) -->
-            <g id="interactiveTorso" class="aituko-torso-anim">
-              <rect x="192" y="208" width="128" height="180" rx="64" fill="#CBD5E1" />
-              <rect x="194" y="210" width="124" height="176" rx="62" fill="url(#aitukoInteractiveSvg_porcelainGrad)" />
-              <rect x="195" y="222" width="38" height="152" rx="19" fill="#E2E8F0" opacity="0.45" />
-              <rect x="300" y="232" width="12" height="124" rx="6" fill="url(#aitukoInteractiveSvg_specularStreak)" />
-              <ellipse cx="256" cy="226" rx="36" ry="8" fill="#FFFFFF" opacity="0.6" />
-              <ellipse cx="256" cy="210" rx="30" ry="6" fill="#0F172A" opacity="0.22" />
-            </g>
-
-            <!-- 5. Tête oblate porcelaine avec visière sombre et yeux cyan -->
-            <g id="interactiveHeadGroup" class="aituko-head-anim">
-              <rect x="136" y="42" width="240" height="168" rx="74" fill="#CBD5E1" />
-              <rect x="138" y="44" width="236" height="164" rx="72" fill="url(#aitukoInteractiveSvg_headDomeGrad)" />
-              <ellipse cx="242" cy="60" rx="55" ry="12" fill="#FFFFFF" opacity="0.90" />
-              <ellipse cx="162" cy="118" rx="12" ry="26" fill="#E2E8F0" opacity="0.4" />
-              <ellipse cx="346" cy="100" rx="8" ry="22" transform="rotate(16 346 100)" fill="#FFFFFF" opacity="0.65" />
-              <ellipse cx="256" cy="204" rx="46" ry="6" fill="#CBD5E1" opacity="0.5" />
-
-              <!-- Visière en verre noir poli concave (Pur obsidienne, zéro ovale au-dessus des yeux) -->
-              <rect x="160" y="61" width="192" height="130" rx="58" fill="#090A0F" />
-              <rect x="162" y="63" width="188" height="126" rx="56" fill="url(#aitukoInteractiveSvg_visorGlassGrad)" stroke="#1F2433" stroke-width="1.5" />
-
-              <!-- Yeux Cyan Électriques dynamiques (^ ^) -->
-              <g id="interactiveEyesGroup" class="aituko-eyes-blink aituko-eyes-glow transition-transform duration-75">
-                <g id="interactiveEyesGroup_arches">
-                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#aitukoInteractiveSvg_cyanGlow)" />
-                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
-                  <path d="M 194, 131 C 199, 116 225, 116 230, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
-
-                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.4" filter="url(#aitukoInteractiveSvg_cyanGlow)" />
-                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#00F0FF" stroke-width="8.5" stroke-linecap="round" fill="none" />
-                  <path d="M 278, 131 C 283, 116 309, 116 314, 131" stroke="#E0F7FF" stroke-width="3.2" stroke-linecap="round" fill="none" />
-                </g>
-              </g>
-            </g>
-
-            <!-- 6. Pods latéraux flottants (ailerons/propulseurs — STRICTEMENT SANS MAINS, ZÉRO HALO CYAN) -->
-            <g id="interactiveLeftHand" class="aituko-left-arm-anim transition-all duration-300">
-              <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
-              <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#aitukoInteractiveSvg_podGrad)" />
-              <rect x="-12" y="-42" width="6" height="74" rx="3" fill="url(#aitukoInteractiveSvg_specularStreak)" />
-              <rect x="6" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
-            </g>
-            <g id="interactiveRightHand" class="aituko-right-arm-anim transition-all duration-300">
-              <rect x="-19" y="-56" width="38" height="112" rx="19" fill="#CBD5E1" />
-              <rect x="-17" y="-54" width="34" height="108" rx="17" fill="url(#aitukoInteractiveSvg_podGrad)" />
-              <rect x="6" y="-42" width="6" height="74" rx="3" fill="url(#aitukoInteractiveSvg_specularStreak)" />
-              <rect x="-15" y="-38" width="9" height="80" rx="4.5" fill="#CBD5E1" opacity="0.35" />
-            </g>
-          </svg>
-        </div>
         <img 
           id="mascotImg" 
           src="mascots/aituko/assets/00_idle/static.png" 
@@ -1723,12 +1564,10 @@
       DOM.formatBtn = document.getElementById('formatBtn');
       DOM.formatDot = document.getElementById('formatDot');
       DOM.formatTxt = document.getElementById('formatTxt');
-      DOM.interactivePillBtn = document.getElementById('interactivePillBtn');
       DOM.stageBox = document.getElementById('stageBox');
       DOM.mascotVideo = document.getElementById('mascotVideo');
       DOM.mascotImg = document.getElementById('mascotImg');
       DOM.mascotLottie = document.getElementById('mascotLottie');
-      DOM.mascotInteractiveRig = document.getElementById('mascotInteractiveRig');
       DOM.mascotStageWrapper = document.getElementById('mascotStageWrapper');
       DOM.fallbackOverlay = document.getElementById('mascotFallbackOverlay');
       DOM.sizeTxt = document.getElementById('sizeTxt');
@@ -2288,7 +2127,7 @@
       if (DOM.formatTxt) {
         if (currentFormat === 'webp') DOM.formatTxt.textContent = "WebP";
         else if (currentFormat === 'lottie') DOM.formatTxt.textContent = "Lottie";
-        else if (currentFormat === 'interactive') DOM.formatTxt.textContent = "Regard";
+
         else if (currentFormat === 'png') DOM.formatTxt.textContent = "PNG";
       }
       if (DOM.catalogueVoteCount) {
@@ -2384,7 +2223,7 @@
     const ACTIVE_PILL_CLASS = "pose-pill active min-h-[44px] py-2.5 px-2.5 rounded-xl border border-[var(--japandi-border)] bg-[var(--japandi-surface)] text-[var(--japandi-text)] text-xs sm:text-sm font-bold flex items-center justify-center text-center transition truncate cursor-pointer shadow-soft";
     const INACTIVE_PILL_CLASS = "pose-pill min-h-[44px] py-2.5 px-2.5 rounded-xl border border-[var(--japandi-border-subtle)] bg-[var(--japandi-surface-muted)] text-[var(--japandi-text-secondary)] hover:text-[var(--japandi-text)] text-xs sm:text-sm font-medium flex items-center justify-center text-center transition truncate cursor-pointer";
 
-    const FORMAT_CYCLE = ['webp', 'lottie', 'interactive', 'png'];
+    const FORMAT_CYCLE = ['lottie', 'png'];
 
     function updateUI() {
       const pFolder = poseFolders[activeIdx];
@@ -2403,24 +2242,16 @@
         } else if (currentFormat === 'lottie') {
           DOM.formatTxt.textContent = "Lottie";
           if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[#00E5FF]";
-        } else if (currentFormat === 'interactive') {
-          DOM.formatTxt.textContent = "Regard";
-          if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[#F59E0B]";
         } else if (currentFormat === 'png') {
           DOM.formatTxt.textContent = "PNG";
           if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-text-muted)]";
         }
       }
 
-      if (currentFormat === 'interactive' && currentMascot !== 'aituko') {
-        currentFormat = 'webp';
-        if (DOM.formatTxt) DOM.formatTxt.textContent = "WebP";
-        if (DOM.formatDot) DOM.formatDot.className = "w-2 h-2 rounded-full bg-[var(--japandi-moss)]";
-      }
+
 
       if (currentFormat === 'lottie') {
         if (DOM.mascotImg) DOM.mascotImg.classList.add('hidden');
-        if (DOM.mascotInteractiveRig) DOM.mascotInteractiveRig.classList.add('hidden');
         if (DOM.mascotLottie) {
           DOM.mascotLottie.classList.remove('hidden');
           const lottieUrl = `${prefix}${pFolder}/lottie.json`;
@@ -2430,15 +2261,9 @@
             DOM.mascotLottie.src = lottieUrl;
           }
         }
-      } else if (currentFormat === 'interactive') {
-        if (DOM.mascotImg) DOM.mascotImg.classList.add('hidden');
-        if (DOM.mascotLottie) DOM.mascotLottie.classList.add('hidden');
-        if (DOM.mascotInteractiveRig) DOM.mascotInteractiveRig.classList.remove('hidden');
-        startEyeTrackingLoop();
       } else {
         // Mode Matriciel (WebP ou PNG)
         if (DOM.mascotLottie) DOM.mascotLottie.classList.add('hidden');
-        if (DOM.mascotInteractiveRig) DOM.mascotInteractiveRig.classList.add('hidden');
         if (DOM.mascotImg) DOM.mascotImg.classList.remove('hidden');
 
         const filename = (currentFormat === 'webp') 
@@ -2541,7 +2366,7 @@
     function setRenderFormat(fmt) {
       if (!FORMAT_CYCLE.includes(fmt)) return;
       currentFormat = fmt;
-      isAnimated = (fmt === 'webp' || fmt === 'lottie' || fmt === 'interactive');
+      isAnimated = (fmt === 'lottie');
       updateUI();
     }
 
@@ -3217,8 +3042,6 @@ import ${varName} from './assets/${folder}/lottie.json';
       }
       updateMascotMessage();
       updateUI();
-      startEyeTrackingLoop();
-
       // Initialisation du Moteur de Gestes Tactiles du Stage
       const stageBox = document.getElementById('stageBox');
       const mascotStageWrapper = document.getElementById('mascotStageWrapper');
