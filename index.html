@@ -15,6 +15,22 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23171614'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif' font-weight='900' font-size='18'>U</text></svg>">
   <meta name="theme-color" content="#171614">
 
+  <!-- Anti-FOUC Theme Pre-Initialization -->
+  <script>
+    (function() {
+      try {
+        var urlTheme = new URLSearchParams(window.location.search).get('theme');
+        var savedTheme = localStorage.getItem('uko_theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (urlTheme === 'dark' || (!urlTheme && (savedTheme === 'dark' || (!savedTheme && prefersDark)))) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch(e) {}
+    })();
+  </script>
+
   <!-- Open Graph & Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Uko UI">
