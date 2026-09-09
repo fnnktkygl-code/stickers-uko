@@ -250,12 +250,11 @@ class TestAitukoIdleVisualIntegrity(unittest.TestCase):
             self.assertEqual(pinholes, 0, f"Frame {f_idx}: Found {pinholes} pinholes/alpha gaps inside pelvis core!")
 
     def test_16_authentic_idle_float_amplitude(self):
-        """Verifies that idle vertical float matches authentic 3D studio amplitude (total root stroke ~20-25px)."""
+        """Verifies that mascot remains grounded at baseline with zero artificial vertical floating."""
         from scripts.build_flawless_aituko_idle import get_kinematics
         root_ys = [get_kinematics(f, 120)['dy_root'] for f in range(120)]
         total_stroke = max(root_ys) - min(root_ys)
-        self.assertLessEqual(total_stroke, 26.0, f"Idle vertical float too large: {total_stroke:.2f}px > 26.0px!")
-        self.assertGreaterEqual(total_stroke, 18.0, f"Idle vertical float too small: {total_stroke:.2f}px < 18.0px!")
+        self.assertEqual(total_stroke, 0.0, f"Mascot must remain grounded (stroke=0.0px), but got {total_stroke:.2f}px!")
 
     def test_17_svg_pelvis_and_chin_contour_smoothness(self):
         """Verifies that animated SVG torso pelvis and head chin have ZERO crevasses or notch jumps."""
